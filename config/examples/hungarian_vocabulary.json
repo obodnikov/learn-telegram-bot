@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "topic": "hungarian_vocabulary",
+    "target_language": "Hungarian",
+    "native_language": "Russian",
+    "difficulty": "intermediate",
+    "total_questions": 6,
+    "created_by": "human",
+    "notes": "Focuses on everyday vocabulary with cultural context"
+  },
+  "questions": [
+    {
+      "question": "Что означает венгерское слово 'köszönöm'?",
+      "choices": {
+        "A": "Пожалуйста",
+        "B": "Извините",
+        "C": "Спасибо",
+        "D": "До свидания"
+      },
+      "correct": "C",
+      "explanation": "Русский: 'Köszönöm' означает 'спасибо' на венгерском языке. Это слово происходит от глагола 'köszön' (приветствовать, благодарить). Можно также сказать 'köszönöm szépen' (большое спасибо) или просто 'köszi' в неформальной обстановке.\n\nMagyar: A 'köszönöm' azt jelenti 'спасибо' oroszul. Ez a szó a 'köszön' igéből származik. Mondhatjuk még: 'köszönöm szépen' (nagyon köszönöm) vagy egyszerűen 'köszi' informális helyzetben.",
+      "difficulty": "intermediate",
+      "tags": ["вежливость", "базовая лексика", "everyday"]
+    },
+    {
+      "question": "Как по-венгерски сказать 'Сколько это стоит?'",
+      "choices": {
+        "A": "Hol van ez?",
+        "B": "Mennyibe kerül?",
+        "C": "Mikor nyitva?",
+        "D": "Hogy hívják?"
+      },
+      "correct": "B",
+      "explanation": "Русский: 'Mennyibe kerül?' - это стандартный вопрос о цене, буквально переводится как 'Во сколько обходится?'. 'Mennyibe' означает 'во сколько/за сколько', а 'kerül' - глагол 'стоить/обходиться'. В магазинах также можно услышать 'Ez mennyibe kerül?' (Сколько это стоит?).\n\nMagyar: A 'Mennyibe kerül?' az ár megkérdezésének standard módja, szó szerint azt jelenti 'Во сколько обходится?'. A 'mennyibe' jelentése 'за сколько', a 'kerül' pedig 'стоить'. Boltokban ezt is hallhatjuk: 'Ez mennyibe kerül?'",
+      "difficulty": "intermediate",
+      "tags": ["шопинг", "вопросы", "повседневные фразы"]
+    },
+    {
+      "question": "Что означает венгерское слово 'pályaudvar'?",
+      "choices": {
+        "A": "Аэропорт",
+        "B": "Автобусная остановка",
+        "C": "Железнодорожный вокзал",
+        "D": "Станция метро"
+      },
+      "correct": "C",
+      "explanation": "Русский: 'Pályaudvar' означает 'железнодорожный вокзал'. Это составное слово: 'pálya' (путь, колея) + 'udvar' (двор). В разговорной речи венгры часто используют сокращение 'pu.' при названии конкретных вокзалов, например 'Keleti pu.' (Восточный вокзал). Для метро используется слово 'metróállomás', для автобуса - 'buszmegálló'.\n\nMagyar: A 'pályaudvar' azt jelenti 'железнодорожный вокзал'. Ez egy összetett szó: 'pálya' (sín) + 'udvar' (двор). Beszélt nyelvben gyakran használjuk a 'pu.' rövidítést, például 'Keleti pu.'. A metróhoz használjuk a 'metróállomás' szót, buszhoz pedig 'buszmegálló'.",
+      "difficulty": "intermediate",
+      "tags": ["транспорт", "места", "составные слова"]
+    },
+    {
+      "question": "Какое венгерское выражение используется для фразы 'Приятного аппетита'?",
+      "choices": {
+        "A": "Jó étvágyat!",
+        "B": "Egészségére!",
+        "C": "Szeretettel!",
+        "D": "Gratulálok!"
+      },
+      "correct": "A",
+      "explanation": "Русский: 'Jó étvágyat!' - это венгерский эквивалент 'Приятного аппетита'. Буквально переводится как 'Хороший аппетит!'. 'Jó' означает 'хороший', 'étvágy' - 'аппетит', суффикс '-at' - это аккузатив. В ответ обычно говорят 'Köszönöm!' (Спасибо!) или тоже 'Jó étvágyat!'. Это важная часть венгерской культуры питания.\n\nMagyar: A 'Jó étvágyat!' az orosz 'Приятного аппетита' megfelelője. Szó szerint 'Хороший аппетит!' jelent. A 'jó' jelentése 'хороший', az 'étvágy' pedig 'аппетит', az '-at' pedig tárgyeset. Válaszként általában azt mondjuk: 'Köszönöm!' vagy szintén 'Jó étvágyat!'. Ez fontos része a magyar étkezési kultúrának.",
+      "difficulty": "intermediate",
+      "tags": ["еда", "культура", "этикет", "устойчивые выражения"]
+    },
+    {
+      "question": "Как правильно сказать 'Я не понимаю' по-венгерски?",
+      "choices": {
+        "A": "Nem tudok",
+        "B": "Nem beszélek",
+        "C": "Nem értem",
+        "D": "Nem akarom"
+      },
+      "correct": "C",
+      "explanation": "Русский: 'Nem értem' означает 'Я не понимаю'. 'Nem' - отрицательная частица 'не', 'értem' - первое лицо глагола 'ért' (понимать). Другие варианты: 'Nem tudok' = 'Я не знаю/не умею', 'Nem beszélek' = 'Я не говорю', 'Nem akarom' = 'Я не хочу'. Полезная фраза: 'Nem értem magyarul' (Я не понимаю по-венгерски).\n\nMagyar: A 'Nem értem' azt jelenti 'Я не понимаю'. A 'nem' tagadószó, az 'értem' pedig az 'ért' ige első személyű alakja. Más lehetőségek: 'Nem tudok' = 'Я не знаю', 'Nem beszélek' = 'Я не говорю', 'Nem akarom' = 'Я не хочу'. Hasznos kifejezés: 'Nem értem magyarul' (Я не понимаю по-венгерски).",
+      "difficulty": "intermediate",
+      "tags": ["общение", "базовые фразы", "глаголы"]
+    },
+    {
+      "question": "Что означает венгерское слово 'bevásárlóközpont'?",
+      "choices": {
+        "A": "Супермаркет",
+        "B": "Торговый центр",
+        "C": "Рынок",
+        "D": "Магазин одежды"
+      },
+      "correct": "B",
+      "explanation": "Русский: 'Bevásárlóközpont' означает 'торговый центр/молл'. Это длинное составное слово: 'be-' (приставка движения внутрь) + 'vásárló' (покупающий, от 'vásárol' - покупать) + 'központ' (центр). Венгерский язык известен такими длинными словами. Супермаркет по-венгерски - 'szupermarket' или 'ABC áruház', рынок - 'piac', магазин - 'üzlet' или 'bolt'.\n\nMagyar: A 'bevásárlóközpont' azt jelenti 'торговый центр'. Ez egy hosszú összetett szó: 'be-' (igekötő) + 'vásárló' ('vásárol' igéből) + 'központ'. A magyar nyelv ilyen hosszú szavakról híres. Oroszul: szupermarket - 'супермаркет' vagy 'szupermarket', piac - 'рынок', üzlet vagy bolt - 'магазин'.",
+      "difficulty": "intermediate",
+      "tags": ["шопинг", "места", "составные слова", "длинные слова"]
+    }
+  ]
+}

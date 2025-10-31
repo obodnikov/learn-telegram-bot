@@ -1,0 +1,47 @@
+topics:
+  hungarian_vocabulary:
+    name: "Hungarian Vocabulary - Everyday Life"
+    type: language
+    target_language: Hungarian
+    native_language: Russian
+    difficulty: intermediate
+    questions_per_batch: 10
+    context: |
+      Focus on everyday vocabulary and common expressions.
+      Include: food, transportation, shopping, directions, time expressions.
+      Emphasize Magyar-specific grammar quirks and cognates from Finno-Ugric roots.
+    
+    examples:
+      file: "config/examples/hungarian_vocabulary.json"
+      mode: "hybrid"
+      use_ratio: 0.4  # 40% from file, 60% generated
+  
+  spanish_basics:
+    name: "Spanish Vocabulary - Basics"
+    type: language
+    target_language: Spanish
+    native_language: English
+    difficulty: beginner
+    questions_per_batch: 10
+    context: |
+      Focus on common daily words and phrases for beginners.
+      Include: greetings, numbers, colors, common verbs.
+    
+    examples:
+      file: "config/examples/spanish_basics.json"
+      mode: "augment"
+  
+  world_war_2:
+    name: "World War 2 Facts"
+    type: history
+    time_period: "1939-1945"
+    difficulty: intermediate
+    questions_per_batch: 10
+    context: |
+      Major events, dates, and figures from World War 2.
+      Include: key battles, political leaders, turning points.
+    
+    examples:
+      file: "config/examples/world_war_2.json"
+      mode: "hybrid"
+      use_ratio: 0.5
