@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "topic": "hungarian_literature_culture",
+    "target_language": "Hungarian",
+    "native_language": "Russian",
+    "difficulty": "advanced",
+    "total_questions": 10,
+    "created_by": "human",
+    "notes": "Focuses on Hungarian literature, music, and cultural heritage. Covers major works, authors, composers from Renaissance to 20th century."
+  },
+  "questions": [
+    {
+      "question": "Кто является автором произведения 'Egy polgár vallomása' (Исповедь буржуа)?",
+      "choices": {
+        "A": "Petőfi Sándor",
+        "B": "Márai Sándor",
+        "C": "Móricz Zsigmond",
+        "D": "Ady Endre"
+      },
+      "correct": "B",
+      "explanation": "Русский: 'Egy polgár vallomása' (Исповедь буржуа) написал Márai Sándor (Мараи Шандор, 1900-1989), один из выдающихся венгерских писателей 20-го века. Это автобиографическое произведение описывает жизнь венгерской буржуазии и интеллигенции первой половины XX века. Мараи эмигрировал после коммунистического переворота 1948 года.\n\nMagyar: Az 'Egy polgár vallomása' című művet Márai Sándor (1900-1989) írta, a 20. század egyik kiemelkedő magyar írója. Ez egy önéletrajzi mű, amely a 20. század első felének magyar polgárságát és értelmiségét mutatja be. Márai 1948-ban, a kommunista hatalomátvétel után emigrált.",
+      "difficulty": "advanced",
+      "tags": ["литература 20 века", "проза", "автобиография", "Márai Sándor"]
+    },
+    {
+      "question": "Какой венгерский поэт написал эпическую поэму 'A walesi bárdok' (Валлийские барды)?",
+      "choices": {
+        "A": "Petőfi Sándor",
+        "B": "Ady Endre",
+        "C": "Arany János",
+        "D": "Balassi Bálint"
+      },
+      "correct": "C",
+      "explanation": "Русский: 'A walesi bárdok' (Валлийские барды) написал Arany János (Арань Янош, 1817-1882), один из крупнейших эпических поэтов венгерской литературы романтизма. Поэма была написана в 1857 году как аллегория на подавление венгерской революции 1848-49 годов. В ней рассказывается о том, как английский король Эдуард I приказал убить валлийских бардов.\n\nMagyar: A 'walesi bárdok' című epikus költeményt Arany János (1817-1882) írta, a magyar romantika egyik legnagyobb epikus költője. A mű 1857-ben készült, az 1848-49-es magyar forradalom leverésének allegóriájaként. A történet arról szól, hogy I. Edvárd angol király megparancsolta a walesi bárdok lemészárlását.",
+      "difficulty": "advanced",
+      "tags": ["поэзия", "романтизм", "эпос", "Arany János", "19 век"]
+    },
+    {
+      "question": "Кто написал сатирическое произведение 'Így írtok ti' (Так вы пишете)?",
+      "choices": {
+        "A": "Karinthy Frigyes",
+        "B": "Móricz Zsigmond",
+        "C": "Kosztolányi Dezső",
+        "D": "Babits Mihály"
+      },
+      "correct": "A",
+      "explanation": "Русский: 'Így írtok ti' (Так вы пишете) написал Karinthy Frigyes (Каринтьи Фридеш, 1887-1938), венгерский писатель и сатирик 20-го века. Это сборник литературных пародий на стили известных венгерских писателей. Произведение демонстрирует блестящее знание литературных стилей и острое чувство юмора автора.\n\nMagyar: Az 'Így írtok ti' című művet Karinthy Frigyes (1887-1938) írta, a 20. század magyar írója és szatirikus. Ez egy irodalmi paródiagyűjtemény, amely híres magyar írók stílusát utánozza. A mű Karinthy brilliáns irodalmi stílusérzékét és éles humorát mutatja be.",
+      "difficulty": "advanced",
+      "tags": ["литература 20 века", "сатира", "пародия", "Karinthy Frigyes"]
+    },
+    {
+      "question": "Кто является композитором оперы 'Bánk bán'?",
+      "choices": {
+        "A": "Liszt Ferenc",
+        "B": "Bartók Béla",
+        "C": "Kodály Zoltán",
+        "D": "Erkel Ferenc"
+      },
+      "correct": "D",
+      "explanation": "Русский: Оперу 'Bánk bán' сочинил Erkel Ferenc (Ференц Эркель, 1810-1893), который является одним из самых выдающихся венгерских композиторов и создателей венгерской национальной оперы. Эта опера, премьера которой состоялась в 1861 году, считается первой настоящей венгерской национальной оперой. Либретто основано на драме Катоны Йожефа.\n\nMagyar: A 'Bánk bán' című operát Erkel Ferenc (1810-1893) komponálta, aki Magyarország egyik legkiemelkedőbb zeneszerzője és a magyar nemzeti opera megteremtője. Ez az 1861-ben bemutatott opera az első igazi magyar nemzeti operának számít. A librettó Katona József drámáján alapul.",
+      "difficulty": "advanced",
+      "tags": ["музыка", "опера", "национальная опера", "Erkel Ferenc", "19 век"]
+    },
+    {
+      "question": "Какой венгерский композитор создал произведение 'Háry János'?",
+      "choices": {
+        "A": "Bartók Béla",
+        "B": "Liszt Ferenc",
+        "C": "Kodály Zoltán",
+        "D": "Erkel Ferenc"
+      },
+      "correct": "C",
+      "explanation": "Русский: 'Háry János' (Хари Янош) сочинил Kodály Zoltán (Золтан Кодай, 1882-1967), выдающийся венгерский композитор и исследователь народной музыки. Это музыкальная сказка для голосов и оркестра (1926), основанная на народных сказаниях о фантазере Яноше Хари. Произведение использует венгерские народные мелодии и инструменты.\n\nMagyar: A 'Háry János' című művet Kodály Zoltán (1882-1967) komponálta, kiemelkedő magyar zeneszerző és népzenekutató. Ez egy zenés játék énekhangra és zenekarra (1926), amely Háry János mesemondó alakjának népi mondáin alapul. A mű magyar népdallamokat és hangszereket használ.",
+      "difficulty": "advanced",
+      "tags": ["музыка", "народная музыка", "Kodály Zoltán", "20 век"]
+    },
+    {
+      "question": "Кто написал стихотворение 'Nemzeti dal' (Национальная песнь)?",
+      "choices": {
+        "A": "Ady Endre",
+        "B": "Arany János",
+        "C": "Petőfi Sándor",
+        "D": "József Attila"
+      },
+      "correct": "C",
+      "explanation": "Русский: 'Nemzeti dal' (Национальная песнь) написал Petőfi Sándor (Петёфи Шандор, 1823-1849), это произведение стало одним из важнейших патриотических стихотворений венгерской литературы романтизма. Стихотворение было написано 13 марта 1848 года и прочитано на ступенях Национального музея в начале венгерской революции. Начинается со знаменитых строк 'Talpra magyar, hí a haza!' (Вставай, венгр, зовёт отчизна!).\n\nMagyar: A 'Nemzeti dal' című verset Petőfi Sándor (1823-1849) írta, ez a mű a magyar romantikus irodalom egyik legfontosabb hazafias költeménye lett. A verset 1848. március 13-án írta, és a Nemzeti Múzeum lépcsőjén olvasták fel a magyar forradalom kezdetén. A híres sorokkal kezdődik: 'Talpra magyar, hí a haza!'",
+      "difficulty": "advanced",
+      "tags": ["поэзия", "романтизм", "революция 1848", "Petőfi Sándor", "патриотизм"]
+    },
+    {
+      "question": "Какой венгерский композитор является автором Magyar rapszódiák (Венгерские рапсодии)?",
+      "choices": {
+        "A": "Erkel Ferenc",
+        "B": "Bartók Béla",
+        "C": "Liszt Ferenc",
+        "D": "Kodály Zoltán"
+      },
+      "correct": "C",
+      "explanation": "Русский: Автором Magyar rapszódiák (Венгерских рапсодий) является Liszt Ferenc (Ференц Лист, 1811-1886), один из величайших венгерских композиторов и пианистов. Это цикл из 19 рапсодий для фортепиано, основанных на венгерских народных и цыганских мелодиях. Самая известная - Рапсодия №2 до-диез минор. Лист считается одним из величайших пианистов-виртуозов всех времен.\n\nMagyar: A Magyar rapszódiák szerzője Liszt Ferenc (1811-1886), az egyik legnagyobb magyar zeneszerző és zongorista. Ez egy 19 zongoradarabból álló ciklus, amely magyar népi és cigány dallamokon alapul. A legismertebb a 2. Magyar rapszódia cisz-mollban. Lisztet minden idők egyik legnagyobb zongoravirtuózának tartják.",
+      "difficulty": "advanced",
+      "tags": ["музыка", "фортепиано", "романтизм", "Liszt Ferenc", "19 век"]
+    },
+    {
+      "question": "Кто является автором романа 'Rokonok' (Родственники)?",
+      "choices": {
+        "A": "Márai Sándor",
+        "B": "Kosztolányi Dezső",
+        "C": "Krúdy Gyula",
+        "D": "Móricz Zsigmond"
+      },
+      "correct": "D",
+      "explanation": "Русский: Автором романа 'Rokonok' (Родственники) является Móricz Zsigmond (Мориц Жигмонд, 1879-1942), выдающийся венгерский писатель 20-го века, известный своими реалистическими произведениями. Роман 'Rokonok' (1930) - одно из его главных произведений, в котором критически изображается провинциальная венгерская буржуазия межвоенного периода.\n\nMagyar: A 'Rokonok' című regény szerzője Móricz Zsigmond (1879-1942), a 20. század kiemelkedő magyar írója, aki realista műveiről ismert. A 'Rokonok' (1930) az egyik főműve, amelyben kritikusan ábrázolja a két világháború közötti vidéki magyar polgárságot.",
+      "difficulty": "advanced",
+      "tags": ["литература 20 века", "проза", "реализм", "Móricz Zsigmond"]
+    },
+    {
+      "question": "Какой венгерский поэт эпохи Возрождения написал 'Hogy Júliára talála, így köszöne neki'?",
+      "choices": {
+        "A": "Janus Pannonius",
+        "B": "Zrínyi Miklós",
+        "C": "Balassi Bálint",
+        "D": "Csokonai Vitéz Mihály"
+      },
+      "correct": "C",
+      "explanation": "Русский: С именем Balassi Bálint (Балинт Балашши, 1554-1594) связано произведение 'Hogy Júliára talála, így köszöne neki' (Как на Юлию набрёл, так ей и молвил). Он был выдающимся поэтом венгерского Ренессанса, первым великим венгерским лирическим поэтом. Балашши создал особую строфическую форму, названную его именем. Его любовная лирика, военные и религиозные стихи оказали огромное влияние на венгерскую поэзию.\n\nMagyar: A 'Hogy Júliára talála, így köszöne neki' című művet Balassi Bálint (1554-1594) írta. Ő a magyar reneszánsz kiemelkedő költője volt, az első nagy magyar lírai költő. Balassi különleges strófaformát alkotott, amelyet róla neveztek el. Szerelmi lírája, vitézi és vallási versei óriási hatással voltak a magyar költészetre.",
+      "difficulty": "advanced",
+      "tags": ["поэзия", "ренессанс", "любовная лирика", "Balassi Bálint", "16 век"]
+    },
+    {
+      "question": "Кто написал стихотворение 'Elbocsátó, szép üzenet' (Прощальное, прекрасное послание)?",
+      "choices": {
+        "A": "Petőfi Sándor",
+        "B": "József Attila",
+        "C": "Ady Endre",
+        "D": "Arany János"
+      },
+      "correct": "C",
+      "explanation": "Русский: Произведение 'Elbocsátó, szép üzenet' (Прощальное, прекрасное послание) написал Ady Endre (Ади Эндре, 1877-1919) - один из выдающихся венгерских поэтов 20-го века, один из основоположников венгерского модернизма. Его поэзия характеризуется символизмом, новаторским использованием языка и глубоким философским содержанием. Ади оказал революционное влияние на венгерскую литературу.\n\nMagyar: Az 'Elbocsátó, szép üzenet' című művet Ady Endre (1877-1919) írta, a 20. század egyik kiemelkedő magyar költője, a magyar modernizmus egyik megalapítója. Költészetét szimbolizmus, a nyelv újító használata és mély filozófiai tartalom jellemzi. Ady forradalmi hatással volt a magyar irodalomra.",
+      "difficulty": "advanced",
+      "tags": ["поэзия", "модернизм", "символизм", "Ady Endre", "20 век"]
+    }
+  ]
+}
