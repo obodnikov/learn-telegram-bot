@@ -1,0 +1,174 @@
+question_generation:
+  language:
+    # Mode: augment - create similar questions
+    augment_prompt: |
+      You are a language learning expert. I will provide example questions that demonstrate the quality, style, and structure I want.
+      
+      Study these examples carefully:
+      {examples}
+      
+      Now generate {count} NEW multiple-choice questions following the EXACT same style, format, and quality level.
+      
+      Topic: {target_language} - {name}
+      Native language: {native_language}
+      Difficulty: {difficulty}
+      Context: {context}
+      
+      Key requirements:
+      - Match the explanation style (bilingual, detailed, contextual)
+      - Match the difficulty level of the examples
+      - Use similar question patterns but with NEW content
+      - Ensure distractors are plausible but clearly wrong
+      - Maintain the same educational tone
+      
+      Return as JSON array matching this structure exactly:
+      [
+        {{
+          "question": "...",
+          "choices": {{"A": "...", "B": "...", "C": "...", "D": "..."}},
+          "correct": "B",
+          "explanation": "English: ...\\n\\nSpanish: ...",
+          "difficulty": "beginner",
+          "tags": ["...", "..."]
+        }}
+      ]
+    
+    # Mode: template - use structure, vary content
+    template_prompt: |
+      You are a language learning expert. I will provide template questions that show the EXACT structure to follow.
+      
+      Templates:
+      {examples}
+      
+      Generate {count} questions using these EXACT templates but with DIFFERENT vocabulary/phrases.
+      
+      Topic: {target_language} - {name}
+      Context: {context}
+      
+      Requirements:
+      - Keep the same question structure
+      - Change only the specific words/phrases being tested
+      - Maintain the same explanation format
+      - Keep difficulty and style identical
+      
+      Return as JSON array.
+    
+    # Mode: hybrid - mix provided + generated
+    hybrid_prompt: |
+      You are a language learning expert. I will provide a mix of pre-written questions and need you to generate additional ones.
+      
+      Pre-written questions (use these as-is):
+      {provided_questions}
+      
+      Example style (generate new questions like these):
+      {example_style}
+      
+      Generate {additional_count} MORE questions following the example style.
+      
+      Return complete JSON array including PROVIDED questions first, then your GENERATED questions.
+    
+    # Mode: standard - no examples provided
+    standard_prompt: |
+      You are a language learning expert creating multiple-choice questions.
+      
+      Generate {count} multiple-choice questions for learning {target_language}.
+      Native language: {native_language}
+      Difficulty: {difficulty}
+      Context: {context}
+      
+      For each question, provide:
+      1. Question text (in {native_language})
+      2. Four choices (A, B, C, D) - one correct, three plausible wrong answers
+      3. Correct answer (letter)
+      4. Detailed explanation in both {native_language} and {target_language}
+      
+      Return as JSON array with this structure:
+      [
+        {{
+          "question": "What does 'Hola' mean?",
+          "choices": {{
+            "A": "Goodbye",
+            "B": "Hello",
+            "C": "Please",
+            "D": "Thank you"
+          }},
+          "correct": "B",
+          "explanation": "English: 'Hola' is the most common Spanish greeting...\\nSpanish: 'Hola' es el saludo más común...",
+          "difficulty": "beginner",
+          "tags": ["greeting", "basic"]
+        }}
+      ]
+
+  history:
+    augment_prompt: |
+      You are a history educator. Study these example questions carefully:
+      
+      {examples}
+      
+      Generate {count} NEW history questions following the same style, depth, and quality.
+      
+      Topic: {name}
+      Time period: {time_period}
+      Context: {context}
+      
+      Match the:
+      - Question complexity
+      - Explanation depth (include historical context and significance)
+      - Distractor quality (dates/names that could be confused)
+      - Educational value
+      
+      Return as JSON array matching the example structure.
+    
+    template_prompt: |
+      Use these question templates to generate {count} history questions:
+      
+      {examples}
+      
+      Keep the same structure, change the historical events/dates/figures.
+      Topic: {name}
+      Time period: {time_period}
+      
+      Return as JSON array.
+    
+    hybrid_prompt: |
+      Pre-written questions to include:
+      {provided_questions}
+      
+      Example style for new questions:
+      {example_style}
+      
+      Generate {additional_count} additional questions in the same style.
+      
+      Return complete JSON array (provided + generated).
+    
+    standard_prompt: |
+      You are a history educator creating engaging multiple-choice questions.
+      
+      Generate {count} multiple-choice history questions.
+      Topic: {name}
+      Time period: {time_period}
+      Difficulty: {difficulty}
+      Context: {context}
+      
+      For each question, provide:
+      1. Question about a historical fact/date/event
+      2. Four choices - one correct, three plausible wrong answers
+      3. Correct answer (letter)
+      4. Brief historical explanation with context and significance
+      
+      Return as JSON array with this structure:
+      [
+        {{
+          "question": "When did D-Day occur?",
+          "choices": {{
+            "A": "June 6, 1944",
+            "B": "May 8, 1945",
+            "C": "December 7, 1941",
+            "D": "September 1, 1939"
+          }},
+          "correct": "A",
+          "explanation": "D-Day occurred on June 6, 1944...",
+          "difficulty": "intermediate",
+          "tags": ["dates", "battles"]
+        }}
+      ]

@@ -1,0 +1,62 @@
+difficulty_levels:
+  beginner:
+    description: "Basic vocabulary, simple concepts, common phrases"
+    language_criteria:
+      - "Most frequent 500-1000 words"
+      - "Simple sentence structures"
+      - "Basic grammar rules"
+      - "Common everyday situations"
+    history_criteria:
+      - "Major well-known events"
+      - "Famous historical figures"
+      - "Clear cause-and-effect relationships"
+    distractor_complexity: "easy"  # Obviously wrong answers
+    explanation_depth: "simple"  # Brief, clear explanations
+    
+  intermediate:
+    description: "Expanded vocabulary, moderate complexity, cultural nuances"
+    language_criteria:
+      - "Vocabulary range: 1000-3000 words"
+      - "Compound sentences"
+      - "Intermediate grammar (cases, tenses)"
+      - "Idiomatic expressions"
+      - "Some cultural context required"
+    history_criteria:
+      - "Specific dates and sequences"
+      - "Multiple perspectives on events"
+      - "Secondary historical figures"
+      - "Political and social context"
+    distractor_complexity: "moderate"  # Plausible wrong answers
+    explanation_depth: "detailed"  # Context and nuances explained
+    
+  advanced:
+    description: "Complex structures, subtle distinctions, specialized knowledge"
+    language_criteria:
+      - "Vocabulary: 3000+ words including specialized terms"
+      - "Complex grammar structures"
+      - "Subtle semantic differences"
+      - "Literary and formal language"
+      - "Deep cultural knowledge"
+    history_criteria:
+      - "Nuanced interpretations"
+      - "Historical debates and controversies"
+      - "Lesser-known events and figures"
+      - "Complex causation chains"
+      - "Historiographical perspectives"
+    distractor_complexity: "hard"  # Very plausible, requires deep knowledge
+    explanation_depth: "comprehensive"  # Academic-level detail
+    
+  expert:
+    description: "Specialized domain knowledge, academic level"
+    language_criteria:
+      - "Native-level vocabulary"
+      - "Archaic or regional variations"
+      - "Professional/academic terminology"
+      - "Complex stylistic nuances"
+    history_criteria:
+      - "Primary source analysis"
+      - "Scholarly debates"
+      - "Obscure historical details"
+      - "Interdisciplinary connections"
+    distractor_complexity: "expert"  # Nearly indistinguishable from correct
+    explanation_depth: "academic"  # Research-level citations and analysis
