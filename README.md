@@ -14,7 +14,7 @@ An intelligent Telegram bot for learning foreign languages, historical facts, an
 
 ## Project Status
 
-Currently ready for **Phase 3: Telegram Bot Handlers**
+Currently ready for **Phase 4: Question Generation & Scheduling**
 
 ### Phase 1: Core Infrastructure & Validation ✅
 - [x] Project structure
@@ -33,11 +33,18 @@ Currently ready for **Phase 3: Telegram Bot Handlers**
 - [x] Question generator (4 modes)
 - [x] Example parser service
 
-See [PHASE1_COMPLETE.md](PHASE1_COMPLETE.md) and [PHASE2_COMPLETE.md](PHASE2_COMPLETE.md) for details.
+### Phase 3: Telegram Bot Handlers ✅
+- [x] Bot initialization and session management
+- [x] Command handlers (/start, /help, /topics, /stats, /cancel)
+- [x] Quiz interaction handlers
+- [x] Inline keyboard callbacks (topic selection, answers, next question)
+- [x] Progress tracking integration
+- [x] User statistics display
+
+See [PHASE1_COMPLETE.md](PHASE1_COMPLETE.md), [PHASE2_COMPLETE.md](PHASE2_COMPLETE.md), and [PHASE3_COMPLETE.md](PHASE3_COMPLETE.md) for details.
 
 ### In Progress
-- [ ] Phase 3: Telegram bot handlers
-- [ ] Phase 4: Question generation & scheduling
+- [ ] Phase 4: Question generation & scheduling (APScheduler)
 - [ ] Phase 5: Analytics and question refinement
 
 ## Installation
@@ -87,12 +94,39 @@ Provide example questions to guide LLM generation:
 
 ## Usage
 
-```bash
-# Validate configuration and examples
-python main.py
+### Running the Bot
 
-# Run tests
+```bash
+# Set environment variables (or use .env file)
+export TELEGRAM_BOT_TOKEN="your_bot_token"
+export DATABASE_URL="sqlite:///learning_bot.db"
+export OPENROUTER_API_KEY="your_api_key"  # Optional for Phase 3
+
+# Run the bot
+python main.py
+```
+
+The bot will:
+1. Validate all configuration files
+2. Initialize the database (create tables if needed)
+3. Load topics and prompts
+4. Start polling for Telegram messages
+
+**Telegram Commands:**
+- `/start` - Register and welcome message
+- `/help` - Show available commands
+- `/topics` - List topics and start quiz
+- `/stats` - View learning statistics
+- `/cancel` - End current quiz session
+
+### Testing
+
+```bash
+# Run all tests
 pytest tests/
+
+# Run with coverage
+pytest --cov=src
 
 # Validate examples manually
 python scripts/validate_examples.py

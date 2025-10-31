@@ -41,12 +41,13 @@ def initialize_database() -> Repository:
         raise DatabaseError(f"Database initialization failed: {e}")
 
 
-def main() -> None:
+async def main_async() -> None:
     """
-    Main application entry point.
+    Main application entry point (async).
 
     Performs startup validation and initializes the bot.
     """
+    bot = None
     try:
         logger.info("Starting Telegram Learning Bot...")
 
@@ -59,15 +60,38 @@ def main() -> None:
         repository = initialize_database()
         logger.info("Phase 2 components initialized: Database & Repository")
 
-        # TODO: Phase 3 - Initialize LLM service
-        # api_key = os.getenv('OPENROUTER_API_KEY')
-        # model = os.getenv('OPENROUTER_MODEL', 'anthropic/claude-3.5-sonnet')
-        # llm_service = LLMService(api_key, model)
+        # Initialize config loader
+        from src.utils.config_loader import ConfigLoader
+        config_loader = ConfigLoader(config_dir)
+        config_loader.load_all()
 
-        # TODO: Phase 4 - Initialize bot and start polling
-        logger.info("Bot initialization complete (Phase 2)")
-        logger.info("Database ready, LLM integration available")
-        logger.info("Ready for Phase 3 implementation (Telegram bot handlers)")
+        # Initialize LLM service (optional)
+        llm_service = None
+        api_key = os.getenv('OPENROUTER_API_KEY')
+        if api_key:
+            from src.services.llm_service import LLMService
+            model = os.getenv('OPENROUTER_MODEL', 'anthropic/claude-3.5-sonnet')
+            llm_service = LLMService(api_key, model)
+            logger.info("LLM service initialized")
+        else:
+            logger.warning("OPENROUTER_API_KEY not set, LLM features disabled")
+
+        # Initialize and start bot
+        token = os.getenv('TELEGRAM_BOT_TOKEN')
+        if not token:
+            raise ConfigurationError("TELEGRAM_BOT_TOKEN not set in environment")
+
+        from src.bot import LearningBot
+        bot = LearningBot(token, repository, config_loader, llm_service)
+
+        # Store bot instance in application context
+        bot.application.bot_data["bot_instance"] = bot
+
+        logger.info("All components initialized successfully")
+        logger.info("Starting Telegram bot...")
+
+        # Start the bot
+        await bot.start()
 
     except ConfigurationError as e:
         logger.error(f"Configuration error: {e}")
@@ -79,10 +103,24 @@ def main() -> None:
         sys.exit(1)
     except KeyboardInterrupt:
         logger.info("Bot shutdown requested by user")
+        if bot:
+            await bot.stop()
         sys.exit(0)
     except Exception as e:
         logger.error(f"Unexpected error: {e}", exc_info=True)
+        if bot:
+            await bot.stop()
         sys.exit(1)
+
+
+def main() -> None:
+    """Wrapper to run async main."""
+    import asyncio
+    try:
+        asyncio.run(main_async())
+    except KeyboardInterrupt:
+        logger.info("Shutdown complete")
+        sys.exit(0)
 
 
 if __name__ == "__main__":
