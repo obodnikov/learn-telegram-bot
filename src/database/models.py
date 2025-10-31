@@ -1,6 +1,7 @@
 """Database models for SQLAlchemy."""
 
-from typing import Optional, List
+from __future__ import annotations
+from typing import Optional
 from datetime import datetime
 from enum import Enum
 from sqlalchemy import (
@@ -40,7 +41,7 @@ class User(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
 
     # Relationships
-    progress: Mapped[List["UserProgress"]] = relationship("UserProgress", back_populates="user", cascade="all, delete-orphan")
+    progress: Mapped[list["UserProgress"]] = relationship("UserProgress", back_populates="user", cascade="all, delete-orphan")
 
     def __repr__(self) -> str:
         return f"<User(id={self.id}, telegram_id={self.telegram_id})>"
@@ -59,7 +60,7 @@ class Topic(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
 
     # Relationships
-    questions: Mapped[List["Question"]] = relationship("Question", back_populates="topic", cascade="all, delete-orphan")
+    questions: Mapped[list["Question"]] = relationship("Question", back_populates="topic", cascade="all, delete-orphan")
 
     def __repr__(self) -> str:
         return f"<Topic(id={self.id}, name={self.name}, type={self.type})>"
@@ -80,7 +81,7 @@ class Question(Base):
     correct_answer: Mapped[str] = mapped_column(String(1), nullable=False)
     explanation: Mapped[str] = mapped_column(Text, nullable=False)
     difficulty: Mapped[str] = mapped_column(String(20), nullable=False, index=True)
-    tags: Mapped[List[str]] = mapped_column(JSON, default=list, nullable=False)
+    tags: Mapped[list[str]] = mapped_column(JSON, default=list, nullable=False)
     source: Mapped[str] = mapped_column(String(20), nullable=False)
     source_file: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
@@ -88,7 +89,7 @@ class Question(Base):
 
     # Relationships
     topic: Mapped["Topic"] = relationship("Topic", back_populates="questions")
-    progress: Mapped[List["UserProgress"]] = relationship("UserProgress", back_populates="question", cascade="all, delete-orphan")
+    progress: Mapped[list["UserProgress"]] = relationship("UserProgress", back_populates="question", cascade="all, delete-orphan")
     analytics: Mapped[Optional["QuestionAnalytics"]] = relationship("QuestionAnalytics", back_populates="question", uselist=False, cascade="all, delete-orphan")
 
     # Indexes for common queries
@@ -162,7 +163,7 @@ class ExampleFileValidation(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     file_path: Mapped[str] = mapped_column(String(255), unique=True, nullable=False, index=True)
     validation_status: Mapped[str] = mapped_column(String(20), nullable=False)
-    validation_errors: Mapped[List[str]] = mapped_column(JSON, default=list, nullable=False)
+    validation_errors: Mapped[list[str]] = mapped_column(JSON, default=list, nullable=False)
     last_validated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
     question_count: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
 

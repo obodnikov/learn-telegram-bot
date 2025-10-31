@@ -16,6 +16,36 @@ topics:
       mode: "hybrid"
       use_ratio: 0.4  # 40% from file, 60% generated
   
+  spanish_basics:
+    name: "Spanish Vocabulary - Basics"
+    type: language
+    target_language: Spanish
+    native_language: English
+    difficulty: beginner
+    questions_per_batch: 10
+    context: |
+      Focus on common daily words and phrases for beginners.
+      Include: greetings, numbers, colors, common verbs.
+    
+    examples:
+      file: "config/examples/spanish_basics.json"
+      mode: "augment"
+  
+  world_war_2:
+    name: "World War 2 Facts"
+    type: history
+    time_period: "1939-1945"
+    difficulty: intermediate
+    questions_per_batch: 4
+    context: |
+      Major events, dates, and figures from World War 2.
+      Include: key battles, political leaders, turning points.
+    
+    examples:
+      file: "config/examples/world_war_2.json"
+      mode: "hybrid"
+      use_ratio: 0.2
+  
   hungarian_literature_culture:
     name: "Hungarian Literature and Culture"
     type: history  # This is cultural/historical knowledge rather than language learning
