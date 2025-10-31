@@ -11,6 +11,16 @@ from src.utils.config_loader import ConfigLoader
 
 logger = get_logger(__name__)
 
+# Global bot instance (set during initialization)
+_bot_instance: Optional['LearningBot'] = None
+
+
+def get_bot_instance() -> 'LearningBot':
+    """Get the global bot instance."""
+    if _bot_instance is None:
+        raise RuntimeError("Bot instance not initialized")
+    return _bot_instance
+
 
 class LearningBot:
     """Telegram learning bot main class."""
@@ -50,6 +60,10 @@ class LearningBot:
 
         # Create application
         self.application = Application.builder().token(token).build()
+
+        # Set global bot instance
+        global _bot_instance
+        _bot_instance = self
 
         # Register handlers
         self._register_handlers()
@@ -96,18 +110,19 @@ class LearningBot:
         """Start the bot with polling."""
         logger.info("Starting Telegram bot...")
         try:
-            # Initialize the bot
-            await self.application.initialize()
-            await self.application.start()
+            # Initialize the application
+            async with self.application:
+                # Start polling
+                logger.info("Bot is running. Press Ctrl+C to stop.")
+                await self.application.start()
+                await self.application.updater.start_polling(
+                    allowed_updates=["message", "callback_query"]
+                )
 
-            # Start polling
-            logger.info("Bot is running. Press Ctrl+C to stop.")
-            await self.application.updater.start_polling(
-                allowed_updates=["message", "callback_query"]
-            )
-
-            # Keep running until stop is called
-            await self.application.updater.idle()
+                # Keep running until stopped
+                import asyncio
+                while True:
+                    await asyncio.sleep(1)
 
         except Exception as e:
             logger.error(f"Error starting bot: {e}", exc_info=True)

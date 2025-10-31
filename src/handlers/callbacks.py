@@ -4,6 +4,7 @@ from datetime import datetime
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from src.utils.logger import get_logger
+from src.bot import get_bot_instance
 
 logger = get_logger(__name__)
 
@@ -18,11 +19,7 @@ async def topic_selection_callback(update: Update, context: ContextTypes.DEFAULT
 
     logger.info(f"Topic {topic_id} selected by user {user_id}")
 
-    bot_instance = context.bot_data.get("bot_instance")
-    if not bot_instance:
-        await query.edit_message_text("Bot not properly initialized.")
-        return
-
+    bot_instance = get_bot_instance()
     repository = bot_instance.repository
     topic = repository.get_topic(topic_id)
     if not topic:
@@ -48,11 +45,7 @@ async def answer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
 
     logger.info(f"Answer {selected_answer} selected by user {user_id}")
 
-    bot_instance = context.bot_data.get("bot_instance")
-    if not bot_instance:
-        await query.edit_message_text("Bot not properly initialized.")
-        return
-
+    bot_instance = get_bot_instance()
     session = bot_instance.get_session(user_id)
     if not session or not session.get('current_question'):
         await query.edit_message_text("No active question. Use /topics to start!")
@@ -93,12 +86,7 @@ async def show_explanation_callback(update: Update, context: ContextTypes.DEFAUL
     await query.answer()
 
     user_id = update.effective_user.id
-    bot_instance = context.bot_data.get("bot_instance")
-
-    if not bot_instance:
-        await query.edit_message_text("Bot not properly initialized.")
-        return
-
+    bot_instance = get_bot_instance()
     session = bot_instance.get_session(user_id)
     if not session or not session.get('current_question'):
         await query.edit_message_text("No active question.")

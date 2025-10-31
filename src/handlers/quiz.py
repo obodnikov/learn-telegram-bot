@@ -4,6 +4,7 @@ from datetime import datetime
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from src.utils.logger import get_logger
+from src.bot import get_bot_instance
 
 logger = get_logger(__name__)
 
@@ -19,10 +20,7 @@ async def start_quiz_handler(update: Update, context: ContextTypes.DEFAULT_TYPE)
     user_id = update.effective_user.id
     logger.info(f"Quiz command received from user {user_id}")
 
-    bot_instance = context.bot_data.get("bot_instance")
-    if not bot_instance:
-        await update.message.reply_text("Bot not properly initialized.")
-        return
+    bot_instance = get_bot_instance()
 
     # Check for existing session
     session = bot_instance.get_session(user_id)
@@ -51,12 +49,7 @@ async def next_question_handler(update: Update, context: ContextTypes.DEFAULT_TY
     await query.answer()
 
     user_id = update.effective_user.id
-    bot_instance = context.bot_data.get("bot_instance")
-
-    if not bot_instance:
-        await query.edit_message_text("Bot not properly initialized.")
-        return
-
+    bot_instance = get_bot_instance()
     session = bot_instance.get_session(user_id)
     if not session:
         await query.edit_message_text(

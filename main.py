@@ -84,9 +84,6 @@ async def main_async() -> None:
         from src.bot import LearningBot
         bot = LearningBot(token, repository, config_loader, llm_service)
 
-        # Store bot instance in application context
-        bot.application.bot_data["bot_instance"] = bot
-
         logger.info("All components initialized successfully")
         logger.info("Starting Telegram bot...")
 

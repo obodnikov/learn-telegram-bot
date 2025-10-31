@@ -3,6 +3,7 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from src.utils.logger import get_logger
+from src.bot import get_bot_instance
 
 logger = get_logger(__name__)
 
@@ -18,12 +19,8 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
     user = update.effective_user
     logger.info(f"Start command received from user {user.id}")
 
-    # Get bot instance from context
-    bot_instance = context.bot_data.get("bot_instance")
-    if not bot_instance:
-        await update.message.reply_text("Bot not properly initialized. Please contact administrator.")
-        return
-
+    # Get bot instance
+    bot_instance = get_bot_instance()
     repository = bot_instance.repository
 
     # Register or get user
@@ -98,11 +95,7 @@ async def topics_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
     logger.info(f"Topics command received from user {user_id}")
 
     # Get bot instance
-    bot_instance = context.bot_data.get("bot_instance")
-    if not bot_instance:
-        await update.message.reply_text("Bot not properly initialized.")
-        return
-
+    bot_instance = get_bot_instance()
     repository = bot_instance.repository
 
     # Get all active topics from database
@@ -143,11 +136,7 @@ async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
     logger.info(f"Stats command received from user {user.id}")
 
     # Get bot instance
-    bot_instance = context.bot_data.get("bot_instance")
-    if not bot_instance:
-        await update.message.reply_text("Bot not properly initialized.")
-        return
-
+    bot_instance = get_bot_instance()
     repository = bot_instance.repository
 
     # Get user from database
@@ -210,10 +199,7 @@ async def cancel_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
     logger.info(f"Cancel command received from user {user_id}")
 
     # Get bot instance
-    bot_instance = context.bot_data.get("bot_instance")
-    if not bot_instance:
-        await update.message.reply_text("Bot not properly initialized.")
-        return
+    bot_instance = get_bot_instance()
 
     # End session if exists
     session = bot_instance.end_session(user_id)
