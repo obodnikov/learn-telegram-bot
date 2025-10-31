@@ -1,0 +1,40 @@
+Generic single-database configuration for Alembic.
+
+## Usage
+
+### Create a new migration
+
+```bash
+alembic revision --autogenerate -m "Description of changes"
+```
+
+### Apply migrations
+
+```bash
+# Upgrade to latest version
+alembic upgrade head
+
+# Upgrade by one version
+alembic upgrade +1
+
+# Downgrade by one version
+alembic downgrade -1
+
+# Downgrade to specific version
+alembic downgrade <revision_id>
+```
+
+### View migration history
+
+```bash
+alembic history
+
+alembic current
+```
+
+### Initial migration
+
+The initial migration has been created with:
+```bash
+alembic revision --autogenerate -m "initial_schema"
+```

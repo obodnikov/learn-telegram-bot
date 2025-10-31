@@ -14,9 +14,9 @@ An intelligent Telegram bot for learning foreign languages, historical facts, an
 
 ## Project Status
 
-Currently implementing **Phase 1: Core Infrastructure & Validation** ✅
+Currently ready for **Phase 3: Telegram Bot Handlers**
 
-### Completed
+### Phase 1: Core Infrastructure & Validation ✅
 - [x] Project structure
 - [x] Configuration system (YAML-based)
 - [x] Example file validation
@@ -24,12 +24,21 @@ Currently implementing **Phase 1: Core Infrastructure & Validation** ✅
 - [x] Startup validation
 - [x] Custom exception handling
 
+### Phase 2: Database & LLM Integration ✅
+- [x] SQLAlchemy models with relationships
+- [x] Alembic migration system
+- [x] Repository pattern with CRUD operations
+- [x] Spaced repetition algorithm (3-tier priority)
+- [x] OpenRouter LLM integration
+- [x] Question generator (4 modes)
+- [x] Example parser service
+
+See [PHASE1_COMPLETE.md](PHASE1_COMPLETE.md) and [PHASE2_COMPLETE.md](PHASE2_COMPLETE.md) for details.
+
 ### In Progress
-- [ ] Phase 2: Database models (SQLAlchemy)
-- [ ] Phase 3: LLM integration (OpenRouter)
-- [ ] Phase 4: Telegram bot handlers
-- [ ] Phase 5: Question generation & scheduling
-- [ ] Phase 6: Spaced repetition algorithm
+- [ ] Phase 3: Telegram bot handlers
+- [ ] Phase 4: Question generation & scheduling
+- [ ] Phase 5: Analytics and question refinement
 
 ## Installation
 
