@@ -53,7 +53,7 @@ class LearningBot:
         self.example_parser = ExampleParser()
         if llm_service:
             self.question_generator = QuestionGenerator(
-                llm_service, config_loader, self.example_parser
+                llm_service, config_loader, self.example_parser, repository
             )
 
             # Initialize scheduler if enabled

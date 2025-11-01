@@ -15,6 +15,7 @@ An intelligent Telegram bot for learning foreign languages, historical facts, an
 - 📚 **Multiple Topics**: Support for languages, history, and custom topics
 - 🎯 **Spaced Repetition**: Smart algorithm tracks progress and repeats missed questions
 - 📝 **Example-Based Learning**: Configure question style using example files
+- 🔄 **Smart Duplicate Prevention**: Automatically tracks used examples and prevents duplicate questions
 - 🌍 **Multilingual**: Support for any language pair (e.g., Hungarian/Russian)
 - 📊 **Progress Tracking**: Analytics on question performance and user learning
 - ⚙️ **Highly Configurable**: YAML-based topic and prompt configuration
@@ -55,6 +56,8 @@ Currently ready for **Phase 5: Analytics & Question Refinement** (Optional)
 - [x] Topic seeding script
 - [x] Manual generation API
 - [x] Environment-based scheduler control
+- [x] Smart duplicate detection and prevention
+- [x] Example question tracking (hybrid mode optimization)
 
 See [PHASE1_COMPLETE.md](PHASE1_COMPLETE.md), [PHASE2_COMPLETE.md](PHASE2_COMPLETE.md), [PHASE3_COMPLETE.md](PHASE3_COMPLETE.md), and [PHASE4_COMPLETE.md](PHASE4_COMPLETE.md) for details.
 
@@ -224,6 +227,31 @@ python scripts/diagnose_database.py
 ```
 
 **For detailed instructions**, see [INSTALLATION.md - Adding Questions](INSTALLATION.md#post-installation-adding-questions).
+
+### Smart Question Management
+
+The bot intelligently manages questions to prevent duplicates:
+
+**Duplicate Prevention**:
+- ✅ Automatically tracks which example questions are already in the database
+- ✅ Only uses unused examples from your example files
+- ✅ Checks generated questions against existing ones before saving
+- ✅ Seamlessly transitions to pure generation when examples are exhausted
+
+**How it works**:
+```bash
+# First run: Uses 2 examples + generates 3 new (total: 5)
+python scripts/generate_questions.py --topic 1 --count 5
+# Output: "Filtered examples: 6 total, 6 unused, 0 already in database"
+# Output: "Hybrid mode: selected 2 from file, will generate 3 new questions"
+
+# After multiple runs: All examples used, generates all new
+python scripts/generate_questions.py --topic 1 --count 5
+# Output: "Filtered examples: 6 total, 0 unused, 6 already in database"
+# Output: "Hybrid mode: no unused examples available, will generate all questions"
+```
+
+This means you can safely run generation multiple times without worrying about duplicates!
 
 ---
 

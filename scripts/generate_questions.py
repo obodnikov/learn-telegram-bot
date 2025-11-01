@@ -101,7 +101,7 @@ async def generate_questions(topic_id: int = None, count: int = 5) -> int:
 
         # Initialize question generator
         example_parser = ExampleParser()
-        question_generator = QuestionGenerator(llm_service, config_loader, example_parser)
+        question_generator = QuestionGenerator(llm_service, config_loader, example_parser, repository)
 
         # Initialize scheduler (for manual generation)
         scheduler = QuestionScheduler(repository, question_generator, config_loader)

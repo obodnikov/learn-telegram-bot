@@ -146,6 +146,40 @@ class ExampleParser:
             tags=q_data.get("tags", [])
         )
 
+    def filter_unused_examples(
+        self,
+        examples: List[ExampleQuestion],
+        existing_questions: List[Any]
+    ) -> List[ExampleQuestion]:
+        """
+        Filter out examples that already exist in the database.
+
+        Args:
+            examples: All example questions
+            existing_questions: Existing questions from database
+
+        Returns:
+            List of unused example questions
+        """
+        if not existing_questions:
+            return examples
+
+        # Build set of existing question texts for fast lookup
+        existing_texts = {q.question_text.strip().lower() for q in existing_questions}
+
+        # Filter out examples that already exist
+        unused = [
+            ex for ex in examples
+            if ex.question.strip().lower() not in existing_texts
+        ]
+
+        logger.info(
+            f"Filtered examples: {len(examples)} total, "
+            f"{len(unused)} unused, {len(examples) - len(unused)} already in database"
+        )
+
+        return unused
+
     def select_questions_for_hybrid(
         self,
         examples: List[ExampleQuestion],
@@ -156,7 +190,7 @@ class ExampleParser:
         For hybrid mode: select questions from examples and calculate how many to generate.
 
         Args:
-            examples: All available example questions
+            examples: All available example questions (should be pre-filtered to unused only)
             total_needed: Total questions needed
             use_ratio: Ratio of provided vs generated (0.3 = 30% from file)
 
@@ -164,17 +198,21 @@ class ExampleParser:
             Tuple of (selected_examples, num_to_generate)
         """
         if not examples:
+            logger.info("Hybrid mode: no unused examples available, will generate all questions")
             return [], total_needed
 
         # Calculate how many to use from examples
         num_from_file = int(total_needed * use_ratio)
-        num_from_file = max(1, min(num_from_file, len(examples)))  # At least 1, at most all
+        num_from_file = max(0, min(num_from_file, len(examples)))  # Between 0 and available
 
         # Calculate how many to generate
         num_to_generate = total_needed - num_from_file
 
         # Randomly select from examples
-        selected = random.sample(examples, num_from_file)
+        if num_from_file > 0:
+            selected = random.sample(examples, num_from_file)
+        else:
+            selected = []
 
         logger.info(
             f"Hybrid mode: selected {num_from_file} from file, "

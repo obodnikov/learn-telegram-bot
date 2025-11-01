@@ -18,7 +18,8 @@ class QuestionGenerator:
         self,
         llm_service: LLMService,
         config_loader: ConfigLoader,
-        example_parser: ExampleParser
+        example_parser: ExampleParser,
+        repository = None
     ):
         """
         Initialize question generator.
@@ -27,16 +28,19 @@ class QuestionGenerator:
             llm_service: LLM service instance
             config_loader: Configuration loader instance
             example_parser: Example parser instance
+            repository: Optional repository for checking existing questions
         """
         self.llm_service = llm_service
         self.config_loader = config_loader
         self.example_parser = example_parser
+        self.repository = repository
         logger.info("QuestionGenerator initialized")
 
     async def generate_questions(
         self,
         topic_id: str,
-        count: int
+        count: int,
+        db_topic_id: int = None
     ) -> List[Dict[str, Any]]:
         """
         Generate questions for a topic.
@@ -80,19 +84,24 @@ class QuestionGenerator:
                 example_path = Path("config/examples") / example_file
             examples = self.example_parser.load_examples(str(example_path))
 
+            # Filter out examples that are already in the database (for hybrid mode)
+            if self.repository and db_topic_id:
+                existing_questions = self.repository.get_questions_for_topic(db_topic_id)
+                examples = self.example_parser.filter_unused_examples(examples, existing_questions)
+
             # Get generation mode
             mode = examples_config.get("mode", "augment") if isinstance(examples_config, dict) else getattr(examples_config, 'mode', "augment")
             use_ratio = examples_config.get("use_ratio", 0.3) if isinstance(examples_config, dict) else getattr(examples_config, 'use_ratio', 0.3)
 
             # Generate based on mode
             if mode == "standard":
-                return await self._generate_standard(topic_config, count)
+                return await self._generate_standard(topic_config, count, db_topic_id)
             elif mode == "augment":
-                return await self._generate_augmented(topic_config, examples, count)
+                return await self._generate_augmented(topic_config, examples, count, db_topic_id)
             elif mode == "template":
-                return await self._generate_templated(topic_config, examples, count)
+                return await self._generate_templated(topic_config, examples, count, db_topic_id)
             elif mode == "hybrid":
-                return await self._generate_hybrid(topic_config, examples, count, use_ratio)
+                return await self._generate_hybrid(topic_config, examples, count, use_ratio, db_topic_id)
             else:
                 raise ConfigurationError(f"Unknown generation mode: {mode}")
 
@@ -106,7 +115,8 @@ class QuestionGenerator:
     async def _generate_standard(
         self,
         topic_config: Dict[str, Any],
-        count: int
+        count: int,
+        db_topic_id: int = None
     ) -> List[Dict[str, Any]]:
         """
         Generate questions without examples.
@@ -114,14 +124,19 @@ class QuestionGenerator:
         Args:
             topic_config: Topic configuration
             count: Number of questions to generate
+            db_topic_id: Database topic ID for duplicate checking
 
         Returns:
-            List of generated questions
+            List of generated questions (filtered for duplicates)
         """
         logger.info("Generating questions using standard mode")
 
         prompt = self._build_prompt(topic_config, "standard", None, count)
         questions = await self.llm_service.generate_questions(prompt)
+
+        # Filter duplicates if repository is available
+        if self.repository and db_topic_id:
+            questions = self._filter_duplicate_questions(questions, db_topic_id)
 
         logger.info(f"Generated {len(questions)} questions in standard mode")
         return questions
@@ -130,7 +145,8 @@ class QuestionGenerator:
         self,
         topic_config: Dict[str, Any],
         examples: List[ExampleQuestion],
-        count: int
+        count: int,
+        db_topic_id: int = None
     ) -> List[Dict[str, Any]]:
         """
         Generate questions similar to examples.
@@ -139,14 +155,19 @@ class QuestionGenerator:
             topic_config: Topic configuration
             examples: Example questions
             count: Number of questions to generate
+            db_topic_id: Database topic ID for duplicate checking
 
         Returns:
-            List of generated questions
+            List of generated questions (filtered for duplicates)
         """
         logger.info(f"Generating {count} questions using augment mode with {len(examples)} examples")
 
         prompt = self._build_prompt(topic_config, "augment", examples, count)
         questions = await self.llm_service.generate_questions(prompt)
+
+        # Filter duplicates if repository is available
+        if self.repository and db_topic_id:
+            questions = self._filter_duplicate_questions(questions, db_topic_id)
 
         logger.info(f"Generated {len(questions)} questions in augment mode")
         return questions
@@ -155,7 +176,8 @@ class QuestionGenerator:
         self,
         topic_config: Dict[str, Any],
         examples: List[ExampleQuestion],
-        count: int
+        count: int,
+        db_topic_id: int = None
     ) -> List[Dict[str, Any]]:
         """
         Generate questions using example templates.
@@ -164,14 +186,19 @@ class QuestionGenerator:
             topic_config: Topic configuration
             examples: Example questions (used as templates)
             count: Number of questions to generate
+            db_topic_id: Database topic ID for duplicate checking
 
         Returns:
-            List of generated questions
+            List of generated questions (filtered for duplicates)
         """
         logger.info(f"Generating {count} questions using template mode")
 
         prompt = self._build_prompt(topic_config, "template", examples, count)
         questions = await self.llm_service.generate_questions(prompt)
+
+        # Filter duplicates if repository is available
+        if self.repository and db_topic_id:
+            questions = self._filter_duplicate_questions(questions, db_topic_id)
 
         logger.info(f"Generated {len(questions)} questions in template mode")
         return questions
@@ -181,19 +208,21 @@ class QuestionGenerator:
         topic_config: Dict[str, Any],
         examples: List[ExampleQuestion],
         total_count: int,
-        use_ratio: float
+        use_ratio: float,
+        db_topic_id: int = None
     ) -> List[Dict[str, Any]]:
         """
         Generate mix of provided and new questions.
 
         Args:
             topic_config: Topic configuration
-            examples: Example questions
+            examples: Example questions (pre-filtered to unused only)
             total_count: Total number of questions needed
             use_ratio: Ratio of provided vs generated (0.3 = 30% from file)
+            db_topic_id: Database topic ID for duplicate checking
 
         Returns:
-            List of questions (mix of examples and generated)
+            List of questions (mix of examples and generated, filtered for duplicates)
         """
         logger.info(
             f"Generating questions using hybrid mode: "
@@ -212,6 +241,10 @@ class QuestionGenerator:
         if num_to_generate > 0:
             prompt = self._build_prompt(topic_config, "hybrid", examples, num_to_generate)
             generated_questions = await self.llm_service.generate_questions(prompt)
+
+            # Filter duplicates from generated questions
+            if self.repository and db_topic_id:
+                generated_questions = self._filter_duplicate_questions(generated_questions, db_topic_id)
         else:
             generated_questions = []
 
@@ -352,3 +385,37 @@ class QuestionGenerator:
                 f"Generate educational multiple-choice questions about the topic. "
                 f"Ensure questions are clear, accurate, and appropriate for the difficulty level."
             )
+
+    def _filter_duplicate_questions(
+        self,
+        questions: List[Dict[str, Any]],
+        db_topic_id: int
+    ) -> List[Dict[str, Any]]:
+        """
+        Filter out questions that already exist in the database.
+
+        Args:
+            questions: Generated questions
+            db_topic_id: Database topic ID
+
+        Returns:
+            Filtered list of questions (duplicates removed)
+        """
+        if not self.repository:
+            return questions
+
+        filtered = []
+        duplicates_count = 0
+
+        for question in questions:
+            question_text = question.get("question_text", "")
+            if not self.repository.question_exists(db_topic_id, question_text):
+                filtered.append(question)
+            else:
+                duplicates_count += 1
+                logger.debug(f"Skipping duplicate question: {question_text[:50]}...")
+
+        if duplicates_count > 0:
+            logger.info(f"Filtered out {duplicates_count} duplicate questions")
+
+        return filtered
