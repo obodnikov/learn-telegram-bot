@@ -9,6 +9,9 @@ This directory contains utility scripts for managing the Telegram Learning Bot.
 | Script | Purpose | Frequency |
 |--------|---------|-----------|
 | `seed_topics.py` | Populate database with topics from config | Once / When adding topics |
+| `manage_topics.py` | Manage topics (list, sync, delete, activate, export, diff) | As needed |
+| `sync_topics.py` | Sync topics from YAML to database | After config changes |
+| `export_topics.py` | Export database topics to YAML | For backup / migration |
 | `generate_questions.py` | Manually generate questions | As needed |
 | `diagnose_database.py` | Check database health and status | Anytime for debugging |
 | `setup.sh` | Automated installation (Linux/Mac) | Once |
@@ -266,6 +269,328 @@ DATABASE DIAGNOSTIC TOOL
 4. Number of topics (active and inactive)
 5. Number of questions
 6. Overall health status
+
+---
+
+## manage_topics.py
+
+**Purpose**: Comprehensive topic management CLI for all topic operations
+
+**When to use**:
+- View all topics and their configurations
+- Sync topics from YAML to database
+- Deactivate/activate topics
+- Export database topics to YAML
+- Check differences between YAML and database
+
+**Commands**:
+
+### list - Show all topics
+```bash
+python scripts/manage_topics.py list
+```
+
+**Output**:
+```
+================================================================================
+ALL TOPICS IN DATABASE
+================================================================================
+
+Topic ID: 1
+  Name: Hungarian Vocabulary - Everyday Life
+  Type: language
+  Status: ACTIVE
+  Created: 2025-01-15 10:30:00
+  Config:
+    questions_per_batch: 10
+    difficulty: intermediate
+    target_language: Hungarian
+    native_language: English
+  Questions: 15
+
+Topic ID: 2
+  Name: Hungarian Literature and Culture
+  Type: language
+  Status: INACTIVE
+  Created: 2025-01-15 10:30:00
+  Config:
+    questions_per_batch: 4
+    difficulty: intermediate
+  Questions: 8
+
+================================================================================
+Total topics: 2
+Active: 1
+Inactive: 1
+================================================================================
+```
+
+### sync - Sync topics from YAML to database
+```bash
+# Preview changes without applying
+python scripts/manage_topics.py sync --dry-run
+
+# Apply changes
+python scripts/manage_topics.py sync
+```
+
+**What it does**:
+- ✅ **Add** topics that exist in YAML but not in database
+- ↻ **Update** topics that exist in both (preserves questions and user progress)
+- ✗ **Deactivate** topics that exist in database but not in YAML (soft delete)
+
+**Output**:
+```
+================================================================================
+SYNCING TOPICS FROM YAML TO DATABASE
+================================================================================
+
+Adding 1 new topics:
+  + Hungarian Grammar Basics
+
+Updating 2 existing topics:
+  ↻ Hungarian Vocabulary - Everyday Life (ID: 1)
+    Changed fields: questions_per_batch, difficulty
+  ↻ Hungarian Literature and Culture (ID: 2)
+    Changed fields: target_language
+
+Deactivating 1 removed topics:
+  ✗ Old Topic (ID: 3) - setting to inactive
+
+================================================================================
+Sync complete - 4 changes made
+================================================================================
+```
+
+**Notes**:
+- **Safe operation**: Never deletes data, only sets `is_active=False`
+- **Preserves progress**: All questions and user statistics remain intact
+- **Reactivates**: If topic was inactive and appears in YAML, it's reactivated
+- **Use `--dry-run`** first to preview changes
+
+### delete - Deactivate a topic (soft delete)
+```bash
+python scripts/manage_topics.py delete <topic_id>
+```
+
+**Example**:
+```bash
+python scripts/manage_topics.py delete 2
+```
+
+**Output**:
+```
+================================================================================
+DEACTIVATING TOPIC ID: 2
+================================================================================
+
+Topic to deactivate:
+  Name: Hungarian Literature and Culture
+  Type: language
+  Questions: 8
+
+Note: This will set is_active=False. The topic and its questions will be preserved.
+      You can reactivate it later with: python scripts/manage_topics.py activate 2
+
+✓ Topic 'Hungarian Literature and Culture' has been deactivated
+================================================================================
+```
+
+**What happens**:
+- Topic is hidden from `/topics` command in bot
+- All questions remain in database
+- User progress is preserved
+- Can be reactivated later
+
+### activate - Reactivate a deactivated topic
+```bash
+python scripts/manage_topics.py activate <topic_id>
+```
+
+**Example**:
+```bash
+python scripts/manage_topics.py activate 2
+```
+
+**Output**:
+```
+================================================================================
+ACTIVATING TOPIC ID: 2
+================================================================================
+
+Topic to activate:
+  Name: Hungarian Literature and Culture
+  Type: language
+  Questions: 8
+
+✓ Topic 'Hungarian Literature and Culture' has been activated
+================================================================================
+```
+
+### export - Export database topics to YAML
+```bash
+# Export with timestamp filename
+python scripts/manage_topics.py export
+
+# Export to specific file
+python scripts/manage_topics.py export --output topics_backup.yaml
+```
+
+**Output**:
+```
+================================================================================
+EXPORTING TOPICS TO YAML
+================================================================================
+
+✓ Exported 2 topics to: topics_export_20250115_103000.yaml
+================================================================================
+```
+
+**Use cases**:
+- Create backup before making changes
+- Migrate topics to another instance
+- Generate YAML from manually created topics
+
+### diff - Show differences between YAML and database
+```bash
+python scripts/manage_topics.py diff
+```
+
+**Output**:
+```
+================================================================================
+YAML vs DATABASE DIFF
+================================================================================
+
+✓ Topics to ADD (1):
+  + Hungarian Grammar Basics
+
+↻ Topics to UPDATE (2):
+  ↻ Hungarian Vocabulary - Everyday Life
+  ↻ Hungarian Literature and Culture
+
+✗ Topics to DEACTIVATE (1):
+  ✗ Old Topic (will be set to inactive)
+
+================================================================================
+```
+
+**Use case**: Preview what `sync` will do before running it
+
+---
+
+## sync_topics.py
+
+**Purpose**: Convenience wrapper for syncing topics from YAML to database
+
+**When to use**:
+- After editing `config/topics.yaml`
+- Adding new topics
+- Updating topic parameters
+
+**Usage**:
+```bash
+# Preview changes
+python scripts/sync_topics.py --dry-run
+
+# Apply changes
+python scripts/sync_topics.py
+```
+
+**This is equivalent to**:
+```bash
+python scripts/manage_topics.py sync --dry-run
+python scripts/manage_topics.py sync
+```
+
+---
+
+## export_topics.py
+
+**Purpose**: Convenience wrapper for exporting database topics to YAML
+
+**When to use**:
+- Creating backups
+- Migrating to another instance
+- Documenting current topic configuration
+
+**Usage**:
+```bash
+# Export with timestamp filename
+python scripts/export_topics.py
+
+# Export to specific file
+python scripts/export_topics.py topics_backup.yaml
+```
+
+**This is equivalent to**:
+```bash
+python scripts/manage_topics.py export
+python scripts/manage_topics.py export --output topics_backup.yaml
+```
+
+---
+
+## Topic Management Workflow
+
+### Initial Setup
+```bash
+# 1. Create topics in YAML
+vim config/topics.yaml
+
+# 2. Seed database
+python scripts/seed_topics.py
+
+# 3. Verify
+python scripts/manage_topics.py list
+```
+
+### Adding New Topics
+```bash
+# 1. Add topic to config/topics.yaml
+vim config/topics.yaml
+
+# 2. Preview changes
+python scripts/sync_topics.py --dry-run
+
+# 3. Apply changes
+python scripts/sync_topics.py
+
+# 4. Generate questions for new topic
+python scripts/generate_questions.py --topic <new_topic_id> --count 10
+```
+
+### Updating Topic Configuration
+```bash
+# 1. Edit config/topics.yaml
+vim config/topics.yaml
+
+# 2. Preview changes
+python scripts/manage_topics.py diff
+
+# 3. Apply changes
+python scripts/sync_topics.py
+```
+
+### Removing Topics
+```bash
+# Option 1: Remove from YAML and sync (recommended)
+vim config/topics.yaml  # Remove topic entry
+python scripts/sync_topics.py  # Topic will be deactivated
+
+# Option 2: Manually deactivate
+python scripts/manage_topics.py delete <topic_id>
+```
+
+### Backup and Restore
+```bash
+# Backup current topics
+python scripts/export_topics.py topics_backup_$(date +%Y%m%d).yaml
+
+# Restore from backup (replace config/topics.yaml)
+cp topics_backup_20250115.yaml config/topics.yaml
+python scripts/sync_topics.py
+```
 
 ---
 
