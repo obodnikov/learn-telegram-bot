@@ -197,6 +197,28 @@ class Repository:
             logger.info(f"Created topic: {name}")
             return topic
 
+    def update_topic(self, topic_id: int, config: dict, is_active: bool = True) -> Optional[Topic]:
+        """
+        Update existing topic.
+
+        Args:
+            topic_id: Topic ID to update
+            config: New topic configuration dictionary
+            is_active: Whether topic is active
+
+        Returns:
+            Updated Topic object if found, None otherwise
+        """
+        with self.get_session() as session:
+            topic = session.query(Topic).filter(Topic.id == topic_id).first()
+            if topic:
+                topic.config = config
+                topic.is_active = is_active
+                session.flush()
+                session.refresh(topic)
+                logger.info(f"Updated topic: {topic.name}")
+            return topic
+
     # Question operations
 
     def create_question(self, question_data: Dict[str, Any]) -> Question:

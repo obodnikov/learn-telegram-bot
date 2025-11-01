@@ -148,7 +148,39 @@ pytest --cov=src
 
 # Validate examples manually
 python scripts/validate_examples.py
+
+# Diagnose database and topics
+python scripts/diagnose_database.py
 ```
+
+### Troubleshooting
+
+**Bot can't see topics:**
+
+1. Run the diagnostic tool:
+   ```bash
+   python scripts/diagnose_database.py
+   ```
+
+2. Check database path:
+   - Make sure you're running the bot from the project root directory
+   - SQLite paths are relative to the current working directory
+   - Default: `sqlite:///./learning_bot.db` → `./learning_bot.db`
+
+3. Verify topics are seeded:
+   ```bash
+   python scripts/seed_topics.py
+   ```
+
+4. Check the logs when starting the bot:
+   - Look for "Database absolute path" in startup logs
+   - Look for "found X topics in database" message
+
+**No questions available:**
+
+- Questions are generated automatically if `ENABLE_SCHEDULER=true`
+- Or manually run question generation (see Phase 4 docs)
+- Topics will still be visible even without questions
 
 ## Project Structure
 
