@@ -65,3 +65,64 @@ topics:
       file: "config/examples/hungarian_literature_culture.json"
       mode: hybrid
       use_ratio: 0.3
+      
+  hungarian_vocabulary_advanced:
+    name: "Hungarian Vocabulary - Advanced"
+    type: language
+    target_language: "Hungarian"
+    native_language: "Russian"
+    difficulty: advanced
+    questions_per_batch: 10
+    context: |
+      Advanced Hungarian vocabulary for Russian speakers with bidirectional translation practice.
+      
+      CRITICAL: Generate questions in BOTH directions:
+      1. Hungarian → Russian (60% of questions): "Что означает венгерское слово/выражение X?"
+      2. Russian → Hungarian (40% of questions): "Как по-венгерски сказать 'X'?"
+      
+      Focus areas:
+      - Abstract concepts and formal language
+      - Idiomatic expressions and collocations
+      - Nuanced meanings and synonyms
+      - Complex compound words
+      - Professional and academic vocabulary
+      - Words with subtle differences (синонимы с нюансами)
+      - Advanced grammar constructions
+      
+      Vocabulary categories:
+      - Adjectives: elkötelezett, kifinomult, elfogult, bonyolult, ellentmondásos, szándékos, meggyőző
+      - Nouns: következmények, hangsúly, lényeg
+      - Verbs: hangsúlyozni, kétségbe vonni, meggyőzni
+      - Adverbs: lényegében
+      - Idiomatic expressions: szemrebbenés nélkül, kétségbe vonni
+      
+      Question structure requirements:
+      1. For HU→RU: Present Hungarian word/phrase, ask for Russian meaning
+      2. For RU→HU: Present Russian word/phrase, ask for Hungarian equivalent
+      3. Wrong answers should be:
+        - Semantically related but incorrect
+        - Plausible alternatives (near-synonyms)
+        - Common learner errors
+      4. Explanations must:
+        - Be bilingual (Russian first, then Hungarian)
+        - Explain etymology where relevant (word formation)
+        - Provide usage examples in both languages
+        - Clarify nuances and distinguish from synonyms
+        - Include related words or expressions
+      
+      Avoid:
+      - Simple, beginner-level vocabulary
+      - Direct cognates or international words
+      - One-to-one translations without context
+      - Questions that can be answered without real understanding
+      
+      Tags to use:
+      - Direction: "HU→RU" or "RU→HU"
+      - Word type: "существительные", "прилагательные", "глаголы", "наречия"
+      - Category: "идиомы", "формальный язык", "абстрактные понятия", "составные слова"
+      - Context: "юридический язык", "академический язык", "культура"
+    
+    examples:
+      file: "config/examples/hungarian_vocabulary_advanced.json"
+      mode: hybrid
+      use_ratio: 0.4
