@@ -14,7 +14,7 @@ An intelligent Telegram bot for learning foreign languages, historical facts, an
 
 ## Project Status
 
-Currently ready for **Phase 4: Question Generation & Scheduling**
+Currently ready for **Phase 5: Analytics & Question Refinement** (Optional)
 
 ### Phase 1: Core Infrastructure & Validation ✅
 - [x] Project structure
@@ -41,11 +41,20 @@ Currently ready for **Phase 4: Question Generation & Scheduling**
 - [x] Progress tracking integration
 - [x] User statistics display
 
-See [PHASE1_COMPLETE.md](PHASE1_COMPLETE.md), [PHASE2_COMPLETE.md](PHASE2_COMPLETE.md), and [PHASE3_COMPLETE.md](PHASE3_COMPLETE.md) for details.
+### Phase 4: Question Generation & Scheduling ✅
+- [x] APScheduler integration for automated generation
+- [x] Cron-based scheduling (configurable intervals)
+- [x] Background question generation jobs
+- [x] Topic seeding script
+- [x] Manual generation API
+- [x] Environment-based scheduler control
 
-### In Progress
-- [ ] Phase 4: Question generation & scheduling (APScheduler)
-- [ ] Phase 5: Analytics and question refinement
+See [PHASE1_COMPLETE.md](PHASE1_COMPLETE.md), [PHASE2_COMPLETE.md](PHASE2_COMPLETE.md), [PHASE3_COMPLETE.md](PHASE3_COMPLETE.md), and [PHASE4_COMPLETE.md](PHASE4_COMPLETE.md) for details.
+
+### Future Enhancements (Optional)
+- [ ] Phase 5: Advanced analytics and question quality management
+- [ ] Admin commands for question review
+- [ ] Automatic quality scoring and filtering
 
 ## Installation
 
@@ -97,10 +106,18 @@ Provide example questions to guide LLM generation:
 ### Running the Bot
 
 ```bash
+# First time: Seed topics into database
+python scripts/seed_topics.py
+
 # Set environment variables (or use .env file)
 export TELEGRAM_BOT_TOKEN="your_bot_token"
 export DATABASE_URL="sqlite:///learning_bot.db"
-export OPENROUTER_API_KEY="your_api_key"  # Optional for Phase 3
+export OPENROUTER_API_KEY="your_api_key"  # Required for question generation
+
+# Optional: Enable automatic question generation (Phase 4)
+export ENABLE_SCHEDULER="true"
+export QUESTION_GENERATION_SCHEDULE="0 */3 * * *"  # Every 3 hours
+export QUESTIONS_PER_RUN="5"
 
 # Run the bot
 python main.py
@@ -111,6 +128,7 @@ The bot will:
 2. Initialize the database (create tables if needed)
 3. Load topics and prompts
 4. Start polling for Telegram messages
+5. Start question generation scheduler (if enabled)
 
 **Telegram Commands:**
 - `/start` - Register and welcome message

@@ -81,10 +81,18 @@ async def main_async() -> None:
         if not token:
             raise ConfigurationError("TELEGRAM_BOT_TOKEN not set in environment")
 
+        # Check if scheduler should be enabled
+        enable_scheduler = os.getenv('ENABLE_SCHEDULER', 'false').lower() == 'true'
+        if enable_scheduler and not llm_service:
+            logger.warning("Scheduler enabled but LLM service not available. Disabling scheduler.")
+            enable_scheduler = False
+
         from src.bot import LearningBot
-        bot = LearningBot(token, repository, config_loader, llm_service)
+        bot = LearningBot(token, repository, config_loader, llm_service, enable_scheduler)
 
         logger.info("All components initialized successfully")
+        if enable_scheduler:
+            logger.info("Question generation scheduler is enabled")
         logger.info("Starting Telegram bot...")
 
         # Start the bot
