@@ -1,0 +1,45 @@
+# Systemd service file for Telegram Learning Bot
+#
+# Installation:
+#   1. Edit this file and replace YOUR_USERNAME with your actual username
+#   2. Copy to: sudo cp deployment/telegram-learning-bot.service /etc/systemd/system/
+#   3. Reload: sudo systemctl daemon-reload
+#   4. Enable: sudo systemctl enable telegram-learning-bot
+#   5. Start: sudo systemctl start telegram-learning-bot
+#   6. Check: sudo systemctl status telegram-learning-bot
+
+[Unit]
+Description=Telegram Learning Bot
+After=network.target
+Wants=network-online.target
+Documentation=https://github.com/YOUR_REPO/learn-telegram-bot
+
+[Service]
+Type=simple
+User=YOUR_USERNAME
+Group=YOUR_USERNAME
+WorkingDirectory=/home/YOUR_USERNAME/learn-telegram-bot
+
+# Environment
+Environment="PATH=/home/YOUR_USERNAME/learn-telegram-bot/venv/bin"
+EnvironmentFile=/home/YOUR_USERNAME/learn-telegram-bot/.env
+
+# Execution
+ExecStart=/home/YOUR_USERNAME/learn-telegram-bot/venv/bin/python main.py
+Restart=always
+RestartSec=10
+
+# Logging
+StandardOutput=append:/home/YOUR_USERNAME/learn-telegram-bot/logs/bot.log
+StandardError=append:/home/YOUR_USERNAME/learn-telegram-bot/logs/bot.log
+SyslogIdentifier=telegram-learning-bot
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/YOUR_USERNAME/learn-telegram-bot/logs /home/YOUR_USERNAME/learn-telegram-bot
+
+[Install]
+WantedBy=multi-user.target

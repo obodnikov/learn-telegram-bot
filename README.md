@@ -2,6 +2,13 @@
 
 An intelligent Telegram bot for learning foreign languages, historical facts, and other educational topics using LLM-powered question generation with spaced repetition.
 
+## 🚀 Quick Links
+
+- **[Quick Start Guide](QUICKSTART.md)** - Get started in 5 minutes
+- **[Installation Guide](INSTALLATION.md)** - Detailed setup instructions
+- **[Deployment Guide](DEPLOYMENT.md)** - Production deployment (systemd, Docker, launchd)
+- **[Troubleshooting](BUGFIX_TOPICS.md)** - Common issues and solutions
+
 ## Features
 
 - 🧠 **LLM-Powered Questions**: Uses OpenRouter API to generate high-quality questions
@@ -58,22 +65,40 @@ See [PHASE1_COMPLETE.md](PHASE1_COMPLETE.md), [PHASE2_COMPLETE.md](PHASE2_COMPLE
 
 ## Installation
 
+**⚠️ IMPORTANT**: For complete installation instructions, see **[INSTALLATION.md](INSTALLATION.md)**
+
+### Quick Install
+
 ```bash
-# Clone the repository
+# 1. Clone and setup
 git clone <repository-url>
 cd learn-telegram-bot
-
-# Create virtual environment
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install dependencies
+# 2. Install dependencies
 pip install -r requirements.txt
 
-# Configure environment
+# 3. Configure
 cp .env.example .env
-# Edit .env with your tokens
+# Edit .env with your TELEGRAM_BOT_TOKEN
+
+# 4. Create logs directory
+mkdir -p logs
+
+# 5. CRITICAL: Seed database with topics
+python scripts/seed_topics.py
+
+# 6. Verify installation
+python scripts/diagnose_database.py
+
+# 7. Run bot
+python main.py
 ```
+
+**👉 Step 5 (seeding topics) is mandatory!** Without it, the bot will have no topics to display.
+
+See **[INSTALLATION.md](INSTALLATION.md)** for detailed step-by-step guide with troubleshooting.
 
 ## Configuration
 
@@ -197,9 +222,17 @@ learn-telegram-bot/
 │   ├── prompts.yaml
 │   ├── difficulty_levels.yaml
 │   └── examples/       # Example question files
-├── tests/              # Test suite
-├── docs/               # Documentation
-└── scripts/            # Utility scripts
+├── deployment/         # Production deployment configs
+│   ├── telegram-learning-bot.service  # systemd (Linux)
+│   ├── com.user.telegram-learning-bot.plist  # launchd (macOS)
+│   └── README.md       # Deployment guide
+├── scripts/            # Utility scripts
+│   ├── setup.sh        # Automated setup
+│   ├── seed_topics.py  # Database seeding
+│   └── diagnose_database.py  # Health check
+├── Dockerfile          # Docker container config
+├── docker-compose.yml  # Docker orchestration
+└── docs/               # Documentation
 ```
 
 ## Development
