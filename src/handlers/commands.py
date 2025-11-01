@@ -98,8 +98,12 @@ async def topics_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
     bot_instance = get_bot_instance()
     repository = bot_instance.repository
 
+    # Debug logging
+    logger.info(f"Repository database URL: {repository.db_url}")
+
     # Get all active topics from database
     topics = repository.get_all_topics(active_only=True)
+    logger.info(f"Topics query returned {len(topics)} topics (active_only=True)")
 
     if not topics:
         await update.message.reply_text(

@@ -60,9 +60,11 @@ def seed_topics() -> None:
             if existing_topic:
                 logger.info(f"Topic already exists: {topic_name} (ID: {existing_topic.id})")
                 # Update config if needed
-                existing_topic.config = config_dict
-                existing_topic.is_active = True
-                repository.session.commit()
+                repository.update_topic(
+                    topic_id=existing_topic.id,
+                    config=config_dict,
+                    is_active=True
+                )
                 logger.info(f"Updated topic configuration: {topic_name}")
             else:
                 # Create new topic

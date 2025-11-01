@@ -32,10 +32,24 @@ def initialize_database() -> Repository:
     db_url = os.getenv('DATABASE_URL', 'sqlite:///learning_bot.db')
     logger.info(f"Initializing database: {db_url}")
 
+    # Log absolute path for SQLite databases
+    if db_url.startswith('sqlite:///'):
+        import os.path
+        db_path = db_url.replace('sqlite:///', '')
+        abs_path = os.path.abspath(db_path)
+        logger.info(f"Database absolute path: {abs_path}")
+        logger.info(f"Database file exists: {os.path.exists(abs_path)}")
+
     try:
         repository = Repository(db_url)
         repository.create_tables()
-        logger.info("Database initialized successfully")
+
+        # Log topic count on startup
+        topics = repository.get_all_topics(active_only=False)
+        logger.info(f"Database initialized successfully - found {len(topics)} topics in database")
+        for topic in topics:
+            logger.info(f"  Topic: {topic.name} (Active: {topic.is_active})")
+
         return repository
     except Exception as e:
         raise DatabaseError(f"Database initialization failed: {e}")
