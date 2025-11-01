@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  telegram-bot:
+    build: .
+    container_name: telegram-learning-bot
+    restart: unless-stopped
+
+    # Load environment variables from .env file
+    env_file:
+      - .env
+
+    # Persist database and logs across container restarts
+    volumes:
+      - ./learning_bot.db:/app/learning_bot.db
+      - ./logs:/app/logs
+      - ./config:/app/config:ro  # Read-only config
+
+    # Health check
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
