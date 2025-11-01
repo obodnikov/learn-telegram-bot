@@ -106,17 +106,33 @@ async def _show_next_question(query, user_id: int, bot_instance) -> None:
         await query.edit_message_text("No active quiz session.")
         return
 
+    # Check if we've reached the questions_per_batch limit
+    questions_per_batch = session.get('questions_per_batch', 10)
+    if session['questions_answered'] >= questions_per_batch:
+        await query.edit_message_text(
+            f"✅ *Session complete!*\n\n"
+            f"Questions answered: {session['questions_answered']}\n"
+            f"Correct: {session['correct_answers']}\n"
+            f"Accuracy: {session['correct_answers']/session['questions_answered']*100 if session['questions_answered'] > 0 else 0:.1f}%\n\n"
+            f"Use /topics to start a new quiz!",
+            parse_mode="Markdown"
+        )
+        bot_instance.end_session(user_id)
+        return
+
     repository = bot_instance.repository
     db_user = repository.get_user_by_telegram_id(user_id)
     question = repository.get_next_question(db_user.id, session['topic_id'])
 
     if not question:
         await query.edit_message_text(
-            f"No more questions available!\n\n"
+            f"No more questions available for this topic!\n\n"
             f"Session complete!\n"
             f"Questions answered: {session['questions_answered']}\n"
             f"Correct: {session['correct_answers']}\n"
-            f"Accuracy: {session['correct_answers']/session['questions_answered']*100 if session['questions_answered'] > 0 else 0:.1f}%"
+            f"Accuracy: {session['correct_answers']/session['questions_answered']*100 if session['questions_answered'] > 0 else 0:.1f}%\n\n"
+            f"Use /topics to start a new quiz!",
+            parse_mode="Markdown"
         )
         bot_instance.end_session(user_id)
         return
