@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "topic": "hungarian_vocabulary_intermediate",
+    "target_language": "Hungarian",
+    "native_language": "Russian",
+    "difficulty": "intermediate",
+    "total_questions": 14,
+    "created_by": "human",
+    "notes": "Intermediate vocabulary with bidirectional translation (HU→RU and RU→HU). Focuses on everyday situations, common phrases, practical vocabulary, and basic grammar structures."
+  },
+  "questions": [
+    {
+      "question": "Что означает венгерское слово 'találkozó'?",
+      "choices": {
+        "A": "Свидание, встреча",
+        "B": "Расставание",
+        "C": "Знакомство",
+        "D": "Разговор"
+      },
+      "correct": "A",
+      "explanation": "Русский: 'Találkozó' означает 'встреча, свидание'. Это существительное происходит от глагола 'találkozik' (встречаться). Используется для любой встречи - деловой, дружеской или романтической. Примеры: 'üzleti találkozó' (деловая встреча), 'találkozó a barátokkal' (встреча с друзьями). Не путать с 'találkozás' (акт встречи).\n\nMagyar: A 'találkozó' jelentése 'встреча, свидание'. Ez a főnév a 'találkozik' igéből (встречаться) származik. Bármilyen találkozásra használható - üzleti, baráti vagy romantikus. Példák: 'üzleti találkozó', 'találkozó a barátokkal'. Ne keverje össze a 'találkozás'-sal (акт встречи).",
+      "difficulty": "intermediate",
+      "tags": ["HU→RU", "существительные", "повседневная жизнь", "социальные ситуации"]
+    },
+    {
+      "question": "Как по-венгерски сказать 'записаться на приём (к врачу)'?",
+      "choices": {
+        "A": "Beírni az orvoshoz",
+        "B": "Időpontot kérni",
+        "C": "Találkozót csinálni",
+        "D": "Regisztrálni a kórházban"
+      },
+      "correct": "B",
+      "explanation": "Русский: 'Időpontot kérni' означает 'записаться на приём, попросить время приёма'. Буквально: 'időpont' (время приёма, назначенное время) + 'kérni' (просить). Это стандартная фраза для записи к врачу, в салон красоты, и т.д. Полная фраза: 'Szeretnék időpontot kérni' (Я бы хотел записаться на приём). После записи вам скажут: 'Van szabad időpontja?' (Есть ли у вас свободное время?).\n\nMagyar: Az 'időpontot kérni' azt jelenti 'записаться на приём'. Szó szerint: 'időpont' (назначенное время) + 'kérni' (просить). Ez a standard kifejezés orvoshoz, fodrászhoz stb. való bejelentkezéshez. Teljes mondat: 'Szeretnék időpontot kérni'. Bejelentkezés után azt mondják: 'Van szabad időpontja?'",
+      "difficulty": "intermediate",
+      "tags": ["RU→HU", "фразы", "здоровье", "практические ситуации", "устойчивые выражения"]
+    },
+    {
+      "question": "Что означает венгерское выражение 'vásárlás'?",
+      "choices": {
+        "A": "Покупки, шопинг",
+        "B": "Продажа",
+        "C": "Рынок",
+        "D": "Магазин"
+      },
+      "correct": "A",
+      "explanation": "Русский: 'Vásárlás' означает 'покупки, шопинг, процесс покупки'. Это существительное от глагола 'vásárol' (покупать). Примеры: 'bevásárlás' (покупка продуктов), 'ablakból vásárlás' (window shopping - разглядывание витрин), 'online vásárlás' (онлайн покупки). Не путать: 'vásár' (ярмарка), 'bolt/üzlet' (магазин), 'eladás' (продажа).\n\nMagyar: A 'vásárlás' jelentése 'покупки, шопинг'. Ez a 'vásárol' igéből (покупать) származó főnév. Példák: 'bevásárlás' (покупка продуктов), 'ablakból vásárlás', 'online vásárlás'. Ne keverje össze: 'vásár' (ярмарка), 'bolt/üzlet' (магазин), 'eladás' (продажа).",
+      "difficulty": "intermediate",
+      "tags": ["HU→RU", "существительные", "шопинг", "повседневные действия"]
+    },
+    {
+      "question": "Как по-венгерски сказать 'заполнить анкету/форму'?",
+      "choices": {
+        "A": "Űrlapot írni",
+        "B": "Űrlapot kitölteni",
+        "C": "Formát csinálni",
+        "D": "Adatokat beírni"
+      },
+      "correct": "B",
+      "explanation": "Русский: 'Űrlapot kitölteni' означает 'заполнить анкету/форму'. Состоит из 'űrlap' (форма, бланк) + 'kitölteni' (заполнять). Глагол 'kitölt' используется специально для заполнения форм, анкет, бланков. Примеры: 'kérdőívet kitölteni' (заполнить анкету), 'formanyomtatványt kitölteni' (заполнить форму). В аэропорту или на границе вас могут попросить: 'Kérem, töltse ki ezt az űrlapot' (Пожалуйста, заполните эту форму).\n\nMagyar: Az 'űrlapot kitölteni' azt jelenti 'заполнить анкету'. Az 'űrlap' (форма) + 'kitölteni' (заполнять) szavakból áll. A 'kitölt' igét használjuk kifejezetten űrlapok, kérdőívek, blankettek kitöltésére. Példák: 'kérdőívet kitölteni', 'formanyomtatványt kitölteni'. Repülőtéren vagy határon kérhetik: 'Kérem, töltse ki ezt az űrlapot'.",
+      "difficulty": "intermediate",
+      "tags": ["RU→HU", "глаголы", "бюрократия", "практические ситуации", "официальные процедуры"]
+    },
+    {
+      "question": "Что означает венгерское слово 'szomszéd'?",
+      "choices": {
+        "A": "Родственник",
+        "B": "Сосед",
+        "C": "Коллега",
+        "D": "Товарищ"
+      },
+      "correct": "B",
+      "explanation": "Русский: 'Szomszéd' означает 'сосед'. Может относиться как к человеку ('a szomszéd' - сосед), так и к прилагательному 'соседний' ('szomszéd ház' - соседний дом, 'szomszéd országok' - соседние страны). Множественное число: 'szomszédok' (соседи). Полезные выражения: 'jó szomszéd' (хороший сосед), 'szomszédok vagyunk' (мы соседи), 'a szomszéd lakásban' (в соседней квартире).\n\nMagyar: A 'szomszéd' jelentése 'сосед'. Vonatkozhat személyre ('a szomszéd') és melléknévre is 'соседний' ('szomszéd ház', 'szomszéd országok'). Többes szám: 'szomszédok' (соседи). Hasznos kifejezések: 'jó szomszéd', 'szomszédok vagyunk', 'a szomszéd lakásban'.",
+      "difficulty": "intermediate",
+      "tags": ["HU→RU", "существительные", "люди", "соседство", "социальные отношения"]
+    },
+    {
+      "question": "Как по-венгерски сказать 'опаздывать'?",
+      "choices": {
+        "A": "Késni",
+        "B": "Maradni",
+        "C": "Várni",
+        "D": "Hiányozni"
+      },
+      "correct": "A",
+      "explanation": "Русский: 'Késni' означает 'опаздывать'. Это очень употребительный глагол в венгерском языке. Примеры: 'Késem!' (Я опаздываю!), 'Késünk a vonatról' (Мы опаздываем на поезд), 'Ne késs!' (Не опаздывай!), 'Elnézést, késtem' (Извините, я опоздал). 'Maradni' - оставаться, 'várni' - ждать, 'hiányozni' - отсутствовать, не хватать. Существительное от 'késni' - 'késés' (опоздание).\n\nMagyar: A 'késni' jelentése 'опаздывать'. Ez egy nagyon gyakori ige a magyar nyelvben. Példák: 'Késem!' (Я опаздываю!), 'Késünk a vonatról' (Мы опаздываем на поезд), 'Ne késs!', 'Elnézést, késtem'. 'Maradni' - оставаться, 'várni' - ждать, 'hiányozni' - отсутствовать. A 'késni' főneve: 'késés' (опоздание).",
+      "difficulty": "intermediate",
+      "tags": ["RU→HU", "глаголы", "время", "повседневные действия", "транспорт"]
+    },
+    {
+      "question": "Что означает венгерское слово 'munkahely'?",
+      "choices": {
+        "A": "Безработица",
+        "B": "Рабочее место, работа",
+        "C": "Должность",
+        "D": "Зарплата"
+      },
+      "correct": "B",
+      "explanation": "Русский: 'Munkahely' означает 'рабочее место, место работы'. Это составное слово: 'munka' (работа) + 'hely' (место). Используется для обозначения места, где человек работает. Примеры: 'új munkahely' (новое место работы), 'munkahelyet keres' (искать работу), 'munkahelyen' (на работе). Синоним: 'munkahely' = место работы, 'állás' = должность, работа, 'fizetés' = зарплата.\n\nMagyar: A 'munkahely' jelentése 'рабочее место, место работы'. Ez egy összetett szó: 'munka' (работа) + 'hely' (место). Arra a helyre utal, ahol valaki dolgozik. Példák: 'új munkahely', 'munkahelyet keres', 'munkahelyen'. Szinonimák: 'munkahely' = место работы, 'állás' = должность, 'fizetés' = зарплата.",
+      "difficulty": "intermediate",
+      "tags": ["HU→RU", "существительные", "работа", "составные слова", "карьера"]
+    },
+    {
+      "question": "Как по-венгерски сказать 'переезжать (на новое место жительства)'?",
+      "choices": {
+        "A": "Menni",
+        "B": "Átmenni",
+        "C": "Költözni",
+        "D": "Utazni"
+      },
+      "correct": "C",
+      "explanation": "Русский: 'Költözni' означает 'переезжать (на новое место жительства)'. Это глагол используется, когда человек меняет место жительства. Примеры: 'Budapestre költözök' (Я переезжаю в Будапешт), 'új lakásba költözünk' (мы переезжаем в новую квартиру), 'mikor költöztök?' (когда вы переезжаете?). Существительное: 'költözés' (переезд), 'költöző' (тот, кто переезжает). 'Menni' - идти, 'átmenni' - переходить, 'utazni' - путешествовать.\n\nMagyar: A 'költözni' jelentése 'переезжать'. Ezt az igét használjuk, amikor valaki lakóhelyet változtat. Példák: 'Budapestre költözök', 'új lakásba költözünk', 'mikor költöztök?'. Főnév: 'költözés' (переезд), 'költöző' (тот, кто переезжает). 'Menni' - идти, 'átmenni' - переходить, 'utazni' - путешествовать.",
+      "difficulty": "intermediate",
+      "tags": ["RU→HU", "глаголы", "жилье", "переезд", "изменения в жизни"]
+    },
+    {
+      "question": "Что означает венгерская фраза 'foglalt'?",
+      "choices": {
+        "A": "Свободно",
+        "B": "Занято (о месте, телефоне)",
+        "C": "Закрыто",
+        "D": "Сломано"
+      },
+      "correct": "B",
+      "explanation": "Русский: 'Foglalt' означает 'занято'. Используется в разных ситуациях: 'A hely foglalt' (место занято), 'A vonal foglalt' (линия занята - о телефоне), 'foglalt jegy' (забронированный билет). Это причастие от глагола 'foglal' (занимать, бронировать). Антоним: 'szabad' (свободно). В ресторане официант может спросить: 'Ez a hely szabad vagy foglalt?' (Это место свободно или занято?). В туалете на двери может быть написано 'Foglalt' или 'Szabad'.\n\nMagyar: A 'foglalt' jelentése 'занято'. Különböző helyzetekben használható: 'A hely foglalt', 'A vonal foglalt' (о телефоне), 'foglalt jegy'. Ez a 'foglal' ige (занимать) melléknévi igeneve. Ellentéte: 'szabad' (свободно). Étteremben a pincér kérdezheti: 'Ez a hely szabad vagy foglalt?'. A WC ajtón lehet: 'Foglalt' vagy 'Szabad'.",
+      "difficulty": "intermediate",
+      "tags": ["HU→RU", "прилагательные", "общественные места", "телефон", "практические ситуации"]
+    },
+    {
+      "question": "Как по-венгерски сказать 'собираться что-то делать, иметь намерение'?",
+      "choices": {
+        "A": "Akarni",
+        "B": "Készülni",
+        "C": "Tervezni",
+        "D": "Gondolni"
+      },
+      "correct": "B",
+      "explanation": "Русский: 'Készülni' означает 'собираться что-то делать, готовиться'. Этот глагол выражает намерение и подготовку. Примеры: 'Készülök elutazni' (Я собираюсь уехать), 'Mire készültök?' (Что вы собираетесь делать?), 'vizsgára készülök' (я готовлюсь к экзамену). Другие варианты: 'akarni' - хотеть, 'tervezni' - планировать (более формально), 'gondolni' - думать. 'Készülni' подчёркивает процесс подготовки и близость действия.\n\nMagyar: A 'készülni' jelentése 'собираться что-то делать, готовиться'. Ez az ige szándékot és felkészülést fejez ki. Példák: 'Készülök elutazni', 'Mire készültök?', 'vizsgára készülök'. Más változatok: 'akarni' - хотеть, 'tervezni' - планировать, 'gondolni' - думать. A 'készülni' a felkészülés folyamatát és a cselekvés közelségét hangsúlyozza.",
+      "difficulty": "intermediate",
+      "tags": ["RU→HU", "глаголы", "намерения", "планы", "будущее время"]
+    },
+    {
+      "question": "Что означает венгерское слово 'tanácsot ad'?",
+      "choices": {
+        "A": "Давать совет",
+        "B": "Давать урок",
+        "C": "Давать разрешение",
+        "D": "Давать информацию"
+      },
+      "correct": "A",
+      "explanation": "Русский: 'Tanácsot ad' (дословно: 'совет даёт') означает 'давать совет'. Это устойчивое словосочетание: 'tanács' (совет) + 'ad' (даёт). Примеры: 'jó tanácsot ad' (даёт хороший совет), 'tanácsot kér' (просить совета), 'tanács nélkül' (без совета). Другие выражения: 'tanácsot követ' (следовать совету), 'tanácsra van szükségem' (мне нужен совет). Не путать: 'lecke' (урок), 'engedély' (разрешение), 'információ' (информация).\n\nMagyar: A 'tanácsot ad' jelentése 'давать совет'. Ez egy állandó szókapcsolat: 'tanács' (совет) + 'ad' (даёт). Példák: 'jó tanácsot ad', 'tanácsot kér', 'tanács nélkül'. Más kifejezések: 'tanácsot követ', 'tanácsra van szükségem'. Ne keverje össze: 'lecke' (урок), 'engedély' (разрешение), 'információ' (информация).",
+      "difficulty": "intermediate",
+      "tags": ["HU→RU", "устойчивые выражения", "коммуникация", "социальные взаимодействия"]
+    },
+    {
+      "question": "Как по-венгерски сказать 'жаловаться'?",
+      "choices": {
+        "A": "Beszélni",
+        "B": "Panaszkodni",
+        "C": "Kérdezni",
+        "D": "Mondani"
+      },
+      "correct": "B",
+      "explanation": "Русский: 'Panaszkodni' означает 'жаловаться'. Глагол происходит от существительного 'panasz' (жалоба). Примеры: 'az időre panaszkodik' (жалуется на погоду), 'mindig panaszkodik' (всегда жалуется), 'ne panaszkodj!' (не жалуйся!). Связанные слова: 'panasz' (жалоба), 'panaszos' (жалобщик), 'panaszkönyv' (книга жалоб). Другие глаголы: 'beszélni' - говорить, 'kérdezni' - спрашивать, 'mondani' - сказать.\n\nMagyar: A 'panaszkodni' jelentése 'жаловаться'. Az ige a 'panasz' (жалоба) főnévből származik. Példák: 'az időre panaszkodik', 'mindig panaszkodik', 'ne panaszkodj!'. Kapcsolódó szavak: 'panasz' (жалоба), 'panaszos' (жалобщик), 'panaszkönyv' (книга жалоб). Más igék: 'beszélni' - говорить, 'kérdezni' - спрашивать, 'mondani' - сказать.",
+      "difficulty": "intermediate",
+      "tags": ["RU→HU", "глаголы", "эмоции", "коммуникация", "негативные действия"]
+    },
+    {
+      "question": "Что означает венгерское слово 'csomagolni'?",
+      "choices": {
+        "A": "Покупать",
+        "B": "Упаковывать",
+        "C": "Посылать",
+        "D": "Получать"
+      },
+      "correct": "B",
+      "explanation": "Русский: 'Csomagolni' означает 'упаковывать, паковать'. Глагол от существительного 'csomag' (пакет, посылка, багаж). Используется для упаковки вещей, подарков, чемоданов. Примеры: 'csomagot csomagolni' (упаковывать посылку), 'bőröndöt csomagolni' (паковать чемодан), 'ajándékot csomagolni' (упаковывать подарок), 'be kell csomagolni' (нужно упаковать). Связанные слова: 'csomag' (пакет, посылка), 'csomagolás' (упаковка - процесс).\n\nMagyar: A 'csomagolni' jelentése 'упаковывать, паковать'. Az ige a 'csomag' (пакет, посылка) főnévből származik. Dolgok, ajándékok, bőröndök csomagolására használjuk. Példák: 'csomagot csomagolni', 'bőröndöt csomagolni', 'ajándékot csomagolni', 'be kell csomagolni'. Kapcsolódó szavak: 'csomag' (пакет), 'csomagolás' (упаковка - процесс).",
+      "difficulty": "intermediate",
+      "tags": ["HU→RU", "глаголы", "путешествия", "практические действия", "шопинг"]
+    },
+    {
+      "question": "Как по-венгерски сказать 'одалживать (кому-то), давать взаймы'?",
+      "choices": {
+        "A": "Venni",
+        "B": "Kölcsönkérni",
+        "C": "Kölcsönadni",
+        "D": "Fizetni"
+      },
+      "correct": "C",
+      "explanation": "Русский: 'Kölcsönadni' означает 'одалживать (кому-то), давать взаймы'. Важно различать: 'kölcsönadni' (давать в долг) и 'kölcsönkérni' (брать в долг, занимать). Примеры: 'Kölcsönadtam neki pénzt' (Я одолжил ему денег), 'Nem szoktam pénzt kölcsönadni' (Я обычно не даю деньги взаймы). 'Kölcsönkérni' - брать в долг: 'kölcsönkértem tőle pénzt' (я занял у него деньги). 'Venni' - покупать, 'fizetni' - платить.\n\nMagyar: A 'kölcsönadni' jelentése 'одалживать, давать взаймы'. Fontos különbséget tenni: 'kölcsönadni' (давать в долг) és 'kölcsönkérni' (брать в долг). Példák: 'Kölcsönadtam neki pénzt', 'Nem szoktam pénzt kölcsönadni'. 'Kölcsönkérni' - брать в долг: 'kölcsönkértem tőle pénzt'. 'Venni' - покупать, 'fizetni' - платить.",
+      "difficulty": "intermediate",
+      "tags": ["RU→HU", "глаголы", "деньги", "финансы", "социальные взаимодействия"]
+    }
+  ]
+}
