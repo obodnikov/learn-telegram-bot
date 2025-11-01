@@ -238,6 +238,9 @@ python scripts/seed_topics.py
 # Generate questions (requires API key)
 python scripts/generate_questions.py --count 10
 
+# Generate for specific topic
+python scripts/generate_questions.py --topic 1 --count 15
+
 # Check database health
 python scripts/diagnose_database.py
 
@@ -246,6 +249,8 @@ bash scripts/setup.sh
 ```
 
 **For detailed documentation**, see [scripts/README.md](scripts/README.md).
+
+**Note**: When generating questions, use batches of 10-15 for best results. Larger batches (25+) may fail due to LLM response size limits. To generate many questions, run the script multiple times with smaller counts.
 
 ---
 

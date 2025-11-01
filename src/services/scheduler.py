@@ -187,7 +187,7 @@ class QuestionScheduler:
                     logger.info(f"Saved {len(questions)} questions for topic: {topic.name}")
 
                 except Exception as e:
-                    logger.error(f"Error in manual generation for topic {topic.name}: {e}", exc_info=True)
+                    logger.error(f"Error in manual generation for topic {topic.name}", exc_info=True)
                     continue
 
             logger.info(f"Manual generation completed. Total generated: {total_generated}")

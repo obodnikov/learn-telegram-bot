@@ -394,6 +394,8 @@ python scripts/generate_questions.py --topic 1 --count 15
 python scripts/generate_questions.py
 ```
 
+**Important**: Use batches of 10-15 questions for best results. Larger batches (25+) may fail due to LLM response size limits. To generate many questions, run the script multiple times.
+
 **Expected output**:
 ```
 INFO - Connected to database: sqlite:///./learning_bot.db
@@ -505,8 +507,11 @@ With default settings:
 
 1. **Initial setup**: Manual generation
    ```bash
-   # Generate 50 questions to start (25 per topic)
-   python scripts/generate_questions.py --count 25
+   # Generate initial questions (run multiple times for more)
+   python scripts/generate_questions.py --count 10
+   python scripts/generate_questions.py --count 10
+   python scripts/generate_questions.py --count 10
+   # Now you have 60 questions total (30 per topic)
    ```
 
 2. **Verify bot works**:
