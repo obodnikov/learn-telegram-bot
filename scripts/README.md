@@ -169,6 +169,24 @@ python scripts/seed_topics.py
 python scripts/generate_questions.py
 ```
 
+**"Failed to parse LLM response" or "Unterminated string"**
+```bash
+# This happens when generating too many questions at once
+# Solution: Use smaller batches (10-15 questions max)
+python scripts/generate_questions.py --count 10
+
+# To generate many questions, run multiple times:
+python scripts/generate_questions.py --topic 1 --count 10
+python scripts/generate_questions.py --topic 1 --count 10
+python scripts/generate_questions.py --topic 1 --count 10
+# Now you have 30 questions total
+```
+
+**Best Practices**:
+- ✅ Use batches of 10-15 questions for reliable generation
+- ✅ Run multiple times for larger question sets
+- ❌ Avoid generating 25+ questions in a single run (may fail)
+
 ---
 
 ## diagnose_database.py

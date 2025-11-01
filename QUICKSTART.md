@@ -104,6 +104,8 @@ nano .env
 python scripts/generate_questions.py --count 10
 ```
 
+**Note**: Use batches of 10-15 for best results. For more questions, run multiple times.
+
 Should see:
 ```
 ✓ Saved 10 questions for topic: Hungarian Vocabulary - Everyday Life

@@ -60,7 +60,7 @@ class QuestionGenerator:
                 raise ConfigurationError(f"Topic not found: {topic_id}")
 
             # Check if topic has examples
-            examples_config = topic_config.get("examples")
+            examples_config = getattr(topic_config, 'examples', None)
 
             if not examples_config:
                 # No examples: standard generation
@@ -68,17 +68,21 @@ class QuestionGenerator:
                 return await self._generate_standard(topic_config, count)
 
             # Load example file
-            example_file = examples_config.get("file")
+            example_file = examples_config.get("file") if isinstance(examples_config, dict) else getattr(examples_config, 'file', None)
             if not example_file:
                 raise ConfigurationError(f"Missing 'file' in examples config for topic: {topic_id}")
 
-            # Resolve example file path (relative to config directory)
-            example_path = Path("config/examples") / example_file
+            # Resolve example file path
+            # If path already includes config/examples, use as-is; otherwise prepend it
+            if example_file.startswith("config/examples/"):
+                example_path = Path(example_file)
+            else:
+                example_path = Path("config/examples") / example_file
             examples = self.example_parser.load_examples(str(example_path))
 
             # Get generation mode
-            mode = examples_config.get("mode", "augment")
-            use_ratio = examples_config.get("use_ratio", 0.3)
+            mode = examples_config.get("mode", "augment") if isinstance(examples_config, dict) else getattr(examples_config, 'mode', "augment")
+            use_ratio = examples_config.get("use_ratio", 0.3) if isinstance(examples_config, dict) else getattr(examples_config, 'use_ratio', 0.3)
 
             # Generate based on mode
             if mode == "standard":
@@ -241,7 +245,7 @@ class QuestionGenerator:
             Formatted prompt string
         """
         # Get base prompt template from config
-        topic_type = topic_config.get("type", "language")
+        topic_type = getattr(topic_config, 'type', 'language')
         prompt_template = self.config_loader.get_prompt(topic_type, mode)
 
         if not prompt_template:
@@ -249,12 +253,12 @@ class QuestionGenerator:
             prompt_template = self._get_default_prompt(topic_type, mode)
 
         # Extract topic details
-        topic_name = topic_config.get("name", "Unknown")
-        target_language = topic_config.get("target_language", "")
-        native_language = topic_config.get("native_language", "")
-        context = topic_config.get("context", "")
-        scope = topic_config.get("scope", "")
-        difficulty = topic_config.get("difficulty", "intermediate")
+        topic_name = getattr(topic_config, 'name', 'Unknown')
+        target_language = getattr(topic_config, 'target_language', '')
+        native_language = getattr(topic_config, 'native_language', '')
+        context = getattr(topic_config, 'context', '')
+        scope = getattr(topic_config, 'scope', '')
+        difficulty = getattr(topic_config, 'difficulty', 'intermediate')
 
         # Format examples if provided
         examples_text = ""
