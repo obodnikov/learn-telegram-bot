@@ -7,6 +7,7 @@ from src.database.repository import Repository
 from src.services.llm_service import LLMService
 from src.services.question_generator import QuestionGenerator
 from src.services.example_parser import ExampleParser
+from src.services.scheduler import QuestionScheduler
 from src.utils.config_loader import ConfigLoader
 
 logger = get_logger(__name__)
@@ -30,7 +31,8 @@ class LearningBot:
         token: str,
         repository: Repository,
         config_loader: ConfigLoader,
-        llm_service: Optional[LLMService] = None
+        llm_service: Optional[LLMService] = None,
+        enable_scheduler: bool = False
     ):
         """
         Initialize the learning bot.
@@ -40,6 +42,7 @@ class LearningBot:
             repository: Database repository instance
             config_loader: Configuration loader instance
             llm_service: Optional LLM service for question generation
+            enable_scheduler: Whether to enable automatic question generation scheduler
         """
         self.token = token
         self.repository = repository
@@ -52,8 +55,18 @@ class LearningBot:
             self.question_generator = QuestionGenerator(
                 llm_service, config_loader, self.example_parser
             )
+
+            # Initialize scheduler if enabled
+            if enable_scheduler:
+                self.scheduler = QuestionScheduler(
+                    repository, self.question_generator, config_loader
+                )
+                logger.info("Scheduler initialized")
+            else:
+                self.scheduler = None
         else:
             self.question_generator = None
+            self.scheduler = None
 
         # Session management - stores active quiz sessions
         self.active_sessions: Dict[int, Dict[str, Any]] = {}
@@ -110,6 +123,11 @@ class LearningBot:
         """Start the bot with polling."""
         logger.info("Starting Telegram bot...")
         try:
+            # Start scheduler if enabled
+            if self.scheduler:
+                self.scheduler.start()
+                logger.info("Question generation scheduler started")
+
             # Initialize the application
             async with self.application:
                 # Start polling
@@ -132,6 +150,11 @@ class LearningBot:
         """Stop the bot gracefully."""
         logger.info("Stopping Telegram bot...")
         try:
+            # Stop scheduler if running
+            if self.scheduler:
+                self.scheduler.stop()
+                logger.info("Scheduler stopped")
+
             if self.application.updater.running:
                 await self.application.updater.stop()
             await self.application.stop()
