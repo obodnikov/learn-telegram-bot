@@ -332,53 +332,272 @@ Use this checklist for fresh installations:
 
 ## Post-Installation: Adding Questions
 
-The bot works with just topics, but questions make it functional!
+**⚠️ IMPORTANT**: The bot needs questions to function! Without questions, users can see topics but cannot start quizzes.
 
-### Option 1: Manual Question Generation (Recommended for testing)
+### Understanding Question Generation
 
-If you have OpenRouter API key:
+**Current Status After Installation**:
+- ✅ Bot is installed
+- ✅ Topics are seeded (2 topics)
+- ❌ Questions = 0 (database is empty)
+- ❌ Quizzes won't work yet
 
-```python
-# Start Python REPL
-python3
+**What Happens Without Questions**:
+1. User sends `/topics` → ✅ Works (shows 2 topics)
+2. User selects a topic → ❌ Fails ("No questions available for this topic")
 
-# Run manual generation
->>> import asyncio
->>> from src.database.repository import Repository
->>> from src.utils.config_loader import ConfigLoader
->>> from src.services.llm_service import LLMService
->>> from src.services.question_generator import QuestionGenerator
->>> from src.services.example_parser import ExampleParser
->>> from src.services.scheduler import QuestionScheduler
->>> import os
->>> from dotenv import load_dotenv
->>> load_dotenv()
->>>
->>> # Initialize services
->>> repo = Repository("sqlite:///./learning_bot.db")
->>> config = ConfigLoader("config")
->>> config.load_all()
->>> llm = LLMService(os.getenv('OPENROUTER_API_KEY'), 'anthropic/claude-3.5-sonnet')
->>> parser = ExampleParser()
->>> gen = QuestionGenerator(llm, config, parser)
->>> scheduler = QuestionScheduler(repo, gen, config)
->>>
->>> # Generate 5 questions for all topics
->>> count = asyncio.run(scheduler.run_manual_generation(count=5))
->>> print(f"Generated {count} questions")
+**You MUST add questions before the bot is useful!**
+
+---
+
+### Option 1: Manual Question Generation (Recommended)
+
+**Best for**: Initial setup, testing, controlled generation
+
+**Requirements**:
+- OpenRouter API key (get at https://openrouter.ai/keys)
+- ~$0.02-0.05 per 10 questions generated
+- Takes 30-60 seconds per topic
+
+#### Step 1: Get OpenRouter API Key
+
+1. Go to https://openrouter.ai
+2. Sign up / log in
+3. Go to https://openrouter.ai/keys
+4. Create new key
+5. Add $5 credits (plenty for testing)
+6. Copy the key (starts with `sk-or-v1-...`)
+
+#### Step 2: Add to .env
+
+```bash
+# Edit .env file
+nano .env
+
+# Add this line:
+OPENROUTER_API_KEY=sk-or-v1-your-actual-key-here
+
+# Save and exit (Ctrl+X, Y, Enter)
 ```
 
-### Option 2: Automatic Generation (Set and forget)
+#### Step 3: Generate Questions
 
-Enable in `.env`:
+**Using the convenience script (easiest)**:
+```bash
+# Generate 10 questions per topic (20 total)
+python scripts/generate_questions.py --count 10
+
+# Or generate for specific topic
+python scripts/generate_questions.py --topic 1 --count 15
+
+# Or just use defaults (5 per topic)
+python scripts/generate_questions.py
+```
+
+**Expected output**:
+```
+INFO - Connected to database: sqlite:///./learning_bot.db
+INFO - Using LLM model: anthropic/claude-3.5-sonnet
+INFO - Generating 10 questions per topic (all active topics)
+INFO - Starting generation... (this may take 30-60 seconds per topic)
+INFO - Generating 10 questions for topic: Hungarian Vocabulary - Everyday Life
+INFO - Saved 10 questions for topic: Hungarian Vocabulary - Everyday Life
+INFO - Generating 10 questions for topic: Hungarian Literature and Culture
+INFO - Saved 10 questions for topic: Hungarian Literature and Culture
+INFO - ✓ Generation complete!
+INFO - ✓ Total questions generated: 20
+```
+
+#### Step 4: Verify
+
+```bash
+# Check database
+python scripts/diagnose_database.py
+
+# Should now show:
+# Total questions: 20 (or however many you generated)
+```
+
+#### Step 5: Test the Bot
+
+```bash
+# Start/restart bot
+python main.py
+
+# In Telegram:
+# 1. Send /topics
+# 2. Select a topic
+# 3. Quiz should start! ✓
+```
+
+---
+
+### Option 2: Automatic Generation (Set and Forget)
+
+**Best for**: Production, continuous operation, hands-off
+
+**How it works**:
+- Bot generates questions automatically on a schedule
+- Default: Every 3 hours, 5 questions per topic
+- Runs in background while bot is active
+- Questions accumulate over time
+
+#### Enable Automatic Generation
+
+Add to `.env`:
 ```env
+# Enable scheduler
 ENABLE_SCHEDULER=true
+
+# Your API key
 OPENROUTER_API_KEY=sk-or-v1-your-key-here
+
+# Schedule (cron format)
 QUESTION_GENERATION_SCHEDULE=0 */3 * * *  # Every 3 hours
-QUESTIONS_PER_RUN=5
+
+# Questions per run
+QUESTIONS_PER_RUN=5  # 5 per topic = 10 total every 3 hours
 ```
 
-Restart bot, and it will generate questions automatically!
+#### Schedule Examples
+
+```bash
+# Every 3 hours (default)
+QUESTION_GENERATION_SCHEDULE=0 */3 * * *
+
+# Every 6 hours
+QUESTION_GENERATION_SCHEDULE=0 */6 * * *
+
+# Every day at 2 AM
+QUESTION_GENERATION_SCHEDULE=0 2 * * *
+
+# Twice daily (9 AM and 9 PM)
+QUESTION_GENERATION_SCHEDULE=0 9,21 * * *
+
+# Every hour (not recommended - costly!)
+QUESTION_GENERATION_SCHEDULE=0 * * * *
+```
+
+#### Start Bot with Scheduler
+
+```bash
+python main.py
+
+# You should see:
+# INFO - Scheduler initialized
+# INFO - Question generation scheduler started
+# INFO - Bot is running. Press Ctrl+C to stop.
+```
+
+#### Cost Estimate
+
+With default settings:
+- 2 topics × 5 questions = 10 questions per run
+- Every 3 hours = 8 runs per day
+- 10 × 8 = 80 questions per day
+- **Cost**: ~$0.05-0.10 per day (~$1.50-3.00 per month)
+
+---
+
+### Option 3: Hybrid Approach (Recommended for Production)
+
+**Best strategy**:
+
+1. **Initial setup**: Manual generation
+   ```bash
+   # Generate 50 questions to start (25 per topic)
+   python scripts/generate_questions.py --count 25
+   ```
+
+2. **Verify bot works**:
+   - Test quizzes in Telegram
+   - Confirm question quality
+   - Adjust if needed
+
+3. **Enable scheduler**: For ongoing generation
+   ```env
+   ENABLE_SCHEDULER=true
+   OPENROUTER_API_KEY=sk-or-v1-...
+   QUESTION_GENERATION_SCHEDULE=0 */6 * * *  # Every 6 hours
+   QUESTIONS_PER_RUN=3  # Slower growth, lower cost
+   ```
+
+4. **Monitor and adjust**:
+   - Check costs after first week
+   - Adjust schedule/count as needed
+   - Review question quality periodically
+
+---
+
+### Comparison Table
+
+| Method | When | Cost | Control | Setup |
+|--------|------|------|---------|-------|
+| **Manual** | On-demand | Pay per use | Full control | Easy |
+| **Automatic** | Scheduled | Ongoing | Set & forget | Medium |
+| **Hybrid** | Both | Flexible | Best of both | Easy |
+
+**Recommendation**: Start with manual generation (50-100 questions), then enable scheduler for growth.
+
+---
+
+### Troubleshooting Question Generation
+
+**"OPENROUTER_API_KEY not found"**
+- Check `.env` file has the key
+- Make sure it starts with `sk-or-v1-`
+- No quotes around the key in .env
+
+**"No questions generated"**
+- Check you have credits in OpenRouter account
+- Verify API key is valid
+- Check logs for errors: `tail -f logs/bot.log`
+
+**"Generation takes too long"**
+- Normal! ~30-60 seconds per topic per run
+- LLM needs time to generate quality questions
+- Be patient during first generation
+
+**"Questions are low quality"**
+- Check example files in `config/examples/`
+- Review prompts in `config/prompts.yaml`
+- Consider using different model (see OPENROUTER_MODEL)
+
+**"Bot still says no questions"**
+- Run diagnostics: `python scripts/diagnose_database.py`
+- Check if questions are in database
+- Restart bot after generating questions
+
+---
+
+### Next Steps After Adding Questions
+
+Once you have questions in the database:
+
+1. ✅ **Test the bot thoroughly**
+   - Try all topics
+   - Answer questions
+   - Check explanations
+   - Verify spaced repetition
+
+2. ✅ **Deploy to production** (see [DEPLOYMENT.md](DEPLOYMENT.md))
+   - Choose: systemd, Docker, or launchd
+   - Set up auto-start
+   - Enable scheduler if desired
+
+3. ✅ **Monitor usage**
+   - Check logs regularly
+   - Review API costs
+   - Adjust generation schedule
+
+4. ✅ **Gather feedback**
+   - Ask users about question quality
+   - Adjust difficulty if needed
+   - Add more topics as needed
+
+---
+
+**Ready to generate questions?** Follow Option 1 above to get started!
 
 ---
 

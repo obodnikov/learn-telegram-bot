@@ -128,23 +128,31 @@ Provide example questions to guide LLM generation:
 
 ## Usage
 
+### Quick Start
+
+```bash
+# 1. Seed topics (required - first time only)
+python scripts/seed_topics.py
+
+# 2. Generate initial questions (required for quizzes)
+python scripts/generate_questions.py --count 10
+
+# 3. Run the bot
+python main.py
+```
+
+**⚠️ Important**: The bot needs questions to function! See [Question Generation](#question-generation) below.
+
 ### Running the Bot
 
 ```bash
-# First time: Seed topics into database
+# Make sure topics are seeded
 python scripts/seed_topics.py
 
-# Set environment variables (or use .env file)
-export TELEGRAM_BOT_TOKEN="your_bot_token"
-export DATABASE_URL="sqlite:///learning_bot.db"
-export OPENROUTER_API_KEY="your_api_key"  # Required for question generation
+# Verify setup
+python scripts/diagnose_database.py
 
-# Optional: Enable automatic question generation (Phase 4)
-export ENABLE_SCHEDULER="true"
-export QUESTION_GENERATION_SCHEDULE="0 */3 * * *"  # Every 3 hours
-export QUESTIONS_PER_RUN="5"
-
-# Run the bot
+# Start the bot
 python main.py
 ```
 
@@ -158,9 +166,88 @@ The bot will:
 **Telegram Commands:**
 - `/start` - Register and welcome message
 - `/help` - Show available commands
-- `/topics` - List topics and start quiz
+- `/topics` - List topics and start quiz (requires questions!)
 - `/stats` - View learning statistics
 - `/cancel` - End current quiz session
+
+---
+
+## Question Generation
+
+**Status After Installation**: 0 questions in database
+
+The bot can show topics but **cannot start quizzes** without questions!
+
+### Option 1: Manual Generation (Recommended)
+
+Generate questions on-demand using the convenience script:
+
+```bash
+# Generate 10 questions per topic
+python scripts/generate_questions.py --count 10
+
+# Generate for specific topic
+python scripts/generate_questions.py --topic 1 --count 15
+
+# Use defaults (5 per topic)
+python scripts/generate_questions.py
+```
+
+**Requirements**:
+- OpenRouter API key (get at https://openrouter.ai/keys)
+- Add to `.env`: `OPENROUTER_API_KEY=sk-or-v1-your-key`
+- ~$0.02-0.05 per 10 questions
+
+### Option 2: Automatic Generation
+
+Enable continuous generation in `.env`:
+
+```env
+ENABLE_SCHEDULER=true
+OPENROUTER_API_KEY=sk-or-v1-your-key
+QUESTION_GENERATION_SCHEDULE=0 */3 * * *  # Every 3 hours
+QUESTIONS_PER_RUN=5  # 5 per topic
+```
+
+Then restart the bot. Questions will generate automatically.
+
+**Cost estimate**: ~$0.05-0.10 per day with default settings.
+
+### Verify Questions
+
+```bash
+# Check how many questions you have
+python scripts/diagnose_database.py
+
+# Should show:
+#   Total questions: 20 (or whatever you generated)
+```
+
+**For detailed instructions**, see [INSTALLATION.md - Adding Questions](INSTALLATION.md#post-installation-adding-questions).
+
+---
+
+## Utility Scripts
+
+The bot includes several utility scripts for management:
+
+```bash
+# Seed topics from config
+python scripts/seed_topics.py
+
+# Generate questions (requires API key)
+python scripts/generate_questions.py --count 10
+
+# Check database health
+python scripts/diagnose_database.py
+
+# Automated setup (Linux/Mac)
+bash scripts/setup.sh
+```
+
+**For detailed documentation**, see [scripts/README.md](scripts/README.md).
+
+---
 
 ### Testing
 

@@ -83,7 +83,36 @@ Should see:
 ✓ Topic seeding completed successfully!
 ```
 
-### 5️⃣ Start Bot (1 min)
+### 5️⃣ Generate Questions (2 min) ⚠️ NEW STEP!
+
+**IMPORTANT**: Bot needs questions to work! This step is required.
+
+**Get API Key** (if you don't have one):
+1. Go to https://openrouter.ai/keys
+2. Sign up and create API key
+3. Add $5 credits
+
+**Add to .env**:
+```bash
+nano .env
+# Add line: OPENROUTER_API_KEY=sk-or-v1-your-key
+# Save: Ctrl+X, Y, Enter
+```
+
+**Generate questions**:
+```bash
+python scripts/generate_questions.py --count 10
+```
+
+Should see:
+```
+✓ Saved 10 questions for topic: Hungarian Vocabulary - Everyday Life
+✓ Saved 10 questions for topic: Hungarian Literature and Culture
+✓ Generation complete!
+✓ Total questions generated: 20
+```
+
+### 6️⃣ Start Bot (1 min)
 
 ```bash
 python main.py
@@ -95,17 +124,36 @@ Should see:
 ✓ Bot is running. Press Ctrl+C to stop.
 ```
 
-### 6️⃣ Test in Telegram (30 sec)
+### 7️⃣ Test in Telegram (30 sec)
 
 1. Open Telegram
 2. Search for your bot (e.g., `@mylearning_bot`)
 3. Click **Start**
 4. Send: `/topics`
 5. **Should see 2 topic buttons!** 🎉
+6. **Click a topic** - Quiz should start! 🎉
 
 ---
 
 ## Troubleshooting
+
+### ❌ "No questions available for this topic"
+
+**Most common issue!** Bot needs questions.
+
+**Fix:**
+```bash
+# 1. Get OpenRouter API key: https://openrouter.ai/keys
+# 2. Add to .env: OPENROUTER_API_KEY=sk-or-v1-...
+# 3. Generate questions:
+python scripts/generate_questions.py --count 10
+
+# 4. Verify:
+python scripts/diagnose_database.py  # Should show questions > 0
+
+# 5. Restart bot
+python main.py
+```
 
 ### ❌ "No topics available yet"
 
@@ -120,6 +168,15 @@ python main.py  # Restart
 ### ❌ "TELEGRAM_BOT_TOKEN not set"
 
 **Fix:** Edit `.env` and add your token from BotFather.
+
+### ❌ "OPENROUTER_API_KEY not found"
+
+**Fix:**
+```bash
+# Get API key from https://openrouter.ai/keys
+nano .env
+# Add: OPENROUTER_API_KEY=sk-or-v1-your-key
+```
 
 ### ❌ "Module not found"
 
