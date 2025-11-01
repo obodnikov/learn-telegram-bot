@@ -4,7 +4,7 @@ topics:
     type: language
     target_language: Hungarian
     native_language: Russian
-    difficulty: intermediate
+    difficulty: beginner
     questions_per_batch: 10
     context: |
       Focus on everyday vocabulary and common expressions.
@@ -124,5 +124,89 @@ topics:
     
     examples:
       file: "config/examples/hungarian_vocabulary_advanced.json"
+      mode: hybrid
+      use_ratio: 0.4
+
+  hungarian_vocabulary_intermediate:
+    name: "Hungarian Vocabulary - Intermediate"
+    type: language
+    target_language: "Hungarian"
+    native_language: "Russian"
+    difficulty: intermediate
+    questions_per_batch: 10
+    context: |
+      Intermediate Hungarian vocabulary for Russian speakers with bidirectional translation practice.
+      
+      CRITICAL: Generate questions in BOTH directions:
+      1. Hungarian → Russian (50% of questions): "Что означает венгерское слово/выражение X?"
+      2. Russian → Hungarian (50% of questions): "Как по-венгерски сказать 'X'?"
+      
+      Focus areas:
+      - Everyday practical vocabulary and situations
+      - Common verbs and their usage
+      - Useful phrases for daily life
+      - Basic compound words
+      - Social interactions and communication
+      - Travel, shopping, health, work situations
+      - Simple idiomatic expressions
+      
+      Vocabulary categories:
+      - Daily activities: találkozó, vásárlás, költözni, csomagolni
+      - Social situations: szomszéd, panaszkodni, tanácsot ad
+      - Practical needs: időpontot kérni, űrlapot kitölteni, foglalt
+      - Work and life: munkahely, késni
+      - Intentions and plans: készülni
+      - Financial: kölcsönadni, kölcsönkérni
+      
+      Difficulty level:
+      - More practical than advanced level
+      - Common everyday words and phrases
+      - Basic grammar structures
+      - Situations learners encounter regularly
+      - Accessible but useful vocabulary
+      
+      Question structure requirements:
+      1. For HU→RU: Present Hungarian word/phrase, ask for Russian meaning
+      2. For RU→HU: Present Russian word/phrase, ask for Hungarian equivalent
+      3. Wrong answers should be:
+        - Related words in the same semantic field
+        - Common confusions for intermediate learners
+        - Words that might seem correct but aren't
+        - Near-synonyms with different usage
+      4. Explanations must:
+        - Be bilingual (Russian first, then Hungarian)
+        - Provide practical usage examples
+        - Include related words and phrases
+        - Distinguish from similar words
+        - Give context for when to use the word
+        - Explain word formation when relevant (compound words)
+      
+      Examples for LLM to follow:
+      - Everyday verbs: menni, jönni, vinni, hozni, látni, hallani
+      - Time expressions: korán, későn, időben, most, akkor
+      - Places: iskola, egyetem, könyvtár, park, étterem
+      - Actions: írni, olvasni, tanulni, dolgozni, pihenni
+      - Communication: beszélni, kérdezni, válaszolni, mondani
+      - Shopping: vásárolni, fizetni, venni, eladni
+      - Food and cooking: főzni, enni, inni, kóstolni
+      - Transportation: utazni, szállni, leszállni, átszállni
+      - Health: fájni, beteg, orvos, gyógyszertár
+      
+      Avoid:
+      - Too basic beginner vocabulary (colors, numbers, days)
+      - Highly abstract or academic terms (save for advanced)
+      - Rare or literary vocabulary
+      - Complex grammatical constructions
+      - Overly formal or technical language
+      
+      Tags to use:
+      - Direction: "HU→RU" or "RU→HU"
+      - Word type: "существительные", "глаголы", "прилагательные", "фразы"
+      - Category: "повседневная жизнь", "работа", "здоровье", "путешествия", "шопинг"
+      - Context: "практические ситуации", "социальные взаимодействия", "устойчивые выражения"
+      - Level indicators: "составные слова", "общественные места", "бюрократия"
+    
+    examples:
+      file: "config/examples/hungarian_vocabulary_intermediate.json"
       mode: hybrid
       use_ratio: 0.4
