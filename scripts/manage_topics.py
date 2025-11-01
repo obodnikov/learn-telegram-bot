@@ -175,18 +175,24 @@ def sync_topics(
         for name in to_add:
             # Find the topic in YAML
             yaml_topic = None
+            yaml_topic_id = None
             for topic_id, topic in yaml_topics.items():
                 if topic.name == name:
                     yaml_topic = topic
+                    yaml_topic_id = topic_id
                     break
 
             if yaml_topic:
                 logger.info(f"  + {name}")
                 if not dry_run:
+                    # Convert to dict and ensure 'id' field matches YAML key
+                    config = vars(yaml_topic)
+                    config['id'] = yaml_topic_id
+
                     repository.create_topic(
                         name=yaml_topic.name,
                         type=yaml_topic.type,
-                        config=vars(yaml_topic),
+                        config=config,
                         is_active=True
                     )
                     changes_made += 1
@@ -197,9 +203,11 @@ def sync_topics(
         for name in to_update:
             # Find the topic in YAML
             yaml_topic = None
+            yaml_topic_id = None
             for topic_id, topic in yaml_topics.items():
                 if topic.name == name:
                     yaml_topic = topic
+                    yaml_topic_id = topic_id
                     break
 
             if yaml_topic:
@@ -209,6 +217,8 @@ def sync_topics(
                 # Show what's changing
                 old_config = db_topic.config
                 new_config = vars(yaml_topic)
+                # Ensure 'id' field matches YAML key
+                new_config['id'] = yaml_topic_id
 
                 changed_fields = []
                 for key in new_config:
