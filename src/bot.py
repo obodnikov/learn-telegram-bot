@@ -187,16 +187,23 @@ class LearningBot:
         Returns:
             Created session dictionary
         """
+        # Get topic configuration to retrieve questions_per_batch
+        topic = self.repository.get_topic(topic_id)
+        questions_per_batch = 10  # Default
+        if topic and topic.config:
+            questions_per_batch = topic.config.get('questions_per_batch', 10)
+
         session = {
             "topic_id": topic_id,
             "topic_name": topic_name,
             "current_question": None,
             "questions_answered": 0,
             "correct_answers": 0,
-            "start_time": None
+            "start_time": None,
+            "questions_per_batch": questions_per_batch
         }
         self.active_sessions[user_id] = session
-        logger.info(f"Created quiz session for user {user_id}, topic: {topic_name}")
+        logger.info(f"Created quiz session for user {user_id}, topic: {topic_name}, batch size: {questions_per_batch}")
         return session
 
     def end_session(self, user_id: int) -> Optional[Dict[str, Any]]:
