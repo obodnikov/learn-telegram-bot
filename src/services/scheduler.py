@@ -71,7 +71,8 @@ class QuestionScheduler:
                     # Generate questions
                     questions = await self.question_generator.generate_questions(
                         topic_id_str,
-                        count=questions_per_run
+                        count=questions_per_run,
+                        db_topic_id=topic.id
                     )
 
                     if not questions:
@@ -171,7 +172,8 @@ class QuestionScheduler:
 
                     questions = await self.question_generator.generate_questions(
                         topic_id_str,
-                        count=count
+                        count=count,
+                        db_topic_id=topic.id
                     )
 
                     if not questions:

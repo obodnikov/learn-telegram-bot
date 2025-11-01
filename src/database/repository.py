@@ -281,6 +281,39 @@ class Repository:
         with self.get_session() as session:
             return session.query(Question).filter(Question.id == question_id).first()
 
+    def get_questions_for_topic(self, topic_id: int) -> List[Question]:
+        """
+        Get all questions for a topic.
+
+        Args:
+            topic_id: Topic ID
+
+        Returns:
+            List of Question objects
+        """
+        with self.get_session() as session:
+            return session.query(Question).filter(Question.topic_id == topic_id).all()
+
+    def question_exists(self, topic_id: int, question_text: str) -> bool:
+        """
+        Check if a question with the same text already exists for a topic.
+
+        Args:
+            topic_id: Topic ID
+            question_text: Question text to check
+
+        Returns:
+            True if question exists, False otherwise
+        """
+        with self.get_session() as session:
+            existing = session.query(Question).filter(
+                and_(
+                    Question.topic_id == topic_id,
+                    Question.question_text == question_text
+                )
+            ).first()
+            return existing is not None
+
     def get_next_question(self, user_id: int, topic_id: int) -> Optional[Question]:
         """
         Get next question based on spaced repetition algorithm.
