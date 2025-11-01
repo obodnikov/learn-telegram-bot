@@ -34,7 +34,6 @@ def initialize_database() -> Repository:
 
     # Log absolute path for SQLite databases
     if db_url.startswith('sqlite:///'):
-        import os.path
         db_path = db_url.replace('sqlite:///', '')
         abs_path = os.path.abspath(db_path)
         logger.info(f"Database absolute path: {abs_path}")
