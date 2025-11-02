@@ -93,7 +93,8 @@ class LearningBot:
         from src.handlers.quiz import start_quiz_handler, next_question_handler
         from src.handlers.callbacks import (
             topic_selection_callback, answer_callback,
-            show_explanation_callback
+            show_explanation_callback, topic_stats_callback,
+            stats_back_callback
         )
 
         # Command handlers
@@ -116,6 +117,13 @@ class LearningBot:
         ))
         self.application.add_handler(CallbackQueryHandler(
             next_question_handler, pattern="^next$"
+        ))
+        # Stats callback handlers
+        self.application.add_handler(CallbackQueryHandler(
+            stats_back_callback, pattern="^stats:back$"
+        ))
+        self.application.add_handler(CallbackQueryHandler(
+            topic_stats_callback, pattern="^stats:"
         ))
 
         logger.info("Handlers registered successfully")

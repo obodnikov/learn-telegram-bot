@@ -155,3 +155,154 @@ async def _show_next_question(query, user_id: int, bot_instance) -> None:
     question_text += f"D: {question.choice_d}\n"
 
     await query.edit_message_text(question_text, reply_markup=reply_markup, parse_mode="Markdown")
+
+
+async def topic_stats_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Handle topic stats button click - show detailed stats for a specific topic."""
+    query = update.callback_query
+    await query.answer()
+
+    user_id = update.effective_user.id
+    topic_id = int(query.data.split(":")[1])
+
+    logger.info(f"Topic stats {topic_id} requested by user {user_id}")
+
+    bot_instance = get_bot_instance()
+    repository = bot_instance.repository
+
+    # Get topic
+    topic = repository.get_topic(topic_id)
+    if not topic:
+        await query.edit_message_text("Topic not found.")
+        return
+
+    # Get user from database
+    db_user = repository.get_user_by_telegram_id(user_id)
+    if not db_user:
+        await query.edit_message_text("User not found.")
+        return
+
+    # Get detailed topic stats
+    stats = repository.get_user_stats(db_user.id, topic_id)
+
+    # Format detailed statistics
+    stats_text = f"📊 *{topic.name}*\n"
+    stats_text += f"{'=' * 40}\n\n"
+
+    stats_text += f"*Question Progress:*\n"
+    stats_text += f"📚 Total Questions: {stats['total_questions']}\n"
+    stats_text += f"👁 Questions Seen: {stats['questions_seen']}\n"
+    stats_text += f"🆕 Not Yet Seen: {stats['questions_not_seen']}\n\n"
+
+    stats_text += f"*Performance:*\n"
+    stats_text += f"✅ Correct: {stats['total_correct']}\n"
+    stats_text += f"❌ Incorrect: {stats['total_incorrect']}\n"
+    stats_text += f"🎯 Accuracy: {stats['accuracy'] * 100:.1f}%\n\n"
+
+    stats_text += f"*Learning Status:*\n"
+    stats_text += f"⭐ Known: {stats['questions_known']}\n"
+    stats_text += f"📖 Learning: {stats['questions_learning']}\n"
+    stats_text += f"⏰ Due for Review: {stats['questions_due']}\n"
+
+    if stats['average_response_time']:
+        stats_text += f"\n*Speed:*\n"
+        stats_text += f"⚡ Avg Response Time: {stats['average_response_time']:.1f}s\n"
+
+    if stats['last_activity']:
+        last_activity = stats['last_activity']
+        if isinstance(last_activity, str):
+            last_activity = datetime.fromisoformat(last_activity)
+        stats_text += f"\n*Activity:*\n"
+        stats_text += f"🕐 Last Practiced: {last_activity.strftime('%Y-%m-%d %H:%M')}\n"
+
+    # Calculate progress percentage
+    progress_pct = 0
+    if stats['total_questions'] > 0:
+        progress_pct = (stats['questions_known'] / stats['total_questions']) * 100
+
+    stats_text += f"\n*Overall Progress:*\n"
+    stats_text += f"📈 Mastery Level: {progress_pct:.1f}%\n"
+
+    # Visual progress bar
+    bar_length = 10
+    filled = int(bar_length * progress_pct / 100)
+    bar = "█" * filled + "░" * (bar_length - filled)
+    stats_text += f"{bar} {progress_pct:.0f}%\n"
+
+    # Back button
+    keyboard = [[InlineKeyboardButton("« Back to All Stats", callback_data="stats:back")]]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    await query.edit_message_text(
+        stats_text,
+        parse_mode="Markdown",
+        reply_markup=reply_markup
+    )
+
+
+async def stats_back_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Handle back button from topic stats - return to main stats menu."""
+    query = update.callback_query
+    await query.answer()
+
+    user_id = update.effective_user.id
+    logger.info(f"Stats back button clicked by user {user_id}")
+
+    bot_instance = get_bot_instance()
+    repository = bot_instance.repository
+
+    # Get user from database
+    db_user = repository.get_user_by_telegram_id(user_id)
+    if not db_user:
+        await query.edit_message_text("User not found.")
+        return
+
+    # Get overall stats
+    stats = repository.get_user_stats(db_user.id)
+
+    # Format overall statistics summary (same as stats_command)
+    stats_text = f"📊 *Your Learning Statistics*\n\n"
+    stats_text += f"📚 Total Questions: {stats['total_questions']}\n"
+    stats_text += f"👁 Questions Seen: {stats['questions_seen']}\n"
+    stats_text += f"🆕 Not Yet Seen: {stats['questions_not_seen']}\n\n"
+
+    stats_text += f"✅ Correct: {stats['total_correct']}\n"
+    stats_text += f"❌ Incorrect: {stats['total_incorrect']}\n"
+    stats_text += f"🎯 Accuracy: {stats['accuracy'] * 100:.1f}%\n\n"
+
+    stats_text += f"⭐ Known: {stats['questions_known']}\n"
+    stats_text += f"📖 Learning: {stats['questions_learning']}\n"
+    stats_text += f"⏰ Due for Review: {stats['questions_due']}\n"
+
+    if stats['average_response_time']:
+        stats_text += f"\n⚡ Avg Response Time: {stats['average_response_time']:.1f}s"
+
+    if stats['last_activity']:
+        last_activity = stats['last_activity']
+        if isinstance(last_activity, str):
+            last_activity = datetime.fromisoformat(last_activity)
+        stats_text += f"\n🕐 Last Activity: {last_activity.strftime('%Y-%m-%d %H:%M')}"
+
+    stats_text += "\n\n_Tap a topic below for detailed stats:_"
+
+    # Create inline keyboard with topic buttons
+    topics = repository.get_all_topics(active_only=True)
+    keyboard = []
+
+    for topic in topics:
+        topic_stats = repository.get_user_stats(db_user.id, topic.id)
+        if topic_stats['questions_seen'] > 0:
+            # Show topic name with quick stats
+            button_text = f"📘 {topic.name} ({topic_stats['questions_seen']}/{topic_stats['total_questions']})"
+            keyboard.append([InlineKeyboardButton(
+                text=button_text,
+                callback_data=f"stats:{topic.id}"
+            )])
+
+    reply_markup = InlineKeyboardMarkup(keyboard) if keyboard else None
+
+    await query.edit_message_text(
+        stats_text,
+        parse_mode="Markdown",
+        reply_markup=reply_markup
+    )
