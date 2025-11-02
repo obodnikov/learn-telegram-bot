@@ -40,7 +40,8 @@ class QuestionGenerator:
         self,
         topic_id: str,
         count: int,
-        db_topic_id: int = None
+        db_topic_id: int = None,
+        max_output_tokens: int = 4000
     ) -> List[Dict[str, Any]]:
         """
         Generate questions for a topic.
@@ -48,6 +49,8 @@ class QuestionGenerator:
         Args:
             topic_id: Topic identifier
             count: Number of questions to generate
+            db_topic_id: Database topic ID for duplicate checking
+            max_output_tokens: Maximum output tokens for LLM response
 
         Returns:
             List of generated questions
@@ -56,6 +59,7 @@ class QuestionGenerator:
             QuestionGenerationError: If generation fails
         """
         logger.info(f"Generating {count} questions for topic: {topic_id}")
+        logger.debug(f"Max output tokens: {max_output_tokens}")
 
         try:
             # Get topic configuration
@@ -69,7 +73,7 @@ class QuestionGenerator:
             if not examples_config:
                 # No examples: standard generation
                 logger.info(f"Standard generation mode (no examples) for topic: {topic_id}")
-                return await self._generate_standard(topic_config, count)
+                return await self._generate_standard(topic_config, count, db_topic_id, max_output_tokens)
 
             # Load example file
             example_file = examples_config.get("file") if isinstance(examples_config, dict) else getattr(examples_config, 'file', None)
@@ -95,13 +99,13 @@ class QuestionGenerator:
 
             # Generate based on mode
             if mode == "standard":
-                return await self._generate_standard(topic_config, count, db_topic_id)
+                return await self._generate_standard(topic_config, count, db_topic_id, max_output_tokens)
             elif mode == "augment":
-                return await self._generate_augmented(topic_config, examples, count, db_topic_id)
+                return await self._generate_augmented(topic_config, examples, count, db_topic_id, max_output_tokens)
             elif mode == "template":
-                return await self._generate_templated(topic_config, examples, count, db_topic_id)
+                return await self._generate_templated(topic_config, examples, count, db_topic_id, max_output_tokens)
             elif mode == "hybrid":
-                return await self._generate_hybrid(topic_config, examples, count, use_ratio, db_topic_id)
+                return await self._generate_hybrid(topic_config, examples, count, use_ratio, db_topic_id, max_output_tokens)
             else:
                 raise ConfigurationError(f"Unknown generation mode: {mode}")
 
@@ -120,7 +124,8 @@ class QuestionGenerator:
         similarity_threshold: float = 0.85,
         duplicate_retry_threshold: float = 0.50,
         max_retries: int = 3,
-        recent_context_limit: int = 20
+        recent_context_limit: int = 20,
+        max_output_tokens: int = 4000
     ) -> List[Dict[str, Any]]:
         """
         Generate questions with enhanced duplicate detection and retry logic.
@@ -138,6 +143,7 @@ class QuestionGenerator:
             duplicate_retry_threshold: Retry if >threshold duplicates found (0.0-1.0, default: 0.50)
             max_retries: Maximum retry attempts (default: 3)
             recent_context_limit: Number of recent questions to show LLM (default: 20)
+            max_output_tokens: Maximum output tokens for LLM response (default: 4000)
 
         Returns:
             List of generated unique questions
@@ -149,7 +155,7 @@ class QuestionGenerator:
             logger.warning(
                 "Repository or db_topic_id not provided, falling back to standard generation"
             )
-            return await self.generate_questions(topic_id, count, db_topic_id)
+            return await self.generate_questions(topic_id, count, db_topic_id, max_output_tokens)
 
         logger.info(
             f"Enhanced generation for topic {topic_id}: count={count}, "
@@ -174,14 +180,15 @@ class QuestionGenerator:
             # Generate questions (with recent context if retry)
             if retry_count == 0:
                 # First attempt: standard generation
-                questions = await self.generate_questions(topic_id, count, db_topic_id)
+                questions = await self.generate_questions(topic_id, count, db_topic_id, max_output_tokens)
             else:
                 # Retry: inject stronger anti-duplicate prompt
                 questions = await self._generate_with_anti_duplicate_context(
                     topic_id,
                     count - len(all_unique_questions),  # Only generate what we still need
                     recent_questions,
-                    retry_count
+                    retry_count,
+                    max_output_tokens
                 )
 
             # Check duplicates using fuzzy matching
@@ -249,7 +256,8 @@ class QuestionGenerator:
         topic_id: str,
         count: int,
         recent_questions: List[str],
-        retry_number: int
+        retry_number: int,
+        max_output_tokens: int = 4000
     ) -> List[Dict[str, Any]]:
         """
         Generate questions with recent context to avoid duplicates.
@@ -259,6 +267,7 @@ class QuestionGenerator:
             count: Number of questions to generate
             recent_questions: Recent question texts to avoid
             retry_number: Current retry number (for logging)
+            max_output_tokens: Maximum output tokens for LLM response
 
         Returns:
             List of generated questions
@@ -282,7 +291,7 @@ class QuestionGenerator:
         )
 
         # Generate questions
-        questions = await self.llm_service.generate_questions(prompt)
+        questions = await self.llm_service.generate_questions(prompt, max_tokens=max_output_tokens)
 
         logger.info(f"Generated {len(questions)} questions with anti-duplicate context")
         return questions
@@ -338,7 +347,8 @@ Generate {count} completely NEW questions that do NOT overlap with the above.
         self,
         topic_config: Dict[str, Any],
         count: int,
-        db_topic_id: int = None
+        db_topic_id: int = None,
+        max_output_tokens: int = 4000
     ) -> List[Dict[str, Any]]:
         """
         Generate questions without examples.
@@ -347,6 +357,7 @@ Generate {count} completely NEW questions that do NOT overlap with the above.
             topic_config: Topic configuration
             count: Number of questions to generate
             db_topic_id: Database topic ID for duplicate checking
+            max_output_tokens: Maximum output tokens for LLM response
 
         Returns:
             List of generated questions (filtered for duplicates)
@@ -354,7 +365,7 @@ Generate {count} completely NEW questions that do NOT overlap with the above.
         logger.info("Generating questions using standard mode")
 
         prompt = self._build_prompt(topic_config, "standard", None, count)
-        questions = await self.llm_service.generate_questions(prompt)
+        questions = await self.llm_service.generate_questions(prompt, max_tokens=max_output_tokens)
 
         # Filter duplicates if repository is available
         if self.repository and db_topic_id:
@@ -368,7 +379,8 @@ Generate {count} completely NEW questions that do NOT overlap with the above.
         topic_config: Dict[str, Any],
         examples: List[ExampleQuestion],
         count: int,
-        db_topic_id: int = None
+        db_topic_id: int = None,
+        max_output_tokens: int = 4000
     ) -> List[Dict[str, Any]]:
         """
         Generate questions similar to examples.
@@ -378,6 +390,7 @@ Generate {count} completely NEW questions that do NOT overlap with the above.
             examples: Example questions
             count: Number of questions to generate
             db_topic_id: Database topic ID for duplicate checking
+            max_output_tokens: Maximum output tokens for LLM response
 
         Returns:
             List of generated questions (filtered for duplicates)
@@ -385,7 +398,7 @@ Generate {count} completely NEW questions that do NOT overlap with the above.
         logger.info(f"Generating {count} questions using augment mode with {len(examples)} examples")
 
         prompt = self._build_prompt(topic_config, "augment", examples, count)
-        questions = await self.llm_service.generate_questions(prompt)
+        questions = await self.llm_service.generate_questions(prompt, max_tokens=max_output_tokens)
 
         # Filter duplicates if repository is available
         if self.repository and db_topic_id:
@@ -399,7 +412,8 @@ Generate {count} completely NEW questions that do NOT overlap with the above.
         topic_config: Dict[str, Any],
         examples: List[ExampleQuestion],
         count: int,
-        db_topic_id: int = None
+        db_topic_id: int = None,
+        max_output_tokens: int = 4000
     ) -> List[Dict[str, Any]]:
         """
         Generate questions using example templates.
@@ -409,6 +423,7 @@ Generate {count} completely NEW questions that do NOT overlap with the above.
             examples: Example questions (used as templates)
             count: Number of questions to generate
             db_topic_id: Database topic ID for duplicate checking
+            max_output_tokens: Maximum output tokens for LLM response
 
         Returns:
             List of generated questions (filtered for duplicates)
@@ -416,7 +431,7 @@ Generate {count} completely NEW questions that do NOT overlap with the above.
         logger.info(f"Generating {count} questions using template mode")
 
         prompt = self._build_prompt(topic_config, "template", examples, count)
-        questions = await self.llm_service.generate_questions(prompt)
+        questions = await self.llm_service.generate_questions(prompt, max_tokens=max_output_tokens)
 
         # Filter duplicates if repository is available
         if self.repository and db_topic_id:
@@ -431,7 +446,8 @@ Generate {count} completely NEW questions that do NOT overlap with the above.
         examples: List[ExampleQuestion],
         total_count: int,
         use_ratio: float,
-        db_topic_id: int = None
+        db_topic_id: int = None,
+        max_output_tokens: int = 4000
     ) -> List[Dict[str, Any]]:
         """
         Generate mix of provided and new questions.
@@ -442,6 +458,7 @@ Generate {count} completely NEW questions that do NOT overlap with the above.
             total_count: Total number of questions needed
             use_ratio: Ratio of provided vs generated (0.3 = 30% from file)
             db_topic_id: Database topic ID for duplicate checking
+            max_output_tokens: Maximum output tokens for LLM response
 
         Returns:
             List of questions (mix of examples and generated, filtered for duplicates)
@@ -462,7 +479,7 @@ Generate {count} completely NEW questions that do NOT overlap with the above.
         # Generate remaining questions
         if num_to_generate > 0:
             prompt = self._build_prompt(topic_config, "hybrid", examples, num_to_generate)
-            generated_questions = await self.llm_service.generate_questions(prompt)
+            generated_questions = await self.llm_service.generate_questions(prompt, max_tokens=max_output_tokens)
 
             # Filter duplicates from generated questions
             if self.repository and db_topic_id:

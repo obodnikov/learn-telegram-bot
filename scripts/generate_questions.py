@@ -43,7 +43,8 @@ async def generate_questions(
     duplicate_retry_threshold: float = 0.50,
     max_retries: int = 3,
     recent_context: int = 20,
-    use_enhanced: bool = False
+    use_enhanced: bool = False,
+    max_output_tokens: int = 4000
 ) -> int:
     """
     Generate questions manually.
@@ -56,6 +57,7 @@ async def generate_questions(
         max_retries: Maximum retry attempts
         recent_context: Number of recent questions for LLM context
         use_enhanced: Use enhanced generation with duplicate detection
+        max_output_tokens: Maximum output tokens for LLM response
 
     Returns:
         Total number of questions generated
@@ -111,6 +113,7 @@ async def generate_questions(
         model = os.getenv('OPENROUTER_MODEL', 'anthropic/claude-3.5-sonnet')
         llm_service = LLMService(api_key, model)
         logger.info(f"Using LLM model: {model}")
+        logger.info(f"Max output tokens: {max_output_tokens}")
 
         # Initialize question generator
         example_parser = ExampleParser()
@@ -165,14 +168,16 @@ async def generate_questions(
                         similarity_threshold=similarity_threshold,
                         duplicate_retry_threshold=duplicate_retry_threshold,
                         max_retries=max_retries,
-                        recent_context_limit=recent_context
+                        recent_context_limit=recent_context,
+                        max_output_tokens=max_output_tokens
                     )
                 else:
                     # Use standard generation
                     questions = await question_generator.generate_questions(
                         topic_id=yaml_topic_id,
                         count=count,
-                        db_topic_id=topic.id
+                        db_topic_id=topic.id,
+                        max_output_tokens=max_output_tokens
                     )
 
                 # Save questions to database
@@ -232,6 +237,11 @@ Duplicate Detection Parameters (--enhanced mode):
   --max-retries              Maximum retry attempts (default: 3)
   --recent-context           Recent questions for LLM context (default: 20)
 
+Advanced Parameters:
+  --max-output-tokens        Maximum LLM output tokens (default: 4000)
+                             Recommended: 250-300 tokens per question
+                             Example: 15 questions × 300 = 4500 tokens
+
 Requirements:
   - OPENROUTER_API_KEY must be set in .env file
   - Topics must be seeded (run: python scripts/seed_topics.py)
@@ -287,6 +297,13 @@ Requirements:
         help='Number of recent questions to show LLM as context (default: 20)'
     )
 
+    parser.add_argument(
+        '--max-output-tokens',
+        type=int,
+        default=4000,
+        help='Maximum output tokens for LLM response (default: 4000, recommended: 250-300 per question)'
+    )
+
     args = parser.parse_args()
 
     # Validate arguments
@@ -310,6 +327,10 @@ Requirements:
         logger.error("Recent context must be between 0 and 100")
         sys.exit(1)
 
+    if args.max_output_tokens < 1000 or args.max_output_tokens > 16000:
+        logger.error("Max output tokens must be between 1000 and 16000")
+        sys.exit(1)
+
     # Run generation
     try:
         total = asyncio.run(generate_questions(
@@ -319,7 +340,8 @@ Requirements:
             duplicate_retry_threshold=args.duplicate_retry_threshold,
             max_retries=args.max_retries,
             recent_context=args.recent_context,
-            use_enhanced=args.enhanced
+            use_enhanced=args.enhanced,
+            max_output_tokens=args.max_output_tokens
         ))
 
         if total == 0:
