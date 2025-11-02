@@ -175,7 +175,6 @@ The bot provides a convenient commands menu accessible via the menu button in Te
 - `/start` - Register and welcome message
 - `/help` - Show available commands
 - `/topics` - List topics and start quiz (requires questions!)
-- `/quiz` - Start a quiz session (redirects to /topics)
 - `/stats` - View learning statistics
 - `/cancel` - End current quiz session
 
