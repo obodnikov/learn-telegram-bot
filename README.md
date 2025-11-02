@@ -169,11 +169,17 @@ The bot will:
 5. Start question generation scheduler (if enabled)
 
 **Telegram Commands:**
+
+The bot provides a convenient commands menu accessible via the menu button in Telegram:
+
 - `/start` - Register and welcome message
 - `/help` - Show available commands
 - `/topics` - List topics and start quiz (requires questions!)
+- `/quiz` - Start a quiz session (redirects to /topics)
 - `/stats` - View learning statistics
 - `/cancel` - End current quiz session
+
+The commands menu is automatically set up when the bot starts, making it easy for users to discover and use available commands.
 
 ---
 
