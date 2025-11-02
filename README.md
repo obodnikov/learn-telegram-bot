@@ -210,10 +210,11 @@ The `/stats` command provides comprehensive learning analytics:
 
 The bot can show topics but **cannot start quizzes** without questions!
 
-### Option 1: Manual Generation (Recommended)
+### Manual Generation (Recommended)
 
-Generate questions on-demand using the convenience script:
+Generate questions on-demand using the CLI script with standard or enhanced mode:
 
+**Standard Generation:**
 ```bash
 # Generate 10 questions per topic
 python scripts/generate_questions.py --count 10
@@ -225,12 +226,29 @@ python scripts/generate_questions.py --topic 1 --count 15
 python scripts/generate_questions.py
 ```
 
+**Enhanced Generation (with Duplicate Detection):**
+```bash
+# Use fuzzy duplicate detection with retry logic
+python scripts/generate_questions.py --enhanced --count 10
+
+# Fine-tune duplicate detection
+python scripts/generate_questions.py --enhanced \
+  --similarity-threshold 0.90 \
+  --duplicate-retry-threshold 0.40 \
+  --max-retries 5
+
+# Generate many questions with higher token limit
+python scripts/generate_questions.py --count 20 --max-output-tokens 8000
+```
+
 **Requirements**:
 - OpenRouter API key (get at https://openrouter.ai/keys)
 - Add to `.env`: `OPENROUTER_API_KEY=sk-or-v1-your-key`
 - ~$0.02-0.05 per 10 questions
 
-### Option 2: Automatic Generation
+**For detailed usage examples and explanations**, see [GENERATE_QUESTIONS.md](GENERATE_QUESTIONS.md).
+
+### Automatic Generation (Scheduler)
 
 Enable continuous generation in `.env`:
 
@@ -241,7 +259,7 @@ QUESTION_GENERATION_SCHEDULE=0 */3 * * *  # Every 3 hours
 QUESTIONS_PER_RUN=5  # 5 per topic
 ```
 
-Then restart the bot. Questions will generate automatically.
+Then restart the bot. Questions will generate automatically on schedule.
 
 **Cost estimate**: ~$0.05-0.10 per day with default settings.
 
@@ -255,7 +273,7 @@ python scripts/diagnose_database.py
 #   Total questions: 20 (or whatever you generated)
 ```
 
-**For detailed instructions**, see [INSTALLATION.md - Adding Questions](INSTALLATION.md#post-installation-adding-questions).
+**For detailed generation guide with examples**, see [GENERATE_QUESTIONS.md](GENERATE_QUESTIONS.md).
 
 ### Smart Question Management
 
