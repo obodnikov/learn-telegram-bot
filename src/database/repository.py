@@ -454,6 +454,84 @@ class Repository:
             ).first()
             return progress is None
 
+    def check_duplicate_question_fuzzy(
+        self,
+        topic_id: int,
+        question_text: str,
+        threshold: float = 0.85
+    ) -> tuple[bool, float]:
+        """
+        Check if question is duplicate using fuzzy string matching.
+
+        Args:
+            topic_id: Topic ID to check within
+            question_text: Question text to check
+            threshold: Similarity threshold (0.0-1.0), default 0.85
+
+        Returns:
+            Tuple of (is_duplicate, max_similarity_score)
+            - is_duplicate: True if any existing question exceeds threshold
+            - max_similarity_score: Highest similarity found (0.0-1.0)
+        """
+        from difflib import SequenceMatcher
+
+        with self.get_session() as session:
+            # Get all questions for this topic
+            existing_questions = session.query(Question).filter(
+                Question.topic_id == topic_id
+            ).all()
+
+            if not existing_questions:
+                return False, 0.0
+
+            max_similarity = 0.0
+
+            # Check fuzzy similarity against each existing question
+            for existing_q in existing_questions:
+                similarity = SequenceMatcher(
+                    None,
+                    question_text.lower().strip(),
+                    existing_q.question_text.lower().strip()
+                ).ratio()
+
+                max_similarity = max(max_similarity, similarity)
+
+                # Early exit if we find a duplicate
+                if similarity > threshold:
+                    logger.debug(
+                        f"Duplicate found: similarity={similarity:.2f} "
+                        f"(threshold={threshold})\n"
+                        f"New: {question_text[:50]}...\n"
+                        f"Existing: {existing_q.question_text[:50]}..."
+                    )
+                    return True, similarity
+
+            return False, max_similarity
+
+    def get_recent_questions(
+        self,
+        topic_id: int,
+        limit: int = 20
+    ) -> list[str]:
+        """
+        Get recent question texts for LLM context (to avoid duplicates).
+
+        Args:
+            topic_id: Topic ID
+            limit: Number of recent questions to fetch (default: 20)
+
+        Returns:
+            List of question texts, ordered by creation date (newest first)
+        """
+        with self.get_session() as session:
+            questions = session.query(Question).filter(
+                Question.topic_id == topic_id
+            ).order_by(
+                Question.created_at.desc()
+            ).limit(limit).all()
+
+            return [q.question_text for q in questions]
+
     # Progress operations
 
     def update_progress(

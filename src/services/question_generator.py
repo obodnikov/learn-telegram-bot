@@ -112,6 +112,228 @@ class QuestionGenerator:
                 raise
             raise QuestionGenerationError(error_msg)
 
+    async def generate_questions_with_dedup(
+        self,
+        topic_id: str,
+        count: int,
+        db_topic_id: int = None,
+        similarity_threshold: float = 0.85,
+        duplicate_retry_threshold: float = 0.50,
+        max_retries: int = 3,
+        recent_context_limit: int = 20
+    ) -> List[Dict[str, Any]]:
+        """
+        Generate questions with enhanced duplicate detection and retry logic.
+
+        This method extends the standard generation with:
+        1. Fuzzy duplicate detection using similarity threshold
+        2. Recent questions context for LLM (to avoid duplicates)
+        3. Automatic retry if duplicate rate exceeds threshold
+
+        Args:
+            topic_id: Topic identifier
+            count: Number of questions to generate
+            db_topic_id: Database topic ID for duplicate checking
+            similarity_threshold: Reject questions with >threshold similarity (0.0-1.0, default: 0.85)
+            duplicate_retry_threshold: Retry if >threshold duplicates found (0.0-1.0, default: 0.50)
+            max_retries: Maximum retry attempts (default: 3)
+            recent_context_limit: Number of recent questions to show LLM (default: 20)
+
+        Returns:
+            List of generated unique questions
+
+        Raises:
+            QuestionGenerationError: If generation fails
+        """
+        if not self.repository or not db_topic_id:
+            logger.warning(
+                "Repository or db_topic_id not provided, falling back to standard generation"
+            )
+            return await self.generate_questions(topic_id, count, db_topic_id)
+
+        logger.info(
+            f"Enhanced generation for topic {topic_id}: count={count}, "
+            f"similarity_threshold={similarity_threshold}, "
+            f"duplicate_retry_threshold={duplicate_retry_threshold}, "
+            f"max_retries={max_retries}"
+        )
+
+        # Get recent questions for LLM context
+        recent_questions = self.repository.get_recent_questions(
+            db_topic_id,
+            limit=recent_context_limit
+        )
+
+        retry_count = 0
+        all_unique_questions = []
+
+        while retry_count <= max_retries:
+            if retry_count > 0:
+                logger.info(f"Retry attempt {retry_count}/{max_retries}")
+
+            # Generate questions (with recent context if retry)
+            if retry_count == 0:
+                # First attempt: standard generation
+                questions = await self.generate_questions(topic_id, count, db_topic_id)
+            else:
+                # Retry: inject stronger anti-duplicate prompt
+                questions = await self._generate_with_anti_duplicate_context(
+                    topic_id,
+                    count - len(all_unique_questions),  # Only generate what we still need
+                    recent_questions,
+                    retry_count
+                )
+
+            # Check duplicates using fuzzy matching
+            unique_questions = []
+            duplicate_count = 0
+
+            for question in questions:
+                question_text = question.get("question_text", "")
+
+                # Check fuzzy duplicate
+                is_duplicate, similarity = self.repository.check_duplicate_question_fuzzy(
+                    db_topic_id,
+                    question_text,
+                    threshold=similarity_threshold
+                )
+
+                if is_duplicate:
+                    duplicate_count += 1
+                    logger.debug(
+                        f"Fuzzy duplicate detected (similarity={similarity:.2f}): "
+                        f"{question_text[:50]}..."
+                    )
+                else:
+                    unique_questions.append(question)
+
+            # Calculate duplicate rate
+            total_generated = len(questions)
+            duplicate_rate = duplicate_count / total_generated if total_generated > 0 else 0.0
+
+            logger.info(
+                f"Generation result: {len(unique_questions)} unique, "
+                f"{duplicate_count} duplicates ({duplicate_rate*100:.1f}% duplicate rate)"
+            )
+
+            # Add unique questions to our collection
+            all_unique_questions.extend(unique_questions)
+
+            # Check if we have enough questions
+            if len(all_unique_questions) >= count:
+                logger.info(
+                    f"Successfully generated {len(all_unique_questions)} unique questions"
+                )
+                return all_unique_questions[:count]  # Return exactly what was requested
+
+            # Check if we should retry
+            if duplicate_rate > duplicate_retry_threshold and retry_count < max_retries:
+                logger.warning(
+                    f"Duplicate rate ({duplicate_rate*100:.1f}%) exceeds threshold "
+                    f"({duplicate_retry_threshold*100:.1f}%), retrying..."
+                )
+                retry_count += 1
+            else:
+                # Either duplicate rate is acceptable, or we've exhausted retries
+                if retry_count >= max_retries:
+                    logger.warning(
+                        f"Max retries ({max_retries}) reached. "
+                        f"Returning {len(all_unique_questions)}/{count} unique questions."
+                    )
+                return all_unique_questions
+
+        return all_unique_questions
+
+    async def _generate_with_anti_duplicate_context(
+        self,
+        topic_id: str,
+        count: int,
+        recent_questions: List[str],
+        retry_number: int
+    ) -> List[Dict[str, Any]]:
+        """
+        Generate questions with recent context to avoid duplicates.
+
+        Args:
+            topic_id: Topic identifier
+            count: Number of questions to generate
+            recent_questions: Recent question texts to avoid
+            retry_number: Current retry number (for logging)
+
+        Returns:
+            List of generated questions
+        """
+        logger.info(
+            f"Generating with anti-duplicate context: "
+            f"{len(recent_questions)} recent questions provided"
+        )
+
+        # Get topic configuration
+        topic_config = self.config_loader.get_topic(topic_id)
+        if not topic_config:
+            raise ConfigurationError(f"Topic not found: {topic_id}")
+
+        # Build prompt with anti-duplicate instructions
+        prompt = self._build_prompt_with_recent_context(
+            topic_config,
+            count,
+            recent_questions,
+            retry_number
+        )
+
+        # Generate questions
+        questions = await self.llm_service.generate_questions(prompt)
+
+        logger.info(f"Generated {len(questions)} questions with anti-duplicate context")
+        return questions
+
+    def _build_prompt_with_recent_context(
+        self,
+        topic_config: Dict[str, Any],
+        count: int,
+        recent_questions: List[str],
+        retry_number: int
+    ) -> str:
+        """
+        Build prompt with recent questions context to avoid duplicates.
+
+        Args:
+            topic_config: Topic configuration
+            count: Number of questions to generate
+            recent_questions: Recent question texts to avoid
+            retry_number: Current retry number (affects prompt strength)
+
+        Returns:
+            Prompt string with anti-duplicate instructions
+        """
+        # Get base prompt
+        base_prompt = self._build_prompt(topic_config, "standard", None, count)
+
+        # Add anti-duplicate section
+        if recent_questions:
+            recent_list = "\n".join([f"- {q}" for q in recent_questions[:20]])
+            anti_dup_strength = "CRITICAL" if retry_number > 1 else "IMPORTANT"
+
+            anti_dup_section = f"""
+
+{anti_dup_strength}: AVOID DUPLICATE QUESTIONS
+
+The following questions already exist for this topic. You MUST generate questions that are:
+1. Semantically different (not just rephrased versions)
+2. Cover different vocabulary/concepts
+3. Use different sentence structures
+
+EXISTING QUESTIONS TO AVOID:
+{recent_list}
+
+Generate {count} completely NEW questions that do NOT overlap with the above.
+"""
+            prompt = base_prompt + anti_dup_section
+        else:
+            prompt = base_prompt
+
+        return prompt
+
     async def _generate_standard(
         self,
         topic_config: Dict[str, Any],
