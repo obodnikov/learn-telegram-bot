@@ -1,5 +1,6 @@
 """Database repository for all data access operations."""
 
+import random
 from typing import List, Optional, Dict, Any
 from datetime import datetime, timedelta
 from sqlalchemy import create_engine, select, func, and_, or_
@@ -316,12 +317,14 @@ class Repository:
 
     def get_next_question(self, user_id: int, topic_id: int) -> Optional[Question]:
         """
-        Get next question based on spaced repetition algorithm.
+        Get next question based on spaced repetition algorithm with randomization.
 
         Priority:
-        1. Questions due for review (next_review_at <= now)
-        2. Questions never seen by user
-        3. Questions with lowest consecutive_correct count
+        1. Questions due for review (next_review_at <= now) - random selection
+        2. Questions never seen by user - random selection
+        3. Questions with consecutive_correct < 2 - random selection
+
+        Excludes questions with consecutive_correct >= 2 (mastered)
 
         Args:
             user_id: User ID
@@ -355,18 +358,20 @@ class Repository:
             for prog in progresses:
                 progress_map[prog.question_id] = prog
 
-            # Priority 1: Questions due for review
+            # Priority 1: Questions due for review (exclude mastered ones)
             due_questions = []
             for q in all_questions:
                 prog = progress_map.get(q.id)
                 if prog and prog.next_review_at and prog.next_review_at <= now:
-                    due_questions.append((q, prog))
+                    # Exclude mastered questions (consecutive_correct >= 2)
+                    if prog.consecutive_correct < 2:
+                        due_questions.append(q)
 
             if due_questions:
-                # Sort by next_review_at (oldest first)
-                due_questions.sort(key=lambda x: x[1].next_review_at)
-                logger.info(f"Selected due question ID: {due_questions[0][0].id}")
-                return due_questions[0][0]
+                # Random selection from due questions
+                selected = random.choice(due_questions)
+                logger.info(f"Selected due question ID: {selected.id} (random from {len(due_questions)} due)")
+                return selected
 
             # Priority 2: Questions never seen
             unseen_questions = []
@@ -375,23 +380,26 @@ class Repository:
                     unseen_questions.append(q)
 
             if unseen_questions:
-                # Return first unseen question (could randomize here)
-                logger.info(f"Selected unseen question ID: {unseen_questions[0].id}")
-                return unseen_questions[0]
+                # Random selection from unseen questions
+                selected = random.choice(unseen_questions)
+                logger.info(f"Selected unseen question ID: {selected.id} (random from {len(unseen_questions)} unseen)")
+                return selected
 
-            # Priority 3: Questions with lowest consecutive_correct
-            if all_questions:
-                questions_with_progress = [
-                    (q, progress_map.get(q.id, None)) for q in all_questions
-                ]
-                # Sort by consecutive_correct (ascending)
-                questions_with_progress.sort(
-                    key=lambda x: x[1].consecutive_correct if x[1] else 0
-                )
-                selected_q = questions_with_progress[0][0]
-                logger.info(f"Selected low-mastery question ID: {selected_q.id}")
-                return selected_q
+            # Priority 3: Questions with consecutive_correct < 2 (not mastered)
+            non_mastered = []
+            for q in all_questions:
+                prog = progress_map.get(q.id)
+                if prog and prog.consecutive_correct < 2:
+                    non_mastered.append(q)
 
+            if non_mastered:
+                # Random selection from non-mastered questions
+                selected = random.choice(non_mastered)
+                logger.info(f"Selected non-mastered question ID: {selected.id} (random from {len(non_mastered)} non-mastered)")
+                return selected
+
+            # All questions are mastered (consecutive_correct >= 2)
+            logger.info(f"All questions for topic {topic_id} are mastered (consecutive_correct >= 2)")
             return None
 
     # Progress operations
