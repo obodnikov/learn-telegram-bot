@@ -1,6 +1,7 @@
 """Main bot module for Telegram bot initialization and management."""
 
 from typing import Optional, Dict, Any
+from telegram import BotCommand
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, MessageHandler, filters
 from src.utils.logger import get_logger
 from src.database.repository import Repository
@@ -92,7 +93,8 @@ class LearningBot:
         from src.handlers.quiz import start_quiz_handler, next_question_handler
         from src.handlers.callbacks import (
             topic_selection_callback, answer_callback,
-            show_explanation_callback
+            show_explanation_callback, topic_stats_callback,
+            stats_back_callback
         )
 
         # Command handlers
@@ -116,8 +118,32 @@ class LearningBot:
         self.application.add_handler(CallbackQueryHandler(
             next_question_handler, pattern="^next$"
         ))
+        # Stats callback handlers
+        self.application.add_handler(CallbackQueryHandler(
+            stats_back_callback, pattern="^stats:back$"
+        ))
+        self.application.add_handler(CallbackQueryHandler(
+            topic_stats_callback, pattern="^stats:"
+        ))
 
         logger.info("Handlers registered successfully")
+
+    async def _set_bot_commands(self) -> None:
+        """Set bot commands menu for Telegram."""
+        commands = [
+            BotCommand(command="start", description="Initialize bot and register"),
+            BotCommand(command="help", description="Show all commands"),
+            BotCommand(command="topics", description="View available learning topics"),
+            BotCommand(command="quiz", description="Start a quiz session"),
+            BotCommand(command="stats", description="Show your learning statistics"),
+            BotCommand(command="cancel", description="Cancel current quiz session"),
+        ]
+
+        try:
+            await self.application.bot.set_my_commands(commands)
+            logger.info("Bot commands menu set successfully")
+        except Exception as e:
+            logger.error(f"Failed to set bot commands: {e}")
 
     async def start(self) -> None:
         """Start the bot with polling."""
@@ -130,6 +156,9 @@ class LearningBot:
 
             # Initialize the application
             async with self.application:
+                # Set bot commands menu
+                await self._set_bot_commands()
+
                 # Start polling
                 logger.info("Bot is running. Press Ctrl+C to stop.")
                 await self.application.start()

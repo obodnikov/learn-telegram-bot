@@ -18,7 +18,7 @@ An intelligent Telegram bot for learning foreign languages, historical facts, an
 - 📝 **Example-Based Learning**: Configure question style using example files
 - 🔄 **Smart Duplicate Prevention**: Automatically tracks used examples and prevents duplicate questions
 - 🌍 **Multilingual**: Support for any language pair (e.g., Hungarian/Russian)
-- 📊 **Progress Tracking**: Analytics on question performance and user learning
+- 📊 **Interactive Statistics**: Comprehensive learning analytics with per-topic drill-down
 - ⚙️ **Highly Configurable**: YAML-based topic and prompt configuration
 - 🛠️ **Topic Management**: CLI tools for syncing, updating, and managing topics
 
@@ -169,11 +169,39 @@ The bot will:
 5. Start question generation scheduler (if enabled)
 
 **Telegram Commands:**
+
+The bot provides a convenient commands menu accessible via the menu button in Telegram:
+
 - `/start` - Register and welcome message
 - `/help` - Show available commands
 - `/topics` - List topics and start quiz (requires questions!)
+- `/quiz` - Start a quiz session (redirects to /topics)
 - `/stats` - View learning statistics
 - `/cancel` - End current quiz session
+
+The commands menu is automatically set up when the bot starts, making it easy for users to discover and use available commands.
+
+### Learning Statistics
+
+The `/stats` command provides comprehensive learning analytics:
+
+**Interactive Menu:**
+- Overall statistics across all topics
+- Tap topic buttons to view detailed per-topic stats
+- Visual progress bars and mastery percentages
+
+**Metrics Tracked:**
+- Total questions, seen, and not yet seen
+- Correct/incorrect answers and accuracy
+- Questions known (mastered with 2+ consecutive correct)
+- Questions currently learning
+- Questions due for review (spaced repetition)
+- Average response time
+- Last activity timestamp
+
+**Example**: Type `/stats` → tap "Hungarian Vocabulary - Beginner" → see detailed progress with visual indicators.
+
+**For complete documentation**, see [STATS_FEATURE.md](STATS_FEATURE.md).
 
 ---
 

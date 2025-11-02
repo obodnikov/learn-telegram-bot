@@ -130,7 +130,7 @@ async def topics_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
 
 async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """
-    Handle /stats command - Show user statistics.
+    Handle /stats command - Show interactive user statistics menu.
 
     Args:
         update: Telegram update object
@@ -154,41 +154,59 @@ async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
     # Get overall stats
     stats = repository.get_user_stats(db_user.id)
 
-    if stats['total_questions_seen'] == 0:
+    if stats['questions_seen'] == 0:
         await update.message.reply_text(
             "You haven't answered any questions yet. Use /topics to start learning!"
         )
         return
 
-    # Format statistics message
-    stats_text = f"""
-*Your Learning Statistics*
+    # Format overall statistics summary
+    stats_text = f"📊 *Your Learning Statistics*\n\n"
+    stats_text += f"📚 Total Questions: {stats['total_questions']}\n"
+    stats_text += f"👁 Questions Seen: {stats['questions_seen']}\n"
+    stats_text += f"🆕 Not Yet Seen: {stats['questions_not_seen']}\n\n"
 
-Total Questions: {stats['total_questions_seen']}
-Correct Answers: {stats['total_correct']}
-Incorrect Answers: {stats['total_incorrect']}
-Accuracy: {stats['accuracy'] * 100:.1f}%
-Questions Mastered: {stats['questions_mastered']}
-"""
+    stats_text += f"✅ Correct: {stats['total_correct']}\n"
+    stats_text += f"❌ Incorrect: {stats['total_incorrect']}\n"
+    stats_text += f"🎯 Accuracy: {stats['accuracy'] * 100:.1f}%\n\n"
+
+    stats_text += f"⭐ Known: {stats['questions_known']}\n"
+    stats_text += f"📖 Learning: {stats['questions_learning']}\n"
+    stats_text += f"⏰ Due for Review: {stats['questions_due']}\n"
 
     if stats['average_response_time']:
-        stats_text += f"Avg Response Time: {stats['average_response_time']:.1f}s\n"
+        stats_text += f"\n⚡ Avg Response Time: {stats['average_response_time']:.1f}s"
 
-    # Get topic-specific stats
+    if stats['last_activity']:
+        from datetime import datetime
+        last_activity = stats['last_activity']
+        if isinstance(last_activity, str):
+            last_activity = datetime.fromisoformat(last_activity)
+        stats_text += f"\n🕐 Last Activity: {last_activity.strftime('%Y-%m-%d %H:%M')}"
+
+    stats_text += "\n\n_Tap a topic below for detailed stats:_"
+
+    # Create inline keyboard with topic buttons
     topics = repository.get_all_topics(active_only=True)
-    if topics:
-        stats_text += "\n*Per Topic:*\n"
-        for topic in topics:
-            topic_stats = repository.get_user_stats(db_user.id, topic.id)
-            if topic_stats['total_questions_seen'] > 0:
-                stats_text += (
-                    f"\n{topic.name}:\n"
-                    f"  Questions: {topic_stats['total_questions_seen']}\n"
-                    f"  Accuracy: {topic_stats['accuracy'] * 100:.1f}%\n"
-                    f"  Mastered: {topic_stats['questions_mastered']}\n"
-                )
+    keyboard = []
 
-    await update.message.reply_text(stats_text, parse_mode="Markdown")
+    for topic in topics:
+        topic_stats = repository.get_user_stats(db_user.id, topic.id)
+        if topic_stats['questions_seen'] > 0:
+            # Show topic name with quick stats
+            button_text = f"📘 {topic.name} ({topic_stats['questions_seen']}/{topic_stats['total_questions']})"
+            keyboard.append([InlineKeyboardButton(
+                text=button_text,
+                callback_data=f"stats:{topic.id}"
+            )])
+
+    reply_markup = InlineKeyboardMarkup(keyboard) if keyboard else None
+
+    await update.message.reply_text(
+        stats_text,
+        parse_mode="Markdown",
+        reply_markup=reply_markup
+    )
 
 
 async def cancel_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:

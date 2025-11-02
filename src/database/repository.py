@@ -494,9 +494,27 @@ class Repository:
             topic_id: Optional topic ID to filter by
 
         Returns:
-            Dictionary with statistics
+            Dictionary with statistics including:
+            - total_questions: Total questions in topic/all topics
+            - questions_seen: Questions user has encountered
+            - questions_not_seen: Questions never encountered
+            - total_correct: Total correct answers
+            - total_incorrect: Total incorrect answers
+            - accuracy: Percentage of correct answers
+            - questions_known: Questions with consecutive_correct >= 2 (mastered)
+            - questions_learning: Questions seen but not yet known
+            - questions_due: Questions due for review now
+            - average_response_time: Average time to answer
+            - last_activity: Most recent activity timestamp
         """
         with self.get_session() as session:
+            # Get total questions count
+            total_questions_query = session.query(Question)
+            if topic_id:
+                total_questions_query = total_questions_query.filter(Question.topic_id == topic_id)
+            total_questions = total_questions_query.count()
+
+            # Get user progress
             query = session.query(UserProgress).filter(UserProgress.user_id == user_id)
 
             if topic_id:
@@ -507,12 +525,17 @@ class Repository:
 
             if not progresses:
                 return {
-                    'total_questions_seen': 0,
+                    'total_questions': total_questions,
+                    'questions_seen': 0,
+                    'questions_not_seen': total_questions,
                     'total_correct': 0,
                     'total_incorrect': 0,
                     'accuracy': 0.0,
+                    'questions_known': 0,
+                    'questions_learning': 0,
+                    'questions_due': 0,
                     'average_response_time': None,
-                    'questions_mastered': 0  # consecutive_correct >= 3
+                    'last_activity': None
                 }
 
             total_correct = sum(p.times_correct for p in progresses)
@@ -522,15 +545,34 @@ class Repository:
             response_times = [p.average_response_time for p in progresses if p.average_response_time]
             avg_response_time = sum(response_times) / len(response_times) if response_times else None
 
-            questions_mastered = sum(1 for p in progresses if p.consecutive_correct >= 3)
+            # Known = consecutive_correct >= 2 (matches mastery exclusion in get_next_question)
+            questions_known = sum(1 for p in progresses if p.consecutive_correct >= 2)
+            questions_seen = len(progresses)
+            questions_learning = questions_seen - questions_known
+
+            # Questions due for review
+            now = datetime.utcnow()
+            questions_due = sum(
+                1 for p in progresses
+                if p.next_review_at and p.next_review_at <= now and p.consecutive_correct < 2
+            )
+
+            # Last activity
+            last_shown_times = [p.last_shown_at for p in progresses if p.last_shown_at]
+            last_activity = max(last_shown_times) if last_shown_times else None
 
             return {
-                'total_questions_seen': len(progresses),
+                'total_questions': total_questions,
+                'questions_seen': questions_seen,
+                'questions_not_seen': total_questions - questions_seen,
                 'total_correct': total_correct,
                 'total_incorrect': total_incorrect,
                 'accuracy': total_correct / total_attempts if total_attempts > 0 else 0.0,
+                'questions_known': questions_known,
+                'questions_learning': questions_learning,
+                'questions_due': questions_due,
                 'average_response_time': avg_response_time,
-                'questions_mastered': questions_mastered
+                'last_activity': last_activity
             }
 
     def update_question_analytics(self, question_id: int) -> None:
