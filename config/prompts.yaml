@@ -24,9 +24,12 @@ question_generation:
       Return as JSON array matching this structure exactly:
       [
         {{
-          "question": "...",
-          "choices": {{"A": "...", "B": "...", "C": "...", "D": "..."}},
-          "correct": "B",
+          "question_text": "...",
+          "choice_a": "...",
+          "choice_b": "...",
+          "choice_c": "...",
+          "choice_d": "...",
+          "correct_answer": "B",
           "explanation": "English: ...\\n\\nSpanish: ...",
           "difficulty": "beginner",
           "tags": ["...", "..."]
@@ -36,36 +39,62 @@ question_generation:
     # Mode: template - use structure, vary content
     template_prompt: |
       You are a language learning expert. I will provide template questions that show the EXACT structure to follow.
-      
+
       Templates:
       {examples}
-      
+
       Generate {count} questions using these EXACT templates but with DIFFERENT vocabulary/phrases.
-      
+
       Topic: {target_language} - {name}
       Context: {context}
-      
+
       Requirements:
       - Keep the same question structure
       - Change only the specific words/phrases being tested
       - Maintain the same explanation format
       - Keep difficulty and style identical
-      
-      Return as JSON array.
+
+      Return as JSON array with this structure:
+      [
+        {{
+          "question_text": "...",
+          "choice_a": "...",
+          "choice_b": "...",
+          "choice_c": "...",
+          "choice_d": "...",
+          "correct_answer": "B",
+          "explanation": "...",
+          "difficulty": "beginner",
+          "tags": ["...", "..."]
+        }}
+      ]
     
     # Mode: hybrid - mix provided + generated
     hybrid_prompt: |
       You are a language learning expert. I will provide a mix of pre-written questions and need you to generate additional ones.
-      
+
       Pre-written questions (use these as-is):
       {provided_questions}
-      
+
       Example style (generate new questions like these):
       {example_style}
-      
+
       Generate {additional_count} MORE questions following the example style.
-      
+
       Return complete JSON array including PROVIDED questions first, then your GENERATED questions.
+
+      Use this structure for each question:
+      {{
+        "question_text": "...",
+        "choice_a": "...",
+        "choice_b": "...",
+        "choice_c": "...",
+        "choice_d": "...",
+        "correct_answer": "B",
+        "explanation": "...",
+        "difficulty": "beginner",
+        "tags": ["...", "..."]
+      }}
     
     # Mode: standard - no examples provided
     standard_prompt: |
@@ -85,14 +114,12 @@ question_generation:
       Return as JSON array with this structure:
       [
         {{
-          "question": "What does 'Hola' mean?",
-          "choices": {{
-            "A": "Goodbye",
-            "B": "Hello",
-            "C": "Please",
-            "D": "Thank you"
-          }},
-          "correct": "B",
+          "question_text": "What does 'Hola' mean?",
+          "choice_a": "Goodbye",
+          "choice_b": "Hello",
+          "choice_c": "Please",
+          "choice_d": "Thank you",
+          "correct_answer": "B",
           "explanation": "English: 'Hola' is the most common Spanish greeting...\\nSpanish: 'Hola' es el saludo más común...",
           "difficulty": "beginner",
           "tags": ["greeting", "basic"]
@@ -102,44 +129,83 @@ question_generation:
   history:
     augment_prompt: |
       You are a history educator. Study these example questions carefully:
-      
+
       {examples}
-      
+
       Generate {count} NEW history questions following the same style, depth, and quality.
-      
+
       Topic: {name}
       Time period: {time_period}
       Context: {context}
-      
+
       Match the:
       - Question complexity
       - Explanation depth (include historical context and significance)
       - Distractor quality (dates/names that could be confused)
       - Educational value
-      
-      Return as JSON array matching the example structure.
+
+      Return as JSON array with this structure:
+      [
+        {{
+          "question_text": "...",
+          "choice_a": "...",
+          "choice_b": "...",
+          "choice_c": "...",
+          "choice_d": "...",
+          "correct_answer": "A",
+          "explanation": "...",
+          "difficulty": "intermediate",
+          "tags": ["...", "..."]
+        }}
+      ]
     
     template_prompt: |
       Use these question templates to generate {count} history questions:
-      
+
       {examples}
-      
+
       Keep the same structure, change the historical events/dates/figures.
       Topic: {name}
       Time period: {time_period}
-      
-      Return as JSON array.
+
+      Return as JSON array with this structure:
+      [
+        {{
+          "question_text": "...",
+          "choice_a": "...",
+          "choice_b": "...",
+          "choice_c": "...",
+          "choice_d": "...",
+          "correct_answer": "A",
+          "explanation": "...",
+          "difficulty": "intermediate",
+          "tags": ["...", "..."]
+        }}
+      ]
     
     hybrid_prompt: |
       Pre-written questions to include:
       {provided_questions}
-      
+
       Example style for new questions:
       {example_style}
-      
+
       Generate {additional_count} additional questions in the same style.
-      
+
       Return complete JSON array (provided + generated).
+
+      Use this structure for each question:
+      {{
+        "question_text": "...",
+        "choice_a": "...",
+        "choice_b": "...",
+        "choice_c": "...",
+        "choice_d": "...",
+        "correct_answer": "A",
+        "explanation": "...",
+        "difficulty": "intermediate",
+        "tags": ["...", "..."]
+      }}
     
     standard_prompt: |
       You are a history educator creating engaging multiple-choice questions.
@@ -159,14 +225,12 @@ question_generation:
       Return as JSON array with this structure:
       [
         {{
-          "question": "When did D-Day occur?",
-          "choices": {{
-            "A": "June 6, 1944",
-            "B": "May 8, 1945",
-            "C": "December 7, 1941",
-            "D": "September 1, 1939"
-          }},
-          "correct": "A",
+          "question_text": "When did D-Day occur?",
+          "choice_a": "June 6, 1944",
+          "choice_b": "May 8, 1945",
+          "choice_c": "December 7, 1941",
+          "choice_d": "September 1, 1939",
+          "correct_answer": "A",
           "explanation": "D-Day occurred on June 6, 1944...",
           "difficulty": "intermediate",
           "tags": ["dates", "battles"]
