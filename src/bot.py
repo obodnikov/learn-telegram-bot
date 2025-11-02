@@ -1,5 +1,6 @@
 """Main bot module for Telegram bot initialization and management."""
 
+import os
 from typing import Optional, Dict, Any
 from telegram import BotCommand
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, MessageHandler, filters
@@ -222,6 +223,10 @@ class LearningBot:
         if topic and topic.config:
             questions_per_batch = topic.config.get('questions_per_batch', 10)
 
+        # Calculate unseen questions quota from environment
+        unseen_ratio = float(os.getenv('UNSEEN_QUESTIONS_RATIO', '0.40'))
+        unseen_target = int(questions_per_batch * unseen_ratio)
+
         session = {
             "topic_id": topic_id,
             "topic_name": topic_name,
@@ -229,10 +234,15 @@ class LearningBot:
             "questions_answered": 0,
             "correct_answers": 0,
             "start_time": None,
-            "questions_per_batch": questions_per_batch
+            "questions_per_batch": questions_per_batch,
+            "unseen_shown": 0,  # Track how many unseen questions shown so far
+            "unseen_target": unseen_target  # Target number of unseen questions for this session
         }
         self.active_sessions[user_id] = session
-        logger.info(f"Created quiz session for user {user_id}, topic: {topic_name}, batch size: {questions_per_batch}")
+        logger.info(
+            f"Created quiz session for user {user_id}, topic: {topic_name}, "
+            f"batch size: {questions_per_batch}, unseen target: {unseen_target} ({unseen_ratio*100:.0f}%)"
+        )
         return session
 
     def end_session(self, user_id: int) -> Optional[Dict[str, Any]]:
