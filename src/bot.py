@@ -91,7 +91,7 @@ class LearningBot:
             start_command, help_command, topics_command,
             stats_command, cancel_command
         )
-        from src.handlers.quiz import start_quiz_handler, next_question_handler
+        from src.handlers.quiz import next_question_handler
         from src.handlers.callbacks import (
             topic_selection_callback, answer_callback,
             show_explanation_callback, topic_stats_callback,
@@ -103,7 +103,6 @@ class LearningBot:
         self.application.add_handler(CommandHandler("help", help_command))
         self.application.add_handler(CommandHandler("topics", topics_command))
         self.application.add_handler(CommandHandler("stats", stats_command))
-        self.application.add_handler(CommandHandler("quiz", start_quiz_handler))
         self.application.add_handler(CommandHandler("cancel", cancel_command))
 
         # Callback query handlers (for inline buttons)
@@ -135,7 +134,6 @@ class LearningBot:
             BotCommand(command="start", description="Initialize bot and register"),
             BotCommand(command="help", description="Show all commands"),
             BotCommand(command="topics", description="View available learning topics"),
-            BotCommand(command="quiz", description="Start a quiz session"),
             BotCommand(command="stats", description="Show your learning statistics"),
             BotCommand(command="cancel", description="Cancel current quiz session"),
         ]

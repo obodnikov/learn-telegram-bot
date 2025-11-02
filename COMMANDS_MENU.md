@@ -23,7 +23,6 @@ The following commands are registered in the menu:
 | `/start` | Initialize bot and register |
 | `/help` | Show all commands |
 | `/topics` | View available learning topics |
-| `/quiz` | Start a quiz session |
 | `/stats` | Show your learning statistics |
 | `/cancel` | Cancel current quiz session |
 
@@ -50,7 +49,6 @@ async def _set_bot_commands(self) -> None:
         BotCommand(command="start", description="Initialize bot and register"),
         BotCommand(command="help", description="Show all commands"),
         BotCommand(command="topics", description="View available learning topics"),
-        BotCommand(command="quiz", description="Start a quiz session"),
         BotCommand(command="stats", description="Show your learning statistics"),
         BotCommand(command="cancel", description="Cancel current quiz session"),
     ]

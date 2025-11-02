@@ -9,34 +9,6 @@ from src.bot import get_bot_instance
 logger = get_logger(__name__)
 
 
-async def start_quiz_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    """
-    Handle /quiz command - Show topic selection or continue existing session.
-
-    Args:
-        update: Telegram update object
-        context: Callback context
-    """
-    user_id = update.effective_user.id
-    logger.info(f"Quiz command received from user {user_id}")
-
-    bot_instance = get_bot_instance()
-
-    # Check for existing session
-    session = bot_instance.get_session(user_id)
-    if session:
-        await update.message.reply_text(
-            f"You already have an active quiz for '{session['topic_name']}'.\n"
-            "Use /cancel to end it first, or continue answering questions."
-        )
-        return
-
-    # Show topics
-    await update.message.reply_text(
-        "Use /topics to select a topic for your quiz session!"
-    )
-
-
 async def next_question_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """
     Show next question in quiz session.

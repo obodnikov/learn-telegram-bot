@@ -61,7 +61,6 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 /start - Start the bot and register
 /help - Show this help message
 /topics - View available learning topics
-/quiz - Start a quiz session
 /stats - View your learning statistics
 /cancel - Cancel current quiz session
 
