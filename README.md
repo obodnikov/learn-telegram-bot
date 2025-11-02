@@ -373,23 +373,38 @@ When the batch limit is reached, the bot displays session statistics and ends th
 
 ### Intelligent Question Selection
 
-Questions are selected using a randomized spaced repetition algorithm:
+Questions are selected using a hybrid algorithm that balances new content exposure with spaced repetition:
 
-**Selection Priority:**
-1. **Due for review** - Questions with `next_review_at <= now` (random selection)
-2. **Never seen** - Questions user hasn't encountered (random selection)
-3. **Not mastered** - Questions with `consecutive_correct < 2` (random selection)
+**Configurable Unseen Ratio:**
+- By default, 40% of questions in each session are **unseen** (new) questions
+- The remaining 60% follow spaced repetition priority
+- Configurable via `UNSEEN_QUESTIONS_RATIO` in `.env` (e.g., `0.40` = 40%)
+
+**Selection Logic:**
+1. **Unseen Questions (40% quota)**:
+   - If unseen quota not met → select random unseen question
+   - Ensures steady introduction of new material
+
+2. **Spaced Repetition (60% or when quota met)**:
+   - **Priority 1**: Due for review (`next_review_at <= now`, not mastered) - random
+   - **Priority 2**: Not mastered (`consecutive_correct < 2`) - random
+   - **Fallback**: Unseen questions (if quota already met)
 
 **Mastery Exclusion:**
-- Questions with 2+ consecutive correct answers are considered "mastered"
-- Mastered questions are automatically excluded from selection
+- Questions with 2+ consecutive correct answers are "known" (mastered)
+- Known questions are automatically excluded from selection
 - Focuses learning on material that needs practice
 
 **Benefits:**
-- ✅ Unpredictable question order keeps learning engaging
-- ✅ Automatic focus on weaker material
-- ✅ Gradual reduction of question pool as mastery increases
-- ✅ Spaced repetition still prioritizes due questions
+- ✅ **Balanced learning**: New content + review in every session
+- ✅ **Consistent progress**: Always learn something new (if available)
+- ✅ **Spaced repetition**: Reviews prioritized when quota is met
+- ✅ **Unpredictable order**: Random selection within each category
+- ✅ **Gradual mastery**: Question pool shrinks as knowledge grows
+
+**Example** (10 questions per session, 40% unseen ratio):
+- Questions 1-4: Unseen/new questions (40%)
+- Questions 5-10: Due for review or other non-mastered (60%)
 
 ---
 

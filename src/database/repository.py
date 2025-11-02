@@ -315,20 +315,31 @@ class Repository:
             ).first()
             return existing is not None
 
-    def get_next_question(self, user_id: int, topic_id: int) -> Optional[Question]:
+    def get_next_question(
+        self,
+        user_id: int,
+        topic_id: int,
+        unseen_shown: int = 0,
+        unseen_target: int = 0
+    ) -> Optional[Question]:
         """
-        Get next question based on spaced repetition algorithm with randomization.
+        Get next question based on spaced repetition algorithm with configurable unseen ratio.
 
-        Priority:
-        1. Questions due for review (next_review_at <= now) - random selection
-        2. Questions never seen by user - random selection
-        3. Questions with consecutive_correct < 2 - random selection
+        Selection Logic:
+        - If unseen_shown < unseen_target: Prioritize unseen questions (if available)
+        - Otherwise: Follow spaced repetition priority (due → non-mastered)
 
-        Excludes questions with consecutive_correct >= 2 (mastered)
+        Spaced Repetition Priority:
+        1. Questions due for review (next_review_at <= now, consecutive_correct < 2) - random
+        2. Questions with consecutive_correct < 2 (not mastered) - random
+
+        Excludes questions with consecutive_correct >= 2 (mastered/known)
 
         Args:
             user_id: User ID
             topic_id: Topic ID
+            unseen_shown: Number of unseen questions shown in current session
+            unseen_target: Target number of unseen questions for session (e.g., 40% of batch)
 
         Returns:
             Question object or None if no questions available
@@ -358,49 +369,90 @@ class Repository:
             for prog in progresses:
                 progress_map[prog.question_id] = prog
 
-            # Priority 1: Questions due for review (exclude mastered ones)
-            due_questions = []
-            for q in all_questions:
-                prog = progress_map.get(q.id)
-                if prog and prog.next_review_at and prog.next_review_at <= now:
-                    # Exclude mastered questions (consecutive_correct >= 2)
-                    if prog.consecutive_correct < 2:
-                        due_questions.append(q)
-
-            if due_questions:
-                # Random selection from due questions
-                selected = random.choice(due_questions)
-                logger.info(f"Selected due question ID: {selected.id} (random from {len(due_questions)} due)")
-                return selected
-
-            # Priority 2: Questions never seen
+            # Build question pools
             unseen_questions = []
-            for q in all_questions:
-                if q.id not in progress_map:
-                    unseen_questions.append(q)
-
-            if unseen_questions:
-                # Random selection from unseen questions
-                selected = random.choice(unseen_questions)
-                logger.info(f"Selected unseen question ID: {selected.id} (random from {len(unseen_questions)} unseen)")
-                return selected
-
-            # Priority 3: Questions with consecutive_correct < 2 (not mastered)
+            due_questions = []
             non_mastered = []
+
             for q in all_questions:
                 prog = progress_map.get(q.id)
-                if prog and prog.consecutive_correct < 2:
+
+                if not prog:
+                    # Never seen before
+                    unseen_questions.append(q)
+                elif prog.consecutive_correct < 2:
+                    # Seen but not mastered
+                    if prog.next_review_at and prog.next_review_at <= now:
+                        due_questions.append(q)
                     non_mastered.append(q)
+                # Else: mastered (consecutive_correct >= 2), excluded
+
+            # Decision logic: Check if we need more unseen questions
+            need_unseen = unseen_shown < unseen_target
+
+            if need_unseen and unseen_questions:
+                # Priority: Unseen questions (to meet quota)
+                selected = random.choice(unseen_questions)
+                logger.info(
+                    f"Selected unseen question ID: {selected.id} "
+                    f"(random from {len(unseen_questions)} unseen, "
+                    f"progress: {unseen_shown + 1}/{unseen_target})"
+                )
+                return selected
+
+            # Otherwise, follow spaced repetition priority
+            if due_questions:
+                # Priority 1: Questions due for review
+                selected = random.choice(due_questions)
+                logger.info(
+                    f"Selected due question ID: {selected.id} "
+                    f"(random from {len(due_questions)} due)"
+                )
+                return selected
 
             if non_mastered:
-                # Random selection from non-mastered questions
+                # Priority 2: Non-mastered questions (not yet due)
                 selected = random.choice(non_mastered)
-                logger.info(f"Selected non-mastered question ID: {selected.id} (random from {len(non_mastered)} non-mastered)")
+                logger.info(
+                    f"Selected non-mastered question ID: {selected.id} "
+                    f"(random from {len(non_mastered)} non-mastered)"
+                )
+                return selected
+
+            # Fallback: If no non-mastered but have unseen (unseen quota already met)
+            if unseen_questions:
+                selected = random.choice(unseen_questions)
+                logger.info(
+                    f"Selected unseen question ID: {selected.id} "
+                    f"(fallback: random from {len(unseen_questions)} unseen, quota met)"
+                )
                 return selected
 
             # All questions are mastered (consecutive_correct >= 2)
-            logger.info(f"All questions for topic {topic_id} are mastered (consecutive_correct >= 2)")
+            logger.info(
+                f"All questions for topic {topic_id} are mastered (consecutive_correct >= 2)"
+            )
             return None
+
+    def is_question_unseen(self, user_id: int, question_id: int) -> bool:
+        """
+        Check if a question has been seen by the user before.
+
+        Args:
+            user_id: User ID
+            question_id: Question ID
+
+        Returns:
+            True if question has never been seen by user, False otherwise
+        """
+        with self.get_session() as session:
+            progress = session.query(UserProgress).filter(
+                and_(
+                    UserProgress.user_id == user_id,
+                    UserProgress.question_id == question_id
+                )
+            ).first()
+            return progress is None
 
     # Progress operations
 

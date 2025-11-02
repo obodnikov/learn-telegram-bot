@@ -122,7 +122,14 @@ async def _show_next_question(query, user_id: int, bot_instance) -> None:
 
     repository = bot_instance.repository
     db_user = repository.get_user_by_telegram_id(user_id)
-    question = repository.get_next_question(db_user.id, session['topic_id'])
+
+    # Get next question with unseen quota tracking
+    question = repository.get_next_question(
+        db_user.id,
+        session['topic_id'],
+        unseen_shown=session.get('unseen_shown', 0),
+        unseen_target=session.get('unseen_target', 0)
+    )
 
     if not question:
         await query.edit_message_text(
@@ -139,6 +146,14 @@ async def _show_next_question(query, user_id: int, bot_instance) -> None:
 
     session['current_question'] = question
     session['start_time'] = datetime.utcnow()
+
+    # Check if this question was unseen and increment counter
+    was_unseen = repository.is_question_unseen(db_user.id, question.id)
+    if was_unseen:
+        session['unseen_shown'] = session.get('unseen_shown', 0) + 1
+        logger.info(
+            f"Showing unseen question, progress: {session['unseen_shown']}/{session.get('unseen_target', 0)}"
+        )
 
     keyboard = [
         [InlineKeyboardButton("A", callback_data="answer:A")],

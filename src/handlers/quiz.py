@@ -71,11 +71,16 @@ async def next_question_handler(update: Update, context: ContextTypes.DEFAULT_TY
         bot_instance.end_session(user_id)
         return
 
-    # Get next question using spaced repetition
+    # Get next question using spaced repetition with unseen quota tracking
     repository = bot_instance.repository
     db_user = repository.get_user_by_telegram_id(user_id)
 
-    question = repository.get_next_question(db_user.id, session['topic_id'])
+    question = repository.get_next_question(
+        db_user.id,
+        session['topic_id'],
+        unseen_shown=session.get('unseen_shown', 0),
+        unseen_target=session.get('unseen_target', 0)
+    )
 
     if not question:
         await query.edit_message_text(
@@ -93,6 +98,14 @@ async def next_question_handler(update: Update, context: ContextTypes.DEFAULT_TY
     # Store current question and start time
     session['current_question'] = question
     session['start_time'] = datetime.utcnow()
+
+    # Check if this question was unseen and increment counter
+    was_unseen = repository.is_question_unseen(db_user.id, question.id)
+    if was_unseen:
+        session['unseen_shown'] = session.get('unseen_shown', 0) + 1
+        logger.info(
+            f"Showing unseen question, progress: {session['unseen_shown']}/{session.get('unseen_target', 0)}"
+        )
 
     # Create answer buttons
     keyboard = [
