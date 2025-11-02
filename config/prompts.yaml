@@ -29,9 +29,9 @@ question_generation:
           "choice_b": "...",
           "choice_c": "...",
           "choice_d": "...",
-          "correct_answer": "B",
-          "explanation": "English: ...\\n\\nSpanish: ...",
-          "difficulty": "beginner",
+          "correct_answer": "...",
+          "explanation": "...",
+          "difficulty": "...",
           "tags": ["...", "..."]
         }}
       ]
@@ -62,9 +62,9 @@ question_generation:
           "choice_b": "...",
           "choice_c": "...",
           "choice_d": "...",
-          "correct_answer": "B",
+          "correct_answer": "...",
           "explanation": "...",
-          "difficulty": "beginner",
+          "difficulty": "...",
           "tags": ["...", "..."]
         }}
       ]
@@ -90,9 +90,9 @@ question_generation:
         "choice_b": "...",
         "choice_c": "...",
         "choice_d": "...",
-        "correct_answer": "B",
+        "correct_answer": "...",
         "explanation": "...",
-        "difficulty": "beginner",
+        "difficulty": "...",
         "tags": ["...", "..."]
       }}
     
@@ -152,9 +152,9 @@ question_generation:
           "choice_b": "...",
           "choice_c": "...",
           "choice_d": "...",
-          "correct_answer": "A",
+          "correct_answer": "...",
           "explanation": "...",
-          "difficulty": "intermediate",
+          "difficulty": "...",
           "tags": ["...", "..."]
         }}
       ]
@@ -176,9 +176,9 @@ question_generation:
           "choice_b": "...",
           "choice_c": "...",
           "choice_d": "...",
-          "correct_answer": "A",
+          "correct_answer": "...",
           "explanation": "...",
-          "difficulty": "intermediate",
+          "difficulty": "...",
           "tags": ["...", "..."]
         }}
       ]
@@ -201,9 +201,9 @@ question_generation:
         "choice_b": "...",
         "choice_c": "...",
         "choice_d": "...",
-        "correct_answer": "A",
+        "correct_answer": "...",
         "explanation": "...",
-        "difficulty": "intermediate",
+        "difficulty": "...",
         "tags": ["...", "..."]
       }}
     
