@@ -14,11 +14,13 @@ An intelligent Telegram bot for learning foreign languages, historical facts, an
 - 🧠 **LLM-Powered Questions**: Uses OpenRouter API to generate high-quality questions
 - 📚 **Multiple Topics**: Support for languages, history, and custom topics
 - 🎯 **Spaced Repetition**: Smart algorithm tracks progress and repeats missed questions
+- 🎲 **Randomized Selection**: Questions selected randomly with mastery-based exclusion
 - 📝 **Example-Based Learning**: Configure question style using example files
 - 🔄 **Smart Duplicate Prevention**: Automatically tracks used examples and prevents duplicate questions
 - 🌍 **Multilingual**: Support for any language pair (e.g., Hungarian/Russian)
 - 📊 **Progress Tracking**: Analytics on question performance and user learning
 - ⚙️ **Highly Configurable**: YAML-based topic and prompt configuration
+- 🛠️ **Topic Management**: CLI tools for syncing, updating, and managing topics
 
 ## Project Status
 
@@ -255,25 +257,135 @@ This means you can safely run generation multiple times without worrying about d
 
 ---
 
+## Topic Management
+
+After initial setup, you can manage topics using CLI tools. Topics are defined in `config/topics.yaml` and synced to the database.
+
+### Managing Topics with CLI
+
+**View all topics:**
+```bash
+python scripts/manage_topics.py list
+```
+
+**Sync YAML changes to database:**
+```bash
+# Preview changes (dry-run)
+python scripts/manage_topics.py sync --dry-run
+
+# Apply changes
+python scripts/manage_topics.py sync
+
+# Or use convenience script
+python scripts/sync_topics.py
+```
+
+**Show differences between YAML and database:**
+```bash
+python scripts/manage_topics.py diff
+```
+
+**Deactivate/Activate topics:**
+```bash
+# Soft delete (set is_active=False)
+python scripts/manage_topics.py delete <topic_id>
+
+# Reactivate
+python scripts/manage_topics.py activate <topic_id>
+```
+
+**Export database to YAML:**
+```bash
+# Export with timestamp filename
+python scripts/manage_topics.py export
+
+# Export to specific file
+python scripts/manage_topics.py export --output backup.yaml
+
+# Or use convenience script
+python scripts/export_topics.py topics_backup.yaml
+```
+
+### Topic Management Workflow
+
+**Adding new topics:**
+1. Add topic definition to `config/topics.yaml`
+2. Run `python scripts/sync_topics.py --dry-run` to preview
+3. Run `python scripts/sync_topics.py` to apply
+4. Generate questions: `python scripts/generate_questions.py --count 10`
+
+**Updating topic parameters:**
+1. Edit topic in `config/topics.yaml` (e.g., change difficulty, questions_per_batch)
+2. Run `python scripts/sync_topics.py` to update database
+3. Changes apply immediately to new quiz sessions
+
+**Removing topics:**
+1. Remove topic from `config/topics.yaml`
+2. Run `python scripts/sync_topics.py`
+3. Topic is soft-deleted (set to inactive) - questions preserved
+
+**For detailed documentation**, see [scripts/README.md - Topic Management](scripts/README.md#topic-management).
+
+---
+
+## Quiz Behavior
+
+### Session Management
+
+Quiz sessions respect the `questions_per_batch` parameter from topic configuration:
+
+```yaml
+# config/topics.yaml
+topics:
+  hungarian_vocabulary_beginner:
+    questions_per_batch: 10  # Session ends after 10 questions
+```
+
+When the batch limit is reached, the bot displays session statistics and ends the quiz.
+
+### Intelligent Question Selection
+
+Questions are selected using a randomized spaced repetition algorithm:
+
+**Selection Priority:**
+1. **Due for review** - Questions with `next_review_at <= now` (random selection)
+2. **Never seen** - Questions user hasn't encountered (random selection)
+3. **Not mastered** - Questions with `consecutive_correct < 2` (random selection)
+
+**Mastery Exclusion:**
+- Questions with 2+ consecutive correct answers are considered "mastered"
+- Mastered questions are automatically excluded from selection
+- Focuses learning on material that needs practice
+
+**Benefits:**
+- ✅ Unpredictable question order keeps learning engaging
+- ✅ Automatic focus on weaker material
+- ✅ Gradual reduction of question pool as mastery increases
+- ✅ Spaced repetition still prioritizes due questions
+
+---
+
 ## Utility Scripts
 
 The bot includes several utility scripts for management:
 
 ```bash
-# Seed topics from config
-python scripts/seed_topics.py
+# Initial setup
+python scripts/seed_topics.py              # Seed topics from YAML (first time)
+bash scripts/setup.sh                      # Automated setup (Linux/Mac)
 
-# Generate questions (requires API key)
-python scripts/generate_questions.py --count 10
+# Topic management
+python scripts/manage_topics.py list       # List all topics with details
+python scripts/sync_topics.py              # Sync YAML changes to database
+python scripts/manage_topics.py diff       # Show YAML vs database differences
+python scripts/export_topics.py            # Export database to YAML
 
-# Generate for specific topic
-python scripts/generate_questions.py --topic 1 --count 15
+# Question generation (requires API key)
+python scripts/generate_questions.py --count 10     # Generate 10 per topic
+python scripts/generate_questions.py --topic 1 --count 15  # Specific topic
 
-# Check database health
-python scripts/diagnose_database.py
-
-# Automated setup (Linux/Mac)
-bash scripts/setup.sh
+# Database management
+python scripts/diagnose_database.py        # Check database health and stats
 ```
 
 **For detailed documentation**, see [scripts/README.md](scripts/README.md).
