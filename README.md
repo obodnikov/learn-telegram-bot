@@ -248,6 +248,8 @@ python scripts/generate_questions.py --count 20 --max-output-tokens 8000
 
 **For detailed usage examples and explanations**, see [GENERATE_QUESTIONS.md](GENERATE_QUESTIONS.md).
 
+**Note**: Question generation uses intelligent vocabulary guidance to prevent repetition. The system uses semantic categories and quality calibration instead of specific word lists, ensuring fresh, diverse questions across multiple generations. See [VOCABULARY_GUIDANCE.md](VOCABULARY_GUIDANCE.md) for details.
+
 ### Automatic Generation (Scheduler)
 
 Enable continuous generation in `.env`:
