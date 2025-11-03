@@ -328,6 +328,52 @@ python scripts/generate_questions.py --count 50 --max-output-tokens 16000
 
 ---
 
+## Vocabulary Guidance System
+
+**Important**: The bot uses an intelligent **hybrid vocabulary guidance approach** to prevent question repetition and maintain consistent quality across multiple generations.
+
+### How It Works
+
+Instead of using specific word lists (which cause LLMs to reuse the same vocabulary), topics use:
+
+1. **Semantic Categories** - Broad topical areas (e.g., "commitment/dedication-related" instead of "elkötelezett, odaadó")
+2. **Quality Calibration** - Example words showing the right complexity level with ✓/✗ markers
+3. **Explicit Instructions** - Clear directive to NOT reuse the calibration examples
+
+### Example from `config/topics.yaml`
+
+```yaml
+Vocabulary level guidance:
+  Generate advanced (C1-C2 level) vocabulary with these characteristics:
+  - Abstract concepts requiring contextual understanding
+  - Words with nuanced meanings and subtle distinctions
+  - Formal register used in academic, professional contexts
+
+  Draw from these semantic categories:
+  - Adjectives: commitment/dedication-related, sophistication/refinement
+  - Nouns: consequences and outcomes, emphasis and importance
+  - Verbs: emphasizing and stressing, questioning and doubting
+
+  QUALITY CALIBRATION (do not reuse these specific words):
+  ✓ Good complexity: elkötelezett (committed - nuanced, C1-C2 level)
+  ✓ Good complexity: kétségbe vonni (to call into question - idiomatic)
+  ✗ Too simple: asztal (table - concrete, A1 level)
+
+  Generate NEW vocabulary at the "Good complexity" level.
+  Do not reuse the calibration examples above.
+```
+
+### Benefits
+
+✅ **Prevents repetition** - LLM understands principles, doesn't copy words
+✅ **Maintains difficulty** - Quality calibration keeps consistent level
+✅ **Scalable** - Can generate hundreds of questions without degradation
+✅ **Flexible** - LLM has creative freedom within boundaries
+
+**For complete details**, see [VOCABULARY_GUIDANCE.md](VOCABULARY_GUIDANCE.md).
+
+---
+
 ## Generation Modes
 
 The bot supports different generation strategies based on topic configuration:

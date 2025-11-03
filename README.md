@@ -248,6 +248,8 @@ python scripts/generate_questions.py --count 20 --max-output-tokens 8000
 
 **For detailed usage examples and explanations**, see [GENERATE_QUESTIONS.md](GENERATE_QUESTIONS.md).
 
+**Note**: Question generation uses intelligent vocabulary guidance to prevent repetition. The system uses semantic categories and quality calibration instead of specific word lists, ensuring fresh, diverse questions across multiple generations. See [VOCABULARY_GUIDANCE.md](VOCABULARY_GUIDANCE.md) for details.
+
 ### Automatic Generation (Scheduler)
 
 Enable continuous generation in `.env`:
@@ -274,6 +276,39 @@ python scripts/diagnose_database.py
 ```
 
 **For detailed generation guide with examples**, see [GENERATE_QUESTIONS.md](GENERATE_QUESTIONS.md).
+
+### Question Database Management
+
+Manage existing questions in the database using the `manage_questions.py` script:
+
+**Export/Import:**
+```bash
+# Export questions to JSON
+python scripts/manage_questions.py export --topic 3 --output backup.json
+
+# Import questions from JSON
+python scripts/manage_questions.py import --file questions.json --topic 3
+```
+
+**View Questions:**
+```bash
+# List questions with filters
+python scripts/manage_questions.py list --topic 3 --difficulty advanced
+
+# Show specific question details
+python scripts/manage_questions.py show --id 42
+```
+
+**Delete Questions:**
+```bash
+# Delete single question (with confirmation)
+python scripts/manage_questions.py delete --id 42
+
+# Remove last N questions from a topic
+python scripts/manage_questions.py remove-last --count 10 --topic 3
+```
+
+**For complete documentation**, see [MANAGE_QUESTIONS.md](MANAGE_QUESTIONS.md).
 
 ### Smart Question Management
 
@@ -443,6 +478,14 @@ python scripts/export_topics.py            # Export database to YAML
 # Question generation (requires API key)
 python scripts/generate_questions.py --count 10     # Generate 10 per topic
 python scripts/generate_questions.py --topic 1 --count 15  # Specific topic
+
+# Question management
+python scripts/manage_questions.py export --topic 3  # Export questions to JSON
+python scripts/manage_questions.py import --file q.json --topic 3  # Import questions
+python scripts/manage_questions.py list --topic 3   # List questions
+python scripts/manage_questions.py show --id 42     # Show question details
+python scripts/manage_questions.py delete --id 42   # Delete question
+python scripts/manage_questions.py remove-last --count 10 --topic 3  # Remove last N
 
 # Database management
 python scripts/diagnose_database.py        # Check database health and stats

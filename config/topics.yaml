@@ -7,9 +7,39 @@ topics:
     difficulty: beginner
     questions_per_batch: 10
     context: |
-      Focus on everyday vocabulary and common expressions.
-      Include: food, transportation, shopping, directions, time expressions.
-      Emphasize Magyar-specific grammar quirks and cognates from Finno-Ugric roots.
+      Focus on everyday vocabulary and common expressions for beginner learners.
+
+      Vocabulary level guidance:
+        Generate beginner (A1-A2 level) vocabulary with these characteristics:
+        - Common everyday words and basic expressions
+        - Essential vocabulary for daily survival situations
+        - Simple, concrete words (not abstract concepts)
+        - High-frequency words that beginners encounter immediately
+        - Basic verbs, nouns, and common phrases
+        - Fundamental grammar structures
+
+        Draw from these semantic categories:
+        - Food and meals: basic foods, drinks, ordering, cooking basics
+        - Transportation: vehicles, travel, directions, getting around
+        - Shopping: buying, paying, basic commerce vocabulary
+        - Directions and locations: asking for and giving directions, places
+        - Time expressions: days, hours, when/what time, schedules
+        - Greetings and politeness: hello, goodbye, please, thank you
+        - Numbers and quantities: counting, prices, amounts
+        - Family and people: basic relationships and descriptions
+        - Daily routines: common activities, basic verbs of action
+
+        QUALITY CALIBRATION (do not reuse these specific words - they are for complexity reference only):
+        ✓ Good complexity: étterem (restaurant - common, practical, A2 level)
+        ✓ Good complexity: mennyibe kerül (how much does it cost - essential phrase)
+        ✓ Good complexity: busszal utazni (to travel by bus - practical, beginner-appropriate)
+        ✗ Too advanced: elkötelezett (committed - abstract, C1-C2 level, too difficult)
+        ✗ Too advanced: időpontot kérni (request appointment - intermediate B1-B2)
+
+        Generate NEW vocabulary at the "Good complexity" level (A1-A2), avoiding intermediate and advanced terms.
+        Do not reuse the calibration examples above - create fresh questions with different vocabulary.
+
+        Emphasize Magyar-specific grammar quirks and cognates from Finno-Ugric roots where appropriate.
     
     examples:
       file: "config/examples/hungarian_vocabulary.json"
@@ -89,12 +119,33 @@ topics:
       - Words with subtle differences (синонимы с нюансами)
       - Advanced grammar constructions
       
-      Vocabulary categories:
-      - Adjectives: elkötelezett, kifinomult, elfogult, bonyolult, ellentmondásos, szándékos, meggyőző
-      - Nouns: következmények, hangsúly, lényeg
-      - Verbs: hangsúlyozni, kétségbe vonni, meggyőzni
-      - Adverbs: lényegében
-      - Idiomatic expressions: szemrebbenés nélkül, kétségbe vonni
+      Vocabulary level guidance:
+        Generate advanced (C1-C2 level) vocabulary with these characteristics:
+        - Abstract concepts requiring contextual understanding (not concrete objects)
+        - Words with nuanced meanings and subtle distinctions
+        - Formal register used in academic, professional, or literary contexts
+        - Idiomatic expressions beyond literal translation
+        - Complex compound words and derived forms
+        - Words where distractor choices require real understanding (not obvious)
+
+        Draw from these semantic categories:
+        - Adjectives: commitment/dedication-related, sophistication/refinement, bias/prejudice, complexity, controversy, intention, persuasion
+        - Nouns: consequences and outcomes, emphasis and importance, essence and core concepts, abstract ideas
+        - Verbs: emphasizing and stressing, questioning and doubting, convincing and persuading, expressing opinion
+        - Adverbs: manner and degree (essentially, fundamentally, thoroughly)
+        - Idiomatic expressions: figurative language about confidence/doubt, non-literal constructions, culturally-specific phrases
+
+        QUALITY CALIBRATION (do not reuse these specific words - they are for complexity reference only):
+        ✓ Good complexity: elkötelezett (committed/dedicated - nuanced, contextual, C1-C2 level)
+        ✓ Good complexity: kifinomult (sophisticated/refined - abstract quality, multiple meanings)
+        ✓ Good complexity: kétségbe vonni (to call into question - idiomatic, non-literal)
+        ✓ Good complexity: szemrebbenés nélkül (without batting an eye - pure idiom, cultural)
+        ✗ Too simple: asztal (table - concrete object, beginner A1 level)
+        ✗ Too simple: futni (to run - basic verb, A1-A2 level)
+        ✗ Too simple: nagy (big - common adjective, no nuance required)
+
+        Generate NEW vocabulary at the "Good complexity" level, not the "Too simple" level.
+        Do not reuse the calibration examples above - create fresh questions with different vocabulary.
       
       Question structure requirements:
       1. For HU→RU: Present Hungarian word/phrase, ask for Russian meaning
@@ -150,21 +201,38 @@ topics:
       - Travel, shopping, health, work situations
       - Simple idiomatic expressions
       
-      Vocabulary categories:
-      - Daily activities: találkozó, vásárlás, költözni, csomagolni
-      - Social situations: szomszéd, panaszkodni, tanácsot ad
-      - Practical needs: időpontot kérni, űrlapot kitölteni, foglalt
-      - Work and life: munkahely, késni
-      - Intentions and plans: készülni
-      - Financial: kölcsönadni, kölcsönkérni
-      
-      Difficulty level:
-      - More practical than advanced level
-      - Common everyday words and phrases
-      - Basic grammar structures
-      - Situations learners encounter regularly
-      - Accessible but useful vocabulary
-      
+      Vocabulary level guidance:
+        Generate intermediate (B1-B2 level) vocabulary with these characteristics:
+        - Practical everyday words and phrases for real-life situations
+        - Common verbs and their typical usage contexts
+        - Useful compound words that intermediate learners should know
+        - Words used in daily conversations and practical tasks
+        - Vocabulary that appears regularly in everyday Hungarian life
+        - Phrases for social interactions and common situations
+
+        Draw from these semantic categories:
+        - Daily activities: meetings and appointments, shopping and errands, moving and organizing, packing and preparing
+        - Social situations: neighbors and community, complaining and expressing concern, giving and receiving advice
+        - Practical needs: making appointments, filling out forms, describing availability and schedules
+        - Work and life: workplace vocabulary, punctuality and time management, daily routines
+        - Intentions and plans: preparing and getting ready, planning and organizing
+        - Financial: borrowing and lending, basic transactions
+        - Communication: asking questions, answering, explaining, discussing
+        - Transportation: traveling, boarding, changing, arriving
+        - Health and wellbeing: describing pain or illness, medical needs
+
+        QUALITY CALIBRATION (do not reuse these specific words - they are for complexity reference only):
+        ✓ Good complexity: találkozó (meeting/appointment - practical, B1-B2 level, useful)
+        ✓ Good complexity: időpontot kérni (to request an appointment - compound phrase, practical situation)
+        ✓ Good complexity: átszállni (to change/transfer - specific meaning, requires context)
+        ✓ Good complexity: tanácsot ad (to give advice - idiomatic phrase structure)
+        ✗ Too simple: menni (to go - basic A1 verb, too elementary)
+        ✗ Too simple: nagy (big - basic A1 adjective)
+        ✗ Too advanced: elkötelezett (committed - too abstract, C1-C2 level)
+
+        Generate NEW vocabulary at the "Good complexity" level (B1-B2), avoiding both too simple (A1-A2) and too advanced (C1-C2).
+        Do not reuse the calibration examples above - create fresh questions with different vocabulary.
+
       Question structure requirements:
       1. For HU→RU: Present Hungarian word/phrase, ask for Russian meaning
       2. For RU→HU: Present Russian word/phrase, ask for Hungarian equivalent
@@ -180,17 +248,6 @@ topics:
         - Distinguish from similar words
         - Give context for when to use the word
         - Explain word formation when relevant (compound words)
-      
-      Examples for LLM to follow:
-      - Everyday verbs: menni, jönni, vinni, hozni, látni, hallani
-      - Time expressions: korán, későn, időben, most, akkor
-      - Places: iskola, egyetem, könyvtár, park, étterem
-      - Actions: írni, olvasni, tanulni, dolgozni, pihenni
-      - Communication: beszélni, kérdezni, válaszolni, mondani
-      - Shopping: vásárolni, fizetni, venni, eladni
-      - Food and cooking: főzni, enni, inni, kóstolni
-      - Transportation: utazni, szállni, leszállni, átszállni
-      - Health: fájni, beteg, orvos, gyógyszertár
       
       Avoid:
       - Too basic beginner vocabulary (colors, numbers, days)
