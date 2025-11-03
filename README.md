@@ -277,6 +277,43 @@ python scripts/diagnose_database.py
 
 **For detailed generation guide with examples**, see [GENERATE_QUESTIONS.md](GENERATE_QUESTIONS.md).
 
+### Answer Position Randomization
+
+**Feature**: The bot automatically shuffles answer choices (A/B/C/D) at runtime to prevent answer position bias.
+
+**How it works**:
+- When displaying each question, the bot randomly shuffles the four choices
+- The correct answer appears in a different position each time
+- Mapping is stored in the user session and automatically handled
+- Works for ALL questions (existing and newly generated)
+
+**Benefits**:
+- ✅ Eliminates LLM tendency to place correct answer at position A
+- ✅ Prevents users from learning answer patterns instead of content
+- ✅ Works immediately without regenerating questions
+- ✅ 100% automatic - no configuration needed
+
+**Example**: If a question's correct answer is stored as "A" in the database, it might be displayed as "C" to the user. When they select "C", it's automatically mapped back to "A" for validation.
+
+**Optional: Improve Question Generation Quality**
+
+While runtime shuffling solves the problem completely, you can also improve the quality of newly generated questions by updating the LLM prompts to explicitly request answer randomization.
+
+Edit `config/prompts.yaml` and add this section to the standard_prompt (around line 100):
+
+```yaml
+IMPORTANT: Randomize correct answer positions!
+- Place the correct answer randomly in positions A, B, C, or D
+- Do NOT always put correct answers in position A
+- In a batch of 10 questions, distribute correct answers roughly evenly:
+  * 2-3 questions with correct answer A
+  * 2-3 questions with correct answer B
+  * 2-3 questions with correct answer C
+  * 2-3 questions with correct answer D
+```
+
+This improves database quality for manual review, but runtime shuffling already ensures users see randomized positions regardless.
+
 ### Question Database Management
 
 Manage existing questions in the database using the `manage_questions.py` script:

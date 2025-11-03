@@ -1,5 +1,6 @@
 """Callback handlers for inline button interactions."""
 
+import random
 from datetime import datetime
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
@@ -7,6 +8,47 @@ from src.utils.logger import get_logger
 from src.bot import get_bot_instance
 
 logger = get_logger(__name__)
+
+
+def _shuffle_choices(question):
+    """
+    Shuffle answer choices and return mapping.
+
+    Args:
+        question: Question object with choice_a, choice_b, choice_c, choice_d, correct_answer
+
+    Returns:
+        tuple: (shuffled_choices dict, answer_mapping dict, correct_displayed str)
+            - shuffled_choices: {'A': text, 'B': text, 'C': text, 'D': text}
+            - answer_mapping: {'A': original_letter, ...} maps displayed -> original
+            - correct_displayed: which letter (A/B/C/D) shows correct answer now
+    """
+    # Original choices with their labels
+    original_choices = [
+        ('A', question.choice_a),
+        ('B', question.choice_b),
+        ('C', question.choice_c),
+        ('D', question.choice_d)
+    ]
+
+    # Shuffle the list
+    shuffled = original_choices.copy()
+    random.shuffle(shuffled)
+
+    # Create mappings
+    display_labels = ['A', 'B', 'C', 'D']
+    shuffled_choices = {}
+    answer_mapping = {}
+    correct_displayed = None
+
+    for display_label, (original_label, choice_text) in zip(display_labels, shuffled):
+        shuffled_choices[display_label] = choice_text
+        answer_mapping[display_label] = original_label
+
+        if original_label == question.correct_answer:
+            correct_displayed = display_label
+
+    return shuffled_choices, answer_mapping, correct_displayed
 
 
 async def topic_selection_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -41,7 +83,7 @@ async def answer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     await query.answer()
 
     user_id = update.effective_user.id
-    selected_answer = query.data.split(":")[1]
+    selected_answer = query.data.split(":")[1]  # This is the displayed letter (shuffled)
 
     logger.info(f"Answer {selected_answer} selected by user {user_id}")
 
@@ -52,7 +94,18 @@ async def answer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         return
 
     question = session['current_question']
-    is_correct = (selected_answer == question.correct_answer)
+
+    # Map displayed answer back to original position
+    answer_mapping = session.get('answer_mapping', {})
+    if answer_mapping:
+        original_answer = answer_mapping.get(selected_answer, selected_answer)
+        logger.debug(f"Mapped displayed answer {selected_answer} -> original {original_answer}")
+    else:
+        # Fallback if no mapping (shouldn't happen with shuffling)
+        original_answer = selected_answer
+        logger.warning("No answer mapping found in session, using selected answer directly")
+
+    is_correct = (original_answer == question.correct_answer)
 
     response_time = None
     if session.get('start_time'):
@@ -155,6 +208,16 @@ async def _show_next_question(query, user_id: int, bot_instance) -> None:
             f"Showing unseen question, progress: {session['unseen_shown']}/{session.get('unseen_target', 0)}"
         )
 
+    # Shuffle answer choices to prevent answer position bias
+    shuffled_choices, answer_mapping, correct_displayed = _shuffle_choices(question)
+    session['answer_mapping'] = answer_mapping  # Store for answer validation
+    session['correct_displayed'] = correct_displayed  # For logging purposes
+
+    logger.debug(
+        f"Answer shuffling: Original correct={question.correct_answer}, "
+        f"Now displayed at={correct_displayed}, Mapping={answer_mapping}"
+    )
+
     keyboard = [
         [InlineKeyboardButton("A", callback_data="answer:A")],
         [InlineKeyboardButton("B", callback_data="answer:B")],
@@ -164,10 +227,10 @@ async def _show_next_question(query, user_id: int, bot_instance) -> None:
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     question_text = f"*Question:*\n{question.question_text}\n\n"
-    question_text += f"A: {question.choice_a}\n"
-    question_text += f"B: {question.choice_b}\n"
-    question_text += f"C: {question.choice_c}\n"
-    question_text += f"D: {question.choice_d}\n"
+    question_text += f"A: {shuffled_choices['A']}\n"
+    question_text += f"B: {shuffled_choices['B']}\n"
+    question_text += f"C: {shuffled_choices['C']}\n"
+    question_text += f"D: {shuffled_choices['D']}\n"
 
     await query.edit_message_text(question_text, reply_markup=reply_markup, parse_mode="Markdown")
 
