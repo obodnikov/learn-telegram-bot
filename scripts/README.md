@@ -13,6 +13,7 @@ This directory contains utility scripts for managing the Telegram Learning Bot.
 | `sync_topics.py` | Sync topics from YAML to database | After config changes |
 | `export_topics.py` | Export database topics to YAML | For backup / migration |
 | `generate_questions.py` | Manually generate questions | As needed |
+| `manage_questions.py` | Manage questions (export, import, list, show, delete) | As needed |
 | `diagnose_database.py` | Check database health and status | Anytime for debugging |
 | `setup.sh` | Automated installation (Linux/Mac) | Once |
 
@@ -189,6 +190,246 @@ python scripts/generate_questions.py --topic 1 --count 10
 - ✅ Use batches of 10-15 questions for reliable generation
 - ✅ Run multiple times for larger question sets
 - ❌ Avoid generating 25+ questions in a single run (may fail)
+
+---
+
+## manage_questions.py
+
+**Purpose**: Manage existing questions in the database (export, import, view, delete)
+
+**When to use**:
+- Export questions for backup or sharing
+- Import questions from JSON files
+- View and review question content
+- Delete low-quality or incorrect questions
+- Clean up bad generation runs
+
+**Requirements**:
+- Database with questions
+
+**Commands**:
+
+### export - Export questions to JSON
+
+**Usage**:
+```bash
+# Export all questions
+python scripts/manage_questions.py export
+
+# Export specific topic
+python scripts/manage_questions.py export --topic 3
+
+# Export to specific file
+python scripts/manage_questions.py export --output backup.json
+
+# Export topic to specific file
+python scripts/manage_questions.py export --topic 1 --output beginner_backup.json
+```
+
+**Output**:
+```
+Exported 127 questions to: questions_hungarian_vocabulary_advanced_20250103_142530.json
+```
+
+**Output format**: JSON array with question data (no database metadata)
+
+### import - Import questions from JSON
+
+**Usage**:
+```bash
+# Import with confirmation
+python scripts/manage_questions.py import --file questions.json --topic 3
+
+# Import without confirmation (automation)
+python scripts/manage_questions.py import --file questions.json --topic 3 --force
+```
+
+**Features**:
+- Automatic duplicate detection (90% similarity threshold)
+- Shows summary of new vs duplicate questions
+- Requires confirmation unless `--force` is used
+
+**Output**:
+```
+Found 10 questions in file:
+  - 7 new questions to import
+  - 3 duplicates (will be skipped)
+
+Import 7 new questions to topic 'Hungarian Vocabulary - Advanced'? (yes/no):
+```
+
+### list - List questions with filters
+
+**Usage**:
+```bash
+# List all questions (first 50)
+python scripts/manage_questions.py list
+
+# List questions from specific topic
+python scripts/manage_questions.py list --topic 3
+
+# List by difficulty
+python scripts/manage_questions.py list --difficulty advanced
+
+# List with custom limit
+python scripts/manage_questions.py list --limit 100
+
+# Combine filters
+python scripts/manage_questions.py list --topic 2 --difficulty intermediate --limit 20
+```
+
+**Output**:
+```
+Found 127 questions:
+
+ID    | Topic                              | Difficulty   | Question Preview
+------|------------------------------------|--------------|-----------------------------------------
+42    | Hungarian Vocabulary - Advanced    | advanced     | Что означает венгерское слово 'odaadó'?
+43    | Hungarian Vocabulary - Advanced    | advanced     | Как по-венгерски сказать 'убедительный'?
+44    | Hungarian Vocabulary - Intermediate| intermediate | Что означает 'találkozó'?
+```
+
+### show - Display question details
+
+**Usage**:
+```bash
+# Show specific question
+python scripts/manage_questions.py show --id 42
+```
+
+**Output**:
+```
+════════════════════════════════════════════════════════════════════════════════
+Question ID: 42
+Topic: Hungarian Vocabulary - Advanced
+Difficulty: advanced
+Created: 2025-01-03 14:25:30
+════════════════════════════════════════════════════════════════════════════════
+
+Question: Что означает венгерское слово 'odaadó'?
+
+A) преданный
+B) большой
+C) быстрый
+D) старый
+
+Correct Answer: A
+
+Explanation:
+Russian: 'odaadó' означает 'преданный', 'посвящённый'...
+Hungarian: Az 'odaadó' jelenti...
+
+Tags: HU→RU, прилагательные, абстрактные понятия
+Source: generated
+Total Answers: 15
+Correct Answers: 12 (80.0%)
+════════════════════════════════════════════════════════════════════════════════
+```
+
+### delete - Delete single question
+
+**Usage**:
+```bash
+# Delete with confirmation
+python scripts/manage_questions.py delete --id 42
+
+# Delete without confirmation (automation)
+python scripts/manage_questions.py delete --id 42 --force
+```
+
+**Features**:
+- Shows full question details before deletion
+- Shows number of users who answered it
+- Shows related data that will be deleted
+- Requires typing 'yes' unless `--force` is used
+- Automatically deletes related user progress and analytics
+
+**Output**:
+```
+Question ID: 42
+Topic: Hungarian Vocabulary - Advanced
+
+Question: Что означает венгерское слово 'odaadó'?
+...
+
+Users who answered this question: 15
+
+This will also delete:
+  - 15 user progress records
+  - 1 analytics record
+
+Type 'yes' to confirm deletion:
+```
+
+### remove-last - Remove last N questions
+
+**Usage**:
+```bash
+# Remove last 5 questions from all topics
+python scripts/manage_questions.py remove-last --count 5
+
+# Remove last 10 questions from specific topic
+python scripts/manage_questions.py remove-last --count 10 --topic 3
+
+# Remove without confirmation
+python scripts/manage_questions.py remove-last --count 10 --topic 3 --force
+```
+
+**Features**:
+- Orders by ID descending (most recent first)
+- Shows summary with question IDs and text
+- Requires typing 'yes' unless `--force` is used
+- Useful for cleaning up bad generation runs
+
+**Output**:
+```
+Will remove 5 questions:
+  ID 45: Что означает венгерское слово 'rendíthetetlen'? (Hungarian Vocabulary - Advanced)
+  ID 44: Как по-венгерски сказать 'сложный'? (Hungarian Vocabulary - Advanced)
+  ID 43: Что означает 'átszállni'? (Hungarian Vocabulary - Intermediate)
+  ID 42: Как по-венгерски сказать 'встреча'? (Hungarian Vocabulary - Intermediate)
+  ID 41: Что означает 'étterem'? (Hungarian Vocabulary - Everyday Life)
+
+This will also delete all related user progress and analytics.
+
+Type 'yes' to confirm deletion:
+```
+
+**Use Cases**:
+
+1. **Backup before bulk operations**:
+   ```bash
+   python scripts/manage_questions.py export --output backup_before_cleanup.json
+   ```
+
+2. **Quality control workflow**:
+   ```bash
+   # Generate questions
+   python scripts/generate_questions.py --enhanced --count 20 --topic 3
+
+   # Review new questions
+   python scripts/manage_questions.py list --topic 3 --limit 20
+
+   # Inspect suspicious question
+   python scripts/manage_questions.py show --id 42
+
+   # Delete if needed
+   python scripts/manage_questions.py delete --id 42
+   ```
+
+3. **Clean up bad generation**:
+   ```bash
+   # Remove last 10 questions from a topic
+   python scripts/manage_questions.py remove-last --count 10 --topic 3
+   ```
+
+4. **Import curated questions**:
+   ```bash
+   # Import with duplicate detection
+   python scripts/manage_questions.py import --file curated_questions.json --topic 3
+   ```
+
+**For complete documentation**, see [MANAGE_QUESTIONS.md](../MANAGE_QUESTIONS.md).
 
 ---
 
