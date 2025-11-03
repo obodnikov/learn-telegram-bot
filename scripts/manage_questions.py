@@ -62,16 +62,18 @@ def export_questions(repository: Repository, topic_id: Optional[int] = None, out
             logger.error(f"Topic ID {topic_id} not found")
             sys.exit(1)
 
-        questions = repository.session.query(Question).filter(
-            Question.topic_id == topic_id
-        ).order_by(Question.created_at).all()
+        with repository.get_session() as session:
+            questions = session.query(Question).filter(
+                Question.topic_id == topic_id
+            ).order_by(Question.created_at).all()
 
         topic_name = topic.name.replace(' ', '_').replace('-', '_').lower()
         default_filename = f"questions_{topic_name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
     else:
-        questions = repository.session.query(Question).order_by(
-            Question.topic_id, Question.created_at
-        ).all()
+        with repository.get_session() as session:
+            questions = session.query(Question).order_by(
+                Question.topic_id, Question.created_at
+            ).all()
         default_filename = f"questions_all_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
 
     if not questions:
@@ -142,10 +144,11 @@ def import_questions(repository: Repository, file_path: str, topic_id: int, forc
     logger.info(f"Target topic: {topic.name} (ID: {topic_id})")
 
     # Check for duplicates
-    existing_questions = repository.session.query(Question).filter(
-        Question.topic_id == topic_id
-    ).all()
-    existing_texts = {q.question_text for q in existing_questions}
+    with repository.get_session() as session:
+        existing_questions = session.query(Question).filter(
+            Question.topic_id == topic_id
+        ).all()
+        existing_texts = {q.question_text for q in existing_questions}
 
     new_questions = []
     duplicate_questions = []
@@ -222,32 +225,47 @@ def delete_question(repository: Repository, question_id: int, force: bool = Fals
         True if deleted, False otherwise
     """
     # Get question
-    question = repository.session.query(Question).filter(Question.id == question_id).first()
-    if not question:
-        logger.error(f"Question ID {question_id} not found")
-        return False
+    with repository.get_session() as session:
+        question = session.query(Question).filter(Question.id == question_id).first()
+        if not question:
+            logger.error(f"Question ID {question_id} not found")
+            return False
 
-    # Get topic name
-    topic = repository.get_topic(question.topic_id)
-    topic_name = topic.name if topic else "Unknown"
+        # Get topic name
+        topic = repository.get_topic(question.topic_id)
+        topic_name = topic.name if topic else "Unknown"
 
-    # Count related data
-    progress_count = len(question.progress)
+        # Count related data
+        progress_count = len(question.progress)
+        has_analytics = question.analytics is not None
+
+        # Store question details before session closes
+        question_details = {
+            'id': question.id,
+            'question_text': question.question_text,
+            'choice_a': question.choice_a,
+            'choice_b': question.choice_b,
+            'choice_c': question.choice_c,
+            'choice_d': question.choice_d,
+            'correct_answer': question.correct_answer,
+            'difficulty': question.difficulty,
+            'created_at': question.created_at
+        }
 
     # Show question details
     print(f"\n{'='*60}")
     print(f"WARNING: You are about to delete question ID {question_id}")
     print(f"{'='*60}")
-    print(f"\nQuestion ID: {question.id}")
+    print(f"\nQuestion ID: {question_details['id']}")
     print(f"Topic: {topic_name}")
-    print(f"Difficulty: {question.difficulty}")
-    print(f"Created: {question.created_at.strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"\nQuestion: {question.question_text}")
-    print(f"  A) {question.choice_a}")
-    print(f"  B) {question.choice_b}")
-    print(f"  C) {question.choice_c}")
-    print(f"  D) {question.choice_d}")
-    print(f"  ✓ Correct answer: {question.correct_answer}")
+    print(f"Difficulty: {question_details['difficulty']}")
+    print(f"Created: {question_details['created_at'].strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"\nQuestion: {question_details['question_text']}")
+    print(f"  A) {question_details['choice_a']}")
+    print(f"  B) {question_details['choice_b']}")
+    print(f"  C) {question_details['choice_c']}")
+    print(f"  D) {question_details['choice_d']}")
+    print(f"  ✓ Correct answer: {question_details['correct_answer']}")
 
     print(f"\nThis will also delete:")
     if progress_count > 0:
@@ -255,7 +273,7 @@ def delete_question(repository: Repository, question_id: int, force: bool = Fals
     else:
         print(f"  - User progress data (no users have answered this question yet)")
 
-    if question.analytics:
+    if has_analytics:
         print(f"  - Question analytics data")
 
     print(f"\n{'='*60}\n")
@@ -269,12 +287,14 @@ def delete_question(repository: Repository, question_id: int, force: bool = Fals
 
     # Delete question (CASCADE will handle related data)
     try:
-        repository.session.delete(question)
-        repository.session.commit()
+        with repository.get_session() as session:
+            question = session.query(Question).filter(Question.id == question_id).first()
+            if question:
+                session.delete(question)
+                session.commit()
         logger.info(f"✓ Question ID {question_id} deleted successfully")
         return True
     except Exception as e:
-        repository.session.rollback()
         logger.error(f"Error deleting question: {e}")
         return False
 
@@ -292,64 +312,66 @@ def remove_last_questions(repository: Repository, count: int, topic_id: Optional
     Returns:
         Number of questions deleted
     """
-    # Build query
-    query = repository.session.query(Question)
+    # Build query and get questions
+    with repository.get_session() as session:
+        query = session.query(Question)
 
-    if topic_id:
-        topic = repository.get_topic(topic_id)
-        if not topic:
-            logger.error(f"Topic ID {topic_id} not found")
-            sys.exit(1)
-        query = query.filter(Question.topic_id == topic_id)
-        topic_desc = f" from topic '{topic.name}'"
-    else:
-        topic_desc = ""
+        if topic_id:
+            topic = repository.get_topic(topic_id)
+            if not topic:
+                logger.error(f"Topic ID {topic_id} not found")
+                sys.exit(1)
+            query = query.filter(Question.topic_id == topic_id)
+            topic_desc = f" from topic '{topic.name}'"
+        else:
+            topic_desc = ""
 
-    # Get last N questions (ordered by ID, descending)
-    questions = query.order_by(desc(Question.id)).limit(count).all()
+        # Get last N questions (ordered by ID, descending)
+        questions = query.order_by(desc(Question.id)).limit(count).all()
 
-    if not questions:
-        logger.warning(f"No questions found{topic_desc}")
-        return 0
+        if not questions:
+            logger.warning(f"No questions found{topic_desc}")
+            return 0
+
+        # Store question details before session closes
+        question_summaries = [
+            {'id': q.id, 'text': q.question_text[:60] + '...'}
+            for q in questions
+        ]
+        question_ids = [q.id for q in questions]
 
     # Show summary
-    question_ids = [str(q.id) for q in questions]
-
     print(f"\n{'='*60}")
-    print(f"WARNING: About to delete {len(questions)} question(s){topic_desc}")
+    print(f"WARNING: About to delete {len(question_summaries)} question(s){topic_desc}")
     print(f"{'='*60}")
-    print(f"\nQuestion IDs: {', '.join(question_ids)}")
+    print(f"\nQuestion IDs: {', '.join(str(qid) for qid in question_ids)}")
     print(f"\nThis will delete:")
 
-    for q in questions:
-        print(f"  - ID {q.id}: {q.question_text[:60]}...")
+    for q in question_summaries:
+        print(f"  - ID {q['id']}: {q['text']}")
 
     print(f"\nAll related user progress and analytics data will also be deleted.")
     print(f"{'='*60}\n")
 
     # Confirmation
     if not force:
-        response = input(f"Type 'yes' to confirm deletion of {len(questions)} question(s): ").strip().lower()
+        response = input(f"Type 'yes' to confirm deletion of {len(question_summaries)} question(s): ").strip().lower()
         if response != 'yes':
             logger.info("Deletion cancelled")
             return 0
 
     # Delete questions
-    deleted_count = 0
-    for question in questions:
-        try:
-            repository.session.delete(question)
-            deleted_count += 1
-        except Exception as e:
-            logger.error(f"Error deleting question ID {question.id}: {e}")
-
     try:
-        repository.session.commit()
-        logger.info(f"✓ Successfully deleted {deleted_count} question(s)")
-        return deleted_count
+        with repository.get_session() as session:
+            for question_id in question_ids:
+                question = session.query(Question).filter(Question.id == question_id).first()
+                if question:
+                    session.delete(question)
+            session.commit()
+        logger.info(f"✓ Successfully deleted {len(question_ids)} question(s)")
+        return len(question_ids)
     except Exception as e:
-        repository.session.rollback()
-        logger.error(f"Error committing deletions: {e}")
+        logger.error(f"Error deleting questions: {e}")
         return 0
 
 
@@ -362,51 +384,80 @@ def show_question(repository: Repository, question_id: int) -> None:
         question_id: Question ID to show
     """
     # Get question
-    question = repository.session.query(Question).filter(Question.id == question_id).first()
-    if not question:
-        logger.error(f"Question ID {question_id} not found")
-        return
+    with repository.get_session() as session:
+        question = session.query(Question).filter(Question.id == question_id).first()
+        if not question:
+            logger.error(f"Question ID {question_id} not found")
+            return
 
-    # Get topic name
-    topic = repository.get_topic(question.topic_id)
-    topic_name = topic.name if topic else "Unknown"
+        # Get topic name
+        topic = repository.get_topic(question.topic_id)
+        topic_name = topic.name if topic else "Unknown"
+
+        # Store all data before session closes
+        q_data = {
+            'id': question.id,
+            'question_text': question.question_text,
+            'choice_a': question.choice_a,
+            'choice_b': question.choice_b,
+            'choice_c': question.choice_c,
+            'choice_d': question.choice_d,
+            'correct_answer': question.correct_answer,
+            'explanation': question.explanation,
+            'difficulty': question.difficulty,
+            'created_at': question.created_at,
+            'tags': question.tags,
+            'source': question.source,
+            'source_file': question.source_file,
+            'progress_count': len(question.progress)
+        }
+
+        # Get analytics if available
+        if question.analytics:
+            q_data['analytics'] = {
+                'total_times_shown': question.analytics.total_times_shown,
+                'total_correct': question.analytics.total_correct,
+                'total_incorrect': question.analytics.total_incorrect,
+                'success_rate': question.analytics.success_rate
+            }
+        else:
+            q_data['analytics'] = None
 
     # Display question
     print(f"\n{'='*60}")
-    print(f"Question ID: {question.id}")
+    print(f"Question ID: {q_data['id']}")
     print(f"Topic: {topic_name}")
-    print(f"Difficulty: {question.difficulty}")
-    print(f"Created: {question.created_at.strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"\nQuestion: {question.question_text}")
-    print(f"  A) {question.choice_a}")
-    print(f"  B) {question.choice_b}")
-    print(f"  C) {question.choice_c}")
-    print(f"  D) {question.choice_d}")
-    print(f"\n  ✓ Correct answer: {question.correct_answer}")
-    print(f"\nExplanation:\n{question.explanation}")
+    print(f"Difficulty: {q_data['difficulty']}")
+    print(f"Created: {q_data['created_at'].strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"\nQuestion: {q_data['question_text']}")
+    print(f"  A) {q_data['choice_a']}")
+    print(f"  B) {q_data['choice_b']}")
+    print(f"  C) {q_data['choice_c']}")
+    print(f"  D) {q_data['choice_d']}")
+    print(f"\n  ✓ Correct answer: {q_data['correct_answer']}")
+    print(f"\nExplanation:\n{q_data['explanation']}")
 
-    if question.tags:
-        print(f"\nTags: {', '.join(question.tags)}")
+    if q_data['tags']:
+        print(f"\nTags: {', '.join(q_data['tags'])}")
 
-    print(f"\nSource: {question.source}")
-    if question.source_file:
-        print(f"Source file: {question.source_file}")
+    print(f"\nSource: {q_data['source']}")
+    if q_data['source_file']:
+        print(f"Source file: {q_data['source_file']}")
 
     # Show statistics if available
-    if question.analytics:
+    if q_data['analytics']:
         print(f"\nStatistics:")
-        print(f"  - Times shown: {question.analytics.total_times_shown}")
-        print(f"  - Correct: {question.analytics.total_correct}")
-        print(f"  - Incorrect: {question.analytics.total_incorrect}")
-        if question.analytics.total_times_shown > 0:
-            success_rate = question.analytics.success_rate * 100
+        print(f"  - Times shown: {q_data['analytics']['total_times_shown']}")
+        print(f"  - Correct: {q_data['analytics']['total_correct']}")
+        print(f"  - Incorrect: {q_data['analytics']['total_incorrect']}")
+        if q_data['analytics']['total_times_shown'] > 0:
+            success_rate = q_data['analytics']['success_rate'] * 100
             print(f"  - Success rate: {success_rate:.1f}%")
 
     # Show user progress count
-    progress_count = len(question.progress)
-    if progress_count > 0:
+    if q_data['progress_count'] > 0:
         print(f"\nUser Progress:")
-        print(f"  - {progress_count} user(s) have answered this question")
+        print(f"  - {q_data['progress_count']} user(s) have answered this question")
 
     print(f"{'='*60}\n")
 
@@ -421,44 +472,56 @@ def list_questions(repository: Repository, topic_id: Optional[int] = None, diffi
         difficulty: Optional difficulty filter
         limit: Maximum number of questions to show
     """
-    # Build query
-    query = repository.session.query(Question)
+    # Build query and get questions
+    with repository.get_session() as session:
+        query = session.query(Question)
 
-    filters = []
-    if topic_id:
-        topic = repository.get_topic(topic_id)
-        if not topic:
-            logger.error(f"Topic ID {topic_id} not found")
-            sys.exit(1)
-        query = query.filter(Question.topic_id == topic_id)
-        filters.append(f"topic: {topic.name}")
+        filters = []
+        if topic_id:
+            topic = repository.get_topic(topic_id)
+            if not topic:
+                logger.error(f"Topic ID {topic_id} not found")
+                sys.exit(1)
+            query = query.filter(Question.topic_id == topic_id)
+            filters.append(f"topic: {topic.name}")
 
-    if difficulty:
-        query = query.filter(Question.difficulty == difficulty)
-        filters.append(f"difficulty: {difficulty}")
+        if difficulty:
+            query = query.filter(Question.difficulty == difficulty)
+            filters.append(f"difficulty: {difficulty}")
 
-    # Get questions
-    questions = query.order_by(desc(Question.id)).limit(limit).all()
+        # Get total count before limit
+        total_count = query.count()
 
-    if not questions:
-        logger.warning("No questions found")
-        return
+        # Get questions
+        questions = query.order_by(desc(Question.id)).limit(limit).all()
+
+        if not questions:
+            logger.warning("No questions found")
+            return
+
+        # Store question data before session closes
+        question_list = []
+        for q in questions:
+            topic = repository.get_topic(q.topic_id)
+            topic_name = topic.name if topic else "Unknown"
+            question_preview = q.question_text[:50] + '...' if len(q.question_text) > 50 else q.question_text
+            question_list.append({
+                'id': q.id,
+                'topic_name': topic_name,
+                'difficulty': q.difficulty,
+                'preview': question_preview
+            })
 
     # Show header
     filter_str = f" ({', '.join(filters)})" if filters else ""
     print(f"\n{'='*60}")
     print(f"Questions{filter_str}")
-    print(f"Showing {len(questions)} of {query.count()} total")
+    print(f"Showing {len(question_list)} of {total_count} total")
     print(f"{'='*60}\n")
 
     # Show questions
-    for q in questions:
-        topic = repository.get_topic(q.topic_id)
-        topic_name = topic.name if topic else "Unknown"
-
-        question_preview = q.question_text[:50] + '...' if len(q.question_text) > 50 else q.question_text
-
-        print(f"ID {q.id:4d} | {topic_name:30s} | {q.difficulty:12s} | {question_preview}")
+    for q in question_list:
+        print(f"ID {q['id']:4d} | {q['topic_name']:30s} | {q['difficulty']:12s} | {q['preview']}")
 
     print(f"\n{'='*60}")
     print(f"Use 'python scripts/manage_questions.py show --id <ID>' to see details")
