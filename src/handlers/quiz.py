@@ -1,5 +1,6 @@
 """Quiz interaction handlers for managing quiz sessions."""
 
+import random
 from datetime import datetime
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
@@ -7,6 +8,47 @@ from src.utils.logger import get_logger
 from src.bot import get_bot_instance
 
 logger = get_logger(__name__)
+
+
+def _shuffle_choices(question):
+    """
+    Shuffle answer choices and return mapping.
+
+    Args:
+        question: Question object with choice_a, choice_b, choice_c, choice_d, correct_answer
+
+    Returns:
+        tuple: (shuffled_choices dict, answer_mapping dict, correct_displayed str)
+            - shuffled_choices: {'A': text, 'B': text, 'C': text, 'D': text}
+            - answer_mapping: {'A': original_letter, ...} maps displayed -> original
+            - correct_displayed: which letter (A/B/C/D) shows correct answer now
+    """
+    # Original choices with their labels
+    original_choices = [
+        ('A', question.choice_a),
+        ('B', question.choice_b),
+        ('C', question.choice_c),
+        ('D', question.choice_d)
+    ]
+
+    # Shuffle the list
+    shuffled = original_choices.copy()
+    random.shuffle(shuffled)
+
+    # Create mappings
+    display_labels = ['A', 'B', 'C', 'D']
+    shuffled_choices = {}
+    answer_mapping = {}
+    correct_displayed = None
+
+    for display_label, (original_label, choice_text) in zip(display_labels, shuffled):
+        shuffled_choices[display_label] = choice_text
+        answer_mapping[display_label] = original_label
+
+        if original_label == question.correct_answer:
+            correct_displayed = display_label
+
+    return shuffled_choices, answer_mapping, correct_displayed
 
 
 async def next_question_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -79,6 +121,16 @@ async def next_question_handler(update: Update, context: ContextTypes.DEFAULT_TY
             f"Showing unseen question, progress: {session['unseen_shown']}/{session.get('unseen_target', 0)}"
         )
 
+    # Shuffle answer choices to prevent answer position bias
+    shuffled_choices, answer_mapping, correct_displayed = _shuffle_choices(question)
+    session['answer_mapping'] = answer_mapping  # Store for answer validation
+    session['correct_displayed'] = correct_displayed  # For logging purposes
+
+    logger.debug(
+        f"Answer shuffling: Original correct={question.correct_answer}, "
+        f"Now displayed at={correct_displayed}, Mapping={answer_mapping}"
+    )
+
     # Create answer buttons
     keyboard = [
         [InlineKeyboardButton("A", callback_data=f"answer:A")],
@@ -90,10 +142,10 @@ async def next_question_handler(update: Update, context: ContextTypes.DEFAULT_TY
 
     # Format question text
     question_text = f"*Question:*\n{question.question_text}\n\n"
-    question_text += f"A: {question.choice_a}\n"
-    question_text += f"B: {question.choice_b}\n"
-    question_text += f"C: {question.choice_c}\n"
-    question_text += f"D: {question.choice_d}\n"
+    question_text += f"A: {shuffled_choices['A']}\n"
+    question_text += f"B: {shuffled_choices['B']}\n"
+    question_text += f"C: {shuffled_choices['C']}\n"
+    question_text += f"D: {shuffled_choices['D']}\n"
 
     await query.edit_message_text(
         question_text,
