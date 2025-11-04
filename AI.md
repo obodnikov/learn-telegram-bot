@@ -28,7 +28,7 @@ The goal: keep output consistent, production-ready, and aligned with our coding 
 ## Dependencies
 - Use `requirements.txt` or `pyproject.toml` for dependencies.
 - Prefer standard library when possible before adding new libraries.
-- If adding a library, explain why itâ€™s needed.
+- If adding a library, explain why it’s needed.
 
 ---
 
@@ -40,12 +40,12 @@ The goal: keep output consistent, production-ready, and aligned with our coding 
 ---
 
 ## Examples
-âœ… Good:
+✅ Good:
 def load_data(path: str) -> pd.DataFrame:
     """Load CSV file into a DataFrame."""
     if not os.path.exists(path):
         raise FileNotFoundError(f"File not found: {path}")
     return pd.read_csv(path)
-âŒ Bad:
+❌ Bad:
 def loaddata(p):
     return pd.read_csv(p)  # no error handling, unclear naming
