@@ -147,15 +147,24 @@ async def generate_questions(
         for topic in topics_to_process:
             logger.info(f"\nGenerating questions for: {topic.name}")
 
-            # Get YAML topic ID from config
+            # Get YAML topic ID and config
             yaml_topic_id = None
-            for yaml_id, yaml_config in config_loader.topics.items():
-                if yaml_config.name == topic.name:
+            yaml_config = None
+            for yaml_id, config in config_loader.topics.items():
+                if config.name == topic.name:
                     yaml_topic_id = yaml_id
+                    yaml_config = config
                     break
 
             if not yaml_topic_id:
                 logger.warning(f"Could not find YAML config for topic: {topic.name}")
+                continue
+
+            # Check if topic is manual type (no LLM generation)
+            topic_type = getattr(yaml_config, 'type', 'language')
+            if topic_type == 'manual':
+                logger.info(f"⊘ Skipping topic '{topic.name}' - type is 'manual' (import-only)")
+                logger.info(f"  Use: python scripts/manage_questions.py import --file <file.json> --topic {topic.id}")
                 continue
 
             try:

@@ -9,6 +9,7 @@ Complete guide to managing questions in the database using the `manage_questions
 - [Commands](#commands)
   - [Export Questions](#export-questions)
   - [Import Questions](#import-questions)
+  - [Creating Manual Topics (Import-Only)](#creating-manual-topics-import-only)
   - [Show Question](#show-question)
   - [List Questions](#list-questions)
   - [Delete Question](#delete-question)
@@ -170,6 +171,87 @@ python scripts/manage_questions.py import --file backup_2025.json --topic 1
 - Importing manually created questions
 - Migrating questions between databases
 - Adding curated question sets
+
+---
+
+### Creating Manual Topics (Import-Only)
+
+**What are manual topics?**
+
+Manual topics allow you to create quiz topics using your own curated questions instead of LLM-generated ones. Questions are added exclusively through the import command.
+
+**Step-by-step guide:**
+
+1. **Create topic in config/topics.yaml:**
+
+```yaml
+topics:
+  my_custom_topic:
+    name: "Custom Quiz - Geography"
+    type: manual  # Prevents LLM generation
+    difficulty: beginner
+    questions_per_batch: 10
+    context: |
+      Test your geography knowledge with these curated questions.
+```
+
+2. **Sync to database:**
+
+```bash
+python scripts/sync_topics.py
+# Note the new topic ID from output (e.g., ID 4)
+```
+
+3. **Prepare JSON file with questions:**
+
+Create a file (e.g., `geography.json`):
+
+```json
+[
+  {
+    "question_text": "What is the capital of France?",
+    "choice_a": "London",
+    "choice_b": "Paris",
+    "choice_c": "Berlin",
+    "choice_d": "Madrid",
+    "correct_answer": "B",
+    "explanation": "Paris is the capital and largest city of France, located on the Seine River.",
+    "difficulty": "beginner",
+    "tags": ["geography", "capitals", "europe"]
+  }
+]
+```
+
+**Required fields:**
+- `question_text` - Question to display
+- `choice_a`, `choice_b`, `choice_c`, `choice_d` - Four choices
+- `correct_answer` - Letter (A/B/C/D)
+- `explanation` - Shown after answering
+- `difficulty` - beginner/intermediate/advanced
+- `tags` - Array of category strings
+
+4. **Import questions:**
+
+```bash
+python scripts/manage_questions.py import --file geography.json --topic 4
+```
+
+**Benefits:**
+- ✅ Full control over question quality
+- ✅ No LLM API costs
+- ✅ Import from any source
+- ✅ Runtime answer shuffling still applies
+
+**Prevention of LLM generation:**
+
+If you attempt to generate questions for a manual topic:
+
+```bash
+$ python scripts/generate_questions.py --topic 4
+
+⊘ Skipping topic 'Custom Quiz - Geography' - type is 'manual' (import-only)
+  Use: python scripts/manage_questions.py import --file <file.json> --topic 4
+```
 
 ---
 
