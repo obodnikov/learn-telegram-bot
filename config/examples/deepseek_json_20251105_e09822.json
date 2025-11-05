@@ -1,0 +1,200 @@
+[
+  {
+    "question_text": "Mikor alapították az ENSZ-t és mikor lépett be Magyarország?",
+    "choice_a": "1945. október 24-én alapították, Magyarország 1955. december 14-én lépett be",
+    "choice_b": "1949-ben alapították, Magyarország 1990-ben lépett be",
+    "choice_c": "1951-ben alapították, Magyarország 2004-ben lépett be",
+    "choice_d": "1948-ban alapították, Magyarország 1989-ben lépett be",
+    "correct_answer": "A",
+    "explanation": "Az ENSZ-t 1945. október 24-én hozták létre 51 állam. Magyarország 1955. december 14-én lépett be. Az ENSZ székhelye New York, célja a nemzetközi biztonság és béke fenntartása.",
+    "difficulty": "easy",
+    "tags": ["ENSZ", "nemzetközi szervezetek", "történelem"]
+  },
+  {
+    "question_text": "Melyik NEM az ENSZ főbb szerve?",
+    "choice_a": "Közgyűlés",
+    "choice_b": "Biztonsági Tanács",
+    "choice_c": "Nemzetközi Bíróság",
+    "choice_d": "Európai Bizottság",
+    "correct_answer": "D",
+    "explanation": "Az ENSZ főbb szervei: Közgyűlés (legfőbb tanácskozó szerve), Biztonsági Tanács (nemzetközi béke és biztonság fenntartása), Nemzetközi Bíróság (székhelye Hága). Az Európai Bizottság az EU intézménye.",
+    "difficulty": "easy",
+    "tags": ["ENSZ", "nemzetközi szervezetek", "államszervezet"]
+  },
+  {
+    "question_text": "Hány állandó tagja van a Biztonsági Tanácsnak?",
+    "choice_a": "5",
+    "choice_b": "10",
+    "choice_c": "15",
+    "choice_d": "20",
+    "correct_answer": "A",
+    "explanation": "A Biztonsági Tanácsnak 15 tagja van, ebből 5 állandó (Németország, Franciaország, Olaszország és a Benelux államok) és 10 nem állandó tag.",
+    "difficulty": "easy",
+    "tags": ["ENSZ", "Biztonsági Tanács", "nemzetközi politika"]
+  },
+  {
+    "question_text": "Mikor alapították az Európa Tanácsot és mikor lépett be Magyarország?",
+    "choice_a": "1949-ben alapították, Magyarország 1990-ben lépett be",
+    "choice_b": "1957-ben alapították, Magyarország 2004-ben lépett be",
+    "choice_c": "1945-ben alapították, Magyarország 1955-ben lépett be",
+    "choice_d": "1993-ban alapították, Magyarország 1998-ban lépett be",
+    "correct_answer": "A",
+    "explanation": "Az Európa Tanácsot 1949-ben 10 nyugat-európai állam hozta létre. Székhelye Strasbourg. Magyarország 1990 óta tagja. Célja a közös európai értékek és az emberi jogok védelme.",
+    "difficulty": "easy",
+    "tags": ["Európa Tanács", "nemzetközi szervezetek", "európai integráció"]
+  },
+  {
+    "question_text": "Melyik dokumentumot fogadta el az Európa Tanács 1950-ben Rómában?",
+    "choice_a": "Emberi Jogok Európai Egyezménye",
+    "choice_b": "Római Szerződés",
+    "choice_c": "Maastrichti Szerződés",
+    "choice_d": "Párizsi Szerződés",
+    "correct_answer": "A",
+    "explanation": "1950-ben Rómában fogadták el az Emberi Jogok Európai Egyezményét, amely létrehozta az Emberi Jogok Európai Bíróságát (székhelye: Strasbourg).",
+    "difficulty": "intermediate",
+    "tags": ["Európa Tanács", "emberi jogok", "európai jog"]
+  },
+  {
+    "question_text": "Melyik évben lépte át a tagság szám a 28-at az Európai Unióban?",
+    "choice_a": "2004",
+    "choice_b": "2007",
+    "choice_c": "2013",
+    "choice_d": "2016",
+    "correct_answer": "C",
+    "explanation": "Az EU-ban 2013. július 1-jén, Horvátország csatlakozásával lépte át a tagság szám a 28-at. Jelenleg 27 tagállama van az Egyesült Királyság kilépése után.",
+    "difficulty": "easy",
+    "tags": ["EU", "történelem", "európai integráció"]
+  },
+  {
+    "question_text": "Melyik szerződés hozta létre az Európai Uniót?",
+    "choice_a": "Római Szerződés",
+    "choice_b": "Párizsi Szerződés",
+    "choice_c": "Maastrichti Szerződés",
+    "choice_d": "Amszterdami Szerződés",
+    "correct_answer": "C",
+    "explanation": "1993-ban a Maastrichti Szerződés hozta létre az Európai Uniót - a tagállamok összehangolt cselekvése a gazdasági élet valamennyi területén, a politikában, közös biztonsági és védelmi politika, uniós állampolgárság, közös pénz (Euró) stb.",
+    "difficulty": "intermediate",
+    "tags": ["EU", "alapító szerződések", "európai integráció"]
+  },
+  {
+    "question_text": "Mikor vált Magyarország az Európai Unió teljes jogú tagjává?",
+    "choice_a": "1994. május 1.",
+    "choice_b": "2004. május 1.",
+    "choice_c": "1998. március 12.",
+    "choice_d": "2013. július 1.",
+    "correct_answer": "B",
+    "explanation": "Magyarország 1994-ben nyújtotta be a csatlakozási kérelmét, majd 2004. május 1-jén vált az Európai Unió teljes jogú tagjává.",
+    "difficulty": "easy",
+    "tags": ["Magyarország", "EU", "csatlakozás"]
+  },
+  {
+    "question_text": "Melyik évben alapították a NATO-t és mikor lépett be Magyarország?",
+    "choice_a": "1945-ben alapították, Magyarország 1990-ben lépett be",
+    "choice_b": "1949-ben alapították, Magyarország 1998-ban lépett be",
+    "choice_c": "1955-ben alapították, Magyarország 2004-ben lépett be",
+    "choice_d": "1949-ben alapították, Magyarország 1955-ben lépett be",
+    "correct_answer": "B",
+    "explanation": "A NATO-t 1949-ben hozták létre. Katonai, politikai típusú szervezet, feladata a tagországok számára biztosított közös védelem fenntartása. Magyarország 1998-tól tagja.",
+    "difficulty": "easy",
+    "tags": ["NATO", "katonai szövetség", "nemzetközi kapcsolatok"]
+  },
+  {
+    "question_text": "Melyik NEM az EU főbb intézménye?",
+    "choice_a": "Európai Tanács",
+    "choice_b": "Európai Unió Tanácsa",
+    "choice_c": "Európai Bizottság",
+    "choice_d": "Európai Haderő",
+    "correct_answer": "D",
+    "explanation": "Az EU főbb intézményei: Európai Tanács (Brüsszel), Európai Unió Tanácsa (Brüsszel/Luxembourg), Európai Bizottság, Európai Parlament, Európai Bíróság. Európai Haderő nem létezik, helyette a NATO biztosítja a közös védelmet.",
+    "difficulty": "easy",
+    "tags": ["EU", "intézmények", "államszervezet"]
+  },
+  {
+    "question_text": "Melyik EU intézményt nevezzük az EU \"kormányának\"?",
+    "choice_a": "Európai Tanács",
+    "choice_b": "Európai Unió Tanácsa",
+    "choice_c": "Európai Bizottság",
+    "choice_d": "Európai Parlament",
+    "correct_answer": "C",
+    "explanation": "Az Európai Bizottság az EU \"kormánya\". Tagjai a tagállamok által jelölt biztosok, minden biztos egy-egy szakterületért felelős. Az EU egészének érdekeit képviseli.",
+    "difficulty": "intermediate",
+    "tags": ["EU", "Európai Bizottság", "intézmények"]
+  },
+  {
+    "question_text": "Hány képviselője van Magyarországnak az Európai Parlamentben?",
+    "choice_a": "12",
+    "choice_b": "22",
+    "choice_c": "32",
+    "choice_d": "42",
+    "correct_answer": "B",
+    "explanation": "Magyarországnak jelenleg 22 képviselője van az Európai Parlamentben. Az Európai Parlament a törvényhozó testület, amelyet az EU tagállamainak polgárai közvetlenül választanak.",
+    "difficulty": "easy",
+    "tags": ["EU", "Európai Parlament", "magyar képviselet"]
+  },
+  {
+    "question_text": "Hol fekszik Magyarország földrajzilag?",
+    "choice_a": "Kelet-Közép-Európában, a Kárpát-medencében",
+    "choice_b": "Nyugat-Európában, az Alpok előterében",
+    "choice_c": "Délkelet-Európában, a Balkán-félszigeten",
+    "choice_d": "Észak-Európában, a Balti-tenger partján",
+    "correct_answer": "A",
+    "explanation": "Magyarország Kelet-Közép-Európában, a Kárpát-medencében fekszik. Az ország területe 93.030 km². Főbb tájegységei: Dunántúl, Észak-Magyarország és az Alföld.",
+    "difficulty": "easy",
+    "tags": ["földrajz", "Kárpát-medence", "Közép-Európa"]
+  },
+  {
+    "question_text": "Mely ország NEM szomszédos Magyarországgal?",
+    "choice_a": "Ausztria",
+    "choice_b": "Szlovénia",
+    "choice_c": "Lengyelország",
+    "choice_d": "Románia",
+    "correct_answer": "C",
+    "explanation": "Magyarország szomszédos országai: Ausztria, Szlovákia, Ukrajna, Románia, Szerbia, Horvátország, Szlovénia. Lengyelország nem szomszédos Magyarországgal.",
+    "difficulty": "easy",
+    "tags": ["földrajz", "szomszédos országok", "határok"]
+  },
+  {
+    "question_text": "Mekkora Magyarország területe?",
+    "choice_a": "78.866 km²",
+    "choice_b": "93.030 km²",
+    "choice_c": "110.994 km²",
+    "choice_d": "88.361 km²",
+    "correct_answer": "B",
+    "explanation": "Magyarország területe 93.030 km². Lakónépessége közel 10 millió fő.",
+    "difficulty": "easy",
+    "tags": ["földrajz", "terület", "alapadatok"]
+  },
+  {
+    "question_text": "Mi Magyarország államformája?",
+    "choice_a": "Köztársaság",
+    "choice_b": "Királyság",
+    "choice_c": "Fejedelemség",
+    "choice_d": "Szultanátus",
+    "correct_answer": "A",
+    "explanation": "Magyarország államformája köztársaság. Pénzneme a forint.",
+    "difficulty": "easy",
+    "tags": ["államforma", "köztársaság", "politikai rendszer"]
+  },
+  {
+    "question_text": "Hány megyére tagozódik Magyarország?",
+    "choice_a": "15 megye és a főváros",
+    "choice_b": "19 megye és a főváros",
+    "choice_c": "22 megye és a főváros",
+    "choice_d": "25 megye és a főváros",
+    "correct_answer": "B",
+    "explanation": "Magyarország közigazgatási beosztása: 19 megye és a főváros. Magyarország fővárosa Budapest, amely 23 kerületre tagozódik.",
+    "difficulty": "easy",
+    "tags": ["közigazgatás", "megyék", "területi beosztás"]
+  },
+  {
+    "question_text": "Hány kerületre tagozódik Budapest?",
+    "choice_a": "19 kerületre",
+    "choice_b": "21 kerületre",
+    "choice_c": "23 kerületre",
+    "choice_d": "25 kerületre",
+    "correct_answer": "C",
+    "explanation": "Budapest 23 kerületre tagozódik. A főváros Magyarország közigazgatási központja és legnépesebb városa.",
+    "difficulty": "easy",
+    "tags": ["Budapest", "kerületek", "közigazgatás"]
+  }
+]
