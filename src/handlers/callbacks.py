@@ -119,6 +119,11 @@ async def answer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     if is_correct:
         session['correct_answers'] += 1
 
+    logger.info(
+        f"Answer processed: questions_answered={session['questions_answered']}, "
+        f"questions_per_batch={session.get('questions_per_batch', 10)}"
+    )
+
     if is_correct:
         result_text = "✅ *Correct!*\n\n"
     else:
@@ -161,6 +166,11 @@ async def _show_next_question(query, user_id: int, bot_instance) -> None:
 
     # Check if we've reached the questions_per_batch limit
     questions_per_batch = session.get('questions_per_batch', 10)
+    logger.info(
+        f"Batch limit check: questions_answered={session['questions_answered']}, "
+        f"questions_per_batch={questions_per_batch}, "
+        f"will_end={session['questions_answered'] >= questions_per_batch}"
+    )
     if session['questions_answered'] >= questions_per_batch:
         await query.edit_message_text(
             f"✅ *Session complete!*\n\n"
