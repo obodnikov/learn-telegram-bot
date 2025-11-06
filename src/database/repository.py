@@ -9,6 +9,7 @@ from contextlib import contextmanager
 from src.database.models import (
     Base,
     User,
+    UserSettings,
     Topic,
     Question,
     UserProgress,
@@ -126,6 +127,100 @@ class Repository:
         if user is None:
             user = self.create_user(telegram_id, native_language)
         return user
+
+    # User Settings operations
+
+    def get_user_settings(self, user_id: int) -> Optional[UserSettings]:
+        """
+        Get user settings by user ID.
+
+        Args:
+            user_id: Internal user ID (not telegram_id)
+
+        Returns:
+            UserSettings object if found, None otherwise
+        """
+        with self.get_session() as session:
+            return session.query(UserSettings).filter(UserSettings.user_id == user_id).first()
+
+    def create_user_settings(self, user_id: int, questions_per_batch: Optional[int] = None) -> UserSettings:
+        """
+        Create user settings.
+
+        Args:
+            user_id: Internal user ID (not telegram_id)
+            questions_per_batch: Number of questions per batch (None = use topic default)
+
+        Returns:
+            Created UserSettings object
+        """
+        with self.get_session() as session:
+            settings = UserSettings(
+                user_id=user_id,
+                questions_per_batch=questions_per_batch,
+                created_at=datetime.utcnow(),
+                updated_at=datetime.utcnow()
+            )
+            session.add(settings)
+            session.flush()
+            session.refresh(settings)
+            logger.info(f"Created settings for user {user_id}: questions_per_batch={questions_per_batch}")
+            return settings
+
+    def update_user_settings(
+        self,
+        user_id: int,
+        questions_per_batch: Optional[int] = None
+    ) -> UserSettings:
+        """
+        Update or create user settings.
+
+        Args:
+            user_id: Internal user ID (not telegram_id)
+            questions_per_batch: Number of questions per batch (None = use topic default)
+
+        Returns:
+            Updated UserSettings object
+        """
+        with self.get_session() as session:
+            settings = session.query(UserSettings).filter(UserSettings.user_id == user_id).first()
+
+            if settings:
+                # Update existing settings
+                settings.questions_per_batch = questions_per_batch
+                settings.updated_at = datetime.utcnow()
+                session.flush()
+                session.refresh(settings)
+                logger.info(f"Updated settings for user {user_id}: questions_per_batch={questions_per_batch}")
+            else:
+                # Create new settings
+                settings = UserSettings(
+                    user_id=user_id,
+                    questions_per_batch=questions_per_batch,
+                    created_at=datetime.utcnow(),
+                    updated_at=datetime.utcnow()
+                )
+                session.add(settings)
+                session.flush()
+                session.refresh(settings)
+                logger.info(f"Created settings for user {user_id}: questions_per_batch={questions_per_batch}")
+
+            return settings
+
+    def get_or_create_user_settings(self, user_id: int) -> UserSettings:
+        """
+        Get existing user settings or create default ones.
+
+        Args:
+            user_id: Internal user ID (not telegram_id)
+
+        Returns:
+            UserSettings object
+        """
+        settings = self.get_user_settings(user_id)
+        if settings is None:
+            settings = self.create_user_settings(user_id)
+        return settings
 
     # Topic operations
 

@@ -19,6 +19,7 @@ An intelligent Telegram bot for learning foreign languages, historical facts, an
 - 🔄 **Smart Duplicate Prevention**: Automatically tracks used examples and prevents duplicate questions
 - 🌍 **Multilingual**: Support for any language pair (e.g., Hungarian/Russian)
 - 📊 **Interactive Statistics**: Comprehensive learning analytics with per-topic drill-down
+- 👤 **User Settings**: Customizable quiz length per user (5-30 questions or topic default)
 - ⚙️ **Highly Configurable**: YAML-based topic and prompt configuration
 - 🛠️ **Topic Management**: CLI tools for syncing, updating, and managing topics
 
@@ -176,6 +177,7 @@ The bot provides a convenient commands menu accessible via the menu button in Te
 - `/help` - Show available commands
 - `/topics` - List topics and start quiz (requires questions!)
 - `/stats` - View learning statistics
+- `/settings` - Configure your preferences (quiz length, etc.)
 - `/cancel` - End current quiz session
 
 The commands menu is automatically set up when the bot starts, making it easy for users to discover and use available commands.
@@ -201,6 +203,27 @@ The `/stats` command provides comprehensive learning analytics:
 **Example**: Type `/stats` → tap "Hungarian Vocabulary - Beginner" → see detailed progress with visual indicators.
 
 **For complete documentation**, see [STATS_FEATURE.md](STATS_FEATURE.md).
+
+### User Settings
+
+The `/settings` command allows each user to customize their quiz preferences:
+
+**Customizable Options:**
+- **Questions Per Quiz**: Choose from 5, 10, 15, 20, 25, or 30 questions
+- **Topic Default**: Let each topic use its own configured length
+
+**How It Works:**
+1. Type `/settings` to open the preferences menu
+2. Select your preferred quiz length
+3. Your choice applies to all future quizzes across all topics
+4. To reset: select "Use Topic Default" to respect per-topic settings
+
+**Priority System:**
+- User preference (highest) → Topic configuration → Global default (10 questions)
+
+**Example**: Set to 15 questions → all quizzes will have 15 questions regardless of topic. Set to "Topic Default" → Hungarian Vocabulary uses 10 (from topics.yaml), Literature uses 4 (from topics.yaml).
+
+**For complete documentation**, see [docs/USER_SETTINGS_FEATURE.md](docs/USER_SETTINGS_FEATURE.md).
 
 ---
 

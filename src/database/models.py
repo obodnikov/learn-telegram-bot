@@ -42,9 +42,28 @@ class User(Base):
 
     # Relationships
     progress: Mapped[list["UserProgress"]] = relationship("UserProgress", back_populates="user", cascade="all, delete-orphan")
+    settings: Mapped[Optional["UserSettings"]] = relationship("UserSettings", back_populates="user", uselist=False, cascade="all, delete-orphan")
 
     def __repr__(self) -> str:
         return f"<User(id={self.id}, telegram_id={self.telegram_id})>"
+
+
+class UserSettings(Base):
+    """User settings model for storing user preferences."""
+
+    __tablename__ = "user_settings"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    user_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id"), unique=True, nullable=False, index=True)
+    questions_per_batch: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+    # Relationships
+    user: Mapped["User"] = relationship("User", back_populates="settings")
+
+    def __repr__(self) -> str:
+        return f"<UserSettings(user_id={self.user_id}, questions_per_batch={self.questions_per_batch})>"
 
 
 class Topic(Base):
