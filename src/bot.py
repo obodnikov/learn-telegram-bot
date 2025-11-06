@@ -234,7 +234,8 @@ class LearningBot:
             "start_time": None,
             "questions_per_batch": questions_per_batch,
             "unseen_shown": 0,  # Track how many unseen questions shown so far
-            "unseen_target": unseen_target  # Target number of unseen questions for this session
+            "unseen_target": unseen_target,  # Target number of unseen questions for this session
+            "shown_question_ids": []  # Track questions shown in this session to prevent repeats
         }
         self.active_sessions[user_id] = session
         logger.info(

@@ -320,7 +320,8 @@ class Repository:
         user_id: int,
         topic_id: int,
         unseen_shown: int = 0,
-        unseen_target: int = 0
+        unseen_target: int = 0,
+        exclude_question_ids: list[int] = None
     ) -> Optional[Question]:
         """
         Get next question based on spaced repetition algorithm with configurable unseen ratio.
@@ -334,18 +335,21 @@ class Repository:
         2. Questions with consecutive_correct < 2 (not mastered) - random
 
         Excludes questions with consecutive_correct >= 2 (mastered/known)
+        Excludes questions in exclude_question_ids list (already shown in session)
 
         Args:
             user_id: User ID
             topic_id: Topic ID
             unseen_shown: Number of unseen questions shown in current session
             unseen_target: Target number of unseen questions for session (e.g., 40% of batch)
+            exclude_question_ids: List of question IDs to exclude (already shown in session)
 
         Returns:
             Question object or None if no questions available
         """
         with self.get_session() as session:
             now = datetime.utcnow()
+            exclude_question_ids = exclude_question_ids or []
 
             # Get all questions for topic
             all_questions = session.query(Question).filter(
@@ -353,6 +357,16 @@ class Repository:
             ).all()
 
             if not all_questions:
+                return None
+
+            # Filter out excluded questions (already shown in session)
+            all_questions = [q for q in all_questions if q.id not in exclude_question_ids]
+
+            if not all_questions:
+                logger.info(
+                    f"No available questions for topic {topic_id} "
+                    f"(all {len(exclude_question_ids)} available questions already shown in session)"
+                )
                 return None
 
             all_question_ids = [q.id for q in all_questions]
