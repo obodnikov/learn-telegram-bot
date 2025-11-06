@@ -1,0 +1,631 @@
+[
+  {
+    "question_text": "Какой венгерский поэт эпохи Возрождения написал 'Hogy Júliára talála, így köszöne neki'?",
+    "choice_a": "Janus Pannonius",
+    "choice_b": "Zrínyi Miklós",
+    "choice_c": "Balassi Bálint",
+    "choice_d": "Csokonai Vitéz Mihály",
+    "correct_answer": "C",
+    "explanation": "Русский: С именем Balassi Bálint (Балинт Балашши, 1554-1594) связано произведение 'Hogy Júliára talála, így köszöne neki' (Как на Юлию набрёл, так ей и молвил). Он был выдающимся поэтом венгерского Ренессанса, первым великим венгерским лирическим поэтом. Балашши создал особую строфическую форму, названную его именем. Его любовная лирика, военные и религиозные стихи оказали огромное влияние на венгерскую поэзию.\n\nMagyar: A 'Hogy Júliára talála, így köszöne neki' című művet Balassi Bálint (1554-1594) írta. Ő a magyar reneszánsz kiemelkedő költője volt, az első nagy magyar lírai költő. Balassi különleges strófaformát alkotott, amelyet róla neveztek el. Szerelmi lírája, vitézi és vallási versei óriási hatással voltak a magyar költészetre.",
+    "difficulty": "advanced",
+    "tags": [
+      "поэзия",
+      "ренессанс",
+      "любовная лирика",
+      "Balassi Bálint",
+      "16 век"
+    ]
+  },
+  {
+    "question_text": "Какой венгерский композитор является автором Magyar rapszódiák (Венгерские рапсодии)?",
+    "choice_a": "Erkel Ferenc",
+    "choice_b": "Bartók Béla",
+    "choice_c": "Liszt Ferenc",
+    "choice_d": "Kodály Zoltán",
+    "correct_answer": "C",
+    "explanation": "Русский: Автором Magyar rapszódiák (Венгерских рапсодий) является Liszt Ferenc (Ференц Лист, 1811-1886), один из величайших венгерских композиторов и пианистов. Это цикл из 19 рапсодий для фортепиано, основанных на венгерских народных и цыганских мелодиях. Самая известная - Рапсодия №2 до-диез минор. Лист считается одним из величайших пианистов-виртуозов всех времен.\n\nMagyar: A Magyar rapszódiák szerzője Liszt Ferenc (1811-1886), az egyik legnagyobb magyar zeneszerző és zongorista. Ez egy 19 zongoradarabból álló ciklus, amely magyar népi és cigány dallamokon alapul. A legismertebb a 2. Magyar rapszódia cisz-mollban. Lisztet minden idők egyik legnagyobb zongoravirtuózának tartják.",
+    "difficulty": "advanced",
+    "tags": [
+      "музыка",
+      "фортепиано",
+      "романтизм",
+      "Liszt Ferenc",
+      "19 век"
+    ]
+  },
+  {
+    "question_text": "Какой венгерский композитор создал произведение 'Háry János'?",
+    "choice_a": "Bartók Béla",
+    "choice_b": "Liszt Ferenc",
+    "choice_c": "Kodály Zoltán",
+    "choice_d": "Erkel Ferenc",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Háry János' (Хари Янош) сочинил Kodály Zoltán (Золтан Кодай, 1882-1967), выдающийся венгерский композитор и исследователь народной музыки. Это музыкальная сказка для голосов и оркестра (1926), основанная на народных сказаниях о фантазере Яноше Хари. Произведение использует венгерские народные мелодии и инструменты.\n\nMagyar: A 'Háry János' című művet Kodály Zoltán (1882-1967) komponálta, kiemelkedő magyar zeneszerző és népzenekutató. Ez egy zenés játék énekhangra és zenekarra (1926), amely Háry János mesemondó alakjának népi mondáin alapul. A mű magyar népdallamokat és hangszereket használ.",
+    "difficulty": "advanced",
+    "tags": [
+      "музыка",
+      "народная музыка",
+      "Kodály Zoltán",
+      "20 век"
+    ]
+  },
+  {
+    "question_text": "Какое произведение считается первой венгерской национальной оперой?",
+    "choice_a": "Hunyadi László",
+    "choice_b": "Bánk bán",
+    "choice_c": "Háry János",
+    "choice_d": "A kékszakállú herceg vára",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Hunyadi László' (1844) - первая национальная венгерская опера, написанная Ференцем Эркелем. Опера основана на исторических событиях и рассказывает о трагической судьбе Ласло Хуньяди. Это произведение заложило основы венгерской оперной традиции.\n\nMagyar: A 'Hunyadi László' (1844) az első magyar nemzeti opera, amelyet Erkel Ferenc komponált. Az opera történelmi eseményeken alapul és Hunyadi László tragikus sorsát meséli el. Ez a mű alapozta meg a magyar operai hagyományt.",
+    "difficulty": "advanced",
+    "tags": [
+      "opera",
+      "Erkel Ferenc",
+      "музыка",
+      "19 век"
+    ]
+  },
+  {
+    "question_text": "Кто из поэтов написал знаменитое стихотворение 'Nemzeti dal' (Национальная песнь), ставшее символом революции 1848 года?",
+    "choice_a": "Petőfi Sándor",
+    "choice_b": "Arany János",
+    "choice_c": "Vörösmarty Mihály",
+    "choice_d": "Batsányi János",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Nemzeti dal' написал Шандор Петёфи (Petőfi Sándor) 15 марта 1848 года. Это стихотворение стало символом венгерской революции и борьбы за независимость 1848-49 годов. Петёфи прочитал его перед толпой в день начала революции.\n\nMagyar: A 'Nemzeti dal'-t Petőfi Sándor írta 1848. március 15-én. A vers az 1848-49-es forradalom és szabadságharc szimbólumává vált. Petőfi a forradalmi nap reggelén szavalta el a tömeg előtt.",
+    "difficulty": "advanced",
+    "tags": [
+      "поэзия",
+      "революция 1848",
+      "Petőfi Sándor",
+      "19 век"
+    ]
+  },
+  {
+    "question_text": "Какой композитор является создателем метода музыкального образования, известного как 'Kodály-módszer'?",
+    "choice_a": "Bartók Béla",
+    "choice_b": "Kodály Zoltán",
+    "choice_c": "Liszt Ferenc",
+    "choice_d": "Erkel Ferenc",
+    "correct_answer": "B",
+    "explanation": "Русский: Золтан Кодай (Kodály Zoltán) разработал всемирно известный метод музыкального образования, основанный на народной музыке и сольфеджио. Этот метод используется во многих странах мира и считается одним из самых эффективных способов музыкального обучения.\n\nMagyar: A Kodály-módszert Kodály Zoltán dolgozta ki, amely egy nemzetközileg elismert zenepedagógiai módszer, amely a népzenén és a szolmizáción alapul. A módszert világszerte használják, és a zenei oktatás egyik leghatékonyabb módszerének tartják.",
+    "difficulty": "advanced",
+    "tags": [
+      "музыкальное образование",
+      "Kodály Zoltán",
+      "народная музыка"
+    ]
+  },
+  {
+    "question_text": "Кто является автором сборника стихов 'Új versek' (Новые стихи), ознаменовавшего начало венгерского модернизма?",
+    "choice_a": "Ady Endre",
+    "choice_b": "József Attila",
+    "choice_c": "Babits Mihály",
+    "choice_d": "Kosztolányi Dezső",
+    "correct_answer": "A",
+    "explanation": "Русский: Сборник 'Új versek' (1906) Эндре Ади (Ady Endre) считается началом венгерского модернизма в поэзии. Этот сборник произвел революцию в венгерской поэзии своим новаторским языком и символизмом.\n\nMagyar: Az 'Új versek' (1906) Ady Endre verseskötete a magyar költészeti modernizmus kezdetét jelzi. A kötet forradalmasította a magyar költészetet újszerű nyelvhasználatával és szimbolizmusával.",
+    "difficulty": "advanced",
+    "tags": [
+      "поэзия",
+      "модернизм",
+      "Ady Endre",
+      "20 век"
+    ]
+  },
+  {
+    "question_text": "Какой венгерский композитор известен своими исследованиями народной музыки и написал 'Микрокосмос'?",
+    "choice_a": "Liszt Ferenc",
+    "choice_b": "Kodály Zoltán",
+    "choice_c": "Bartók Béla",
+    "choice_d": "Dohnányi Ernő",
+    "correct_answer": "C",
+    "explanation": "Русский: Бела Барток (Bartók Béla) создал 'Микрокосмос' - собрание из 153 прогрессивных фортепианных пьес. Он также известен своими этномузыкологическими исследованиями и записями народной музыки.\n\nMagyar: Bartók Béla komponálta a 'Mikrokozmosz'-t, amely 153 progresszív zongoradarabból áll. Emellett népzenekutatásairól és népzenegyűjtéseiről is híres.",
+    "difficulty": "advanced",
+    "tags": [
+      "музыка",
+      "Bartók Béla",
+      "народная музыка",
+      "20 век"
+    ]
+  },
+  {
+    "question_text": "Кто написал эпическую поэму 'Szigeti veszedelem' (Сигетская опасность)?",
+    "choice_a": "Balassi Bálint",
+    "choice_b": "Zrínyi Miklós",
+    "choice_c": "Janus Pannonius",
+    "choice_d": "Tinódi Lantos Sebestyén",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Szigeti veszedelem' написал Миклош Зрини (Zrínyi Miklós) в 1645-46 годах. Это барочный эпос о героической обороне крепости Сигетвар от турок в 1566 году, где погиб его прадед.\n\nMagyar: A 'Szigeti veszedelem'-et Zrínyi Miklós írta 1645-46-ban. Ez egy barokk eposz, amely a szigetvári vár 1566-os török ostromáról szól, ahol dédapja hősi halált halt.",
+    "difficulty": "advanced",
+    "tags": [
+      "эпос",
+      "барокко",
+      "Zrínyi Miklós",
+      "17 век"
+    ]
+  },
+  {
+    "question_text": "Какой венгерский писатель является автором романа 'Légy jó mindhalálig' (Будь добр до самой смерти)?",
+    "choice_a": "Móricz Zsigmond",
+    "choice_b": "Kosztolányi Dezső",
+    "choice_c": "Karinthy Frigyes",
+    "choice_d": "Márai Sándor",
+    "correct_answer": "A",
+    "explanation": "Русский: Роман 'Légy jó mindhalálig' (1920) написал Жигмонд Мориц (Móricz Zsigmond). Это история о мальчике Ньилаше Мише, учащемся в дебреценском колледже, которая стала классикой венгерской литературы.\n\nMagyar: A 'Légy jó mindhalálig' (1920) című regényt Móricz Zsigmond írta. A történet Nyilas Misiről szól, egy debreceni kollégiumi diákról, és a magyar irodalom klasszikusává vált.",
+    "difficulty": "advanced",
+    "tags": [
+      "проза",
+      "Móricz Zsigmond",
+      "20 век",
+      "роман"
+    ]
+  },
+  {
+    "question_text": "Кто является автором произведения 'Egy polgár vallomása' (Исповедь буржуа)?",
+    "choice_a": "Petőfi Sándor",
+    "choice_b": "Márai Sándor",
+    "choice_c": "Móricz Zsigmond",
+    "choice_d": "Ady Endre",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Egy polgár vallomása' (Исповедь буржуа) написал Márai Sándor (Мараи Шандор, 1900-1989), один из выдающихся венгерских писателей 20-го века. Это автобиографическое произведение описывает жизнь венгерской буржуазии и интеллигенции первой половины XX века. Мараи эмигрировал после коммунистического переворота 1948 года.\n\nMagyar: Az 'Egy polgár vallomása' című művet Márai Sándor (1900-1989) írta, a 20. század egyik kiemelkedő magyar írója. Ez egy önéletrajzi mű, amely a 20. század első felének magyar polgárságát és értelmiségét mutatja be. Márai 1948-ban, a kommunista hatalomátvétel után emigrált.",
+    "difficulty": "advanced",
+    "tags": [
+      "литература 20 века",
+      "проза",
+      "автобиография",
+      "Márai Sándor"
+    ]
+  },
+  {
+    "question_text": "Кто написал сатирическое произведение 'Így írtok ti' (Так вы пишете)?",
+    "choice_a": "Karinthy Frigyes",
+    "choice_b": "Móricz Zsigmond",
+    "choice_c": "Kosztolányi Dezső",
+    "choice_d": "Babits Mihály",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Így írtok ti' (Так вы пишете) написал Karinthy Frigyes (Каринтьи Фридеш, 1887-1938), венгерский писатель и сатирик 20-го века. Это сборник литературных пародий на стили известных венгерских писателей. Произведение демонстрирует блестящее знание литературных стилей и острое чувство юмора автора.\n\nMagyar: Az 'Így írtok ti' című művet Karinthy Frigyes (1887-1938) írta, a 20. század magyar írója és szatirikus. Ez egy irodalmi paródiagyűjtemény, amely híres magyar írók stílusát utánozza. A mű Karinthy brilliáns irodalmi stílusérzékét és éles humorát mutatja be.",
+    "difficulty": "advanced",
+    "tags": [
+      "литература 20 века",
+      "сатира",
+      "пародия",
+      "Karinthy Frigyes"
+    ]
+  },
+  {
+    "question_text": "Какой венгерский поэт написал эпическую поэму 'A walesi bárdok' (Валлийские барды)?",
+    "choice_a": "Petőfi Sándor",
+    "choice_b": "Ady Endre",
+    "choice_c": "Arany János",
+    "choice_d": "Balassi Bálint",
+    "correct_answer": "C",
+    "explanation": "Русский: 'A walesi bárdok' (Валлийские барды) написал Arany János (Арань Янош, 1817-1882), один из крупнейших эпических поэтов венгерской литературы романтизма. Поэма была написана в 1857 году как аллегория на подавление венгерской революции 1848-49 годов. В ней рассказывается о том, как английский король Эдуард I приказал убить валлийских бардов.\n\nMagyar: A 'walesi bárdok' című epikus költeményt Arany János (1817-1882) írta, a magyar romantika egyik legnagyobb epikus költője. A mű 1857-ben készült, az 1848-49-es magyar forradalom leverésének allegóriájaként. A történet arról szól, hogy I. Edvárd angol király megparancsolta a walesi bárdok lemészárlását.",
+    "difficulty": "advanced",
+    "tags": [
+      "поэзия",
+      "романтизм",
+      "эпос",
+      "Arany János",
+      "19 век"
+    ]
+  },
+  {
+    "question_text": "Кто из венгерских композиторов создал метод музыкального образования, известный как 'метод Кодая'?",
+    "choice_a": "Liszt Ferenc",
+    "choice_b": "Kodály Zoltán",
+    "choice_c": "Bartók Béla",
+    "choice_d": "Erkel Ferenc",
+    "correct_answer": "B",
+    "explanation": "Русский: Kodály Zoltán (Кодай Золтан, 1882-1967) разработал революционный метод музыкального образования, основанный на народной музыке и сольфеджио. Метод Кодая используется во всем мире и подчеркивает важность раннего музыкального образования через народные песни.\n\nMagyar: Kodály Zoltán (1882-1967) dolgozta ki a róla elnevezett zenepedagógiai módszert, amely a népzenén és a szolfédzson alapul. A Kodály-módszert világszerte használják, és hangsúlyozza a korai zenei nevelés fontosságát népdalok segítségével.",
+    "difficulty": "advanced",
+    "tags": [
+      "музыкальное образование",
+      "Kodály Zoltán",
+      "народная музыка",
+      "педагогика"
+    ]
+  },
+  {
+    "question_text": "Кто написал знаменитое стихотворение 'Nemzeti dal' (Национальная песнь), ставшее символом революции 1848 года?",
+    "choice_a": "Petőfi Sándor",
+    "choice_b": "Arany János",
+    "choice_c": "Vörösmarty Mihály",
+    "choice_d": "Kölcsey Ferenc",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Nemzeti dal' написал Petőfi Sándor (Петёфи Шандор, 1823-1849) 13 марта 1848 года. Это стихотворение стало символом венгерской революции 1848-49 годов и было прочитано поэтом перед толпой в день начала революции 15 марта.\n\nMagyar: A 'Nemzeti dal'-t Petőfi Sándor (1823-1849) írta 1848. március 13-án. A vers az 1848-49-es forradalom és szabadságharc szimbólumává vált, amelyet a költő a forradalom kezdetén, március 15-én szavalt el a tömeg előtt.",
+    "difficulty": "advanced",
+    "tags": [
+      "поэзия",
+      "революция 1848",
+      "Petőfi Sándor",
+      "политическая литература"
+    ]
+  },
+  {
+    "question_text": "Какой венгерский композитор написал 'Венгерские рапсодии'?",
+    "choice_a": "Liszt Ferenc",
+    "choice_b": "Bartók Béla",
+    "choice_c": "Kodály Zoltán",
+    "choice_d": "Erkel Ferenc",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Венгерские рапсодии' написал Liszt Ferenc (Лист Ференц, 1811-1886). Это серия из 19 произведений для фортепиано, основанных на венгерских народных мелодиях и цыганской музыке. Они стали одними из самых известных произведений композитора.\n\nMagyar: A 'Magyar rapszódiák'-at Liszt Ferenc (1811-1886) írta. A 19 zongoradarabból álló sorozat magyar népzenei és cigányzenei motívumokra épül. Ezek a művek a zeneszerző legismertebb alkotásai közé tartoznak.",
+    "difficulty": "advanced",
+    "tags": [
+      "музыка",
+      "Liszt Ferenc",
+      "романтизм",
+      "народная музыка"
+    ]
+  },
+  {
+    "question_text": "Кто из поэтов эпохи Возрождения написал цикл стихов 'Júlia-versek'?",
+    "choice_a": "Balassi Bálint",
+    "choice_b": "Janus Pannonius",
+    "choice_c": "Zrínyi Miklós",
+    "choice_d": "Bornemisza Péter",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Júlia-versek' написал Balassi Bálint (Балашши Балинт, 1554-1594), крупнейший венгерский поэт эпохи Возрождения. Цикл посвящен его возлюбленной Юлии и считается вершиной венгерской любовной лирики XVI века.\n\nMagyar: A 'Júlia-versek'-et Balassi Bálint (1554-1594) írta, a magyar reneszánsz költészet legnagyobb alakja. A versciklus szerelméhez, Júliához íródott, és a 16. századi magyar szerelmi líra csúcspontjának tekinthető.",
+    "difficulty": "advanced",
+    "tags": [
+      "поэзия",
+      "Возрождение",
+      "Balassi Bálint",
+      "любовная лирика"
+    ]
+  },
+  {
+    "question_text": "Какой писатель является автором романа 'Légy jó mindhalálig' (Будь добр до самой смерти)?",
+    "choice_a": "Móricz Zsigmond",
+    "choice_b": "Kosztolányi Dezső",
+    "choice_c": "Márai Sándor",
+    "choice_d": "Németh László",
+    "correct_answer": "A",
+    "explanation": "Русский: Роман 'Légy jó mindhalálig' написал Móricz Zsigmond (Мориц Жигмонд, 1879-1942). Это история о молодом студенте Ньилаше Миши, которая отражает моральные и социальные проблемы венгерского общества начала XX века.\n\nMagyar: A 'Légy jó mindhalálig' című regényt Móricz Zsigmond (1879-1942) írta. A mű Nyilas Misi történetén keresztül mutatja be a 20. század eleji magyar társadalom erkölcsi és szociális problémáit.",
+    "difficulty": "advanced",
+    "tags": [
+      "проза",
+      "Móricz Zsigmond",
+      "20 век",
+      "роман воспитания"
+    ]
+  },
+  {
+    "question_text": "Кто из композиторов собрал и систематизировал венгерские народные песни вместе с Kodály Zoltán?",
+    "choice_a": "Bartók Béla",
+    "choice_b": "Liszt Ferenc",
+    "choice_c": "Erkel Ferenc",
+    "choice_d": "Dohnányi Ernő",
+    "correct_answer": "A",
+    "explanation": "Русский: Bartók Béla (Барток Бела, 1881-1945) вместе с Кодаем Золтаном собрал и систематизировал тысячи венгерских народных песен. Их работа заложила основу современной этномузыкологии и оказала огромное влияние на развитие венгерской музыки XX века.\n\nMagyar: Bartók Béla (1881-1945) Kodály Zoltánnal együtt gyűjtötte és rendszerezte a magyar népdalok ezreit. Munkásságuk megalapozta a modern népzenetudományt és jelentősen befolyásolta a 20. századi magyar zene fejlődését.",
+    "difficulty": "advanced",
+    "tags": [
+      "музыка",
+      "Bartók Béla",
+      "народная музыка",
+      "этномузыкология"
+    ]
+  },
+  {
+    "question_text": "Кто является автором романа 'Rokonok' (Родственники)?",
+    "choice_a": "Márai Sándor",
+    "choice_b": "Kosztolányi Dezső",
+    "choice_c": "Krúdy Gyula",
+    "choice_d": "Móricz Zsigmond",
+    "correct_answer": "D",
+    "explanation": "Русский: Автором романа 'Rokonok' (Родственники) является Móricz Zsigmond (Мориц Жигмонд, 1879-1942), выдающийся венгерский писатель 20-го века, известный своими реалистическими произведениями. Роман 'Rokonok' (1930) - одно из его главных произведений, в котором критически изображается провинциальная венгерская буржуазия межвоенного периода.\n\nMagyar: A 'Rokonok' című regény szerzője Móricz Zsigmond (1879-1942), a 20. század kiemelkedő magyar írója, aki realista műveiről ismert. A 'Rokonok' (1930) az egyik főműve, amelyben kritikusan ábrázolja a két világháború közötti vidéki magyar polgárságot.",
+    "difficulty": "advanced",
+    "tags": [
+      "литература 20 века",
+      "проза",
+      "реализм",
+      "Móricz Zsigmond"
+    ]
+  },
+  {
+    "question_text": "Кто написал стихотворение 'Elbocsátó, szép üzenet' (Прощальное, прекрасное послание)?",
+    "choice_a": "Petőfi Sándor",
+    "choice_b": "József Attila",
+    "choice_c": "Ady Endre",
+    "choice_d": "Arany János",
+    "correct_answer": "C",
+    "explanation": "Русский: Произведение 'Elbocsátó, szép üzenet' (Прощальное, прекрасное послание) написал Ady Endre (Ади Эндре, 1877-1919) - один из выдающихся венгерских поэтов 20-го века, один из основоположников венгерского модернизма. Его поэзия характеризуется символизмом, новаторским использованием языка и глубоким философским содержанием. Ади оказал революционное влияние на венгерскую литературу.\n\nMagyar: Az 'Elbocsátó, szép üzenet' című művet Ady Endre (1877-1919) írta, a 20. század egyik kiemelkedő magyar költője, a magyar modernizmus egyik megalapítója. Költészetét szimbolizmus, a nyelv újító használata és mély filozófiai tartalom jellemzi. Ady forradalmi hatással volt a magyar irodalomra.",
+    "difficulty": "advanced",
+    "tags": [
+      "поэзия",
+      "модернизм",
+      "символизм",
+      "Ady Endre",
+      "20 век"
+    ]
+  },
+  {
+    "question_text": "Кто написал стихотворение 'Nemzeti dal' (Национальная песнь)?",
+    "choice_a": "Ady Endre",
+    "choice_b": "Arany János",
+    "choice_c": "Petőfi Sándor",
+    "choice_d": "József Attila",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Nemzeti dal' (Национальная песнь) написал Petőfi Sándor (Петёфи Шандор, 1823-1849), это произведение стало одним из важнейших патриотических стихотворений венгерской литературы романтизма. Стихотворение было написано 13 марта 1848 года и прочитано на ступенях Национального музея в начале венгерской революции. Начинается со знаменитых строк 'Talpra magyar, hí a haza!' (Вставай, венгр, зовёт отчизна!).\n\nMagyar: A 'Nemzeti dal' című verset Petőfi Sándor (1823-1849) írta, ez a mű a magyar romantikus irodalom egyik legfontosabb hazafias költeménye lett. A verset 1848. március 13-án írta, és a Nemzeti Múzeum lépcsőjén olvasták fel a magyar forradalom kezdetén. A híres sorokkal kezdődik: 'Talpra magyar, hí a haza!'",
+    "difficulty": "advanced",
+    "tags": [
+      "поэзия",
+      "романтизм",
+      "революция 1848",
+      "Petőfi Sándor",
+      "патриотизм"
+    ]
+  },
+  {
+    "question_text": "Какое произведение считается первым эпосом на венгерском языке?",
+    "choice_a": "Szigeti veszedelem",
+    "choice_b": "Toldi",
+    "choice_c": "János vitéz",
+    "choice_d": "Dorottya",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Szigeti veszedelem' (Сигетская опасность) - эпическая поэма, написанная Zrínyi Miklós (Зрини Миклош) в 1647-1648 годах, считается первым эпосом на венгерском языке. Произведение описывает героическую оборону крепости Сигетвар от турецких войск в 1566 году.\n\nMagyar: A 'Szigeti veszedelem', amelyet Zrínyi Miklós írt 1647-1648-ban, az első magyar nyelvű eposz. A mű az 1566-os szigetvári várostrom hősies védelmét írja le.",
+    "difficulty": "advanced",
+    "tags": [
+      "эпос",
+      "барокко",
+      "Zrínyi Miklós",
+      "историческая литература"
+    ]
+  },
+  {
+    "question_text": "Кто из композиторов создал метод музыкального образования, известный как 'Kodály-módszer'?",
+    "choice_a": "Bartók Béla",
+    "choice_b": "Kodály Zoltán",
+    "choice_c": "Liszt Ferenc",
+    "choice_d": "Erkel Ferenc",
+    "correct_answer": "B",
+    "explanation": "Русский: Kodály Zoltán (Кодай Золтан) разработал всемирно известный метод музыкального образования 'Kodály-módszer'. Этот метод основан на народной музыке и использует относительную сольмизацию для обучения музыкальной грамоте.\n\nMagyar: Kodály Zoltán dolgozta ki a nemzetközileg elismert 'Kodály-módszer' zenepedagógiai rendszert. A módszer a népzenére épül és a relatív szolmizációt használja a zenei írás-olvasás tanításához.",
+    "difficulty": "advanced",
+    "tags": [
+      "музыкальное образование",
+      "Kodály Zoltán",
+      "народная музыка",
+      "педагогика"
+    ]
+  },
+  {
+    "question_text": "Кто написал сатирический роман 'Utazás a koponyám körül'?",
+    "choice_a": "Márai Sándor",
+    "choice_b": "Karinthy Frigyes",
+    "choice_c": "Móricz Zsigmond",
+    "choice_d": "Kosztolányi Dezső",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Utazás a koponyám körül' (Путешествие вокруг моего черепа) написал Karinthy Frigyes (Каринти Фридьеш) в 1937 году. Это автобиографический роман о его опыте операции на мозге, сочетающий сатиру с глубоким философским осмыслением.\n\nMagyar: Az 'Utazás a koponyám körül' című művet Karinthy Frigyes írta 1937-ben. Ez egy önéletrajzi regény az agydaganat-műtétjéről, amely egyesíti a szatírát és a mély filozófiai gondolkodást.",
+    "difficulty": "advanced",
+    "tags": [
+      "сатира",
+      "автобиография",
+      "Karinthy Frigyes",
+      "модернизм"
+    ]
+  },
+  {
+    "question_text": "Какой поэт написал цикл стихотворений 'Új versek'?",
+    "choice_a": "Ady Endre",
+    "choice_b": "József Attila",
+    "choice_c": "Babits Mihály",
+    "choice_d": "Petőfi Sándor",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Új versek' (Новые стихи) - сборник стихов Ady Endre (Ади Эндре), опубликованный в 1906 году. Этот сборник ознаменовал начало венгерского модернизма в поэзии и революционно изменил венгерскую литературу.\n\nMagyar: Az 'Új versek' Ady Endre verseskötete, amely 1906-ban jelent meg. Ez a kötet a magyar költészeti modernizmus kezdetét jelentette, és forradalmasította a magyar irodalmat.",
+    "difficulty": "advanced",
+    "tags": [
+      "поэзия",
+      "модернизм",
+      "Ady Endre",
+      "20 век"
+    ]
+  },
+  {
+    "question_text": "Кто из композиторов создал 'Magyar rapszódiák'?",
+    "choice_a": "Bartók Béla",
+    "choice_b": "Kodály Zoltán",
+    "choice_c": "Liszt Ferenc",
+    "choice_d": "Erkel Ferenc",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Magyar rapszódiák' (Венгерские рапсодии) созданы Liszt Ferenc (Ференц Лист). Это цикл из 19 фортепианных пьес, основанных на венгерских народных мелодиях и цыганской музыке, написанных между 1846 и 1885 годами.\n\nMagyar: A 'Magyar rapszódiák'-at Liszt Ferenc komponálta. Ez egy 19 zongoradarabból álló sorozat, amely magyar népdalokra és cigányzenére épül, 1846 és 1885 között íródott.",
+    "difficulty": "advanced",
+    "tags": [
+      "музыка",
+      "Liszt Ferenc",
+      "романтизм",
+      "фортепианная музыка"
+    ]
+  },
+  {
+    "question_text": "Кто написал роман 'A gyertyák csonkig égnek'?",
+    "choice_a": "Márai Sándor",
+    "choice_b": "Móricz Zsigmond",
+    "choice_c": "Kosztolányi Dezső",
+    "choice_d": "Karinthy Frigyes",
+    "correct_answer": "A",
+    "explanation": "Русский: Роман 'A gyertyák csonkig égnek' (Свечи догорают до конца) написал Márai Sándor (Мараи Шандор) в 1942 году. Это одно из самых известных его произведений о дружбе, любви и предательстве в контексте распада австро-венгерской аристократии.\n\nMagyar: 'A gyertyák csonkig égnek' című regényt Márai Sándor írta 1942-ben. Ez az egyik legismertebb műve, amely a barátságról, szerelemről és árulásról szól az osztrák-magyar arisztokrácia hanyatlásának kontextusában.",
+    "difficulty": "advanced",
+    "tags": [
+      "проза",
+      "Márai Sándor",
+      "20 век",
+      "роман"
+    ]
+  },
+  {
+    "question_text": "Кто из поэтов эпохи Возрождения написал 'Egy katonaének'?",
+    "choice_a": "Janus Pannonius",
+    "choice_b": "Balassi Bálint",
+    "choice_c": "Zrínyi Miklós",
+    "choice_d": "Csokonai Vitéz Mihály",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Egy katonaének' (Песнь воина) написал Balassi Bálint (Балашши Балинт), величайший венгерский поэт эпохи Возрождения. Это стихотворение прославляет жизнь пограничных воинов и является одним из самых известных произведений венгерской ренессансной поэзии.\n\nMagyar: Az 'Egy katonaének'-et Balassi Bálint írta, aki a magyar reneszánsz költészet legnagyobb alakja. A vers a végvári vitézek életét dicsőíti, és a magyar reneszánsz költészet egyik legismertebb alkotása.",
+    "difficulty": "advanced",
+    "tags": [
+      "поэзия",
+      "Возрождение",
+      "Balassi Bálint",
+      "военная поэзия"
+    ]
+  },
+  {
+    "question_text": "Кто является композитором оперы 'Bánk bán'?",
+    "choice_a": "Liszt Ferenc",
+    "choice_b": "Bartók Béla",
+    "choice_c": "Kodály Zoltán",
+    "choice_d": "Erkel Ferenc",
+    "correct_answer": "D",
+    "explanation": "Русский: Оперу 'Bánk bán' сочинил Erkel Ferenc (Ференц Эркель, 1810-1893), который является одним из самых выдающихся венгерских композиторов и создателей венгерской национальной оперы. Эта опера, премьера которой состоялась в 1861 году, считается первой настоящей венгерской национальной оперой. Либретто основано на драме Катоны Йожефа.\n\nMagyar: A 'Bánk bán' című operát Erkel Ferenc (1810-1893) komponálta, aki Magyarország egyik legkiemelkedőbb zeneszerzője és a magyar nemzeti opera megteremtője. Ez az 1861-ben bemutatott opera az első igazi magyar nemzeti operának számít. A librettó Katona József drámáján alapul.",
+    "difficulty": "advanced",
+    "tags": [
+      "музыка",
+      "опера",
+      "национальная опера",
+      "Erkel Ferenc",
+      "19 век"
+    ]
+  },
+  {
+    "question_text": "Who wrote the epic poem 'Szigeti veszedelem' (The Siege of Sziget)?",
+    "choice_a": "Zrínyi Miklós",
+    "choice_b": "Balassi Bálint",
+    "choice_c": "Janus Pannonius",
+    "choice_d": "Arany János",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Szigeti veszedelem' написал Zrínyi Miklós (1620-1664) в 1647-1648 годах. Это барочный эпос, описывающий героическую оборону крепости Сигетвар в 1566 году, где погиб его прадед. Произведение считается первым венгерским эпосом.\n\nMagyar: A 'Szigeti veszedelem'-et Zrínyi Miklós (1620-1664) írta 1647-1648-ban. A barokk eposz a szigetvári vár 1566-os hősies védelmét írja le, ahol dédapja elesett. Ez tekinthető az első magyar eposznak.",
+    "difficulty": "advanced",
+    "tags": [
+      "literature",
+      "baroque",
+      "epic poetry",
+      "historical"
+    ]
+  },
+  {
+    "question_text": "Which composer is known for developing the Kodály Method in music education?",
+    "choice_a": "Kodály Zoltán",
+    "choice_b": "Bartók Béla",
+    "choice_c": "Liszt Ferenc",
+    "choice_d": "Erkel Ferenc",
+    "correct_answer": "A",
+    "explanation": "Русский: Kodály Zoltán (1882-1967) разработал всемирно известный метод музыкального образования, основанный на народной музыке и сольфеджио. Этот метод до сих пор используется во многих странах.\n\nMagyar: Kodály Zoltán (1882-1967) dolgozta ki a népzenén és szolfédzson alapuló, nemzetközileg elismert zenepedagógiai módszert, amelyet ma is számos országban alkalmaznak.",
+    "difficulty": "advanced",
+    "tags": [
+      "music",
+      "education",
+      "folk music",
+      "20th century"
+    ]
+  },
+  {
+    "question_text": "Which of Petőfi Sándor's poems became a catalyst for the 1848 Hungarian Revolution?",
+    "choice_a": "Nemzeti dal",
+    "choice_b": "János vitéz",
+    "choice_c": "Szeptember végén",
+    "choice_d": "A puszta télen",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Nemzeti dal' (Национальная песня) Петёфи стала символом революции 1848 года. Он прочитал её 15 марта 1848 года на ступенях Национального музея, что стало началом революционных событий.\n\nMagyar: A 'Nemzeti dal' a 1848-as forradalom szimbólumává vált. Petőfi március 15-én szavalta el a Nemzeti Múzeum lépcsőjén, ami a forradalmi események kezdetét jelentette.",
+    "difficulty": "advanced",
+    "tags": [
+      "literature",
+      "poetry",
+      "revolution",
+      "19th century"
+    ]
+  },
+  {
+    "question_text": "Which literary work by Márai Sándor explores the themes of class, friendship, and betrayal?",
+    "choice_a": "A gyertyák csonkig égnek",
+    "choice_b": "Szindbád hazamegy",
+    "choice_c": "Az igazi",
+    "choice_d": "Föld, föld!",
+    "correct_answer": "A",
+    "explanation": "Русский: 'A gyertyák csonkig égnek' (Свечи догорают до конца) - самый известный роман Márai Sándor, исследующий темы дружбы, предательства и классовых различий в довоенной Венгрии.\n\nMagyar: 'A gyertyák csonkig égnek' Márai Sándor legismertebb regénye, amely a barátság, árulás és osztálykülönbségek témáját vizsgálja a háború előtti Magyarországon.",
+    "difficulty": "advanced",
+    "tags": [
+      "literature",
+      "20th century",
+      "novel",
+      "modernism"
+    ]
+  },
+  {
+    "question_text": "Which composer collected and recorded Hungarian folk music with Kodály Zoltán?",
+    "choice_a": "Bartók Béla",
+    "choice_b": "Liszt Ferenc",
+    "choice_c": "Erkel Ferenc",
+    "choice_d": "Dohnányi Ernő",
+    "correct_answer": "A",
+    "explanation": "Русский: Bartók Béla вместе с Kodály Zoltán собирали и записывали венгерскую народную музыку в начале 20-го века, что значительно повлияло на их композиторское творчество.\n\nMagyar: Bartók Béla Kodály Zoltánnal együtt gyűjtötte és jegyezte le a magyar népzenét a 20. század elején, ami jelentősen befolyásolta zeneszerzői munkásságukat.",
+    "difficulty": "advanced",
+    "tags": [
+      "music",
+      "folk music",
+      "ethnomusicology",
+      "20th century"
+    ]
+  },
+  {
+    "question_text": "Which work by Karinthy Frigyes parodies famous Hungarian writers?",
+    "choice_a": "Így írtok ti",
+    "choice_b": "Tanár úr kérem",
+    "choice_c": "Utazás a koponyám körül",
+    "choice_d": "Capillária",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Így írtok ti' (Так пишете вы) - сборник литературных пародий Karinthy Frigyes, высмеивающий стиль известных венгерских писателей начала 20-го века.\n\nMagyar: Az 'Így írtok ti' Karinthy Frigyes irodalmi paródiagyűjteménye, amely a 20. század eleji ismert magyar írók stílusát figurázza ki.",
+    "difficulty": "advanced",
+    "tags": [
+      "literature",
+      "parody",
+      "satire",
+      "20th century"
+    ]
+  },
+  {
+    "question_text": "Which Renaissance poet wrote love poems in both Latin and Hungarian?",
+    "choice_a": "Balassi Bálint",
+    "choice_b": "Janus Pannonius",
+    "choice_c": "Bornemisza Péter",
+    "choice_d": "Tinódi Lantos Sebestyén",
+    "correct_answer": "A",
+    "explanation": "Русский: Balassi Bálint (1554-1594) писал любовную лирику как на латыни, так и на венгерском языке, став основоположником венгерской любовной поэзии эпохи Возрождения.\n\nMagyar: Balassi Bálint (1554-1594) latin és magyar nyelven is írt szerelmes verseket, megalapozva a magyar reneszánsz szerelmi költészetet.",
+    "difficulty": "advanced",
+    "tags": [
+      "literature",
+      "Renaissance",
+      "poetry",
+      "multilingual"
+    ]
+  },
+  {
+    "question_text": "Which of Liszt Ferenc's compositions was inspired by Hungarian folk music?",
+    "choice_a": "Magyar rapszódiák",
+    "choice_b": "Faust szimfónia",
+    "choice_c": "Krisztus oratórium",
+    "choice_d": "Dante szimfónia",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Magyar rapszódiák' (Венгерские рапсодии) Liszt Ferenc основаны на венгерских народных мелодиях и цыганской музыке, которую он слышал в молодости.\n\nMagyar: A 'Magyar rapszódiák' Liszt Ferenc olyan műve, amely a magyar népzenén és a fiatalkorában hallott cigányzenén alapul.",
+    "difficulty": "advanced",
+    "tags": [
+      "music",
+      "classical",
+      "folk influence",
+      "19th century"
+    ]
+  },
+  {
+    "question_text": "Which poet wrote 'A Dunánál' reflecting on national identity and history?",
+    "choice_a": "József Attila",
+    "choice_b": "Ady Endre",
+    "choice_c": "Babits Mihály",
+    "choice_d": "Kosztolányi Dezső",
+    "correct_answer": "A",
+    "explanation": "Русский: 'A Dunánál' (У Дуная) - знаменитое стихотворение József Attila, написанное в 1936 году, в котором он размышляет о венгерской идентичности и истории.\n\nMagyar: 'A Dunánál' József Attila 1936-ban írt híres verse, amelyben a magyar identitásról és történelemről elmélkedik.",
+    "difficulty": "advanced",
+    "tags": [
+      "literature",
+      "poetry",
+      "modernism",
+      "20th century"
+    ]
+  }
+]

@@ -1,0 +1,1419 @@
+[
+  {
+    "question_text": "Как по-венгерски сказать 'подчёркивать, выделять, акцентировать'?",
+    "choice_a": "Kijelenteni",
+    "choice_b": "Hangsúlyozni",
+    "choice_c": "Magyarázni",
+    "choice_d": "Bemutatni",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Hangsúlyozni' означает 'подчёркивать, выделять, акцентировать, делать ударение'. Глагол происходит от 'hangsúly' (ударение, акцент) + '-oz' (глагольный суффикс). Используется как для фонетического ударения, так и для метафорического подчёркивания важности. 'Kijelenteni' - 'заявлять', 'magyarázni' - 'объяснять', 'bemutatni' - 'представлять'. Пример: 'Hangsúlyoznom kell...' (Я должен подчеркнуть...).\n\nMagyar: A 'hangsúlyozni' jelentése 'подчёркивать, выделять, акцентировать'. Az ige a 'hangsúly' (ударение) + '-oz' képzőből származik. Mind fonetikai hangsúlyt, mind átvitt értelemben a fontosság kiemelését jelenti. A 'kijelenteni' - 'заявлять', a 'magyarázni' - 'объяснять', a 'bemutatni' pedig 'представлять'. Példa: 'Hangsúlyoznom kell...'.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "глаголы",
+      "коммуникация",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'сомневаться, подвергать сомнению'?",
+    "choice_a": "Gondolkodni",
+    "choice_b": "Kétségbe vonni",
+    "choice_c": "Bizonytalannak lenni",
+    "choice_d": "Tagadni",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Kétségbe vonni' означает 'сомневаться, подвергать сомнению, ставить под вопрос'. Это устойчивое выражение состоит из 'kétség' (сомнение) + '-be' (суффикс иллатива) + 'vonni' (тянуть, ставить). 'Gondolkodni' - 'думать, размышлять', 'bizonytalannak lenni' - 'быть неуверенным', 'tagadni' - 'отрицать'. Пример: 'Kétségbe vonom az állításait' (Я подвергаю сомнению его утверждения).\n\nMagyar: A 'kétségbe vonni' jelentése 'сомневаться, подвергать сомнению'. Ez egy állandó kifejezés: 'kétség' (сомнение) + '-be' + 'vonni' (ставить). A 'gondolkodni' - 'думать', a 'bizonytalannak lenni' - 'быть неуверенным', a 'tagadni' pedig 'отрицать'. Példa: 'Kétségbe vonom az állításait'.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "глаголы",
+      "устойчивые выражения",
+      "ментальные процессы"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'szándékos'?",
+    "choice_a": "Случайный, непреднамеренный",
+    "choice_b": "Намеренный, преднамеренный, умышленный",
+    "choice_c": "Запланированный, плановый",
+    "choice_d": "Желаемый, желательный",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Szándékos' означает 'намеренный, преднамеренный, умышленный'. Описывает действие, совершённое с определённым намерением, не случайно. Происходит от существительного 'szándék' (намерение, умысел) + суффикс '-os'. Антоним: 'szándékolatlan' (ненамеренный). Примеры: 'szándékos károkozás' (умышленное причинение вреда), 'szándékos megtévesztés' (преднамеренный обман).\n\nMagyar: A 'szándékos' jelentése 'намеренный, умышленный'. Bizonyos szándékkal, nem véletlenül végzett cselekvést ír le. A 'szándék' főnévből (намерение) + '-os' toldalékból származik. Ellentéte: 'szándékolatlan' (ненамеренный). Példák: 'szándékos károkozás', 'szándékos megtévesztés'.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "прилагательные",
+      "юридический язык",
+      "намерения"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'szemrebbenés nélkül'?",
+    "choice_a": "Без внимания, не замечая",
+    "choice_b": "Не моргнув глазом, без колебаний",
+    "choice_c": "Без зрительного контакта",
+    "choice_d": "Закрыв глаза",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Szemrebbenés nélkül' буквально переводится как 'без моргания глаза' и означает 'не моргнув глазом, без колебаний, решительно'. Это идиоматическое выражение описывает действие, совершённое без сомнений или страха. Состоит из: 'szem' (глаз) + 'rebbenés' (моргание) + 'nélkül' (без). Пример: 'Szemrebbenés nélkül hazudott' (Он солгал не моргнув глазом).\n\nMagyar: A 'szemrebbenés nélkül' szó szerint 'без моргания глаза' és jelentése 'не моргнув глазом, без колебаний'. Ez egy idiomatikus kifejezés, amely kétség vagy félelem nélkül végzett cselekvést ír le. Részei: 'szem' (глаз) + 'rebbenés' (моргание) + 'nélkül' (без). Példa: 'Szemrebbenés nélkül hazudott'.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "идиомы",
+      "устойчивые выражения",
+      "образные выражения"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'kifinomult'?",
+    "choice_a": "Изысканный, утончённый",
+    "choice_b": "Законченный, завершённый",
+    "choice_c": "Очищенный, отфильтрованный",
+    "choice_d": "Развитый, продвинутый",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Kifinomult' означает 'изысканный, утончённый, рафинированный'. Используется для описания высокого уровня культуры, вкуса или развития. От 'ki-' (приставка завершённости) + 'finom' (тонкий, деликатный). Пример: 'kifinomult ízlés' (изысканный вкус).\n\nMagyar: A 'kifinomult' jelentése 'изысканный, утончённый'. Magas szintű kultúra, ízlés vagy fejlettség leírására használjuk. A 'ki-' prefixumból és a 'finom' melléknévből származik. Példa: 'kifinomult ízlés'.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "прилагательные",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'подчеркнуть, акцентировать'?",
+    "choice_a": "Kiemelni",
+    "choice_b": "Hangsúlyozni",
+    "choice_c": "Jelezni",
+    "choice_d": "Mutatni",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Hangsúlyozni' означает 'подчеркнуть, акцентировать'. От слова 'hangsúly' (ударение, акцент). Отличается от 'kiemelni' (выделить), 'jelezni' (обозначить). Пример: 'Fontos hangsúlyozni, hogy...' (Важно подчеркнуть, что...).\n\nMagyar: A 'hangsúlyozni' jelentése 'подчеркнуть, акцентировать'. A 'hangsúly' főnévből származik. Különbözik a 'kiemelni', 'jelezni' igéktől. Példa: 'Fontos hangsúlyozni, hogy...'.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "глаголы",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'következmények'?",
+    "choice_a": "Последствия, результаты",
+    "choice_b": "Заключения, выводы",
+    "choice_c": "Требования, условия",
+    "choice_d": "Обстоятельства, ситуации",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Következmények' означает 'последствия, результаты'. От 'következik' (следовать). Используется для описания результатов или последствий действий. Пример: 'ennek súlyos következményei lehetnek' (это может иметь серьёзные последствия).\n\nMagyar: A 'következmények' jelentése 'последствия, результаты'. A 'következik' igéből származik. Cselekvések eredményeinek vagy következményeinek leírására használjuk. Példa: 'ennek súlyos következményei lehetnek'.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "существительные",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'оспаривать, ставить под сомнение'?",
+    "choice_a": "Vitatni",
+    "choice_b": "Megkérdőjelezni",
+    "choice_c": "Kétségbe vonni",
+    "choice_d": "Ellenezni",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Kétségbe vonni' означает 'оспаривать, ставить под сомнение'. Состоит из 'kétség' (сомнение) + 'vonni' (втягивать). Сильнее, чем 'vitatni' (спорить) или 'megkérdőjelezni' (подвергать сомнению). Пример: 'Nem lehet kétségbe vonni a tényeket' (Нельзя оспаривать факты).\n\nMagyar: A 'kétségbe vonni' jelentése 'оспаривать, ставить под сомнение'. A 'kétség' és 'vonni' szavakból áll. Erősebb, mint a 'vitatni' vagy 'megkérdőjelezni'. Példa: 'Nem lehet kétségbe vonni a tényeket'.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "глаголы",
+      "идиомы"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'elfogult'?",
+    "choice_a": "Предвзятый, пристрастный",
+    "choice_b": "Принятый, одобренный",
+    "choice_c": "Захваченный, занятый",
+    "choice_d": "Увлечённый, заинтересованный",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Elfogult' означает 'предвзятый, пристрастный'. От 'el-' (приставка) + 'fogul' (быть захваченным). Описывает необъективное отношение или суждение. Пример: 'elfogult bíró' (предвзятый судья).\n\nMagyar: Az 'elfogult' jelentése 'предвзятый, пристрастный'. Az 'el-' prefixumból és a 'fogul' igéből származik. Nem objektív hozzáállást vagy ítéletet ír le. Példa: 'elfogult bíró'.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "прилагательные",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'по существу, в сущности'?",
+    "choice_a": "Alapvetően",
+    "choice_b": "Tulajdonképpen",
+    "choice_c": "Lényegében",
+    "choice_d": "Általában",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Lényegében' означает 'по существу, в сущности'. От слова 'lényeg' (сущность). Отличается от 'alapvetően' (в основном), 'tulajdonképpen' (собственно говоря). Пример: 'Lényegében igaza van' (По существу, он прав).\n\nMagyar: A 'lényegében' jelentése 'по существу, в сущности'. A 'lényeg' főnévből származik. Különbözik az 'alapvetően', 'tulajdonképpen' szavaktól. Példa: 'Lényegében igaza van'.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "наречия",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'сложный, запутанный, комплексный'?",
+    "choice_a": "Nehéz",
+    "choice_b": "Bonyolult",
+    "choice_c": "Összetett",
+    "choice_d": "Komplikált",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Bonyolult' означает 'сложный, запутанный, комплексный'. Это слово используется для описания чего-то трудного для понимания из-за множества элементов или связей. 'Nehéz' означает просто 'трудный', 'összetett' - 'составной, сложный (из частей)', 'komplikált' - 'усложнённый, осложнённый'. Пример: 'bonyolult helyzet' (сложная ситуация), 'bonyolult kérdés' (запутанный вопрос).\n\nMagyar: A 'bonyolult' jelentése 'сложный, запутанный'. Ezt a szót használjuk valamire, amit nehéz megérteni sok elem vagy kapcsolat miatt. A 'nehéz' egyszerűen 'трудный', az 'összetett' - 'составной', a 'komplikált' pedig 'усложнённый'. Példa: 'bonyolult helyzet', 'bonyolult kérdés'.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "прилагательные",
+      "синонимы",
+      "нюансы значений"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'meggyőző'?",
+    "choice_a": "Победоносный, одерживающий победу",
+    "choice_b": "Убедительный, убеждающий",
+    "choice_c": "Сильный, мощный",
+    "choice_d": "Доказуемый, доказанный",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Meggyőző' означает 'убедительный, убеждающий'. Это причастие/прилагательное от глагола 'meggyőz' (убеждать, уверять). Описывает аргумент, доказательство или человека, способного убедить других. Примеры: 'meggyőző érv' (убедительный довод), 'meggyőző bizonyíték' (убедительное доказательство), 'meggyőző előadás' (убедительное выступление). Не путать с 'győztes' (победоносный).\n\nMagyar: A 'meggyőző' jelentése 'убедительный, убеждающий'. Ez a 'meggyőz' ige (убеждать) melléknévi igeneve. Olyan érvet, bizonyítékot vagy személyt ír le, amely/aki képes másokat meggyőzni. Példák: 'meggyőző érv', 'meggyőző bizonyíték', 'meggyőző előadás'. Ne keverje össze a 'győztes'-sel (победоносный).",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "прилагательные",
+      "причастия",
+      "аргументация"
+    ]
+  },
+  {
+    "question_text": "Как переводится венгерское слово 'elkötelezett' на русский язык?",
+    "choice_a": "Преданный, приверженный",
+    "choice_b": "Обязанный, должен",
+    "choice_c": "Связанный, соединённый",
+    "choice_d": "Готовый, подготовленный",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Elkötelezett' означает 'преданный, приверженный, убеждённый'. Это слово используется для описания человека, глубоко преданного идее, делу или человеку. Например: 'elkötelezett demokrata' (убеждённый демократ), 'elkötelezett munkatárs' (преданный сотрудник). Слово происходит от 'el-' (приставка) + 'kötelez' (обязывать).\n\nMagyar: Az 'elkötelezett' jelentése 'преданный, приверженный'. Ez a szó egy eszméhez, ügyhöz vagy személyhez mélyen elkötelezett embert ír le. Például: 'elkötelezett demokrata', 'elkötelezett munkatárs'. Az 'el-' előtagból és a 'kötelez' igéből származik.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "абстрактные понятия",
+      "прилагательные",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'lényegében'?",
+    "choice_a": "В деталях, подробно",
+    "choice_b": "По существу, в сущности, в основном",
+    "choice_c": "Формально, официально",
+    "choice_d": "Очевидно, явно",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Lényegében' означает 'по существу, в сущности, в основном, по сути дела'. Это наречие используется для выражения главного смысла или основной идеи, отбрасывая детали. Происходит от 'lényeg' (суть, сущность) + '-ében' (суффикс инессива). Синонимы: 'alapjában véve', 'voltaképpen'. Пример: 'Lényegében egyetértek veled' (По существу я с тобой согласен).\n\nMagyar: A 'lényegében' jelentése 'по существу, в сущности'. Ez a határozószó a fő értelmet vagy alapgondolatot fejezi ki, részleteket félretéve. A 'lényeg' (суть) + '-ében' ragból származik. Szinonimák: 'alapjában véve', 'voltaképpen'. Példa: 'Lényegében egyetértek veled'.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "наречия",
+      "дискурсивные маркеры",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'подвергать сомнению, ставить под вопрос'?",
+    "choice_a": "Megkérdőjelezni",
+    "choice_b": "Kétségbe vonni",
+    "choice_c": "Ellenezni",
+    "choice_d": "Vitatni",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Kétségbe vonni' означает 'подвергать сомнению, ставить под вопрос'. Это более формальное выражение, чем 'megkérdőjelezni'. Происходит от 'kétség' (сомнение) + 'von' (тянуть). Пример: 'Kétségbe vonja az állítás igazságát' (Ставит под сомнение истинность утверждения).\n\nMagyar: A 'kétségbe vonni' jelentése 'подвергать сомнению'. Formálisabb kifejezés, mint a 'megkérdőjelezni'. A 'kétség' főnévből és a 'von' igéből származik. Példa: 'Kétségbe vonja az állítás igazságát'.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "глаголы",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'последствия, результаты'?",
+    "choice_a": "Eredmények",
+    "choice_b": "Következmények",
+    "choice_c": "Hatások",
+    "choice_d": "Végkimenetel",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Következmények' означает 'последствия, результаты'. Слово имеет более широкое значение, чем просто 'результаты' (eredmények) и часто используется в контексте негативных или непредвиденных последствий. Происходит от 'következik' (следовать). Пример: 'súlyos következmények' (серьёзные последствия).\n\nMagyar: A 'következmények' jelentése 'последствия'. Szélesebb jelentésű, mint az 'eredmények', és gyakran negatív vagy váratlan következményekre utal. A 'következik' igéből származik. Példa: 'súlyos következmények'.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "существительные",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'hangsúlyozni'?",
+    "choice_a": "Подчёркивать, акцентировать",
+    "choice_b": "Выделять голосом",
+    "choice_c": "Повторять",
+    "choice_d": "Усиливать",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Hangsúlyozni' означает 'подчёркивать, акцентировать, делать ударение'. Происходит от 'hangsúly' (ударение, акцент). Используется как в прямом смысле (для речи), так и в переносном (для выделения важности). Пример: 'Fontos hangsúlyozni, hogy...' (Важно подчеркнуть, что...).\n\nMagyar: A 'hangsúlyozni' jelentése 'подчёркивать, акцентировать'. A 'hangsúly' főnévből származik. Mind szó szerinti (beszédben), mind átvitt értelemben (fontosság kiemelésére) használjuk. Példa: 'Fontos hangsúlyozni, hogy...'.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "глаголы",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'по сути, в сущности'?",
+    "choice_a": "Alapjában",
+    "choice_b": "Lényegében",
+    "choice_c": "Tulajdonképpen",
+    "choice_d": "Valójában",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Lényegében' означает 'по сути, в сущности'. Происходит от 'lényeg' (сущность) + '-ben' (суффикс). Это более формальное слово, чем 'tulajdonképpen' или 'valójában'. Используется для подчёркивания основной сути явления или ситуации. Пример: 'Lényegében igaza van' (По сути, он прав).\n\nMagyar: A 'lényegében' jelentése 'по сути, в сущности'. A 'lényeg' főnévből és a '-ben' ragból származik. Formálisabb, mint a 'tulajdonképpen' vagy 'valójában'. Egy jelenség vagy helyzet lényegének kiemelésére használjuk. Példa: 'Lényegében igaza van'.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "наречия",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'последствия, вытекающие результаты'?",
+    "choice_a": "Eredmények",
+    "choice_b": "Hatások",
+    "choice_c": "Következmények",
+    "choice_d": "Végeredmények",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Következmények' означает 'последствия, вытекающие результаты'. Это слово описывает результаты, которые следуют из какого-то действия или события, часто негативные или серьёзные. 'Eredmények' - просто 'результаты', 'hatások' - 'воздействия, влияния', 'végeredmények' - 'конечные результаты'. Происходит от 'következik' (следовать). Пример: 'cselekedetek következményei' (последствия действий).\n\nMagyar: A 'következmények' jelentése 'последствия, вытекающие результаты'. Ez a szó egy cselekvés vagy esemény nyomán létrejövő eredményeket írja le, gyakran negatív vagy súlyos következményeket. Az 'eredmények' egyszerűen 'результаты', a 'hatások' - 'воздействия', a 'végeredmények' pedig 'конечные результаты'. A 'következik' igéből származik. Példa: 'cselekedetek következményei'.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "существительные",
+      "формальный язык",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'предвзятый, необъективный, тенденциозный'?",
+    "choice_a": "Rosszhiszemű",
+    "choice_b": "Elfogult",
+    "choice_c": "Igazságtalan",
+    "choice_d": "Kritikus",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Elfogult' означает 'предвзятый, необъективный, тенденциозный'. Слово описывает мнение или отношение, основанное на предубеждении, а не на фактах. 'Rosszhiszemű' - 'недобросовестный', 'igazságtalan' - 'несправедливый', 'kritikus' - 'критический'. Происходит от 'el-' + 'fogul' (становиться необъективным). Пример: 'elfogult vélemény' (предвзятое мнение).\n\nMagyar: Az 'elfogult' jelentése 'предвзятый, необъективный'. A szó előítéleten, nem tényeken alapuló véleményt vagy hozzáállást ír le. A 'rosszhiszemű' - 'недобросовестный', az 'igazságtalan' - 'несправедливый', a 'kritikus' pedig 'критический'. Az 'el-' előtagból és a 'fogul' igéből származik. Példa: 'elfogult vélemény'.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "абстрактные понятия",
+      "прилагательные",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'противоречивый, неоднозначный'?",
+    "choice_a": "Ellentmondásos",
+    "choice_b": "Vitás",
+    "choice_c": "Kétséges",
+    "choice_d": "Bizonytalan",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Ellentmondásos' означает 'противоречивый, неоднозначный'. Описывает что-то, содержащее внутренние противоречия или вызывающее разногласия. Состоит из 'ellentmondás' (противоречие) + '-os'. 'Vitás' означает 'спорный', 'kétséges' - 'сомнительный', 'bizonytalan' - 'неопределённый, неуверенный'. Примеры: 'ellentmondásos kijelentés' (противоречивое заявление), 'ellentmondásos érzések' (противоречивые чувства).\n\nMagyar: Az 'ellentmondásos' jelentése 'противоречивый, неоднозначный'. Belső ellentmondásokat tartalmazó vagy nézeteltérést okozó dolgot ír le. Az 'ellentmondás' (противоречие) + '-os' toldalékból áll. A 'vitás' jelentése 'спорный', a 'kétséges' - 'сомнительный', a 'bizonytalan' pedig 'неопределённый'. Példák: 'ellentmondásos kijelentés', 'ellentmondásos érzések'.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "прилагательные",
+      "логика",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'подчеркивать, акцентировать'?",
+    "choice_a": "Kiemelni",
+    "choice_b": "Hangsúlyozni",
+    "choice_c": "Nyomatékosítani",
+    "choice_d": "Jelezni",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Hangsúlyozni' означает 'подчеркивать, акцентировать'. Происходит от существительного 'hangsúly' (ударение, акцент). 'Kiemelni' - 'выделять', 'nyomatékosítani' - 'усиливать', 'jelezni' - 'обозначать'.\n\nMagyar: A 'hangsúlyozni' jelentése 'подчеркивать, акцентировать'. A 'hangsúly' főnévből származik. Példa: 'hangsúlyozni kell a fontosságát' (нужно подчеркнуть важность).",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "глаголы",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'lényegében'?",
+    "choice_a": "По сути, в сущности",
+    "choice_b": "В основном",
+    "choice_c": "Главным образом",
+    "choice_d": "В целом",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Lényegében' означает 'по сути, в сущности'. Образовано от 'lényeg' (сущность) + '-ben' (в). Используется для выражения самой сути явления или ситуации.\n\nMagyar: A 'lényegében' a 'lényeg' főnév + '-ben' rag kombinációjából származik. A dolgok vagy helyzetek lényegi tartalmának kifejezésére használják.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "наречия",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'убедительный, веский (об аргументе)'?",
+    "choice_a": "Meggyőző",
+    "choice_b": "Hatásos",
+    "choice_c": "Erőteljes",
+    "choice_d": "Nyomós",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Meggyőző' означает 'убедительный'. Происходит от глагола 'meggyőzni' (убеждать). 'Hatásos' - 'эффективный', 'erőteljes' - 'сильный', 'nyomós' - 'веский'.\n\nMagyar: A 'meggyőző' a 'meggyőzni' igéből származik. Példa: 'meggyőző érvelés' (убедительная аргументация).",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "прилагательные",
+      "логика"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'ставить под сомнение, подвергать сомнению'?",
+    "choice_a": "Megkérdőjelezni",
+    "choice_b": "Kétségbe vonni",
+    "choice_c": "Vitatni",
+    "choice_d": "Kételkedni",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Kétségbe vonni' означает 'ставить под сомнение, подвергать сомнению'. Состоит из 'kétség' (сомнение) + 'vonni' (втягивать). 'Megkérdőjelezni' - 'оспаривать', 'vitatni' - 'спорить', 'kételkedni' - 'сомневаться'.\n\nMagyar: A 'kétségbe vonni' a 'kétség' és 'vonni' szavakból áll. Példa: 'kétségbe vonja az állítást' (ставит утверждение под сомнение).",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "глаголы",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'méltányosságot gyakorol'?",
+    "choice_a": "Проявлять снисходительность",
+    "choice_b": "Вершить правосудие",
+    "choice_c": "Соблюдать равенство",
+    "choice_d": "Устанавливать справедливость",
+    "correct_answer": "A",
+    "explanation": "RU: 'Méltányosságot gyakorol' означает 'проявлять снисходительность' или 'действовать с учётом особых обстоятельств'. Это формальное выражение часто используется в юридическом контексте.\nHU: A kifejezés a hivatalos nyelvben használatos, különösen amikor valaki rugalmasan, az egyedi körülményeket figyelembe véve alkalmazza a szabályokat.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "идиомы",
+      "юридический язык",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'непоколебимая убежденность'?",
+    "choice_a": "Rendíthetetlen meggyőződés",
+    "choice_b": "Erős hit",
+    "choice_c": "Szilárd vélemény",
+    "choice_d": "Határozott állítás",
+    "correct_answer": "A",
+    "explanation": "RU: 'Rendíthetetlen meggyőződés' точно передает значение 'непоколебимая убежденность'. 'Rendíthetetlen' происходит от глагола 'rendít' (поколебать) с отрицательным суффиксом.\nHU: A 'rendíthetetlen' választékos kifejezés, amely erősebb, mint az 'erős' vagy 'szilárd'.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "существительные",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'kibontakozik'?",
+    "choice_a": "Раскрываться, развиваться",
+    "choice_b": "Распаковываться",
+    "choice_c": "Разворачиваться физически",
+    "choice_d": "Освобождаться",
+    "correct_answer": "A",
+    "explanation": "RU: 'Kibontakozik' означает 'раскрываться' в переносном смысле, особенно говоря о талантах или возможностях.\nHU: A 'kibontakozik' átvitt értelmű jelentése a fejlődésre, tehetségek vagy lehetőségek megmutatkozására utal.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "глаголы",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски выразить 'докопаться до сути'?",
+    "choice_a": "Végére jár",
+    "choice_b": "Megtalál",
+    "choice_c": "Kikutat",
+    "choice_d": "Felfedez",
+    "correct_answer": "A",
+    "explanation": "RU: 'Végére jár' - идиоматическое выражение, буквально 'дойти до конца', используется в значении 'докопаться до сути'.\nHU: A 'végére jár' kifejezés azt jelenti, hogy alaposan kivizsgál valamit, megtalálja a dolgok magyarázatát.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "идиомы",
+      "глаголы"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'számot vet valamivel'?",
+    "choice_a": "Осмыслить, проанализировать что-либо",
+    "choice_b": "Посчитать что-либо",
+    "choice_c": "Оценить количество",
+    "choice_d": "Подвести итог",
+    "correct_answer": "A",
+    "explanation": "RU: 'Számot vet valamivel' - идиоматическое выражение, означающее глубокий анализ ситуации или проблемы.\nHU: A 'számot vet valamivel' azt jelenti, hogy alaposan átgondol, mérlegel valamit, szembenéz a tényekkel.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "идиомы",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'предвзятое отношение'?",
+    "choice_a": "Elfogult hozzáállás",
+    "choice_b": "Részrehajló vélemény",
+    "choice_c": "Egyoldalú nézet",
+    "choice_d": "Pártos szemlélet",
+    "correct_answer": "A",
+    "explanation": "RU: 'Elfogult hozzáállás' наиболее точно передает значение 'предвзятое отношение'. 'Elfogult' происходит от 'elfog' (захватить) в переносном смысле.\nHU: Az 'elfogult' kifejezés olyan személyre utal, aki nem képes objektíven megítélni valamit.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "прилагательные",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски выразить 'неоспоримое доказательство'?",
+    "choice_a": "Megdönthetetlen bizonyíték",
+    "choice_b": "Erős érv",
+    "choice_c": "Világos bizonyíték",
+    "choice_d": "Határozott tény",
+    "correct_answer": "A",
+    "explanation": "RU: 'Megdönthetetlen bizonyíték' буквально означает 'неопровержимое доказательство'. 'Megdönthetetlen' образовано от глагола 'megdönt' (опровергнуть) с отрицательным суффиксом.\nHU: A 'megdönthetetlen' olyan bizonyítékra utal, amit nem lehet megcáfolni vagy érvényteleníteni.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "юридический язык",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'szőrszálhasogató'?",
+    "choice_a": "Придирчивый, мелочный",
+    "choice_b": "Внимательный",
+    "choice_c": "Точный",
+    "choice_d": "Педантичный",
+    "correct_answer": "A",
+    "explanation": "RU: 'Szőrszálhasogató' буквально означает 'расщепляющий волос', используется для описания чрезмерно придирчивого человека.\nHU: A 'szőrszálhasogató' olyan személyre utal, aki túlzottan aprólékos, a legkisebb részletekben is kijavít másokat.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "прилагательные",
+      "идиомы"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'всесторонне рассмотреть'?",
+    "choice_a": "Körüljár",
+    "choice_b": "Megvizsgál",
+    "choice_c": "Átnéz",
+    "choice_d": "Elemez",
+    "correct_answer": "A",
+    "explanation": "RU: 'Körüljár' буквально означает 'обойти вокруг', в переносном смысле - 'всесторонне рассмотреть вопрос'.\nHU: A 'körüljár' átvitt értelemben azt jelenti, hogy valamit minden szempontból alaposan megvizsgál, végiggondol.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "глаголы",
+      "идиомы"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'méltányosság'?",
+    "choice_a": "справедливость, беспристрастность",
+    "choice_b": "достоинство",
+    "choice_c": "уважение",
+    "choice_d": "честность",
+    "correct_answer": "A",
+    "explanation": "Méltányosság означает справедливое и беспристрастное отношение, часто используется в юридическом контексте. От слова méltó (достойный). Пример: Méltányossági kérelmet nyújtott be (Подал прошение о справедливом рассмотрении).",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "существительные",
+      "юридический язык",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'предвзятость, необъективность'?",
+    "choice_a": "elfogódottság",
+    "choice_b": "részrehajlás",
+    "choice_c": "előítélet",
+    "choice_d": "részletesség",
+    "correct_answer": "B",
+    "explanation": "Részrehajlás (дословно 'склонение в сторону') - точный термин для обозначения предвзятости. Производное от rész (часть) и hajlás (наклон). Пример: A bíró részrehajlás nélkül ítélkezett (Судья выносил решение беспристрастно).",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "существительные",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски 'неопровержимый аргумент'?",
+    "choice_a": "megcáfolhatatlan érv",
+    "choice_b": "erős bizonyíték",
+    "choice_c": "döntő érv",
+    "choice_d": "vitathatatlan állítás",
+    "correct_answer": "A",
+    "explanation": "Megcáfolhatatlan érv - буквально 'неопровержимый аргумент'. Образовано от meg- (префикс завершенности) + cáfol (опровергать) + -hatatlan (суффикс невозможности).",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "прилагательные",
+      "академический язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'körültekintően'?",
+    "choice_a": "осмотрительно, предусмотрительно",
+    "choice_b": "внимательно",
+    "choice_c": "тщательно",
+    "choice_d": "осторожно",
+    "correct_answer": "A",
+    "explanation": "Körültekintően - наречие от körültekintő (осмотрительный), буквально 'смотрящий вокруг'. Пример: Körültekintően kell eljárni ebben az ügyben (Нужно действовать предусмотрительно в этом деле).",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "наречия",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'félvállról vesz'?",
+    "choice_a": "относиться несерьёзно, пренебрежительно",
+    "choice_b": "брать частично",
+    "choice_c": "недооценивать",
+    "choice_d": "игнорировать",
+    "correct_answer": "A",
+    "explanation": "Félvállról vesz (буквально 'брать с половины плеча') - идиоматическое выражение для обозначения несерьёзного, пренебрежительного отношения к чему-либо.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "идиомы",
+      "глаголы"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски 'всесторонне рассмотреть вопрос'?",
+    "choice_a": "körbejárni a kérdést",
+    "choice_b": "megvizsgálni a témát",
+    "choice_c": "elemezni a problémát",
+    "choice_d": "átgondolni az ügyet",
+    "correct_answer": "A",
+    "explanation": "Körbejárni a kérdést (буквально 'обойти вопрос кругом') - идиоматическое выражение, означающее тщательное, всестороннее рассмотрение вопроса.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "идиомы",
+      "глаголы"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'megfellebbezhetetlen'?",
+    "choice_a": "не подлежащий обжалованию",
+    "choice_b": "неоспоримый",
+    "choice_c": "окончательный",
+    "choice_d": "безапелляционный",
+    "correct_answer": "A",
+    "explanation": "Megfellebbezhetetlen - юридический термин, образованный от fellebbez (обжаловать) с префиксом meg- и суффиксом -hetetlen (невозможности). Используется в контексте судебных решений.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "прилагательные",
+      "юридический язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски 'неотъемлемая часть'?",
+    "choice_a": "elválaszthatatlan része",
+    "choice_b": "szerves része",
+    "choice_c": "alapvető része",
+    "choice_d": "lényeges része",
+    "correct_answer": "A",
+    "explanation": "Elválaszthatatlan része - от el- (от-) + választ (отделять) + -hatatlan (суффикс невозможности). Буквально 'неотделимая часть'. Пример: Ez a hagyomány az ünnep elválaszthatatlan része (Эта традиция - неотъемлемая часть праздника).",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "прилагательные",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'непоколебимый (о решении, намерении)'?",
+    "choice_a": "megingathatatlan",
+    "choice_b": "szilárd",
+    "choice_c": "határozott",
+    "choice_d": "biztos",
+    "correct_answer": "A",
+    "explanation": "Megingathatatlan (от meg- + ingat 'шатать' + -hatatlan 'невозможно') - более формальное и сильное выражение, чем szilárd или határozott. Пример: Megingathatatlan elhatározással folytatta útját.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "прилагательные",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'неопровержимый (о доказательстве)'?",
+    "choice_a": "megdönthetetlen",
+    "choice_b": "bizonyított",
+    "choice_c": "kétségtelen",
+    "choice_d": "vitathatatlan",
+    "correct_answer": "A",
+    "explanation": "Megdönthetetlen (meg- + dönt 'опровергать' + -hetetlen 'невозможно') - формальное слово, часто используемое в научном и юридическом контексте. Пример: Megdönthetetlen bizonyíték (Неопровержимое доказательство).",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "прилагательные",
+      "юридический язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'körmönfont'?",
+    "choice_a": "изощрённый, хитроумный",
+    "choice_b": "прямолинейный",
+    "choice_c": "сложный",
+    "choice_d": "запутанный",
+    "correct_answer": "A",
+    "explanation": "Körmönfont (букв. 'закрученный на ногте') - идиоматическое выражение для описания чего-то хитроумного или изощрённого. Пример: Körmönfont magyarázattal állt elő (Он выступил с изощрённым объяснением).",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "прилагательные",
+      "идиомы"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'основополагающий принцип'?",
+    "choice_a": "alapelv",
+    "choice_b": "főszabály",
+    "choice_c": "alaptétel",
+    "choice_d": "vezérelv",
+    "correct_answer": "A",
+    "explanation": "Alapelv (alap 'основа' + elv 'принцип') - наиболее формальный термин для обозначения фундаментального принципа. Пример: Ez a demokrácia alapelve (Это основополагающий принцип демократии).",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "существительные",
+      "академический язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'színt vall'?",
+    "choice_a": "раскрыть свои истинные намерения",
+    "choice_b": "менять цвет",
+    "choice_c": "признаваться",
+    "choice_d": "выбирать сторону",
+    "correct_answer": "A",
+    "explanation": "Színt vall (букв. 'признавать цвет') - идиоматическое выражение, означающее раскрытие истинных намерений или позиции. Пример: Végre színt vallott a kérdésben (Наконец он раскрыл свою позицию по этому вопросу).",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "идиомы",
+      "культура"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски 'подвергать сомнению обоснованность'?",
+    "choice_a": "megalapozottságát megkérdőjelezi",
+    "choice_b": "kételkedik benne",
+    "choice_c": "nem hisz benne",
+    "choice_d": "vitatja az állítást",
+    "correct_answer": "A",
+    "explanation": "megalapozottság (обоснованность) + megkérdőjelez (ставить под вопрос). Формальное выражение, часто используемое в научных и юридических текстах.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "глаголы",
+      "юридический язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'kézenfekvő megoldás'?",
+    "choice_a": "Очевидное решение",
+    "choice_b": "Ручное управление",
+    "choice_c": "Простой выход",
+    "choice_d": "Быстрый способ",
+    "correct_answer": "A",
+    "explanation": "kézenfekvő (очевидный, буквально 'лежащий на руке') + megoldás (решение). Идиоматическое выражение для описания самоочевидного, напрашивающегося решения.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "идиомы",
+      "составные слова"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски 'придавать особое значение'?",
+    "choice_a": "kiemelt jelentőséget tulajdonít",
+    "choice_b": "fontosnak tart",
+    "choice_c": "nagyra értékel",
+    "choice_d": "hangsúlyoz",
+    "correct_answer": "A",
+    "explanation": "kiemelt (особый, выделенный) + jelentőség (значение) + tulajdonít (приписывать). Формальное выражение, часто используемое в официальных документах.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "формальный язык",
+      "составные слова"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'feltétlen odaadás'?",
+    "choice_a": "Безусловная преданность",
+    "choice_b": "Временная привязанность",
+    "choice_c": "Случайная встреча",
+    "choice_d": "Взаимное уважение",
+    "correct_answer": "A",
+    "explanation": "feltétlen (безусловный) + odaadás (преданность). Выражение высокого стиля, описывающее абсолютную, безоговорочную преданность.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "абстрактные понятия",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'megfontoltan eljárni'?",
+    "choice_a": "действовать обдуманно",
+    "choice_b": "быстро реагировать",
+    "choice_c": "случайно поступать",
+    "choice_d": "избегать ответственности",
+    "correct_answer": "A",
+    "explanation": "RU: 'Megfontoltan eljárni' означает действовать после тщательного обдумывания, взвешенно и рассудительно. HU: A 'megfontoltan' a körültekintő, alapos megfontolás utáni cselekvésre utal.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "глаголы",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'méltányosságot tanúsítani'?",
+    "choice_a": "проявлять справедливость",
+    "choice_b": "выражать сочувствие",
+    "choice_c": "оказывать помощь",
+    "choice_d": "демонстрировать силу",
+    "correct_answer": "A",
+    "explanation": "RU: 'Méltányosságot tanúsítani' означает проявлять справедливость и беспристрастность в отношении других. HU: A kifejezés a méltányos, igazságos bánásmód aktív gyakorlására utal.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "глаголы",
+      "юридический язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски 'неопровержимое доказательство'?",
+    "choice_a": "megdönthetetlen bizonyíték",
+    "choice_b": "erős érv",
+    "choice_c": "világos jel",
+    "choice_d": "biztos tény",
+    "correct_answer": "A",
+    "explanation": "RU: 'Megdönthetetlen bizonyíték' буквально означает доказательство, которое невозможно опровергнуть. HU: A 'megdönthetetlen' azt jelenti, hogy nem lehet megcáfolni vagy érvényteleníteni.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "юридический язык",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'kellő körültekintéssel'?",
+    "choice_a": "с должной осмотрительностью",
+    "choice_b": "с большим вниманием",
+    "choice_c": "без промедления",
+    "choice_d": "с осторожностью",
+    "correct_answer": "A",
+    "explanation": "RU: 'Kellő körültekintéssel' означает действовать с необходимой степенью предусмотрительности и внимания к деталям. HU: A 'kellő' azt jelzi, hogy az óvatosság mértéke megfelelő, nem túlzó.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "наречия",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'вникать в суть вопроса'?",
+    "choice_a": "elmélyedni a kérdésben",
+    "choice_b": "megérteni a problémát",
+    "choice_c": "foglalkozni valamivel",
+    "choice_d": "tanulmányozni az ügyet",
+    "correct_answer": "A",
+    "explanation": "RU: 'Elmélyedni a kérdésben' точно передает идею глубокого погружения в проблему. HU: Az 'elmélyedni' ige kifejezi a alapos, mélyreható tanulmányozást.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "глаголы",
+      "академический язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'meggyőződésem szerint'?",
+    "choice_a": "по моему убеждению",
+    "choice_b": "как мне кажется",
+    "choice_c": "насколько я знаю",
+    "choice_d": "я думаю",
+    "correct_answer": "A",
+    "explanation": "RU: 'Meggyőződésem szerint' выражает твердую уверенность говорящего, более формально чем просто 'я думаю'. HU: A 'meggyőződés' erősebb, mint a vélemény vagy sejtés.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "идиомы",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски 'неоспоримый факт'?",
+    "choice_a": "vitathatatlan tény",
+    "choice_b": "biztos információ",
+    "choice_c": "egyértelmű adat",
+    "choice_d": "pontos tény",
+    "correct_answer": "A",
+    "explanation": "RU: 'Vitathatatlan tény' означает факт, который невозможно оспорить или подвергнуть сомнению. HU: A 'vitathatatlan' erősebb kifejezés, mint az 'egyértelmű' vagy 'biztos'.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "прилагательные",
+      "академический язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'kétségbe vonni valamit'?",
+    "choice_a": "ставить что-либо под сомнение",
+    "choice_b": "отрицать что-либо",
+    "choice_c": "опровергать что-либо",
+    "choice_d": "критиковать что-либо",
+    "correct_answer": "A",
+    "explanation": "RU: 'Kétségbe vonni valamit' означает выражать сомнение в чем-либо, подвергать что-то сомнению. HU: A 'kétségbe vonni' nem teljes tagadást jelent, hanem a kételkedés kifejezését.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "глаголы",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'megkérdőjelezhetetlen'?",
+    "choice_a": "неоспоримый",
+    "choice_b": "сомнительный",
+    "choice_c": "противоречивый",
+    "choice_d": "недоказуемый",
+    "correct_answer": "A",
+    "explanation": "Megkérdőjelezhetetlen (буквально 'не поддающийся сомнению') - сложное слово, образованное от kérdőjel (вопросительный знак) с отрицательным суффиксом. Используется в формальном языке для описания чего-то абсолютно бесспорного.\nПример: Az ő szakértelme megkérdőjelezhetetlen (Его компетентность неоспорима)",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "прилагательные",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'méltányolható'?",
+    "choice_a": "заслуживающий уважения",
+    "choice_b": "достойный похвалы",
+    "choice_c": "приемлемый",
+    "choice_d": "одобряемый",
+    "correct_answer": "A",
+    "explanation": "Méltányolható происходит от méltányol (признавать заслуги) и используется в формальном контексте для описания чего-то, заслуживающего уважения или признания.\nПример: Ez egy méltányolható érv (Это заслуживающий уважения аргумент)",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "прилагательные",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'принципиальное возражение'?",
+    "choice_a": "elvi kifogás",
+    "choice_b": "alapvető kifogás",
+    "choice_c": "fontos kifogás",
+    "choice_d": "lényeges kifogás",
+    "correct_answer": "A",
+    "explanation": "Elvi kifogás - устойчивое выражение, где elvi (принципиальный) происходит от elv (принцип). Используется в формальном контексте для обозначения возражения по принципиальным соображениям.\nПример: Nincs elvi kifogásom ellene (У меня нет принципиальных возражений против этого)",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "формальный язык",
+      "академический язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'неоднозначное толкование'?",
+    "choice_a": "többértelmű értelmezés",
+    "choice_b": "kétértelmű magyarázat",
+    "choice_c": "vitatható értelmezés",
+    "choice_d": "homályos magyarázat",
+    "correct_answer": "A",
+    "explanation": "Többértelmű értelmezés - где több 'много' + értelmű 'значный' образует сложное прилагательное, описывающее множественность интерпретаций.\nПример: A törvény többértelmű értelmezése vitához vezetett (Неоднозначное толкование закона привело к спору)",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "юридический язык",
+      "составные слова"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'mellébeszélés'?",
+    "choice_a": "уклонение от ответа",
+    "choice_b": "пустословие",
+    "choice_c": "ложь",
+    "choice_d": "оправдание",
+    "correct_answer": "A",
+    "explanation": "Mellébeszélés (букв. 'говорение мимо') - существительное, образованное от mellé 'рядом' + beszél 'говорить', означает уклончивый ответ или попытку избежать прямого ответа.\nПример: Elég volt a mellébeszélésből! (Хватит уклоняться от ответа!)",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "существительные",
+      "идиомы"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'rendíthetetlen'?",
+    "choice_a": "непоколебимый",
+    "choice_b": "неподвижный",
+    "choice_c": "неизменный",
+    "choice_d": "несгибаемый",
+    "correct_answer": "A",
+    "explanation": "Rendíthetetlen происходит от глагола rendít (поколебать) + -hetetlen (суффикс невозможности). Означает 'непоколебимый, стойкий'. Пример: Rendíthetetlen hite volt az igazságban. (У него была непоколебимая вера в правду.)",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "прилагательные",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'вопреки здравому смыслу'?",
+    "choice_a": "józan ész ellenére",
+    "choice_b": "észszerűtlenül",
+    "choice_c": "logikátlanul",
+    "choice_d": "értelmetlenül",
+    "correct_answer": "A",
+    "explanation": "Józan ész ellenére - устойчивое выражение, где józan ész = здравый смысл, ellenére = вопреки. Пример: A józan ész ellenére cselekedett. (Он действовал вопреки здравому смыслу.)",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "идиомы",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'felülkerekedik'?",
+    "choice_a": "одерживать верх",
+    "choice_b": "подниматься выше",
+    "choice_c": "превосходить",
+    "choice_d": "возвышаться",
+    "correct_answer": "A",
+    "explanation": "Felülkerekedik: felül- (сверху) + kerekedik (становиться). Означает 'одерживать верх, преодолевать'. Пример: Felülkerekedett a félelmein. (Он преодолел свои страхи.)",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "глаголы",
+      "идиомы"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'неопровержимый (довод)'?",
+    "choice_a": "megcáfolhatatlan",
+    "choice_b": "vitathatatlan",
+    "choice_c": "kétségtelen",
+    "choice_d": "bizonyított",
+    "correct_answer": "A",
+    "explanation": "RU: 'Megcáfolhatatlan' буквально означает 'не поддающийся опровержению'. Образовано от глагола 'cáfol' (опровергать) + '-hatatlan' (суффикс невозможности).\nHU: A 'cáfol' igéből származik, a '-hatatlan' képzővel. Erősebb jelentésű, mint a 'vitathatatlan'.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "прилагательные",
+      "академический язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'törekvés'?",
+    "choice_a": "стремление, устремление",
+    "choice_b": "попытка",
+    "choice_c": "желание",
+    "choice_d": "намерение",
+    "correct_answer": "A",
+    "explanation": "RU: 'Törekvés' означает целенаправленное стремление к чему-либо, более формально, чем 'próbálkozás'.\nHU: Céltudatos igyekezetet jelent, formálisabb, mint a 'próbálkozás'.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "существительные",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'visszás helyzet'?",
+    "choice_a": "обычная ситуация",
+    "choice_b": "парадоксальная ситуация",
+    "choice_c": "простое положение",
+    "choice_d": "выгодное положение",
+    "correct_answer": "B",
+    "explanation": "RU: 'Visszás helyzet' описывает парадоксальную, противоречивую ситуацию. 'Visszás' означает 'противоречивый, парадоксальный', а 'helyzet' - 'ситуация'.\nHU: A 'visszás helyzet' ellentmondásos, fonák, paradox szituációt jelent.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "абстрактные понятия",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'безупречная репутация'?",
+    "choice_a": "jó hírnév",
+    "choice_b": "makulátlan hírnév",
+    "choice_c": "tiszta név",
+    "choice_d": "erős tekintély",
+    "correct_answer": "B",
+    "explanation": "RU: 'Makulátlan hírnév' точно передает понятие безупречной репутации, где 'makulátlan' означает 'безупречный', а 'hírnév' - 'репутация'.\nHU: A 'makulátlan hírnév' kifogástalan, hibátlan, tiszta reputációt jelent.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "формальный язык",
+      "составные слова"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'megátalkodott makacsság'?",
+    "choice_a": "случайное упрямство",
+    "choice_b": "временное сопротивление",
+    "choice_c": "закоренелое упрямство",
+    "choice_d": "слабое несогласие",
+    "correct_answer": "C",
+    "explanation": "RU: 'Megátalkodott makacsság' означает закоренелое, неисправимое упрямство. 'Megátalkodott' - 'закоренелый', а 'makacsság' - 'упрямство'.\nHU: A 'megátalkodott makacsság' megrögzött, javíthatatlan konokságot jelent.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "абстрактные понятия",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'неизгладимое впечатление'?",
+    "choice_a": "erős hatás",
+    "choice_b": "kitörölhetetlen benyomás",
+    "choice_c": "mély érzés",
+    "choice_d": "tartós emlék",
+    "correct_answer": "B",
+    "explanation": "RU: 'Kitörölhetetlen benyomás' точно передает концепцию неизгладимого впечатления, где 'kitörölhetetlen' означает 'неизгладимый', а 'benyomás' - 'впечатление'.\nHU: A 'kitörölhetetlen benyomás' olyan élményt jelent, ami örökre megmarad az emlékezetben.",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "абстрактные понятия",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'mélyreható elemzés'?",
+    "choice_a": "Поверхностный обзор",
+    "choice_b": "Поверхностный анализ",
+    "choice_c": "Глубокий анализ",
+    "choice_d": "Предварительное исследование",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Mélyreható elemzés' переводится как 'глубокий анализ'. Слово 'mélyreható' (глубокий, тщательный) образовано от 'mély' (глубокий) + 'reható' (проникающий). Это выражение используется в академическом и профессиональном контекстах для обозначения всестороннего и детального изучения. Например: 'A jelentés mélyreható elemzést tartalmaz a gazdasági helyzetről.' (Отчет содержит глубокий анализ экономической ситуации).\n\nHungarian: 'Mélyreható elemzés' means 'deep analysis'. The word 'mélyreható' (in-depth, thorough) is formed from 'mély' (deep) + 'reható' (penetrating). This expression is used in academic and professional contexts to denote a comprehensive and detailed study. For example: 'A jelentés mélyreható elemzést tartalmaz a gazdasági helyzetről.' (The report contains a deep analysis of the economic situation).",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "существительные",
+      "прилагательные",
+      "формальный язык",
+      "академический язык",
+      "составные слова"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'принципиальная позиция'?",
+    "choice_a": "elvi álláspont",
+    "choice_b": "alapvető helyzet",
+    "choice_c": "fő szempont",
+    "choice_d": "fontos nézőpont",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Принципиальная позиция' переводится как 'elvi álláspont'. 'Elvi' означает 'принципиальный, теоретический' (от 'elv' – принцип), а 'álláspont' – 'позиция, точка зрения'. Это выражение относится к твёрдой, основанной на принципах точке зрения. Например: 'Fenntartotta az elvi álláspontját a tárgyalások során.' (Он сохранял свою принципиальную позицию во время переговоров).\n\nHungarian: 'Принципиальная позиция' translates to 'elvi álláspont'. 'Elvi' means 'principled, theoretical' (from 'elv' – principle), and 'álláspont' means 'position, standpoint'. This expression refers to a firm, principle-based point of view. For example: 'Fenntartotta az elvi álláspontját a tárgyalások során.' (He maintained his principled position during the negotiations).",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "существительные",
+      "прилагательные",
+      "формальный язык",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'visszaélés'?",
+    "choice_a": "Преимущество",
+    "choice_b": "Злоупотребление",
+    "choice_c": "Повторное использование",
+    "choice_d": "Отказ",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Visszaélés' означает 'злоупотребление'. Слово образовано от 'vissza' (обратно) и 'él' (жить, использовать), то есть 'использовать неправильно', 'злоупотреблять'. Часто используется в контексте злоупотребления властью, доверием или служебным положением. Например: 'Hivatali visszaélés miatt indult eljárás.' (Было возбуждено дело по факту злоупотребления служебным положением).\n\nHungarian: 'Visszaélés' means 'abuse'. The word is formed from 'vissza' (back, re-) and 'él' (to live, to use), meaning 'to misuse', 'to abuse'. It is often used in the context of abuse of power, trust, or office. For example: 'Hivatali visszaélés miatt indult eljárás.' (Proceedings were initiated due to abuse of office).",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "существительные",
+      "формальный язык",
+      "юридический язык",
+      "составные слова"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'kérdésessé tenni'?",
+    "choice_a": "Уточнить",
+    "choice_b": "Поставить под сомнение",
+    "choice_c": "Задать вопрос",
+    "choice_d": "Рассмотреть",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Kérdésessé tenni' переводится как 'поставить под сомнение'. Дословно 'сделать вопросительным'. 'Kérdéses' означает 'сомнительный, спорный', а 'tenni' – 'делать'. Это выражение используется, когда что-то, что считалось верным или очевидным, подвергается критике или сомнению. Например: 'Az új adatok kérdésessé teszik az eddigi elméletet.' (Новые данные ставят под сомнение прежнюю теорию).\n\nHungarian: 'Kérdésessé tenni' means 'to call into question'. Literally 'to make questionable'. 'Kérdéses' means 'questionable, debatable', and 'tenni' means 'to make'. This expression is used when something previously considered true or obvious is subjected to criticism or doubt. For example: 'Az új adatok kérdésessé teszik az eddigi elméletet.' (The new data calls into question the previous theory).",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "глаголы",
+      "идиомы",
+      "абстрактные понятия",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'добросовестное исполнение'?",
+    "choice_a": "jóhiszemű teljesítés",
+    "choice_b": "becsületes munka",
+    "choice_c": "korrekt végrehajtás",
+    "choice_d": "megbízható kivitelezés",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Добросовестное исполнение' переводится как 'jóhiszemű teljesítés'. 'Jóhiszemű' означает 'добросовестный, добросовестно' (от 'jó' – хороший и 'hiszemű' – верящий, добросовестный), а 'teljesítés' – 'исполнение, выполнение'. Это юридический и формальный термин, обозначающий выполнение обязательств с честными намерениями. Например: 'A szerződés jóhiszemű teljesítését várjuk el.' (Мы ожидаем добросовестного исполнения договора).\n\nHungarian: 'Добросовестное исполнение' translates to 'jóhiszemű teljesítés'. 'Jóhiszemű' means 'in good faith, conscientious' (from 'jó' – good and 'hiszemű' – believing, conscientious), and 'teljesítés' means 'performance, fulfillment'. This is a legal and formal term referring to fulfilling obligations with honest intentions. For example: 'A szerződés jóhiszemű teljesítését várjuk el.' (We expect good faith performance of the contract).",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "существительные",
+      "прилагательные",
+      "формальный язык",
+      "юридический язык",
+      "составные слова"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'недвусмысленно заявить'?",
+    "choice_a": "egyértelműen kijelenteni",
+    "choice_b": "határozottan állítani",
+    "choice_c": "világosan elmondani",
+    "choice_d": "nyíltan közölni",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Недвусмысленно заявить' переводится как 'egyértelműen kijelenteni'. 'Egyértelműen' означает 'недвусмысленно, однозначно' (от 'egy' – один, 'értelem' – смысл), а 'kijelenteni' – 'заявить, объявить'. Это выражение подчеркивает отсутствие какого-либо двойного толкования или неясности в заявлении. Например: 'A miniszter egyértelműen kijelentette, hogy nem támogatja a javaslatot.' (Министр недвусмысленно заявил, что не поддерживает предложение).\n\nHungarian: 'Недвусмысленно заявить' translates to 'egyértelműen kijelenteni'. 'Egyértelműen' means 'unequivocally, unambiguously' (from 'egy' – one, 'értelem' – meaning), and 'kijelenteni' means 'to state, to declare'. This expression emphasizes the absence of any double interpretation or ambiguity in a statement. For example: 'A miniszter egyértelműen kijelentette, hogy nem támogatja a javaslatot.' (The minister unequivocally stated that he does not support the proposal).",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "глаголы",
+      "наречия",
+      "формальный язык",
+      "абстрактные понятия",
+      "составные слова"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать 'фундаментальный принцип'?",
+    "choice_a": "alapvető elv",
+    "choice_b": "fő szabály",
+    "choice_c": "lényeges alap",
+    "choice_d": "elsődleges törvény",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Фундаментальный принцип' переводится как 'alapvető elv'. 'Alapvető' означает 'фундаментальный, основной' (от 'alap' – основа), а 'elv' – 'принцип'. Это выражение используется для обозначения ключевых, базовых положений в любой области. Например: 'Az emberi jogok tisztelete alapvető elv.' (Уважение прав человека – фундаментальный принцип).\n\nHungarian: 'Фундаментальный принцип' translates to 'alapvető elv'. 'Alapvető' means 'fundamental, basic' (from 'alap' – base), and 'elv' means 'principle'. This expression is used to denote key, basic tenets in any field. For example: 'Az emberi jogok tisztelete alapvető elv.' (Respect for human rights is a fundamental principle).",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "существительные",
+      "прилагательные",
+      "формальный язык",
+      "академический язык",
+      "составные слова"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'átfogóan vizsgálni'?",
+    "choice_a": "Поверхностно изучить",
+    "choice_b": "Всесторонне исследовать",
+    "choice_c": "Быстро рассмотреть",
+    "choice_d": "Частично проанализировать",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Átfogóan vizsgálni' переводится как 'всесторонне исследовать'. 'Átfogóan' означает 'всесторонне, всеобъемлюще' (от 'átfogó' – всеобъемлющий), а 'vizsgálni' – 'исследовать, изучать'. Это выражение используется для описания комплексного и полного анализа или изучения чего-либо. Например: 'A bizottság átfogóan vizsgálta a problémát.' (Комиссия всесторонне исследовала проблему).\n\nHungarian: 'Átfogóan vizsgálni' means 'to examine comprehensively'. 'Átfogóan' means 'comprehensively, extensively' (from 'átfogó' – comprehensive), and 'vizsgálni' means 'to examine, to study'. This expression is used to describe a complex and complete analysis or study of something. For example: 'A bizottság átfogóan vizsgálta a problémát.' (The committee comprehensively examined the problem).",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "глаголы",
+      "наречия",
+      "формальный язык",
+      "академический язык",
+      "составные слова"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'szemléletmód'?",
+    "choice_a": "образ мышления, способ восприятия",
+    "choice_b": "метод исследования",
+    "choice_c": "поведение, образ действий",
+    "choice_d": "структура аргументации",
+    "correct_answer": "A",
+    "explanation": "RU: 'Szemléletmód' буквально означает «образ мышления, подход или манера смотреть на вещи». Слово состоит из 'szemlélet' (взгляд, восприятие) и 'mód' (способ, режим). Отличается от 'módszer' (метод исследования) — 'szemléletmód' описывает скорее умственную позицию или парадигму. Примеры: «Tudományos szemléletmód» — «научный образ мышления». Родственные слова: 'szemlélet', 'szemlélni', 'világnézet'.\nHU: 'Szemléletmód' szó szerinti jelentése: a gondolkodás, észlelés módja, egyfajta megközelítési keret. A szó összetevői: 'szemlélet' (észlelés, szemlélet) + 'mód' (mód, módus). Nem ugyanaz, mint egy kutatási módszer ('módszer'), mert inkább szemléleti keretet vagy paradigmát jelöl. Példa: „Fenntarthatósági szemléletmód” — „a fenntarthatóság szemlélete”. Kapcsolódó kifejezések: 'szemlélet', 'világnézet', 'hozzáállás'.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "существительные",
+      "составные слова",
+      "абстрактные понятия",
+      "академический язык"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерский глагол 'nyomatékosít'?",
+    "choice_a": "подчеркивать, придавать значение (усилять аргумент)",
+    "choice_b": "умалять важность, принижать",
+    "choice_c": "исследовать, анализировать",
+    "choice_d": "формализовать, легализовать",
+    "correct_answer": "A",
+    "explanation": "RU: 'Nyomatékosít' — это глагол, означающий «подчеркивать, придавать особый вес/значение» (to emphasize, to stress). Этимологически от 'nyomaték' (ударение, вес — связанное с 'nyom' — давить) + продуктивный суффикс '-osít' (делать). Близкие слова: 'nyomaték', 'kiemelni'. Отличие от 'kisebbíteni' (умалять) или от простого 'megemlíteni' (упоминать) — 'nyomatékosít' подразумевает усиленное выделение. Пример: «A szerző nyomatékosította a bizonyítékok jelentőségét» — «Автор подчеркнул значимость доказательств».\nHU: A 'nyomatékosít' ige jelentése: hangsúlyozni, nagyobb súlyt adni valamely állításnak. Szótöve a 'nyomaték' (nyomásból képzett 'súly', 'hangsúly') + -osít (alakító, okozó képző). Kapcsolódó szavak: 'nyomaték', 'kiemel', 'hangsúlyoz'. Nem ugyanolyan, mint egyszerű említés ('megemlíteni') vagy jelentés csökkentése ('kisebbít'). Példa: „A tanár nyomatékosította a forráskritika szükségességét.”",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "глаголы",
+      "формальный язык",
+      "академический язык"
+    ]
+  },
+  {
+    "question_text": "Что означает прилагательное 'kifogásolható'?",
+    "choice_a": "оспариваемый; заслуживающий возражений или критики",
+    "choice_b": "безупречный, безошибочный",
+    "choice_c": "юридически обязательный",
+    "choice_d": "полностью подтвержденный факт",
+    "correct_answer": "A",
+    "explanation": "RU: 'Kifogásolható' означает 'поддающийся критике, вызывающий возражения' (objectionable, open to criticism). Образовано от 'kifogás' (возражение) + аналитического суффикса '-olható' (возможность). Отличается от 'vitatható' — близкое по смыслу ('оспоримый'), но 'kifogásolható' чаще несет оттенок 'неприемлемый/незаконный/некорректный' в поведении или решении, тогда как 'vitatható' нейтральнее ('можно обсуждать'). Пример: «A bizottság kifogásolható eljárást állapított meg» — «Комиссия выявила процедуру, которую можно оспорить/которой следует возразить». Родственные формы: 'kifogás', 'kifogásolni'.\nHU: A 'kifogásolható' jelentése: kifogást érdemlő, bírálható, kritika tárgyát képező. Szótöve 'kifogás' (ellenérv, kifogás) + '-olható' (lehetővé tevő képző). A 'vitatható' hasonló, de sokszor semlegesebb (valami megvitatható), míg 'kifogásolható' gyakran erkölcsi vagy jogi kifogást sugall. Példa: „Az ellenőrzés több kifogásolható gyakorlatot tárt fel.”",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "прилагательные",
+      "формальный язык",
+      "юридический язык",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское существительное 'visszásság'?",
+    "choice_a": "нарушение справедливости, несоответствие нормам; противоправная или сомнительная ситуация",
+    "choice_b": "официальное разрешение",
+    "choice_c": "логическое соответствие",
+    "choice_d": "техническая ошибка",
+    "correct_answer": "A",
+    "explanation": "RU: 'Visszásság' — формальное существительное, означающее 'неправомерность, противоречивость, несправедливость' (irregularity, anomaly, injustice). Корень 'vissza-' (назад) + прилагательное 'visszás' с суффиксом '-ság' для образования существительного. Часто употребляется в юридическом или общественном контексте: «visszásságot tapasztalni» — «обнаружить нарушения/несправедливости». Отличие от 'hiba' (ошибка) — 'visszásság' несёт больше оценочный, юридико-моральный оттенок. Пример: «A pályázati rendszerben visszásságok merültek fel».\nHU: A 'visszásság' szó jelentése: olyan ellentmondásos, jogsértő vagy etikailag kifogásolható helyzet, amely nem felel meg az elvárásoknak. A képzés: 'visszás' (ellentmondásos) + '-ság' (főnévképző). Gyakori in: 'visszásságokat feltárni', 'visszásságok büntetése'. Nem pusztán technikai hiba ('hiba'), hanem rendszer- vagy normaellenesség. Példa: „A vizsgálat több visszásságot tárt fel a közbeszerzésekben.”",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "существительные",
+      "формальный язык",
+      "юридический язык",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'részrehajlás'?",
+    "choice_a": "предвзятость, склонность отдавать предпочтение одной стороне",
+    "choice_b": "объективность, нейтральность",
+    "choice_c": "склонность к физическому наклону",
+    "choice_d": "правовая обязанность",
+    "correct_answer": "A",
+    "explanation": "RU: 'Részrehajlás' означает 'предвзятость, уклон в сторону' (bias, partiality). Составлено из 'részre' (в сторону, на часть) + 'hajlás' (наклон). Формальный, часто юридический или академический термин, близкий к 'elfogultság', но «részrehajlás» подчёркивает активный наклон в пользу одной стороны (например, в расследовании). Пример: «A bíróság részrehajlásának gyanúja» — «Подозрение на предвзятость суда». Родственные слова: 'hajlás', 'elfogultság'.\nHU: A 'részrehajlás' jelentése: részleges elbírálás, előítélet vagy előnyben részesítés valamelyik oldal felé. A szó elemei: 'részre' (oldalra) + 'hajlás' (hajlam, dőlés). Gyakran jogi/etikai kontextusban használják; hasonló a 'elfogultság' szóhoz, de a 'részrehajlás' kifejezetten a részleges elbírálást, torzítást jelzi. Példa: „A vizsgálatban részrehajlás gyanúja merült fel.”",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "существительные",
+      "формальный язык",
+      "юридический язык",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'kétséget kizáróan'?",
+    "choice_a": "вне всякого сомнения, без возможности усомниться",
+    "choice_b": "с долей сомнения",
+    "choice_c": "на первый взгляд",
+    "choice_d": "после долгих раздумий",
+    "correct_answer": "A",
+    "explanation": "RU: 'Kétséget kizáróan' переводится как «вне всякого сомнения, безоговорочно». Состав: 'kétség' (сомнение) + 'kizáróan' (исключительно, исключая) — от глагола 'kizár' (исключать) + суффикс образующий наречие. Часто используется в юридическом и научном стиле, чтобы подчеркнуть достоверность: «Kétséget kizáróan bizonyítható» — «Можно доказать вне всякого сомнения». Отличается от 'kétségesen' (сомнительно) или 'talán' (возможно). Родственные выражения: 'kétségtelenül', 'kizárólag'.\nHU: A 'kétséget kizáróan' jelentése: minden kétséget kizáró módon, vitathatatlanul. A kifejezés részei: 'kétség' (kétség, kétely) és 'kizáróan' ('kizár' + -ó/-ő képző + -an). Jogi és tudományos szövegekben gyakori: „A tény kétséget kizáróan bizonyított.” Nem keverendő össze a 'talán' vagy 'kétségesen' kifejezésekkel, amelyek bizonytalanságot jeleznek.",
+    "difficulty": "advanced",
+    "tags": [
+      "HU→RU",
+      "наречия",
+      "идиомы",
+      "формальный язык",
+      "юридический язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать «довести до абсурда» (в значении: сделать довод нелепым через чрезмерное применение)?",
+    "choice_a": "abszurdba hajszolni",
+    "choice_b": "abszurdizálni",
+    "choice_c": "ironizálni",
+    "choice_d": "ésszerűsíteni",
+    "correct_answer": "A",
+    "explanation": "RU: Лучший эквивалент — 'abszurdba hajszolni' (буквально 'загонять в абсурд'), где 'hajszolni' означает 'подгонять, загонять', а 'abszurd' — абсурд. Этот оборот ясно передаёт идею доведения аргумента или ситуации до нелепости путём крайностей. 'Abszurdizálni' звучит как возможное однокоренное слово, но менее употребительно и более редкое; 'ironizálni' — 'иронизировать', не то же самое; 'ésszerűsíteni' — 'делать разумным' (противоположное). Пример: «Az ellenfél érvelését abszurdba hajszolták a szélsőséges következtetések.»\nHU: A pontos magyar kifejezés: 'abszurdba hajszolni', ahol az 'abszurd' és a 'hajszolni' (ösztönösen 'hajtani, siettetni') alkotja a szókapcsolatot. Pontosan azt fejezi ki, hogy valamit túlzásba visznek, és ezáltal nevetségessé, értelmetlenné válik. Az 'abszurdizálni' ritkábban használt és stilisztikailag más árnyalatú lehet; az 'ironizálni' pedig iróniát jelez, nem ugyanaz. Példa: „A végkövetkeztetések abszurdba hajszolták az eredeti tételt.”",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "глаголы",
+      "идиомы",
+      "культура",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать «вынести приговор» (в юридическом смысле)?",
+    "choice_a": "ítéletet hozni",
+    "choice_b": "ítéletet végrehajtani",
+    "choice_c": "ítélkezni",
+    "choice_d": "elfogadni",
+    "correct_answer": "A",
+    "explanation": "RU: Юридический эквивалент «вынести приговор» — 'ítéletet hozni' (буквально 'принять/сделать приговор'). 'Ítéletet végrehajtani' — 'привести приговор в исполнение' (исполнение приговора). 'Ítélkezni' — 'судить', более общий глагол, означающий совершать судейские действия; 'elfogadni' — 'принять', слишком широкий глагол. Пример: «A bíróság ma ítéletet hozott az ügyben.»\nHU: A jogi magyar kifejezés: 'ítéletet hozni' — a bíróság által meghozott döntés, az ítélet kimondása. Az 'ítéletet végrehajtani' a büntetés végrehajtására utal, míg az 'ítélkezni' általánosabb értelemben ítélni (bírói tevékenység). 'Elfogadni' egyszerűen 'elfogadni valamit' és nem specifikus. Példa: „A bíró ítéletet hozott a vádlottal szemben.”",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "глаголы",
+      "юридический язык",
+      "формальный язык"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски сказать «оспоримый» (в значении: подлежащий обсуждению или сомнению)?",
+    "choice_a": "vitatható",
+    "choice_b": "ellenséges",
+    "choice_c": "biztos",
+    "choice_d": "megállapodott",
+    "correct_answer": "A",
+    "explanation": "RU: 'Венгерское слово 'vitatható' означает 'оспоримый, спорный, поддающийся сомнению'. Корень 'vita' (спор) + суффикс '-ható' (возможность). Отличие от 'kifogásolható' (вызвать возражение — более оценочно-негативное) и от 'megkérdőjelezhető' (поддающийся сомнению — близко по смыслу, но 'vitatható' чаще нейтрально указывает на предмет дискуссии). Пример: «A kutatás módszertana vitatható.»\nHU: A 'vitatható' szó azt jelenti: amiről lehet vitázni, megkérdőjelezhető, ellentmondásos. Eredete: 'vita' (vita) + '-ható' (lehetőség kifejező képző). Nem azonos az 'ellenséges'-sel (ellenséges = ellenséges), és nem jelenti azt, hogy 'biztos' vagy 'megegyezett'. Példa: „A szerző következtetései vitathatók a módszertan miatt.”",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "прилагательные",
+      "формальный язык",
+      "академический язык",
+      "абстрактные понятия"
+    ]
+  },
+  {
+    "question_text": "Как по-венгерски выразить 'решающее значение' (т.е. имеющее критическое/решающее влияние)?",
+    "choice_a": "döntő jelentőségű",
+    "choice_b": "lényegtelen",
+    "choice_c": "kisebb jelentőségű",
+    "choice_d": "időszakos hatású",
+    "correct_answer": "A",
+    "explanation": "RU: Наиболее точный перевод 'решающее значение' — 'döntő jelentőségű' (букв. 'имеющий решающее/решающее значение'). 'Döntő' от 'dönt' (решать) + суффикс '-ő' образует прилагательное; 'jelentőségű' — от 'jelentőség' (значимость) + -ű (обозначающий обладание качеством). Отличие от 'lényegtelen' (неважный) и от 'kisebb jelentőségű' (менее значимый). Пример: «A bizonyíték döntő jelentőségű volt a perben.»\nHU: A 'döntő jelentőségű' pontos magyar kifejezés: 'döntő' (döntést hozó/jelentős) + 'jelentőségű' (jelentőséggel bíró). Az etimológia: 'dönt' (cselekvés: dönteni) + képzők. Nem azonos a 'lényegtelen'-nel (jelentéktelen) vagy a 'kisebb jelentőségű'-vel (kevésbé fontos). Példa: „A bizottság döntése döntő jelentőségű a további fejlesztések szempontjából.”",
+    "difficulty": "advanced",
+    "tags": [
+      "RU→HU",
+      "прилагательные",
+      "абстрактные понятия",
+      "академический язык",
+      "формальный язык"
+    ]
+  }
+]

@@ -1,0 +1,1016 @@
+[
+  {
+    "question_text": "Как по-венгерски сказать 'Сколько это стоит?'",
+    "choice_a": "Hol van ez?",
+    "choice_b": "Mennyibe kerül?",
+    "choice_c": "Mikor nyitva?",
+    "choice_d": "Hogy hívják?",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Mennyibe kerül?' - это стандартный вопрос о цене, буквально переводится как 'Во сколько обходится?'. 'Mennyibe' означает 'во сколько/за сколько', а 'kerül' - глагол 'стоить/обходиться'. В магазинах также можно услышать 'Ez mennyibe kerül?' (Сколько это стоит?).\n\nMagyar: A 'Mennyibe kerül?' az ár megkérdezésének standard módja, szó szerint azt jelenti 'Во сколько обходится?'. A 'mennyibe' jelentése 'за сколько', a 'kerül' pedig 'стоить'. Boltokban ezt is hallhatjuk: 'Ez mennyibe kerül?'",
+    "difficulty": "intermediate",
+    "tags": [
+      "шопинг",
+      "вопросы",
+      "повседневные фразы"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'pályaudvar'?",
+    "choice_a": "Аэропорт",
+    "choice_b": "Автобусная остановка",
+    "choice_c": "Железнодорожный вокзал",
+    "choice_d": "Станция метро",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Pályaudvar' означает 'железнодорожный вокзал'. Это составное слово: 'pálya' (путь, колея) + 'udvar' (двор). В разговорной речи венгры часто используют сокращение 'pu.' при названии конкретных вокзалов, например 'Keleti pu.' (Восточный вокзал). Для метро используется слово 'metróállomás', для автобуса - 'buszmegálló'.\n\nMagyar: A 'pályaudvar' azt jelenti 'железнодорожный вокзал'. Ez egy összetett szó: 'pálya' (sín) + 'udvar' (двор). Beszélt nyelvben gyakran használjuk a 'pu.' rövidítést, például 'Keleti pu.'. A metróhoz használjuk a 'metróállomás' szót, buszhoz pedig 'buszmegálló'.",
+    "difficulty": "intermediate",
+    "tags": [
+      "транспорт",
+      "места",
+      "составные слова"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'köszönöm'?",
+    "choice_a": "Пожалуйста",
+    "choice_b": "Извините",
+    "choice_c": "Спасибо",
+    "choice_d": "До свидания",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Köszönöm' означает 'спасибо' на венгерском языке. Это слово происходит от глагола 'köszön' (приветствовать, благодарить). Можно также сказать 'köszönöm szépen' (большое спасибо) или просто 'köszi' в неформальной обстановке.\n\nMagyar: A 'köszönöm' azt jelenti 'спасибо' oroszul. Ez a szó a 'köszön' igéből származik. Mondhatjuk még: 'köszönöm szépen' (nagyon köszönöm) vagy egyszerűen 'köszi' informális helyzetben.",
+    "difficulty": "intermediate",
+    "tags": [
+      "вежливость",
+      "базовая лексика",
+      "everyday"
+    ]
+  },
+  {
+    "question_text": "Какое венгерское выражение используется для фразы 'Приятного аппетита'?",
+    "choice_a": "Jó étvágyat!",
+    "choice_b": "Egészségére!",
+    "choice_c": "Szeretettel!",
+    "choice_d": "Gratulálok!",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Jó étvágyat!' - это венгерский эквивалент 'Приятного аппетита'. Буквально переводится как 'Хороший аппетит!'. 'Jó' означает 'хороший', 'étvágy' - 'аппетит', суффикс '-at' - это аккузатив. В ответ обычно говорят 'Köszönöm!' (Спасибо!) или тоже 'Jó étvágyat!'. Это важная часть венгерской культуры питания.\n\nMagyar: A 'Jó étvágyat!' az orosz 'Приятного аппетита' megfelelője. Szó szerint 'Хороший аппетит!' jelent. A 'jó' jelentése 'хороший', az 'étvágy' pedig 'аппетит', az '-at' pedig tárgyeset. Válaszként általában azt mondjuk: 'Köszönöm!' vagy szintén 'Jó étvágyat!'. Ez fontos része a magyar étkezési kultúrának.",
+    "difficulty": "intermediate",
+    "tags": [
+      "еда",
+      "культура",
+      "этикет",
+      "устойчивые выражения"
+    ]
+  },
+  {
+    "question_text": "Как правильно сказать 'Я очень голоден' по-венгерски?",
+    "choice_a": "Nagyon szomjas vagyok",
+    "choice_b": "Nagyon éhes vagyok",
+    "choice_c": "Nagyon fáradt vagyok",
+    "choice_d": "Nagyon álmos vagyok",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Nagyon éhes vagyok' означает 'Я очень голоден'. 'Nagyon' - очень, 'éhes' - голодный, 'vagyok' - форма глагола быть (я есть). Другие варианты означают: A - я очень хочу пить, C - я очень устал, D - я очень сонный.\n\nMagyar: A 'Nagyon éhes vagyok' azt jelenti 'Я очень голоден'. A 'nagyon' jelentése 'очень', 'éhes' jelentése 'голодный', és a 'vagyok' a létige egyes szám első személyű alakja.",
+    "difficulty": "intermediate",
+    "tags": [
+      "еда",
+      "состояния",
+      "базовые выражения"
+    ]
+  },
+  {
+    "question_text": "Какое время показывают часы 'fél nyolc' в венгерском языке?",
+    "choice_a": "8:30",
+    "choice_b": "7:30",
+    "choice_c": "8:00",
+    "choice_d": "7:00",
+    "correct_answer": "B",
+    "explanation": "Русский: В венгерском языке 'fél nyolc' буквально означает 'половина восьмого', то есть 7:30. Венгерская система указания времени отличается от русской: 'fél' (половина) + следующий час. Например, 'fél kettő' - 1:30, 'fél három' - 2:30.\n\nMagyar: A magyar időmeghatározásban a 'fél nyolc' 7:30-at jelent. A 'fél' után mindig a következő órát mondjuk. Ez különbözik az orosz rendszertől.",
+    "difficulty": "intermediate",
+    "tags": [
+      "время",
+      "числительные",
+      "особенности языка"
+    ]
+  },
+  {
+    "question_text": "Как спросить 'Где находится ближайший банкомат?' по-венгерски?",
+    "choice_a": "Hol van a legközelebbi étterem?",
+    "choice_b": "Hol van a legközelebbi bank?",
+    "choice_c": "Hol van a legközelebbi ATM?",
+    "choice_d": "Hol van a legközelebbi bolt?",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Hol van a legközelebbi ATM?' - правильный вопрос о местонахождении банкомата. 'Hol van' - где находится, 'legközelebbi' - ближайший, 'ATM' - банкомат (используется международное сокращение). Можно также сказать 'bankautomata'.\n\nMagyar: A 'Hol van a legközelebbi ATM?' a helyes kérdés. A 'legközelebbi' szó a 'közel' (близко) melléknév felsőfoka. Az 'ATM' mellett a 'bankautomata' kifejezés is használatos.",
+    "difficulty": "intermediate",
+    "tags": [
+      "направления",
+      "места",
+      "вопросы"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское выражение 'Jó étvágyat!'?",
+    "choice_a": "Будьте здоровы!",
+    "choice_b": "На здоровье!",
+    "choice_c": "Приятного аппетита!",
+    "choice_d": "Счастливого пути!",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Jó étvágyat!' означает 'Приятного аппетита!'. 'Jó' - хороший, 'étvágy' - аппетит, '-at' - суффикс винительного падежа. Это стандартное пожелание перед едой в Венгрии.\n\nMagyar: A 'Jó étvágyat!' kifejezés az étkezés előtti jókívánság. A 'jó' jelentése 'хороший', az 'étvágy' jelentése 'аппетит'. Az '-at' tárgyrag teszi teljessé a kifejezést.",
+    "difficulty": "intermediate",
+    "tags": [
+      "еда",
+      "вежливость",
+      "пожелания"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'Мне нужно два билета' по-венгерски?",
+    "choice_a": "Két jegyet kérek",
+    "choice_b": "Két jegy van",
+    "choice_c": "Két jegyem van",
+    "choice_d": "Két jegy kell",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Két jegyet kérek' - правильный способ попросить два билета. 'Két' - два, 'jegy' - билет, '-et' - окончание винительного падежа, 'kérek' - я прошу (вежливая форма).\n\nMagyar: A 'Két jegyet kérek' a helyes forma jegyvásárláskor. A 'két' jelentése 'два', a 'jegy' jelentése 'билет', a '-et' a tárgyrag, és a 'kérek' az 'kér' ige egyes szám első személyű alakja.",
+    "difficulty": "intermediate",
+    "tags": [
+      "транспорт",
+      "числительные",
+      "покупки"
+    ]
+  },
+  {
+    "question_text": "Какое слово используется для обозначения 'супермаркета' в венгерском языке?",
+    "choice_a": "Áruház",
+    "choice_b": "Szupermarket",
+    "choice_c": "Bolt",
+    "choice_d": "Piac",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Áruház' - это венгерское слово для обозначения супермаркета или универмага. Это составное слово: 'áru' (товар) + 'ház' (дом). Хотя 'szupermarket' тоже используется, 'áruház' является более традиционным венгерским словом.\n\nMagyar: Az 'áruház' a hagyományos magyar kifejezés a nagyobb üzletekre. Az 'áru' jelentése 'товар', a 'ház' jelentése 'дом'. A 'szupermarket' is használatos, de az 'áruház' eredetibb magyar szó.",
+    "difficulty": "intermediate",
+    "tags": [
+      "покупки",
+      "места",
+      "составные слова"
+    ]
+  },
+  {
+    "question_text": "Что означает венгерское слово 'bevásárlóközpont'?",
+    "choice_a": "Супермаркет",
+    "choice_b": "Торговый центр",
+    "choice_c": "Рынок",
+    "choice_d": "Магазин одежды",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Bevásárlóközpont' означает 'торговый центр/молл'. Это длинное составное слово: 'be-' (приставка движения внутрь) + 'vásárló' (покупающий, от 'vásárol' - покупать) + 'központ' (центр). Венгерский язык известен такими длинными словами. Супермаркет по-венгерски - 'szupermarket' или 'ABC áruház', рынок - 'piac', магазин - 'üzlet' или 'bolt'.\n\nMagyar: A 'bevásárlóközpont' azt jelenti 'торговый центр'. Ez egy hosszú összetett szó: 'be-' (igekötő) + 'vásárló' ('vásárol' igéből) + 'központ'. A magyar nyelv ilyen hosszú szavakról híres. Oroszul: szupermarket - 'супермаркет' vagy 'szupermarket', piac - 'рынок', üzlet vagy bolt - 'магазин'.",
+    "difficulty": "intermediate",
+    "tags": [
+      "шопинг",
+      "места",
+      "составные слова",
+      "длинные слова"
+    ]
+  },
+  {
+    "question_text": "Как правильно сказать 'Я не понимаю' по-венгерски?",
+    "choice_a": "Nem tudok",
+    "choice_b": "Nem beszélek",
+    "choice_c": "Nem értem",
+    "choice_d": "Nem akarom",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Nem értem' означает 'Я не понимаю'. 'Nem' - отрицательная частица 'не', 'értem' - первое лицо глагола 'ért' (понимать). Другие варианты: 'Nem tudok' = 'Я не знаю/не умею', 'Nem beszélek' = 'Я не говорю', 'Nem akarom' = 'Я не хочу'. Полезная фраза: 'Nem értem magyarul' (Я не понимаю по-венгерски).\n\nMagyar: A 'Nem értem' azt jelenti 'Я не понимаю'. A 'nem' tagadószó, az 'értem' pedig az 'ért' ige első személyű alakja. Más lehetőségek: 'Nem tudok' = 'Я не знаю', 'Nem beszélek' = 'Я не говорю', 'Nem akarom' = 'Я не хочу'. Hasznos kifejezés: 'Nem értem magyarul' (Я не понимаю по-венгерски).",
+    "difficulty": "intermediate",
+    "tags": [
+      "общение",
+      "базовые фразы",
+      "глаголы"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'Доброе утро!' по-венгерски?",
+    "choice_a": "Jó reggelt!",
+    "choice_b": "Jó estét!",
+    "choice_c": "Jó napot!",
+    "choice_d": "Jó éjszakát!",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Jó reggelt!' означает 'Доброе утро!'. 'Jó' = хороший/добрый, 'reggel' = утро. Другие приветствия: 'Jó napot!' = 'Добрый день!', 'Jó estét!' = 'Добрый вечер!', 'Jó éjszakát!' = 'Спокойной ночи!'.\n\nMagyar: A 'Jó reggelt!' a reggeli köszönés. A 'jó' jelentése 'добрый', a 'reggel' jelentése 'утро'.",
+    "difficulty": "beginner",
+    "tags": [
+      "приветствия",
+      "время суток",
+      "базовые фразы"
+    ]
+  },
+  {
+    "question_text": "Какое слово означает 'метро' в венгерском языке?",
+    "choice_a": "Vonat",
+    "choice_b": "Busz",
+    "choice_c": "Metró",
+    "choice_d": "Villamos",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Metró' - это 'метро'. Это интернационализм, легко запоминающийся. Другие виды транспорта: 'vonat' = поезд, 'busz' = автобус, 'villamos' = трамвай.\n\nMagyar: A 'metró' nemzetközi szó, jelentése 'метро'.",
+    "difficulty": "beginner",
+    "tags": [
+      "транспорт",
+      "город",
+      "заимствования"
+    ]
+  },
+  {
+    "question_text": "Как спросить 'Сколько это стоит?' по-венгерски?",
+    "choice_a": "Mennyi idő van?",
+    "choice_b": "Mennyibe kerül?",
+    "choice_c": "Hol van?",
+    "choice_d": "Mi ez?",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Mennyibe kerül?' значит 'Сколько это стоит?'. 'Mennyi' = сколько, 'kerül' = стоить. Важная фраза для покупок.\n\nMagyar: A 'Mennyibe kerül?' azt jelenti 'Сколько это стоит?'. Alapvető kifejezés vásárlásnál.",
+    "difficulty": "beginner",
+    "tags": [
+      "покупки",
+      "цены",
+      "вопросы"
+    ]
+  },
+  {
+    "question_text": "Выберите правильное слово для 'хлеб':",
+    "choice_a": "Tej",
+    "choice_b": "Víz",
+    "choice_c": "Kenyér",
+    "choice_d": "Hús",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Kenyér' означает 'хлеб'. Другие варианты: 'tej' = молоко, 'víz' = вода, 'hús' = мясо.\n\nMagyar: A 'kenyér' jelentése 'хлеб'. Alapvető élelmiszer.",
+    "difficulty": "beginner",
+    "tags": [
+      "еда",
+      "продукты",
+      "базовая лексика"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'направо' по-венгерски?",
+    "choice_a": "Balra",
+    "choice_b": "Jobbra",
+    "choice_c": "Egyenesen",
+    "choice_d": "Vissza",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Jobbra' значит 'направо'. От слова 'jobb' (правый). 'Balra' = налево, 'egyenesen' = прямо, 'vissza' = назад.\n\nMagyar: A 'jobbra' irányt jelöl, jelentése 'направо'.",
+    "difficulty": "beginner",
+    "tags": [
+      "направления",
+      "ориентация",
+      "базовые слова"
+    ]
+  },
+  {
+    "question_text": "Какое время показывают часы 'Fél nyolc'?",
+    "choice_a": "8:00",
+    "choice_b": "7:30",
+    "choice_c": "8:30",
+    "choice_d": "7:00",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Fél nyolc' буквально значит 'половина восьмого' = 7:30. Венгерский способ указания времени отличается от русского.\n\nMagyar: A 'fél nyolc' jelentése '7:30'. A magyar időmeghatározás különbözik az orosztól.",
+    "difficulty": "beginner",
+    "tags": [
+      "время",
+      "числа",
+      "особенности языка"
+    ]
+  },
+  {
+    "question_text": "Что означает слово 'köszönöm'?",
+    "choice_a": "Пожалуйста",
+    "choice_b": "Извините",
+    "choice_c": "Спасибо",
+    "choice_d": "До свидания",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Köszönöm' значит 'спасибо'. Очень важное слово вежливости.\n\nMagyar: A 'köszönöm' azt jelenti 'спасибо'. Alapvető udvariassági kifejezés.",
+    "difficulty": "beginner",
+    "tags": [
+      "вежливость",
+      "базовые фразы"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'Я голоден/голодна' по-венгерски?",
+    "choice_a": "Éhes vagyok",
+    "choice_b": "Szomjas vagyok",
+    "choice_c": "Fáradt vagyok",
+    "choice_d": "Beteg vagyok",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Éhes vagyok' = 'Я голоден/голодна'. 'Éhes' = голодный, 'vagyok' = являюсь (1-е лицо от 'быть').\n\nMagyar: Az 'éhes vagyok' azt jelenti 'Я голоден/голодна'.",
+    "difficulty": "beginner",
+    "tags": [
+      "состояния",
+      "чувства",
+      "глагол быть"
+    ]
+  },
+  {
+    "question_text": "Какое слово означает 'магазин'?",
+    "choice_a": "Ház",
+    "choice_b": "Bolt",
+    "choice_c": "Iskola",
+    "choice_d": "Kórház",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Bolt' значит 'магазин'. Также можно использовать 'üzlet'. Другие варианты: 'ház' = дом, 'iskola' = школа, 'kórház' = больница.\n\nMagyar: A 'bolt' jelentése 'магазин'.",
+    "difficulty": "beginner",
+    "tags": [
+      "места",
+      "город",
+      "покупки"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'Извините' по-венгерски?",
+    "choice_a": "Kérem",
+    "choice_b": "Bocsánat",
+    "choice_c": "Köszönöm",
+    "choice_d": "Viszlát",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Bocsánat' значит 'извините'. Также можно сказать 'elnézést'. 'Kérem' = пожалуйста, 'köszönöm' = спасибо, 'viszlát' = до свидания.\n\nMagyar: A 'bocsánat' azt jelenti 'извините'.",
+    "difficulty": "beginner",
+    "tags": [
+      "вежливость",
+      "извинения",
+      "базовые фразы"
+    ]
+  },
+  {
+    "question_text": "Какое слово означает 'вода'?",
+    "choice_a": "Bor",
+    "choice_b": "Sör",
+    "choice_c": "Víz",
+    "choice_d": "Tej",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Víz' значит 'вода'. Другие напитки: 'bor' = вино, 'sör' = пиво, 'tej' = молоко.\n\nMagyar: A 'víz' jelentése 'вода'.",
+    "difficulty": "beginner",
+    "tags": [
+      "напитки",
+      "еда",
+      "базовая лексика"
+    ]
+  },
+  {
+    "question_text": "Как спросить 'Где находится...?' по-венгерски?",
+    "choice_a": "Mi ez?",
+    "choice_b": "Hol van?",
+    "choice_c": "Mikor van?",
+    "choice_d": "Ki ez?",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Hol van?' значит 'Где находится?'. 'Hol' = где, 'van' = есть/находится.\n\nMagyar: A 'hol van?' azt jelenti 'Где находится?'.",
+    "difficulty": "beginner",
+    "tags": [
+      "вопросы",
+      "местоположение",
+      "базовые фразы"
+    ]
+  },
+  {
+    "question_text": "Какое слово означает 'автобус'?",
+    "choice_a": "Busz",
+    "choice_b": "Autó",
+    "choice_c": "Bicikli",
+    "choice_d": "Vonat",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Busz' значит 'автобус'. Другой транспорт: 'autó' = машина, 'bicikli' = велосипед, 'vonat' = поезд.\n\nMagyar: A 'busz' jelentése 'автобус'.",
+    "difficulty": "beginner",
+    "tags": [
+      "транспорт",
+      "город",
+      "заимствования"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'Добрый день!' по-венгерски?",
+    "choice_a": "Jó reggelt!",
+    "choice_b": "Jó napot!",
+    "choice_c": "Jó estét!",
+    "choice_d": "Jó éjt!",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Jó napot!' значит 'Добрый день!'. 'Jó' = добрый, 'nap' = день.\n\nMagyar: A 'jó napot!' a napközbeni köszönés.",
+    "difficulty": "beginner",
+    "tags": [
+      "приветствия",
+      "время суток",
+      "базовые фразы"
+    ]
+  },
+  {
+    "question_text": "Какое слово означает 'ресторан'?",
+    "choice_a": "Bolt",
+    "choice_b": "Étterem",
+    "choice_c": "Piac",
+    "choice_d": "Kávézó",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Étterem' значит 'ресторан'. От 'étel' (еда) + 'terem' (зал). Другие места: 'bolt' = магазин, 'piac' = рынок, 'kávézó' = кафе.\n\nMagyar: Az 'étterem' jelentése 'ресторан'.",
+    "difficulty": "beginner",
+    "tags": [
+      "места",
+      "еда",
+      "составные слова"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'До свидания' по-венгерски?",
+    "choice_a": "Szia",
+    "choice_b": "Viszontlátásra",
+    "choice_c": "Helló",
+    "choice_d": "Jó napot",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Viszontlátásra' (формально) или 'Viszlát' (неформально) значит 'до свидания'. Другие приветствия: 'szia' = привет/пока, 'helló' = привет.\n\nMagyar: A 'viszontlátásra' formális búcsúzás.",
+    "difficulty": "beginner",
+    "tags": [
+      "прощание",
+      "вежливость",
+      "базовые фразы"
+    ]
+  },
+  {
+    "question_text": "Какое слово означает 'деньги'?",
+    "choice_a": "Pénz",
+    "choice_b": "Idő",
+    "choice_c": "Óra",
+    "choice_d": "Nap",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Pénz' значит 'деньги'. Другие слова: 'idő' = время, 'óra' = час/часы, 'nap' = день/солнце.\n\nMagyar: A 'pénz' jelentése 'деньги'.",
+    "difficulty": "beginner",
+    "tags": [
+      "деньги",
+      "покупки",
+      "базовая лексика"
+    ]
+  },
+  {
+    "question_text": "Как спросить 'Который час?' по-венгерски?",
+    "choice_a": "Hány óra van?",
+    "choice_b": "Mennyi idő van?",
+    "choice_c": "Mi az idő?",
+    "choice_d": "Mikor van?",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Hány óra van?' значит 'Который час?'. 'Hány' = сколько, 'óra' = час, 'van' = есть.\n\nMagyar: A 'hány óra van?' azt jelenti 'Который час?'.",
+    "difficulty": "beginner",
+    "tags": [
+      "время",
+      "вопросы",
+      "базовые фразы"
+    ]
+  },
+  {
+    "question_text": "How do you say 'Good morning' in Hungarian?",
+    "choice_a": "Jó reggelt",
+    "choice_b": "Jó estét",
+    "choice_c": "Jó napot",
+    "choice_d": "Jó éjszakát",
+    "correct_answer": "A",
+    "explanation": "Jó reggelt = Good morning (Доброе утро). The word 'reggel' means morning, and 'jó' means good.",
+    "difficulty": "beginner",
+    "tags": [
+      "greetings",
+      "basic expressions"
+    ]
+  },
+  {
+    "question_text": "Which word means 'bread' in Hungarian?",
+    "choice_a": "Tej",
+    "choice_b": "Kenyér",
+    "choice_c": "Víz",
+    "choice_d": "Hús",
+    "correct_answer": "B",
+    "explanation": "Kenyér = bread (хлеб). This is a basic food vocabulary word.",
+    "difficulty": "beginner",
+    "tags": [
+      "food",
+      "basic nouns"
+    ]
+  },
+  {
+    "question_text": "How do you say 'bus' in Hungarian?",
+    "choice_a": "Busz",
+    "choice_b": "Vonat",
+    "choice_c": "Autó",
+    "choice_d": "Metró",
+    "correct_answer": "A",
+    "explanation": "Busz = bus (автобус). This is a cognate with many European languages.",
+    "difficulty": "beginner",
+    "tags": [
+      "transportation",
+      "cognates"
+    ]
+  },
+  {
+    "question_text": "What is the Hungarian word for 'please'?",
+    "choice_a": "Köszönöm",
+    "choice_b": "Kérem",
+    "choice_c": "Igen",
+    "choice_d": "Nem",
+    "correct_answer": "B",
+    "explanation": "Kérem = please (пожалуйста). Essential politeness term.",
+    "difficulty": "beginner",
+    "tags": [
+      "politeness",
+      "basic expressions"
+    ]
+  },
+  {
+    "question_text": "How do you say 'left' in Hungarian?",
+    "choice_a": "Jobbra",
+    "choice_b": "Egyenesen",
+    "choice_c": "Balra",
+    "choice_d": "Hátra",
+    "correct_answer": "C",
+    "explanation": "Balra = left (налево). Important for giving and understanding directions.",
+    "difficulty": "beginner",
+    "tags": [
+      "directions",
+      "navigation"
+    ]
+  },
+  {
+    "question_text": "What is the Hungarian word for 'water'?",
+    "choice_a": "Víz",
+    "choice_b": "Bor",
+    "choice_c": "Sör",
+    "choice_d": "Tej",
+    "correct_answer": "A",
+    "explanation": "Víz = water (вода). Basic beverage vocabulary.",
+    "difficulty": "beginner",
+    "tags": [
+      "food",
+      "beverages"
+    ]
+  },
+  {
+    "question_text": "Which means 'thank you' in Hungarian?",
+    "choice_a": "Kérem",
+    "choice_b": "Köszönöm",
+    "choice_c": "Szia",
+    "choice_d": "Viszlát",
+    "correct_answer": "B",
+    "explanation": "Köszönöm = thank you (спасибо). Essential politeness expression.",
+    "difficulty": "beginner",
+    "tags": [
+      "politeness",
+      "basic expressions"
+    ]
+  },
+  {
+    "question_text": "How do you say 'train' in Hungarian?",
+    "choice_a": "Autó",
+    "choice_b": "Busz",
+    "choice_c": "Vonat",
+    "choice_d": "Repülő",
+    "correct_answer": "C",
+    "explanation": "Vonat = train (поезд). Important transportation vocabulary.",
+    "difficulty": "beginner",
+    "tags": [
+      "transportation",
+      "vehicles"
+    ]
+  },
+  {
+    "question_text": "What is the Hungarian word for 'shop/store'?",
+    "choice_a": "Üzlet",
+    "choice_b": "Piac",
+    "choice_c": "Ház",
+    "choice_d": "Iskola",
+    "correct_answer": "A",
+    "explanation": "Üzlet = shop/store (магазин). Common place vocabulary.",
+    "difficulty": "beginner",
+    "tags": [
+      "shopping",
+      "places"
+    ]
+  },
+  {
+    "question_text": "How do you say 'now' in Hungarian?",
+    "choice_a": "Később",
+    "choice_b": "Most",
+    "choice_c": "Majd",
+    "choice_d": "Holnap",
+    "correct_answer": "B",
+    "explanation": "Most = now (сейчас). Essential time expression.",
+    "difficulty": "beginner",
+    "tags": [
+      "time",
+      "adverbs"
+    ]
+  },
+  {
+    "question_text": "Which word means 'milk' in Hungarian?",
+    "choice_a": "Tej",
+    "choice_b": "Víz",
+    "choice_c": "Kávé",
+    "choice_d": "Bor",
+    "correct_answer": "A",
+    "explanation": "Tej = milk (молоко). Basic beverage vocabulary.",
+    "difficulty": "beginner",
+    "tags": [
+      "food",
+      "beverages"
+    ]
+  },
+  {
+    "question_text": "How do you say 'right' (direction) in Hungarian?",
+    "choice_a": "Balra",
+    "choice_b": "Jobbra",
+    "choice_c": "Előre",
+    "choice_d": "Hátra",
+    "correct_answer": "B",
+    "explanation": "Jobbra = right (направо). Essential for navigation.",
+    "difficulty": "beginner",
+    "tags": [
+      "directions",
+      "navigation"
+    ]
+  },
+  {
+    "question_text": "What is the Hungarian word for 'coffee'?",
+    "choice_a": "Tea",
+    "choice_b": "Víz",
+    "choice_c": "Kávé",
+    "choice_d": "Tej",
+    "correct_answer": "C",
+    "explanation": "Kávé = coffee (кофе). Common beverage vocabulary.",
+    "difficulty": "beginner",
+    "tags": [
+      "food",
+      "beverages"
+    ]
+  },
+  {
+    "question_text": "How do you say 'goodbye' in Hungarian?",
+    "choice_a": "Szia",
+    "choice_b": "Viszlát",
+    "choice_c": "Helló",
+    "choice_d": "Jó napot",
+    "correct_answer": "B",
+    "explanation": "Viszlát = goodbye (до свидания). Basic farewell expression.",
+    "difficulty": "beginner",
+    "tags": [
+      "greetings",
+      "basic expressions"
+    ]
+  },
+  {
+    "question_text": "Which means 'market' in Hungarian?",
+    "choice_a": "Piac",
+    "choice_b": "Bolt",
+    "choice_c": "Üzlet",
+    "choice_d": "Áruház",
+    "correct_answer": "A",
+    "explanation": "Piac = market (рынок). Common shopping vocabulary.",
+    "difficulty": "beginner",
+    "tags": [
+      "shopping",
+      "places"
+    ]
+  },
+  {
+    "question_text": "How do you say 'tomorrow' in Hungarian?",
+    "choice_a": "Ma",
+    "choice_b": "Tegnap",
+    "choice_c": "Holnap",
+    "choice_d": "Most",
+    "correct_answer": "C",
+    "explanation": "Holnap = tomorrow (завтра). Basic time expression.",
+    "difficulty": "beginner",
+    "tags": [
+      "time",
+      "basic expressions"
+    ]
+  },
+  {
+    "question_text": "What is the Hungarian word for 'car'?",
+    "choice_a": "Autó",
+    "choice_b": "Busz",
+    "choice_c": "Vonat",
+    "choice_d": "Bicikli",
+    "correct_answer": "A",
+    "explanation": "Autó = car (машина). Common transportation vocabulary.",
+    "difficulty": "beginner",
+    "tags": [
+      "transportation",
+      "vehicles"
+    ]
+  },
+  {
+    "question_text": "How do you say 'yes' in Hungarian?",
+    "choice_a": "Nem",
+    "choice_b": "Igen",
+    "choice_c": "Talán",
+    "choice_d": "Vagy",
+    "correct_answer": "B",
+    "explanation": "Igen = yes (да). Essential basic vocabulary.",
+    "difficulty": "beginner",
+    "tags": [
+      "basic expressions",
+      "answers"
+    ]
+  },
+  {
+    "question_text": "Which word means 'restaurant' in Hungarian?",
+    "choice_a": "Étterem",
+    "choice_b": "Kávézó",
+    "choice_c": "Bolt",
+    "choice_d": "Piac",
+    "correct_answer": "A",
+    "explanation": "Étterem = restaurant (ресторан). Important place vocabulary.",
+    "difficulty": "beginner",
+    "tags": [
+      "places",
+      "food"
+    ]
+  },
+  {
+    "question_text": "How do you say 'today' in Hungarian?",
+    "choice_a": "Holnap",
+    "choice_b": "Tegnap",
+    "choice_c": "Ma",
+    "choice_d": "Most",
+    "correct_answer": "C",
+    "explanation": "Ma = today (сегодня). Common time expression.",
+    "difficulty": "beginner",
+    "tags": [
+      "time",
+      "basic expressions"
+    ]
+  },
+  {
+    "question_text": "Выберите правильный перевод слова 'хлеб':",
+    "choice_a": "kenyér",
+    "choice_b": "víz",
+    "choice_c": "tej",
+    "choice_d": "sajt",
+    "correct_answer": "A",
+    "explanation": "kenyér = хлеб. Основное слово для обозначения хлеба",
+    "difficulty": "beginner",
+    "tags": [
+      "food",
+      "basics"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'автобусная остановка' по-венгерски?",
+    "choice_a": "buszmegálló",
+    "choice_b": "buszállomás",
+    "choice_c": "autóbusz",
+    "choice_d": "megálló",
+    "correct_answer": "A",
+    "explanation": "buszmegálló = автобусная остановка. busz (автобус) + megálló (остановка)",
+    "difficulty": "beginner",
+    "tags": [
+      "transportation",
+      "locations"
+    ]
+  },
+  {
+    "question_text": "Выберите правильный перевод 'понедельник':",
+    "choice_a": "kedd",
+    "choice_b": "szerda",
+    "choice_c": "hétfő",
+    "choice_d": "csütörtök",
+    "correct_answer": "C",
+    "explanation": "hétfő = понедельник. От слова hét (неделя)",
+    "difficulty": "beginner",
+    "tags": [
+      "time",
+      "days"
+    ]
+  },
+  {
+    "question_text": "Как спросить 'Где туалет?' по-венгерски?",
+    "choice_a": "Hol van a bolt?",
+    "choice_b": "Hol van a mosdó?",
+    "choice_c": "Hol van az állomás?",
+    "choice_d": "Hol van a bank?",
+    "correct_answer": "B",
+    "explanation": "Hol van a mosdó? = Где туалет? Hol van (где находится) + a mosdó (туалет)",
+    "difficulty": "beginner",
+    "tags": [
+      "locations",
+      "questions"
+    ]
+  },
+  {
+    "question_text": "Выберите правильный перевод числа 'два':",
+    "choice_a": "egy",
+    "choice_b": "kettő",
+    "choice_c": "három",
+    "choice_d": "négy",
+    "correct_answer": "B",
+    "explanation": "kettő = два. Базовое числительное",
+    "difficulty": "beginner",
+    "tags": [
+      "numbers",
+      "counting"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'Я хочу кофе' по-венгерски?",
+    "choice_a": "Kérek egy kávét",
+    "choice_b": "Van egy kávé",
+    "choice_c": "Iszom egy kávét",
+    "choice_d": "Nem kérek kávét",
+    "correct_answer": "A",
+    "explanation": "Kérek egy kávét = Я хочу кофе. Kérek (прошу/хочу) + egy (один) + kávét (кофе в винительном падеже)",
+    "difficulty": "beginner",
+    "tags": [
+      "food",
+      "ordering"
+    ]
+  },
+  {
+    "question_text": "Что означает 'kérem'?",
+    "choice_a": "Спасибо",
+    "choice_b": "Пожалуйста",
+    "choice_c": "Извините",
+    "choice_d": "До свидания",
+    "correct_answer": "B",
+    "explanation": "Kérem = пожалуйста. Это одно из самых важных слов вежливости в венгерском языке.",
+    "difficulty": "beginner",
+    "tags": [
+      "politeness",
+      "essential phrases"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'один билет' по-венгерски?",
+    "choice_a": "egy jegy",
+    "choice_b": "két jegy",
+    "choice_c": "sok jegy",
+    "choice_d": "minden jegy",
+    "correct_answer": "A",
+    "explanation": "Egy jegy = один билет. Egy = один, jegy = билет.",
+    "difficulty": "beginner",
+    "tags": [
+      "numbers",
+      "transportation"
+    ]
+  },
+  {
+    "question_text": "Что означает 'bolt'?",
+    "choice_a": "Ресторан",
+    "choice_b": "Магазин",
+    "choice_c": "Аптека",
+    "choice_d": "Банк",
+    "correct_answer": "B",
+    "explanation": "Bolt = магазин. Важное слово для повседневных покупок.",
+    "difficulty": "beginner",
+    "tags": [
+      "shopping",
+      "places"
+    ]
+  },
+  {
+    "question_text": "Как спросить 'Сколько времени?' по-венгерски?",
+    "choice_a": "Hány óra van?",
+    "choice_b": "Hol van?",
+    "choice_c": "Mi ez?",
+    "choice_d": "Hogy vagy?",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Hány óra van?' буквально означает 'Который час?' или 'Сколько времени?'. 'Hány' значит 'сколько', а 'óra' - 'час'.\nMagyar: A 'Hány óra van?' az idő kérdezésére szolgáló alapvető kifejezés. A 'hány' kérdőszó számokra vonatkozik, az 'óra' pedig időegységet jelöl.",
+    "difficulty": "beginner",
+    "tags": [
+      "time",
+      "questions"
+    ]
+  },
+  {
+    "question_text": "Какое слово означает 'яблоко' по-венгерски?",
+    "choice_a": "körte",
+    "choice_b": "alma",
+    "choice_c": "narancs",
+    "choice_d": "banán",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Alma' - это 'яблоко'. Другие варианты означают: körte (груша), narancs (апельсин), banán (банан).\nMagyar: Az 'alma' egy alapvető gyümölcs neve. A többi választási lehetőség más gyümölcsöket jelöl.",
+    "difficulty": "beginner",
+    "tags": [
+      "food",
+      "fruits"
+    ]
+  },
+  {
+    "question_text": "Какое слово означает 'телефон' по-венгерски?",
+    "choice_a": "könyv",
+    "choice_b": "telefon",
+    "choice_c": "toll",
+    "choice_d": "óra",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Telefon' означает 'телефон'. Другие варианты: könyv (книга), toll (ручка), óra (часы).\nMagyar: A 'telefon' nemzetközi szó, amely a magyarban is hasonlóan hangzik, mint sok más nyelvben.",
+    "difficulty": "beginner",
+    "tags": [
+      "technology",
+      "communication"
+    ]
+  },
+  {
+    "question_text": "Как спросить 'Как тебя зовут?' по-венгерски?",
+    "choice_a": "Hogy vagy?",
+    "choice_b": "Mi ez?",
+    "choice_c": "Hogy hívnak?",
+    "choice_d": "Hol laksz?",
+    "correct_answer": "C",
+    "explanation": "Русский: 'Hogy hívnak?' означает 'Как тебя зовут?'. Это один из самых распространенных способов спросить чье-то имя.\nMagyar: A 'Hogy hívnak?' az egyik leggyakoribb módja annak, hogy megkérdezzük valaki nevét. A 'hív' ige jelentése 'звать', а '-nak' végződés teszi kérdő formává.",
+    "difficulty": "beginner",
+    "tags": [
+      "introductions",
+      "questions"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'спасибо большое' по-венгерски?",
+    "choice_a": "köszönöm",
+    "choice_b": "nagyon köszönöm",
+    "choice_c": "kérem szépen",
+    "choice_d": "szívesen",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Nagyon köszönöm' означает 'спасибо большое'. 'Nagyon' значит 'очень', 'köszönöm' - 'спасибо'.\nMagyar: A 'nagyon köszönöm' nyomatékos köszönetnyilvánítás.",
+    "difficulty": "beginner",
+    "tags": [
+      "politeness",
+      "basic"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'стакан' по-венгерски?",
+    "choice_a": "tányér",
+    "choice_b": "pohár",
+    "choice_c": "kanál",
+    "choice_d": "villa",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Pohár' означает 'стакан'. Важное слово для ресторана и дома.\nMagyar: A 'pohár' az iváshoz használt eszköz neve.",
+    "difficulty": "beginner",
+    "tags": [
+      "objects",
+      "dining"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'холодно' по-венгерски?",
+    "choice_a": "hideg",
+    "choice_b": "meleg",
+    "choice_c": "forró",
+    "choice_d": "hűvös",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Hideg' означает 'холодно/холодный'. Базовое слово для описания температуры.\nMagyar: A 'hideg' alapvető hőmérsékletet jelző szó.",
+    "difficulty": "beginner",
+    "tags": [
+      "weather",
+      "descriptions"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'молоко' по-венгерски?",
+    "choice_a": "Tej",
+    "choice_b": "Víz",
+    "choice_c": "Kávé",
+    "choice_d": "Tea",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Tej' означает 'молоко'. Это базовое слово для обозначения молочного напитка.\nMagyar: A 'tej' egy alapvető élelmiszer neve, ami a 'milk' jelentésű szó magyarul.",
+    "difficulty": "beginner",
+    "tags": [
+      "food",
+      "drinks",
+      "basic-nouns"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'спасибо большое' по-венгерски?",
+    "choice_a": "Köszönöm szépen",
+    "choice_b": "Kérem szépen",
+    "choice_c": "Viszontlátásra",
+    "choice_d": "Szívesen",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Köszönöm szépen' - вежливая форма благодарности. 'Köszönöm' означает 'спасибо', 'szépen' добавляет значение 'красиво/очень'.\nMagyar: A 'köszönöm szépen' egy udvarias köszönetnyilvánítás, amit gyakran használunk.",
+    "difficulty": "beginner",
+    "tags": [
+      "politeness",
+      "thanks",
+      "basic-phrases"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'улица' по-венгерски?",
+    "choice_a": "Tér",
+    "choice_b": "Utca",
+    "choice_c": "Ház",
+    "choice_d": "Út",
+    "correct_answer": "B",
+    "explanation": "Русский: 'Utca' означает 'улица'. Это важное слово для ориентации в городе.\nMagyar: Az 'utca' egy alapvető városnavigációs szó, amit címek megadásánál is használunk.",
+    "difficulty": "beginner",
+    "tags": [
+      "directions",
+      "city",
+      "locations"
+    ]
+  },
+  {
+    "question_text": "Как сказать 'спасибо большое' по-венгерски?",
+    "choice_a": "köszönöm szépen",
+    "choice_b": "kérem szépen",
+    "choice_c": "viszontlátásra",
+    "choice_d": "szívesen",
+    "correct_answer": "A",
+    "explanation": "Русский: 'Köszönöm szépen' означает 'спасибо большое'. 'Szépen' добавляется к 'köszönöm' для более вежливой формы благодарности.\nMagyar: A 'köszönöm szépen' a 'köszönöm' udvariasabb formája.",
+    "difficulty": "beginner",
+    "tags": [
+      "politeness",
+      "basic phrases"
+    ]
+  }
+]

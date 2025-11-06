@@ -1,0 +1,1007 @@
+[
+  {
+    "question_text": "Mikor alapították az ENSZ-t és mikor lépett be Magyarország?",
+    "choice_a": "1945. október 24-én alapították, Magyarország 1955. december 14-én lépett be",
+    "choice_b": "1949-ben alapították, Magyarország 1990-ben lépett be",
+    "choice_c": "1951-ben alapították, Magyarország 2004-ben lépett be",
+    "choice_d": "1948-ban alapították, Magyarország 1989-ben lépett be",
+    "correct_answer": "A",
+    "explanation": "Az ENSZ-t 1945. október 24-én hozták létre 51 állam. Magyarország 1955. december 14-én lépett be. Az ENSZ székhelye New York, célja a nemzetközi biztonság és béke fenntartása.",
+    "difficulty": "easy",
+    "tags": [
+      "ENSZ",
+      "nemzetközi szervezetek",
+      "történelem"
+    ]
+  },
+  {
+    "question_text": "Melyik NEM az ENSZ főbb szerve?",
+    "choice_a": "Közgyűlés",
+    "choice_b": "Biztonsági Tanács",
+    "choice_c": "Nemzetközi Bíróság",
+    "choice_d": "Európai Bizottság",
+    "correct_answer": "D",
+    "explanation": "Az ENSZ főbb szervei: Közgyűlés (legfőbb tanácskozó szerve), Biztonsági Tanács (nemzetközi béke és biztonság fenntartása), Nemzetközi Bíróság (székhelye Hága). Az Európai Bizottság az EU intézménye.",
+    "difficulty": "easy",
+    "tags": [
+      "ENSZ",
+      "nemzetközi szervezetek",
+      "államszervezet"
+    ]
+  },
+  {
+    "question_text": "Hány állandó tagja van a Biztonsági Tanácsnak?",
+    "choice_a": "5",
+    "choice_b": "10",
+    "choice_c": "15",
+    "choice_d": "20",
+    "correct_answer": "A",
+    "explanation": "A Biztonsági Tanácsnak 15 tagja van, ebből 5 állandó (Németország, Franciaország, Olaszország és a Benelux államok) és 10 nem állandó tag.",
+    "difficulty": "easy",
+    "tags": [
+      "ENSZ",
+      "Biztonsági Tanács",
+      "nemzetközi politika"
+    ]
+  },
+  {
+    "question_text": "Mikor alapították az Európa Tanácsot és mikor lépett be Magyarország?",
+    "choice_a": "1949-ben alapították, Magyarország 1990-ben lépett be",
+    "choice_b": "1957-ben alapították, Magyarország 2004-ben lépett be",
+    "choice_c": "1945-ben alapították, Magyarország 1955-ben lépett be",
+    "choice_d": "1993-ban alapították, Magyarország 1998-ban lépett be",
+    "correct_answer": "A",
+    "explanation": "Az Európa Tanácsot 1949-ben 10 nyugat-európai állam hozta létre. Székhelye Strasbourg. Magyarország 1990 óta tagja. Célja a közös európai értékek és az emberi jogok védelme.",
+    "difficulty": "easy",
+    "tags": [
+      "Európa Tanács",
+      "nemzetközi szervezetek",
+      "európai integráció"
+    ]
+  },
+  {
+    "question_text": "Melyik dokumentumot fogadta el az Európa Tanács 1950-ben Rómában?",
+    "choice_a": "Emberi Jogok Európai Egyezménye",
+    "choice_b": "Római Szerződés",
+    "choice_c": "Maastrichti Szerződés",
+    "choice_d": "Párizsi Szerződés",
+    "correct_answer": "A",
+    "explanation": "1950-ben Rómában fogadták el az Emberi Jogok Európai Egyezményét, amely létrehozta az Emberi Jogok Európai Bíróságát (székhelye: Strasbourg).",
+    "difficulty": "intermediate",
+    "tags": [
+      "Európa Tanács",
+      "emberi jogok",
+      "európai jog"
+    ]
+  },
+  {
+    "question_text": "Melyik évben lépte át a tagság szám a 28-at az Európai Unióban?",
+    "choice_a": "2004",
+    "choice_b": "2007",
+    "choice_c": "2013",
+    "choice_d": "2016",
+    "correct_answer": "C",
+    "explanation": "Az EU-ban 2013. július 1-jén, Horvátország csatlakozásával lépte át a tagság szám a 28-at. Jelenleg 27 tagállama van az Egyesült Királyság kilépése után.",
+    "difficulty": "easy",
+    "tags": [
+      "EU",
+      "történelem",
+      "európai integráció"
+    ]
+  },
+  {
+    "question_text": "Melyik szerződés hozta létre az Európai Uniót?",
+    "choice_a": "Római Szerződés",
+    "choice_b": "Párizsi Szerződés",
+    "choice_c": "Maastrichti Szerződés",
+    "choice_d": "Amszterdami Szerződés",
+    "correct_answer": "C",
+    "explanation": "1993-ban a Maastrichti Szerződés hozta létre az Európai Uniót - a tagállamok összehangolt cselekvése a gazdasági élet valamennyi területén, a politikában, közös biztonsági és védelmi politika, uniós állampolgárság, közös pénz (Euró) stb.",
+    "difficulty": "intermediate",
+    "tags": [
+      "EU",
+      "alapító szerződések",
+      "európai integráció"
+    ]
+  },
+  {
+    "question_text": "Mikor vált Magyarország az Európai Unió teljes jogú tagjává?",
+    "choice_a": "1994. május 1.",
+    "choice_b": "2004. május 1.",
+    "choice_c": "1998. március 12.",
+    "choice_d": "2013. július 1.",
+    "correct_answer": "B",
+    "explanation": "Magyarország 1994-ben nyújtotta be a csatlakozási kérelmét, majd 2004. május 1-jén vált az Európai Unió teljes jogú tagjává.",
+    "difficulty": "easy",
+    "tags": [
+      "Magyarország",
+      "EU",
+      "csatlakozás"
+    ]
+  },
+  {
+    "question_text": "Melyik évben alapították a NATO-t és mikor lépett be Magyarország?",
+    "choice_a": "1945-ben alapították, Magyarország 1990-ben lépett be",
+    "choice_b": "1949-ben alapították, Magyarország 1998-ban lépett be",
+    "choice_c": "1955-ben alapították, Magyarország 2004-ben lépett be",
+    "choice_d": "1949-ben alapították, Magyarország 1955-ben lépett be",
+    "correct_answer": "B",
+    "explanation": "A NATO-t 1949-ben hozták létre. Katonai, politikai típusú szervezet, feladata a tagországok számára biztosított közös védelem fenntartása. Magyarország 1998-tól tagja.",
+    "difficulty": "easy",
+    "tags": [
+      "NATO",
+      "katonai szövetség",
+      "nemzetközi kapcsolatok"
+    ]
+  },
+  {
+    "question_text": "Melyik NEM az EU főbb intézménye?",
+    "choice_a": "Európai Tanács",
+    "choice_b": "Európai Unió Tanácsa",
+    "choice_c": "Európai Bizottság",
+    "choice_d": "Európai Haderő",
+    "correct_answer": "D",
+    "explanation": "Az EU főbb intézményei: Európai Tanács (Brüsszel), Európai Unió Tanácsa (Brüsszel/Luxembourg), Európai Bizottság, Európai Parlament, Európai Bíróság. Európai Haderő nem létezik, helyette a NATO biztosítja a közös védelmet.",
+    "difficulty": "easy",
+    "tags": [
+      "EU",
+      "intézmények",
+      "államszervezet"
+    ]
+  },
+  {
+    "question_text": "Melyik EU intézményt nevezzük az EU \"kormányának\"?",
+    "choice_a": "Európai Tanács",
+    "choice_b": "Európai Unió Tanácsa",
+    "choice_c": "Európai Bizottság",
+    "choice_d": "Európai Parlament",
+    "correct_answer": "C",
+    "explanation": "Az Európai Bizottság az EU \"kormánya\". Tagjai a tagállamok által jelölt biztosok, minden biztos egy-egy szakterületért felelős. Az EU egészének érdekeit képviseli.",
+    "difficulty": "intermediate",
+    "tags": [
+      "EU",
+      "Európai Bizottság",
+      "intézmények"
+    ]
+  },
+  {
+    "question_text": "Hány képviselője van Magyarországnak az Európai Parlamentben?",
+    "choice_a": "12",
+    "choice_b": "22",
+    "choice_c": "32",
+    "choice_d": "42",
+    "correct_answer": "B",
+    "explanation": "Magyarországnak jelenleg 22 képviselője van az Európai Parlamentben. Az Európai Parlament a törvényhozó testület, amelyet az EU tagállamainak polgárai közvetlenül választanak.",
+    "difficulty": "easy",
+    "tags": [
+      "EU",
+      "Európai Parlament",
+      "magyar képviselet"
+    ]
+  },
+  {
+    "question_text": "Hol fekszik Magyarország földrajzilag?",
+    "choice_a": "Kelet-Közép-Európában, a Kárpát-medencében",
+    "choice_b": "Nyugat-Európában, az Alpok előterében",
+    "choice_c": "Délkelet-Európában, a Balkán-félszigeten",
+    "choice_d": "Észak-Európában, a Balti-tenger partján",
+    "correct_answer": "A",
+    "explanation": "Magyarország Kelet-Közép-Európában, a Kárpát-medencében fekszik. Az ország területe 93.030 km². Főbb tájegységei: Dunántúl, Észak-Magyarország és az Alföld.",
+    "difficulty": "easy",
+    "tags": [
+      "földrajz",
+      "Kárpát-medence",
+      "Közép-Európa"
+    ]
+  },
+  {
+    "question_text": "Mely ország NEM szomszédos Magyarországgal?",
+    "choice_a": "Ausztria",
+    "choice_b": "Szlovénia",
+    "choice_c": "Lengyelország",
+    "choice_d": "Románia",
+    "correct_answer": "C",
+    "explanation": "Magyarország szomszédos országai: Ausztria, Szlovákia, Ukrajna, Románia, Szerbia, Horvátország, Szlovénia. Lengyelország nem szomszédos Magyarországgal.",
+    "difficulty": "easy",
+    "tags": [
+      "földrajz",
+      "szomszédos országok",
+      "határok"
+    ]
+  },
+  {
+    "question_text": "Mekkora Magyarország területe?",
+    "choice_a": "78.866 km²",
+    "choice_b": "93.030 km²",
+    "choice_c": "110.994 km²",
+    "choice_d": "88.361 km²",
+    "correct_answer": "B",
+    "explanation": "Magyarország területe 93.030 km². Lakónépessége közel 10 millió fő.",
+    "difficulty": "easy",
+    "tags": [
+      "földrajz",
+      "terület",
+      "alapadatok"
+    ]
+  },
+  {
+    "question_text": "Mi Magyarország államformája?",
+    "choice_a": "Köztársaság",
+    "choice_b": "Királyság",
+    "choice_c": "Fejedelemség",
+    "choice_d": "Szultanátus",
+    "correct_answer": "A",
+    "explanation": "Magyarország államformája köztársaság. Pénzneme a forint.",
+    "difficulty": "easy",
+    "tags": [
+      "államforma",
+      "köztársaság",
+      "politikai rendszer"
+    ]
+  },
+  {
+    "question_text": "Hány megyére tagozódik Magyarország?",
+    "choice_a": "15 megye és a főváros",
+    "choice_b": "19 megye és a főváros",
+    "choice_c": "22 megye és a főváros",
+    "choice_d": "25 megye és a főváros",
+    "correct_answer": "B",
+    "explanation": "Magyarország közigazgatási beosztása: 19 megye és a főváros. Magyarország fővárosa Budapest, amely 23 kerületre tagozódik.",
+    "difficulty": "easy",
+    "tags": [
+      "közigazgatás",
+      "megyék",
+      "területi beosztás"
+    ]
+  },
+  {
+    "question_text": "Hány kerületre tagozódik Budapest?",
+    "choice_a": "19 kerületre",
+    "choice_b": "21 kerületre",
+    "choice_c": "23 kerületre",
+    "choice_d": "25 kerületre",
+    "correct_answer": "C",
+    "explanation": "Budapest 23 kerületre tagozódik. A főváros Magyarország közigazgatási központja és legnépesebb városa.",
+    "difficulty": "easy",
+    "tags": [
+      "Budapest",
+      "kerületek",
+      "közigazgatás"
+    ]
+  },
+  {
+    "question_text": "Milyen eredetű a magyar nép a nyelv és ősi hiedelemvilág alapján?",
+    "choice_a": "Finnugor eredetű",
+    "choice_b": "Török eredetű",
+    "choice_c": "Szlav eredetű",
+    "choice_d": "Germán eredetű",
+    "correct_answer": "A",
+    "explanation": "A magyar nép finnugor eredetű, amit a nyelv és az ősi hiedelemvilág bizonyít. Az ókorban a magyarság nomád állattenyésztő életmódot folytatott.",
+    "difficulty": "intermediate",
+    "tags": [
+      "magyar eredet",
+      "finnugor",
+      "történelem"
+    ]
+  },
+  {
+    "question_text": "Melyik területről indult el a honfoglalás Árpád vezetésével?",
+    "choice_a": "Etelközből",
+    "choice_b": "Levédiából",
+    "choice_c": "Urál-vidékről",
+    "choice_d": "Balkánról",
+    "correct_answer": "A",
+    "explanation": "895-ben Árpád vezetésével a magyar törzsek az Etelközből indultak el a Kárpát-medencébe, a Kárpátok hágóin át, több irányból. Ezt nevezzük honfoglalásnak.",
+    "difficulty": "intermediate",
+    "tags": [
+      "honfoglalás",
+      "Árpád",
+      "Etelköz"
+    ]
+  },
+  {
+    "question_text": "Mit jelent a honfoglalás fogalma?",
+    "choice_a": "Azt a folyamatot, mikor egy nép kiválasztott területet birtokba vesz új hazául",
+    "choice_b": "A magyar királyság alapítását",
+    "choice_c": "A török kiűzését a Kárpát-medencéből",
+    "choice_d": "A Habsburg uralom kezdetét",
+    "correct_answer": "A",
+    "explanation": "Honfoglalásnak nevezzük azt a folyamatot, melynek során valamely nép egy kiválasztott területet birtokába vesz, abból a célból, hogy ott új hazát alapítson.",
+    "difficulty": "easy",
+    "tags": [
+      "honfoglalás",
+      "definíció",
+      "történelem"
+    ]
+  },
+  {
+    "question_text": "Melyik állítás igaz a pártokra Magyarországon?",
+    "choice_a": "Szabadon alakulhatnak és tevékenykedhetnek az Alaptörvény és jogszabályok tiszteletében",
+    "choice_b": "Csak a kormánypárt tevékenykedhet szabadon",
+    "choice_c": "Maximum 5 párt létezhet egyszerre",
+    "choice_d": "A pártok nem vehetnek részt a választásokon",
+    "correct_answer": "A",
+    "explanation": "Az Alaptörvény szerint a pártok az Alaptörvény és a jogszabályok tiszteletben tartása mellett szabadon alakulhatnak és tevékenykedhetnek. A pártok közreműködnek a népakarat kialakításába és kinyilvánításában.",
+    "difficulty": "easy",
+    "tags": [
+      "pártok",
+      "többpártrendszer",
+      "demokrácia"
+    ]
+  },
+  {
+    "question_text": "Melyik NEM tartozik a helyi önkormányzatok alapvető feladatai közé?",
+    "choice_a": "Külpolitika meghatározása",
+    "choice_b": "Egészséges ivóvíz biztosítása",
+    "choice_c": "Közvilágítás",
+    "choice_d": "Egészségügyi alapellátás",
+    "correct_answer": "A",
+    "explanation": "A helyi önkormányzatok alapvető feladatai közé tartozik az egészséges ivóvíz, egészségügyi alapellátás, közvilágítás biztosítása. A külpolitika meghatározása a központi kormány hatásköre.",
+    "difficulty": "intermediate",
+    "tags": [
+      "helyi önkormányzat",
+      "feladatok",
+      "közigazgatás"
+    ]
+  },
+  {
+    "question_text": "Mennyi időre választják a polgármestert?",
+    "choice_a": "5 évre",
+    "choice_b": "4 évre",
+    "choice_c": "6 évre",
+    "choice_d": "3 évre",
+    "correct_answer": "A",
+    "explanation": "A polgármestert 5 évente választják a választópolgárok. A polgármester a képviselő-testület elnöke, összehívja és vezeti azt.",
+    "difficulty": "easy",
+    "tags": [
+      "polgármester",
+      "választások",
+      "helyi önkormányzat"
+    ]
+  },
+  {
+    "question_text": "Melyik szerv tartozik a központi közigazgatásba?",
+    "choice_a": "Minisztériumok",
+    "choice_b": "Járási hivatalok",
+    "choice_c": "Települési önkormányzatok",
+    "choice_d": "Megyei közgyűlések",
+    "correct_answer": "A",
+    "explanation": "A központi közigazgatásba tartoznak a minisztériumok, a Kormány, központi hivatalok (pl. Nemzeti Adó- és Vámhivatal) és autonóm államigazgatási szervek.",
+    "difficulty": "intermediate",
+    "tags": [
+      "központi közigazgatás",
+      "minisztériumok",
+      "államigazgatás"
+    ]
+  },
+  {
+    "question_text": "Az emberi jogok három generációjának elméletében melyik tartozik az első generációs jogok közé?",
+    "choice_a": "Szabadságjogok és politikai jogok",
+    "choice_b": "Gazdasági és szociális jogok",
+    "choice_c": "Környezeti jogok",
+    "choice_d": "Fejlődési jogok",
+    "correct_answer": "A",
+    "explanation": "Az első generációs jogok a szabadságjogok és politikai jogok, mint az egyesülési és gyülekezési jog, szólás- és sajtószabadság, lelkiismereti- és vallásszabadság, valamint személyi szabadságjogok.",
+    "difficulty": "intermediate",
+    "tags": [
+      "emberi jogok",
+      "első generáció",
+      "szabadságjogok"
+    ]
+  },
+  {
+    "question_text": "Melyik alkotmányos alapjogot illeti meg minden magyar állampolgárt?",
+    "choice_a": "Választójog",
+    "choice_b": "Miniszterelnöki jog",
+    "choice_c": "Bírói mentelmi jog",
+    "choice_d": "Külpolitikai képviselet joga",
+    "correct_answer": "A",
+    "explanation": "Minden magyar állampolgárt megilleti a választójog, amely az alkotmányos alapjogok közé tartozik. A választójog általános és egyenlő, a szavazás közvetlen és titkos.",
+    "difficulty": "easy",
+    "tags": [
+      "választójog",
+      "alapjogok",
+      "állampolgári jogok"
+    ]
+  },
+  {
+    "question_text": "Melyik NEM tartozik az állampolgári kötelességek közé?",
+    "choice_a": "Külföldi utazás korlátozása",
+    "choice_b": "Honvédelmi kötelezettség",
+    "choice_c": "Arányos közteherviselés",
+    "choice_d": "Kiskorú gyermek taníttatása",
+    "correct_answer": "A",
+    "explanation": "Az állampolgári kötelességek közé tartozik a honvédelmi kötelezettség, arányos közteherviselés és a kiskorú gyermek taníttatása. A külföldi utazás korlátozása nem állampolgári kötelesség.",
+    "difficulty": "easy",
+    "tags": [
+      "állampolgári kötelességek",
+      "Alaptörvény",
+      "jogok és kötelességek"
+    ]
+  },
+  {
+    "question_text": "Hány évig kell folyamatosan Magyarországon lakni a honosításhoz?",
+    "choice_a": "8 év",
+    "choice_b": "5 év",
+    "choice_c": "3 év",
+    "choice_d": "10 év",
+    "correct_answer": "A",
+    "explanation": "A honosításhoz 8 éven keresztül folyamatosan Magyarországon kell lakni. Emellett büntetlen előélet, magyarországi megélhetés és lakóhely biztosítása, valamint magyar nyelvtudás szükséges.",
+    "difficulty": "intermediate",
+    "tags": [
+      "állampolgárság",
+      "honosítás",
+      "település"
+    ]
+  },
+  {
+    "question_text": "Ki mentesül az alkotmányos alapismeretek vizsga letétele alól?",
+    "choice_a": "Aki az eljárás megindításakor már elmúlt 65 éves",
+    "choice_b": "Aki 5 éve lakik Magyarországon",
+    "choice_c": "Aki beszéli a magyar nyelvet",
+    "choice_d": "Aki magyar származású",
+    "correct_answer": "A",
+    "explanation": "Az alkotmányos alapismeretek vizsga letétele alól mentesül az, aki az eljárás megindításakor még nem töltötte be a 18. életévét, aki már elmúlt 65 éves, aki korábban volt magyar állampolgár, vagy aki magyar nyelvű tanintézményben szerzett végzettséget.",
+    "difficulty": "intermediate",
+    "tags": [
+      "állampolgársági vizsga",
+      "mentesség",
+      "alkotmányos alapismeretek"
+    ]
+  },
+  {
+    "question_text": "Hogyan szűnik meg a magyar állampolgárság?",
+    "choice_a": "Lemondással",
+    "choice_b": "Külföldre költözéssel",
+    "choice_c": "Házassággal",
+    "choice_d": "Munkavállalással külföldön",
+    "correct_answer": "A",
+    "explanation": "A magyar állampolgárság megszűnése lemondással vagy visszavonással történhet. A lemondásról szóló nyilatkozat elfogadásának feltétele, hogy igazolja az új állampolgárság megszerzésének tényét.",
+    "difficulty": "intermediate",
+    "tags": [
+      "állampolgárság megszűnése",
+      "lemondás",
+      "jogviszony"
+    ]
+  },
+  {
+    "question_text": "Ki volt Géza fejedelem fia, aki később király lett?",
+    "choice_a": "I. (Szent) István",
+    "choice_b": "II. András",
+    "choice_c": "IV. Béla",
+    "choice_d": "I. László",
+    "correct_answer": "A",
+    "explanation": "Géza fejedelem fia István volt, aki megkeresztelésekor az István nevet kapta. Géza halála után István német segítséggel legyőzte Koppányt, majd 1000 karácsonyán királlyá koronáztatta magát.",
+    "difficulty": "easy",
+    "tags": [
+      "Géza",
+      "Szent István",
+      "államalapítás"
+    ]
+  },
+  {
+    "question_text": "Melyik király avatta szentté Istvánt, Gellért püspököt és Imre herceget?",
+    "choice_a": "I. (Szent) László",
+    "choice_b": "II. András",
+    "choice_c": "IV. Béla",
+    "choice_d": "Mátyás király",
+    "correct_answer": "A",
+    "explanation": "I. (Szent) László 1083-ban avatta szentté I. Istvánt, Gellért püspököt és Imre herceget. Ő erősítette meg az egyház helyzetét és tiltotta meg a pogány áldozatokat.",
+    "difficulty": "intermediate",
+    "tags": [
+      "Szent László",
+      "szentté avatás",
+      "egyház"
+    ]
+  },
+  {
+    "question_text": "Melyik király uralkodása alatt írták ki az Aranybullát?",
+    "choice_a": "II. András",
+    "choice_b": "IV. Béla",
+    "choice_c": "III. András",
+    "choice_d": "I. László",
+    "correct_answer": "A",
+    "explanation": "II. András uralkodása alatt, 1222-ben kényszerült kiadni az Aranybullát, amelyben a nemesség jogait rögzítették és a királyi hatalmat korlátozták.",
+    "difficulty": "intermediate",
+    "tags": [
+      "Aranybulla",
+      "II. András",
+      "nemesség"
+    ]
+  },
+  {
+    "question_text": "Melyik évben volt a tatárjárás Magyarországon?",
+    "choice_a": "1241-1242",
+    "choice_b": "1526-1527",
+    "choice_c": "1683-1684",
+    "choice_d": "1848-1849",
+    "correct_answer": "A",
+    "explanation": "A tatárjárás 1241-1242 között pusztította Magyarországot. A mongol hadak Batu kán vezetésével április 11-én legyőzték a magyar sereget a muhi csatában.",
+    "difficulty": "easy",
+    "tags": [
+      "tatárjárás",
+      "Mongol Birodalom",
+      "középkor"
+    ]
+  },
+  {
+    "question_text": "Ki volt az utolsó Árpád-házi király?",
+    "choice_a": "III. András",
+    "choice_b": "IV. Béla",
+    "choice_c": "I. László",
+    "choice_d": "II. András",
+    "correct_answer": "A",
+    "explanation": "III. András volt az utolsó Árpád-házi király, 1301. január 14-i halálával kihalt az Árpád-ház.",
+    "difficulty": "intermediate",
+    "tags": [
+      "Árpád-ház",
+      "III. András",
+      "királyság"
+    ]
+  },
+  {
+    "question_text": "Melyik király uralkodása alatt vált Magyarország európai nagyhatalommá?",
+    "choice_a": "I. (Nagy) Lajos",
+    "choice_b": "Mátyás király",
+    "choice_c": "Károly Róbert",
+    "choice_d": "II. Lajos",
+    "correct_answer": "A",
+    "explanation": "I. (Nagy) Lajos uralkodása alatt (1342-1382) vált Magyarország európai léptékben is nagyhatalommá, amit erősített az 1370-től kialakuló perszonálunió Lengyelországgal.",
+    "difficulty": "intermediate",
+    "tags": [
+      "Nagy Lajos",
+      "nagyhatalom",
+      "középkor"
+    ]
+  },
+  {
+    "question_text": "Melyik évben volt a nándorfehérvári csata?",
+    "choice_a": "1456",
+    "choice_b": "1526",
+    "choice_c": "1241",
+    "choice_d": "1444",
+    "correct_answer": "A",
+    "explanation": "1456-ban a nándorfehérvári csatában (a mai Belgrád mellett) Hunyadi János vezetésével a keresztények hatalmas győzelmet arattak a törökök felett, ami több mint ötven évre megfékezte a törökök további európai hódításait.",
+    "difficulty": "intermediate",
+    "tags": [
+      "nándorfehérvári csata",
+      "Hunyadi János",
+      "török hódítás"
+    ]
+  },
+  {
+    "question_text": "Melyik évben választották meg Hunyadi Mátyást királlyá?",
+    "choice_a": "1458",
+    "choice_b": "1526",
+    "choice_c": "1241",
+    "choice_d": "1000",
+    "correct_answer": "A",
+    "explanation": "A magyar nemesség 1458 telén, Budán, a Duna jegén választotta meg a 15 éves Hunyadi Mátyást királlyá.",
+    "difficulty": "intermediate",
+    "tags": [
+      "Mátyás király",
+      "királyválasztás",
+      "reneszánsz"
+    ]
+  },
+  {
+    "question_text": "Melyik csata jelentette a török hódítás kezdetét Magyarországon?",
+    "choice_a": "Mohácsi csata 1526",
+    "choice_b": "Nándorfehérvári csata 1456",
+    "choice_c": "Várnai csata 1444",
+    "choice_d": "Muhi csata 1241",
+    "correct_answer": "A",
+    "explanation": "1526. augusztus 29-én a mohácsi csatában II. Lajos magyar király vereséget szenvedett I. Szulejmán török szultánnal szemben, ami a török hódítás kezdetét jelentette.",
+    "difficulty": "easy",
+    "tags": [
+      "mohácsi csata",
+      "török hódítás",
+      "1526"
+    ]
+  },
+  {
+    "question_text": "Melyik évben szabadult fel Buda a török uralom alól?",
+    "choice_a": "1686",
+    "choice_b": "1526",
+    "choice_c": "1541",
+    "choice_d": "1699",
+    "correct_answer": "A",
+    "explanation": "1686-ban, 145 év török uralom után szabadult fel Buda. A Szent Liga (Habsburg Birodalom, Lengyelország, Velence) szerezte vissza a várat.",
+    "difficulty": "intermediate",
+    "tags": [
+      "török kiűzés",
+      "Buda felszabadítás",
+      "Habsburgok"
+    ]
+  },
+  {
+    "question_text": "Ki vezette a Rákóczi-szabadságharcot?",
+    "choice_a": "II. Rákóczi Ferenc",
+    "choice_b": "Bocskai István",
+    "choice_c": "Thököly Imre",
+    "choice_d": "Dózsa György",
+    "correct_answer": "A",
+    "explanation": "II. Rákóczi Ferenc vezette a Rákóczi-szabadságharcot 1703-1711 között a Habsburg uralom ellen. A szabadságharc bukása után 1711-ben a szatmári békekötés következett.",
+    "difficulty": "easy",
+    "tags": [
+      "Rákóczi-szabadságharc",
+      "Habsburg ellenes felkelés",
+      "18. század"
+    ]
+  },
+  {
+    "question_text": "Melyik évben volt az 1848-as forradalom?",
+    "choice_a": "1848. március 15.",
+    "choice_b": "1849. augusztus 13.",
+    "choice_c": "1848. szeptember",
+    "choice_d": "1849. április 14.",
+    "correct_answer": "A",
+    "explanation": "Az 1848-as forradalom 1848. március 15-én tört ki Pesten. A nemzet legfontosabb követeléseit 12 pontban fogalmazták meg.",
+    "difficulty": "easy",
+    "tags": [
+      "1848-as forradalom",
+      "március 15",
+      "reformkor"
+    ]
+  },
+  {
+    "question_text": "Ki volt az első felelős magyar kormány miniszterelnöke 1848-ban?",
+    "choice_a": "gróf Batthyány Lajos",
+    "choice_b": "Kossuth Lajos",
+    "choice_c": "Széchenyi István",
+    "choice_d": "Deák Ferenc",
+    "correct_answer": "A",
+    "explanation": "A forradalom nyomására gróf Batthyány Lajost nevezték ki az első felelős magyar kormány miniszterelnökéül 1848-ban.",
+    "difficulty": "intermediate",
+    "tags": [
+      "Batthyány Lajos",
+      "1848",
+      "első felelős kormány"
+    ]
+  },
+  {
+    "question_text": "Hol és mikor kötötték meg a kiegyezést?",
+    "choice_a": "1867",
+    "choice_b": "1848",
+    "choice_c": "1849",
+    "choice_d": "1918",
+    "correct_answer": "A",
+    "explanation": "1867-ben kötötték meg a kiegyezést, amelynek eredményeként megalakult az Osztrák-Magyar Monarchia. A tárgyalásokat Deák Ferenc vezette.",
+    "difficulty": "easy",
+    "tags": [
+      "kiegyezés",
+      "1867",
+      "Osztrák-Magyar Monarchia"
+    ]
+  },
+  {
+    "question_text": "Melyik évben írták alá a trianoni békeszerződést?",
+    "choice_a": "1920. június 4.",
+    "choice_b": "1918. október",
+    "choice_c": "1914. július 28.",
+    "choice_d": "1938. november 2.",
+    "correct_answer": "A",
+    "explanation": "A trianoni békediktátumot 1920. június 4-én írták alá. Magyarország elveszítette területe kétharmadát, anyagi jóvátétel fizetésére kötelezték, hadseregét leszerelték.",
+    "difficulty": "easy",
+    "tags": [
+      "trianon",
+      "1920",
+      "békeszerződés"
+    ]
+  },
+  {
+    "question_text": "Melyik évben lépett be Magyarország a második világháborúba?",
+    "choice_a": "1941",
+    "choice_b": "1939",
+    "choice_c": "1944",
+    "choice_d": "1945",
+    "correct_answer": "A",
+    "explanation": "Magyarország 1941-ben lépett be a második világháborúba. A magyar csapatok a keleti fronton harcoltak a német hadsereg oldalán.",
+    "difficulty": "easy",
+    "tags": [
+      "II. világháború",
+      "Magyarország",
+      "1941"
+    ]
+  },
+  {
+    "question_text": "Mikor foglalták el a német csapatok Magyarországot?",
+    "choice_a": "1944. március 19.",
+    "choice_b": "1941. április 11.",
+    "choice_c": "1945. február 13.",
+    "choice_d": "1939. szeptember 1.",
+    "correct_answer": "A",
+    "explanation": "1944. március 19-én a német csapatok megszállták Magyarországot, miután a Horthy-kormány megpróbált átállni a szövetségesek oldalára.",
+    "difficulty": "intermediate",
+    "tags": [
+      "német megszállás",
+      "1944",
+      "II. világháború"
+    ]
+  },
+  {
+    "question_text": "Melyik évben volt az 1956-os forradalom?",
+    "choice_a": "1956. október 23.",
+    "choice_b": "1945. április 4.",
+    "choice_c": "1948. június 12.",
+    "choice_d": "1968. augusztus 21.",
+    "correct_answer": "A",
+    "explanation": "Az 1956-os forradalom 1956. október 23-án kezdődött budapesti diákok békés tüntetésével, amely fegyveres felkeléssé nőtt.",
+    "difficulty": "easy",
+    "tags": [
+      "1956-os forradalom",
+      "október 23",
+      "szabadságharc"
+    ]
+  },
+  {
+    "question_text": "Ki volt a Kádár-rendszer vezetője?",
+    "choice_a": "Kádár János",
+    "choice_b": "Rákosi Mátyás",
+    "choice_c": "Nagy Imre",
+    "choice_d": "Görbei János",
+    "correct_answer": "A",
+    "explanation": "Kádár János volt a Kádár-rendszer vezetője 1956-os forradalom leverése után. 30 évig maradt az ország élén, és viszonylag enyhe változatát alakította ki a kommunista diktatúrának.",
+    "difficulty": "easy",
+    "tags": [
+      "Kádár János",
+      "Kádár-rendszer",
+      "kommunizmus"
+    ]
+  },
+  {
+    "question_text": "Ki írta a magyar himnusz szövegét és ki komponálta a zenéjét?",
+    "choice_a": "Kölcsey Ferenc írta, Erkel Ferenc zenésítette",
+    "choice_b": "Vörösmarty Mihály írta, Liszt Ferenc zenésítette",
+    "choice_c": "Petőfi Sándor írta, Erkel Ferenc zenésítette",
+    "choice_d": "Arany János írta, Bartók Béla zenésítette",
+    "correct_answer": "A",
+    "explanation": "A magyar himnusz szövegét Kölcsey Ferenc írta 1823. január 22-én, a zenéjét Erkel Ferenc komponálta.",
+    "difficulty": "easy",
+    "tags": [
+      "himnusz",
+      "nemzeti jelképek",
+      "kultúra"
+    ]
+  },
+  {
+    "question_text": "Milyen színekből áll a magyar zászló és mit szimbolizálnak?",
+    "choice_a": "Piros-fehér-zöld: erő, hűség, remény",
+    "choice_b": "Piros-kék-fehér: vér, ég, béke",
+    "choice_c": "Piros-sárga-zöld: tűz, búza, erdő",
+    "choice_d": "Kék-fehér-piros: hit, tisztaság, szeretet",
+    "correct_answer": "A",
+    "explanation": "A magyar zászló három, egyenlő szélességű piros, fehér és zöld színű vízszintes sávból áll. A piros az erőt, a fehér a hűséget, a zöld a reményt szimbolizálja.",
+    "difficulty": "easy",
+    "tags": [
+      "zászló",
+      "nemzeti jelképek",
+      "szimbólumok"
+    ]
+  },
+  {
+    "question_text": "Melyik évben született meg a honfoglalás?",
+    "choice_a": "895-ben",
+    "choice_b": "1000-ben",
+    "choice_c": "1241-ben",
+    "choice_d": "1526-ban",
+    "correct_answer": "A",
+    "explanation": "A honfoglalás 895-ben kezdődött Árpád vezetésével, amikor a magyar törzsek a Kárpát-medencébe vonultak be a Kárpátok hágóin át.",
+    "difficulty": "easy",
+    "tags": [
+      "honfoglalás",
+      "történelem",
+      "Árpád"
+    ]
+  },
+  {
+    "question_text": "Melyik csata vetett véget a kalandozások korszakának?",
+    "choice_a": "Augsburgi csata 955-ben",
+    "choice_b": "Mohácsi csata 1526-ban",
+    "choice_c": "Muhi csata 1241-ben",
+    "choice_d": "Várnai csata 1444-ben",
+    "correct_answer": "A",
+    "explanation": "955-ben, Augsburgnál a magyar könnyűlovasság vereséget szenvedett a nehézpáncélos nyugati hadaktól, ezzel véget ért a kalandozások kora.",
+    "difficulty": "intermediate",
+    "tags": [
+      "kalandozások",
+      "csaták",
+      "történelem"
+    ]
+  },
+  {
+    "question_text": "Melyik évben koronázták meg Szent Istvánt királlyá?",
+    "choice_a": "1000 karácsonyán",
+    "choice_b": "895 tavaszán",
+    "choice_c": "1241 áprilisában",
+    "choice_d": "1526 augusztusában",
+    "correct_answer": "A",
+    "explanation": "I. (Szent) István 1000 karácsonyán koronáztatta magát királlyá, ezzel megszületett a keresztény Magyar Királyság.",
+    "difficulty": "easy",
+    "tags": [
+      "Szent István",
+      "királykoronázás",
+      "államalapítás"
+    ]
+  },
+  {
+    "question_text": "Mikor volt a tatárjárás Magyarországon?",
+    "choice_a": "1241-1242",
+    "choice_b": "1526-1541",
+    "choice_c": "1683-1699",
+    "choice_d": "1848-1849",
+    "correct_answer": "A",
+    "explanation": "A tatárjárás 1241-1242 között pusztította Magyarországot. A mongol hadak Batu kán vezetésével április 11-én legyőzték a magyar sereget a muhi csatában.",
+    "difficulty": "easy",
+    "tags": [
+      "tatárjárás",
+      "középkor",
+      "Mongol Birodalom"
+    ]
+  },
+  {
+    "question_text": "Melyik királyt nevezték \"lovagkirálynak\"?",
+    "choice_a": "I. (Nagy) Lajos",
+    "choice_b": "Mátyás király",
+    "choice_c": "II. Lajos",
+    "choice_d": "Károly Róbert",
+    "correct_answer": "A",
+    "explanation": "I. (Nagy) Lajost nevezték \"lovagkirálynak\", mivel uralkodását végigkísérték hadjáratai, amelyekben személyesen is jeleskedett.",
+    "difficulty": "intermediate",
+    "tags": [
+      "lovagkirály",
+      "I. Lajos",
+      "középkor"
+    ]
+  },
+  {
+    "question_text": "Melyik dokumentum szabályozza a magyar állampolgárság fogalmát?",
+    "choice_a": "1993. évi LV. törvény",
+    "choice_b": "Az Alaptörvény",
+    "choice_c": "2012. évi CCII. törvény",
+    "choice_d": "2016. évi CL. törvény",
+    "correct_answer": "A",
+    "explanation": "A magyar állampolgárság fogalmát az 1993. évi LV. törvény, a magyar állampolgársági törvény határozza meg. Ez tartalmazza az állampolgárság megszerzésének és megszűnésének szabályait.",
+    "difficulty": "intermediate",
+    "tags": [
+      "állampolgárság",
+      "1993. évi LV. törvény",
+      "jogszabály"
+    ]
+  },
+  {
+    "question_text": "Melyik elv alapján válik magyar állampolgárrá a magyar állampolgár gyermeke?",
+    "choice_a": "Vérségi elv",
+    "choice_b": "Területi elv",
+    "choice_c": "Lakóhely elv",
+    "choice_d": "Nyilatkozat elv",
+    "correct_answer": "A",
+    "explanation": "Születésénél fogva magyar állampolgárrá válik a magyar állampolgár gyermeke - ez a vérségi elv. A területi elv a hontalanság megelőzésére szolgál.",
+    "difficulty": "intermediate",
+    "tags": [
+      "állampolgárság",
+      "vérségi elv",
+      "születéssel"
+    ]
+  },
+  {
+    "question_text": "Melyik NEM feltétele a kedvezményes honosításnak?",
+    "choice_a": "Magyarországi ingatlan tulajdon",
+    "choice_b": "Magyar állampolgárral való házasság",
+    "choice_c": "Magyar állampolgár gyermeke",
+    "choice_d": "Magyar hatóság által elismert menekült státusz",
+    "correct_answer": "A",
+    "explanation": "A kedvezményes honosítás feltételei között szerepel a magyar állampolgárral való házasság, magyar állampolgár gyermeke, vagy menekült státusz. Magyarországi ingatlan tulajdon nem feltétel.",
+    "difficulty": "intermediate",
+    "tags": [
+      "kedvezményes honosítás",
+      "állampolgárság",
+      "feltételek"
+    ]
+  },
+  {
+    "question_text": "Mennyi idő áll rendelkezésre az írásbeli vizsgafeladat megírására az alkotmányos alapismeretek vizsgán?",
+    "choice_a": "60 perc",
+    "choice_b": "90 perc",
+    "choice_c": "120 perc",
+    "choice_d": "45 perc",
+    "correct_answer": "A",
+    "explanation": "Az alkotmányos alapismeretek vizsgán az írásbeli feladat megírására 60 perc áll rendelkezésre. A vizsga háromtagú vizsgabizottság előtt zajlik, először írásbeli, majd szóbeli tétellel.",
+    "difficulty": "easy",
+    "tags": [
+      "állampolgársági vizsga",
+      "vizsgaidő",
+      "alkotmányos alapismeretek"
+    ]
+  },
+  {
+    "question_text": "Melyik évben alapították az Európai Tanácsot?",
+    "choice_a": "1949",
+    "choice_b": "1957",
+    "choice_c": "1993",
+    "choice_d": "2004",
+    "correct_answer": "A",
+    "explanation": "Az Európa Tanácsot 1949-ben 10 nyugat-európai állam hozta létre. Székhelye Strasbourg, célja a közös európai értékek és az emberi jogok védelme.",
+    "difficulty": "easy",
+    "tags": [
+      "Európa Tanács",
+      "1949",
+      "nemzetközi szervezetek"
+    ]
+  },
+  {
+    "question_text": "Melyik magyar király uralkodása alatt írták ki az Aranybullát?",
+    "choice_a": "II. András",
+    "choice_b": "IV. Béla",
+    "choice_c": "I. László",
+    "choice_d": "Mátyás király",
+    "correct_answer": "A",
+    "explanation": "II. András uralkodása alatt, 1222-ben kényszerült kiadni az Aranybullát, amely a nemesség jogait rögzítette és a királyi hatalmat korlátozta.",
+    "difficulty": "intermediate",
+    "tags": [
+      "Aranybulla",
+      "II. András",
+      "középkor"
+    ]
+  },
+  {
+    "question_text": "Melyik évben lépett hatályba Magyarország Alaptörvénye?",
+    "choice_a": "2012. január 1.",
+    "choice_b": "1990. március 15.",
+    "choice_c": "1989. október 23.",
+    "choice_d": "2004. május 1.",
+    "correct_answer": "A",
+    "explanation": "Magyarország Alaptörvénye 2012. január 1-jén lépett hatályba. Ez Magyarország jogrendjének alapja és a legmagasabb jogi erővel bíró törvény.",
+    "difficulty": "easy",
+    "tags": [
+      "Alaptörvény",
+      "2012",
+      "jogrend"
+    ]
+  },
+  {
+    "question_text": "Hány tagból áll jelenleg az Országgyűlés?",
+    "choice_a": "199 fő",
+    "choice_b": "200 fő",
+    "choice_c": "250 fő",
+    "choice_d": "386 fő",
+    "correct_answer": "A",
+    "explanation": "Az Országgyűlés jelenleg 199 fős. A magyar választási rendszer vegyes választási rendszer: a választópolgárok a képviselők egy részét közvetlenül választják, más része a pártok listáiról kerül be.",
+    "difficulty": "easy",
+    "tags": [
+      "Országgyűlés",
+      "képviselők",
+      "politika"
+    ]
+  },
+  {
+    "question_text": "Melyik testület választja meg a köztársasági elnököt?",
+    "choice_a": "Országgyűlés",
+    "choice_b": "Kormány",
+    "choice_c": "Alkotmánybíróság",
+    "choice_d": "Népszavazás",
+    "correct_answer": "A",
+    "explanation": "A köztársasági elnököt az Országgyűlés választja 5 évre, titkos szavazással. Megválasztható bármely magyar állampolgár, aki a 35. életévét betöltötte és van választójoga.",
+    "difficulty": "easy",
+    "tags": [
+      "köztársasági elnök",
+      "választás",
+      "Országgyűlés"
+    ]
+  },
+  {
+    "question_text": "Mennyi időre választják az Alkotmánybíróság tagjait?",
+    "choice_a": "12 évre",
+    "choice_b": "5 évre",
+    "choice_c": "6 évre",
+    "choice_d": "9 évre",
+    "correct_answer": "A",
+    "explanation": "Az Alkotmánybíróság 15 tagját az Országgyűlés az országgyűlési képviselők kétharmadának szavazatával 12 évre választja.",
+    "difficulty": "intermediate",
+    "tags": [
+      "Alkotmánybíróság",
+      "bírói függetlenség",
+      "jogszolgáltatás"
+    ]
+  }
+]
