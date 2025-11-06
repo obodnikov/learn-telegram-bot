@@ -85,7 +85,7 @@ async def next_question_handler(update: Update, context: ContextTypes.DEFAULT_TY
         bot_instance.end_session(user_id)
         return
 
-    # Get next question using spaced repetition with unseen quota tracking
+    # Get next question using spaced repetition with unseen quota tracking and session exclusion
     repository = bot_instance.repository
     db_user = repository.get_user_by_telegram_id(user_id)
 
@@ -93,7 +93,8 @@ async def next_question_handler(update: Update, context: ContextTypes.DEFAULT_TY
         db_user.id,
         session['topic_id'],
         unseen_shown=session.get('unseen_shown', 0),
-        unseen_target=session.get('unseen_target', 0)
+        unseen_target=session.get('unseen_target', 0),
+        exclude_question_ids=session.get('shown_question_ids', [])
     )
 
     if not question:
@@ -109,9 +110,12 @@ async def next_question_handler(update: Update, context: ContextTypes.DEFAULT_TY
         bot_instance.end_session(user_id)
         return
 
-    # Store current question and start time
+    # Track this question as shown in the session
     session['current_question'] = question
     session['start_time'] = datetime.utcnow()
+    if 'shown_question_ids' not in session:
+        session['shown_question_ids'] = []
+    session['shown_question_ids'].append(question.id)
 
     # Check if this question was unseen and increment counter
     was_unseen = repository.is_question_unseen(db_user.id, question.id)
