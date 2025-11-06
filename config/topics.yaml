@@ -267,3 +267,18 @@ topics:
       file: "config/examples/hungarian_vocabulary_intermediate.json"
       mode: hybrid
       use_ratio: 0.4
+
+  # Example of a MANUAL topic (import-only, no LLM generation)
+  # Uncomment and customize this example to add your own manual topic:
+  #
+  # custom_imported_topic:
+  #   name: "Custom Quiz - My Topic"
+  #   type: manual  # This prevents LLM generation
+  #   difficulty: beginner  # or intermediate/advanced
+  #   questions_per_batch: 10
+  #   context: |
+  #     Description of this topic (shown to users).
+  #     This topic contains manually curated questions imported from JSON files.
+  #
+  #   # Note: For manual topics, the examples section is optional
+  #   # Questions are added via: python scripts/manage_questions.py import --file questions.json --topic <ID>

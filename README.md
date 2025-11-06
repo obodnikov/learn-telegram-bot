@@ -443,6 +443,102 @@ python scripts/export_topics.py topics_backup.yaml
 
 **For detailed documentation**, see [scripts/README.md - Topic Management](scripts/README.md#topic-management).
 
+### Manual Topics (Import-Only)
+
+**What are manual topics?**
+
+Manual topics allow you to create quiz topics using your own curated questions instead of LLM-generated ones. This is useful for:
+- Specialized subject matter not suitable for LLM generation
+- Pre-existing question sets you want to import
+- Content requiring specific formatting or structure
+- Quality-controlled questions from external sources
+
+**How to create a manual topic:**
+
+1. **Add topic to config/topics.yaml:**
+
+```yaml
+topics:
+  my_custom_quiz:
+    name: "Custom Quiz - My Specialty Topic"
+    type: manual  # This prevents LLM generation
+    difficulty: intermediate
+    questions_per_batch: 10
+    context: |
+      Description of this topic shown to users.
+      This topic contains manually curated questions.
+```
+
+2. **Sync to database:**
+
+```bash
+python scripts/sync_topics.py
+# Note the topic ID (e.g., ID 4)
+```
+
+3. **Prepare questions JSON file:**
+
+Create a JSON file with your questions (e.g., `my_questions.json`):
+
+```json
+[
+  {
+    "question_text": "What is the capital of France?",
+    "choice_a": "London",
+    "choice_b": "Paris",
+    "choice_c": "Berlin",
+    "choice_d": "Madrid",
+    "correct_answer": "B",
+    "explanation": "Paris is the capital and largest city of France.",
+    "difficulty": "beginner",
+    "tags": ["geography", "capitals", "europe"]
+  },
+  {
+    "question_text": "Which planet is closest to the Sun?",
+    "choice_a": "Venus",
+    "choice_b": "Earth",
+    "choice_c": "Mercury",
+    "choice_d": "Mars",
+    "correct_answer": "C",
+    "explanation": "Mercury is the closest planet to the Sun in our solar system.",
+    "difficulty": "beginner",
+    "tags": ["astronomy", "solar system", "planets"]
+  }
+]
+```
+
+4. **Import questions:**
+
+```bash
+python scripts/manage_questions.py import --file my_questions.json --topic 4
+```
+
+**Required fields for each question:**
+- `question_text` - The question to display
+- `choice_a`, `choice_b`, `choice_c`, `choice_d` - Four answer choices
+- `correct_answer` - Letter of correct choice (A/B/C/D)
+- `explanation` - Explanation shown after answering
+- `difficulty` - beginner/intermediate/advanced
+- `tags` - Array of strings for categorization
+
+**Benefits of manual topics:**
+- ✅ Full control over question quality and content
+- ✅ No API costs (no LLM generation)
+- ✅ Can import questions from any source
+- ✅ Same quiz experience as LLM-generated topics
+- ✅ Still benefits from runtime answer shuffling
+
+**Attempting to generate questions for manual topics:**
+
+If you try to run the generation script on a manual topic, it will skip it:
+
+```bash
+$ python scripts/generate_questions.py --topic 4
+
+⊘ Skipping topic 'Custom Quiz - My Specialty Topic' - type is 'manual' (import-only)
+  Use: python scripts/manage_questions.py import --file <file.json> --topic 4
+```
+
 ---
 
 ## Quiz Behavior
