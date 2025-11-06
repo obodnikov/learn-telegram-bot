@@ -91,6 +91,7 @@ class LearningBot:
             start_command, help_command, topics_command,
             stats_command, cancel_command
         )
+        from src.handlers.settings import settings_command, settings_batch_callback
         from src.handlers.quiz import next_question_handler
         from src.handlers.callbacks import (
             topic_selection_callback, answer_callback,
@@ -103,6 +104,7 @@ class LearningBot:
         self.application.add_handler(CommandHandler("help", help_command))
         self.application.add_handler(CommandHandler("topics", topics_command))
         self.application.add_handler(CommandHandler("stats", stats_command))
+        self.application.add_handler(CommandHandler("settings", settings_command))
         self.application.add_handler(CommandHandler("cancel", cancel_command))
 
         # Callback query handlers (for inline buttons)
@@ -117,6 +119,10 @@ class LearningBot:
         ))
         self.application.add_handler(CallbackQueryHandler(
             next_question_handler, pattern="^next$"
+        ))
+        # Settings callback handlers
+        self.application.add_handler(CallbackQueryHandler(
+            settings_batch_callback, pattern="^settings:batch:"
         ))
         # Stats callback handlers
         self.application.add_handler(CallbackQueryHandler(
@@ -135,6 +141,7 @@ class LearningBot:
             BotCommand(command="help", description="Show all commands"),
             BotCommand(command="topics", description="View available learning topics"),
             BotCommand(command="stats", description="Show your learning statistics"),
+            BotCommand(command="settings", description="Configure your preferences"),
             BotCommand(command="cancel", description="Cancel current quiz session"),
         ]
 
@@ -215,11 +222,24 @@ class LearningBot:
         Returns:
             Created session dictionary
         """
-        # Get topic configuration to retrieve questions_per_batch
-        topic = self.repository.get_topic(topic_id)
-        questions_per_batch = 10  # Default
-        if topic and topic.config:
-            questions_per_batch = topic.config.get('questions_per_batch', 10)
+        # Get user from database to access settings
+        db_user = self.repository.get_user_by_telegram_id(user_id)
+
+        # Priority 1: Check user settings for custom questions_per_batch
+        questions_per_batch = None
+        if db_user:
+            user_settings = self.repository.get_user_settings(db_user.id)
+            if user_settings and user_settings.questions_per_batch:
+                questions_per_batch = user_settings.questions_per_batch
+                logger.info(f"Using user preference: {questions_per_batch} questions per batch")
+
+        # Priority 2: If no user setting, use topic configuration
+        if questions_per_batch is None:
+            topic = self.repository.get_topic(topic_id)
+            if topic and topic.config:
+                questions_per_batch = topic.config.get('questions_per_batch', 10)
+            else:
+                questions_per_batch = 10  # Fallback default
 
         # Calculate unseen questions quota from environment
         unseen_ratio = float(os.getenv('UNSEEN_QUESTIONS_RATIO', '0.40'))

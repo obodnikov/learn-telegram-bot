@@ -62,6 +62,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 /help - Show this help message
 /topics - View available learning topics
 /stats - View your learning statistics
+/settings - Configure your preferences
 /cancel - Cancel current quiz session
 
 *How to Use:*
@@ -70,6 +71,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 2. Select a topic to start learning
 3. Answer questions and get immediate feedback
 4. Your progress is tracked automatically with spaced repetition
+5. Customize quiz length with /settings
 
 *Features:*
 
@@ -77,6 +79,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 - Detailed bilingual explanations
 - Progress tracking and analytics
 - Multiple difficulty levels
+- Customizable quiz length per user
     """
 
     await update.message.reply_text(help_text, parse_mode="Markdown")

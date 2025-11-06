@@ -171,6 +171,8 @@ INFO - Topic seeding completed successfully!
 
 **If you see errors**: Check that your config files exist in `config/` directory.
 
+**Note**: The database is automatically initialized with the latest schema, including the `user_settings` table for customizable quiz lengths. No separate migration step is needed for new installations.
+
 ---
 
 ## Step 9: Verify Installation
@@ -235,6 +237,7 @@ INFO - Bot is running. Press Ctrl+C to stop.
 - `/help` - Show available commands
 - `/topics` - **Should show 2 topic buttons!**
 - `/stats` - Show your learning statistics
+- `/settings` - Configure quiz preferences (length, etc.)
 
 **If `/topics` shows "No topics available"**:
 - Check the bot logs when you send the command
@@ -1010,6 +1013,45 @@ python main.py
 - **macOS**: Use launchd
 - **Cloud/Production**: Use Docker
 - **Quick testing**: Use screen/tmux
+
+---
+
+## Updating Existing Installation
+
+### Migrating to User Settings Feature
+
+If you're upgrading from an older version without user settings support:
+
+**Quick Migration** (for most users):
+```bash
+# 1. Stop the bot
+sudo systemctl stop telegram-learning-bot  # or your stop command
+
+# 2. Backup database
+cp learning_bot.db learning_bot.db.backup
+
+# 3. Pull latest code
+git pull origin main
+
+# 4. Run migration
+source venv/bin/activate
+alembic upgrade head
+
+# 5. Restart bot
+sudo systemctl start telegram-learning-bot
+```
+
+**Detailed Migration Guide**: See [docs/MIGRATION_USER_SETTINGS.md](docs/MIGRATION_USER_SETTINGS.md) for:
+- Complete step-by-step instructions
+- Troubleshooting guide
+- Rollback procedures
+- Verification checklist
+
+**What's New**:
+- ✨ `/settings` command for customizable quiz length
+- 📊 New `user_settings` database table
+- 🎯 Per-user preferences (5-30 questions or topic default)
+- ✅ 100% backward compatible - existing users unaffected
 
 ---
 
