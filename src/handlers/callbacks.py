@@ -127,7 +127,9 @@ async def answer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     if is_correct:
         result_text = "✅ *Correct!*\n\n"
     else:
-        result_text = f"❌ *Incorrect.*\nCorrect answer: *{question.correct_answer}*\n\n"
+        # Use the shuffled displayed position, not the original database letter
+        correct_letter = session.get('correct_displayed', question.correct_answer)
+        result_text = f"❌ *Incorrect.*\nCorrect answer: *{correct_letter}*\n\n"
 
     result_text += f"*Explanation:*\n{question.explanation}\n\n"
     result_text += f"Progress: {session['correct_answers']}/{session['questions_answered']} correct"
