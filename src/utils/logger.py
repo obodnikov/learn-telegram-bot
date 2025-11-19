@@ -23,12 +23,13 @@ def setup_logger(
     # Remove default handler
     logger.remove()
     
-    # Console handler with colors
+    # Console handler with colors (auto-detect TTY)
+    # Only colorize if stdout is a terminal (TTY), not when redirected to syslog
     logger.add(
         sys.stdout,
         format="<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan> - <level>{message}</level>",
         level=log_level,
-        colorize=True
+        colorize=sys.stdout.isatty()  # Auto-detect: True if terminal, False if redirected
     )
     
     # File handler if specified
