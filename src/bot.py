@@ -96,7 +96,8 @@ class LearningBot:
         from src.handlers.callbacks import (
             topic_selection_callback, answer_callback,
             show_explanation_callback, topic_stats_callback,
-            stats_back_callback
+            stats_back_callback, reset_confirm_callback,
+            reset_execute_callback
         )
 
         # Command handlers
@@ -130,6 +131,13 @@ class LearningBot:
         ))
         self.application.add_handler(CallbackQueryHandler(
             topic_stats_callback, pattern="^stats:"
+        ))
+        # Reset callback handlers
+        self.application.add_handler(CallbackQueryHandler(
+            reset_confirm_callback, pattern="^reset_confirm:"
+        ))
+        self.application.add_handler(CallbackQueryHandler(
+            reset_execute_callback, pattern="^reset_execute:"
         ))
 
         logger.info("Handlers registered successfully")
