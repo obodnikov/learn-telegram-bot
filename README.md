@@ -20,6 +20,7 @@ An intelligent Telegram bot for learning foreign languages, historical facts, an
 - 🌍 **Multilingual**: Support for any language pair (e.g., Hungarian/Russian)
 - 📊 **Interactive Statistics**: Comprehensive learning analytics with per-topic drill-down
 - 👤 **User Settings**: Customizable quiz length per user (5-30 questions or topic default)
+- 🔄 **Topic Reset**: Restart completed topics from scratch while preserving completion history
 - ⚙️ **Highly Configurable**: YAML-based topic and prompt configuration
 - 🛠️ **Topic Management**: CLI tools for syncing, updating, and managing topics
 
@@ -224,6 +225,47 @@ The `/settings` command allows each user to customize their quiz preferences:
 **Example**: Set to 15 questions → all quizzes will have 15 questions regardless of topic. Set to "Topic Default" → Hungarian Vocabulary uses 10 (from topics.yaml), Literature uses 4 (from topics.yaml).
 
 **For complete documentation**, see [docs/USER_SETTINGS_FEATURE.md](docs/USER_SETTINGS_FEATURE.md).
+
+### Topic Reset
+
+When you've completed a topic (mastered all questions), you can reset it to practice again while preserving your achievement history.
+
+**How it Works:**
+1. Complete a topic by mastering all questions (2+ consecutive correct answers)
+2. Open `/stats` and select the completed topic
+3. Click the **"🔄 Reset Progress"** button
+4. Confirm the reset in the dialog
+5. Your progress is archived and the topic starts fresh
+
+**Features:**
+- ✅ **Only finished topics** can be reset (safety check)
+- ✅ **Two-step confirmation** prevents accidental resets
+- ✅ **History preserved** - all past completions are saved
+- ✅ **Attempt tracking** - see your improvement over multiple attempts
+- ✅ **Full statistics** - accuracy, questions known, completion dates
+
+**What Gets Saved:**
+- Attempt number (1st, 2nd, 3rd completion, etc.)
+- Accuracy percentage
+- Number of questions mastered
+- Total correct/incorrect answers
+- Completion date and time
+
+**Example History Display:**
+```
+Previous Completions:
+  #1: 85.5% (20/25 known) - 2025-11-10
+  #2: 95.0% (24/25 known) - 2025-11-15
+  #3: 100.0% (25/25 known) - 2025-11-19
+```
+
+**Benefits:**
+- Practice topics multiple times to strengthen retention
+- Track your improvement across attempts
+- Challenge yourself to beat previous scores
+- Review material without losing your achievement history
+
+**For complete documentation**, see [docs/TOPIC_RESET_FEATURE.md](docs/TOPIC_RESET_FEATURE.md).
 
 ---
 

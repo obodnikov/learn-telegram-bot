@@ -324,8 +324,27 @@ async def topic_stats_callback(update: Update, context: ContextTypes.DEFAULT_TYP
     bar = "█" * filled + "░" * (bar_length - filled)
     stats_text += f"{bar} {progress_pct:.0f}%\n"
 
-    # Back button
-    keyboard = [[InlineKeyboardButton("« Back to All Stats", callback_data="stats:back")]]
+    # Check if topic is finished and show history
+    is_finished = repository.is_topic_finished(db_user.id, topic_id)
+    topic_history = repository.get_topic_history(db_user.id, topic_id)
+
+    if topic_history:
+        stats_text += f"\n*Previous Completions:*\n"
+        for hist in topic_history[:3]:  # Show last 3 attempts
+            completion_date = hist.completion_date
+            if isinstance(completion_date, str):
+                completion_date = datetime.fromisoformat(completion_date)
+            stats_text += (
+                f"  #{hist.attempt_number}: {hist.accuracy_percentage:.1f}% "
+                f"({hist.questions_known}/{hist.questions_total} known) - "
+                f"{completion_date.strftime('%Y-%m-%d')}\n"
+            )
+
+    # Build keyboard with back button and optional reset button
+    keyboard = []
+    if is_finished:
+        keyboard.append([InlineKeyboardButton("🔄 Reset Progress", callback_data=f"reset_confirm:{topic_id}")])
+    keyboard.append([InlineKeyboardButton("« Back to All Stats", callback_data="stats:back")])
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     await query.edit_message_text(
@@ -401,3 +420,129 @@ async def stats_back_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
         parse_mode="Markdown",
         reply_markup=reply_markup
     )
+
+
+async def reset_confirm_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Handle reset confirmation button - show confirmation dialog."""
+    query = update.callback_query
+    await query.answer()
+
+    user_id = update.effective_user.id
+    topic_id = int(query.data.split(":")[1])
+
+    logger.info(f"Reset confirmation requested for topic {topic_id} by user {user_id}")
+
+    bot_instance = get_bot_instance()
+    repository = bot_instance.repository
+
+    # Get topic
+    topic = repository.get_topic(topic_id)
+    if not topic:
+        await query.edit_message_text("Topic not found.")
+        return
+
+    # Get user from database
+    db_user = repository.get_user_by_telegram_id(user_id)
+    if not db_user:
+        await query.edit_message_text("User not found.")
+        return
+
+    # Check if topic is finished
+    if not repository.is_topic_finished(db_user.id, topic_id):
+        await query.edit_message_text(
+            f"⚠️ Cannot reset *{topic.name}*\n\n"
+            f"Only finished topics (all questions mastered) can be reset.\n"
+            f"Continue practicing to master all questions first!",
+            parse_mode="Markdown"
+        )
+        return
+
+    # Get current stats
+    stats = repository.get_user_stats(db_user.id, topic_id)
+
+    # Show confirmation message
+    confirm_text = f"⚠️ *Reset Topic: {topic.name}?*\n\n"
+    confirm_text += f"Your current progress will be archived:\n"
+    confirm_text += f"• Accuracy: {stats['accuracy'] * 100:.1f}%\n"
+    confirm_text += f"• Questions Known: {stats['questions_known']}/{stats['total_questions']}\n"
+    confirm_text += f"• Correct Answers: {stats['total_correct']}\n\n"
+    confirm_text += f"After reset, you'll start this topic from the beginning. "
+    confirm_text += f"Your history will be preserved and visible in statistics.\n\n"
+    confirm_text += f"Are you sure you want to continue?"
+
+    keyboard = [
+        [InlineKeyboardButton("✅ Yes, Reset", callback_data=f"reset_execute:{topic_id}")],
+        [InlineKeyboardButton("❌ Cancel", callback_data=f"stats:{topic_id}")]
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    await query.edit_message_text(
+        confirm_text,
+        parse_mode="Markdown",
+        reply_markup=reply_markup
+    )
+
+
+async def reset_execute_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Handle reset execution button - archive and reset topic progress."""
+    query = update.callback_query
+    await query.answer()
+
+    user_id = update.effective_user.id
+    topic_id = int(query.data.split(":")[1])
+
+    logger.info(f"Reset execution for topic {topic_id} by user {user_id}")
+
+    bot_instance = get_bot_instance()
+    repository = bot_instance.repository
+
+    # Get topic
+    topic = repository.get_topic(topic_id)
+    if not topic:
+        await query.edit_message_text("Topic not found.")
+        return
+
+    # Get user from database
+    db_user = repository.get_user_by_telegram_id(user_id)
+    if not db_user:
+        await query.edit_message_text("User not found.")
+        return
+
+    try:
+        # Archive current progress
+        history = repository.archive_topic_progress(db_user.id, topic_id)
+
+        # Reset progress
+        deleted_count = repository.reset_topic_progress(db_user.id, topic_id)
+
+        # Show success message
+        success_text = f"✅ *Topic Reset Complete!*\n\n"
+        success_text += f"Topic: *{topic.name}*\n"
+        success_text += f"Progress archived as Attempt #{history.attempt_number}\n"
+        success_text += f"• Accuracy: {history.accuracy_percentage:.1f}%\n"
+        success_text += f"• Known Questions: {history.questions_known}/{history.questions_total}\n"
+        success_text += f"• Date: {history.completion_date.strftime('%Y-%m-%d %H:%M')}\n\n"
+        success_text += f"You can now start this topic fresh!\n"
+        success_text += f"Use /topics to begin learning again."
+
+        keyboard = [[InlineKeyboardButton("« Back to Stats", callback_data="stats:back")]]
+        reply_markup = InlineKeyboardMarkup(keyboard)
+
+        await query.edit_message_text(
+            success_text,
+            parse_mode="Markdown",
+            reply_markup=reply_markup
+        )
+
+        logger.info(
+            f"Successfully reset topic {topic_id} for user {user_id}: "
+            f"archived as attempt #{history.attempt_number}, deleted {deleted_count} progress records"
+        )
+
+    except Exception as e:
+        logger.error(f"Error resetting topic {topic_id} for user {user_id}: {e}")
+        await query.edit_message_text(
+            f"❌ Error resetting topic: {str(e)}\n\n"
+            f"Please try again or contact support.",
+            parse_mode="Markdown"
+        )

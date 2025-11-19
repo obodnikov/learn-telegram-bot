@@ -174,6 +174,31 @@ class QuestionAnalytics(Base):
         return f"<QuestionAnalytics(question_id={self.question_id}, success_rate={self.success_rate:.2f})>"
 
 
+class TopicHistory(Base):
+    """Topic history model for tracking completed topic attempts."""
+
+    __tablename__ = "topic_history"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    user_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id"), nullable=False, index=True)
+    topic_id: Mapped[int] = mapped_column(Integer, ForeignKey("topics.id"), nullable=False, index=True)
+    completion_date: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    questions_total: Mapped[int] = mapped_column(Integer, nullable=False)
+    questions_correct: Mapped[int] = mapped_column(Integer, nullable=False)
+    questions_incorrect: Mapped[int] = mapped_column(Integer, nullable=False)
+    accuracy_percentage: Mapped[float] = mapped_column(Float, nullable=False)
+    questions_known: Mapped[int] = mapped_column(Integer, nullable=False)
+    attempt_number: Mapped[int] = mapped_column(Integer, nullable=False)
+
+    # Indexes for common queries
+    __table_args__ = (
+        Index('idx_user_topic_history', 'user_id', 'topic_id'),
+    )
+
+    def __repr__(self) -> str:
+        return f"<TopicHistory(user_id={self.user_id}, topic_id={self.topic_id}, attempt={self.attempt_number}, accuracy={self.accuracy_percentage:.1f}%)>"
+
+
 class ExampleFileValidation(Base):
     """Example file validation log model."""
 

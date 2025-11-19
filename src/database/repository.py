@@ -14,6 +14,7 @@ from src.database.models import (
     Question,
     UserProgress,
     QuestionAnalytics,
+    TopicHistory,
     ExampleFileValidation,
     QuestionSource,
     ValidationStatus
@@ -893,6 +894,160 @@ class Repository:
             questions = session.query(Question).filter(Question.id.in_(question_ids)).all()
 
             return questions
+
+    # Topic History operations
+
+    def is_topic_finished(self, user_id: int, topic_id: int) -> bool:
+        """
+        Check if a topic is finished (all questions mastered).
+
+        Args:
+            user_id: User ID
+            topic_id: Topic ID
+
+        Returns:
+            True if all questions have consecutive_correct >= 2, False otherwise
+        """
+        with self.get_session() as session:
+            # Get all questions for the topic
+            all_questions = session.query(Question).filter(
+                Question.topic_id == topic_id
+            ).all()
+
+            if not all_questions:
+                return False
+
+            all_question_ids = [q.id for q in all_questions]
+
+            # Get user progress for all questions
+            progresses = session.query(UserProgress).filter(
+                and_(
+                    UserProgress.user_id == user_id,
+                    UserProgress.question_id.in_(all_question_ids)
+                )
+            ).all()
+
+            # Check if user has seen all questions and mastered them
+            if len(progresses) != len(all_questions):
+                return False
+
+            # All questions must have consecutive_correct >= 2
+            return all(p.consecutive_correct >= 2 for p in progresses)
+
+    def get_topic_history(self, user_id: int, topic_id: Optional[int] = None) -> List[TopicHistory]:
+        """
+        Get topic completion history for a user.
+
+        Args:
+            user_id: User ID
+            topic_id: Optional topic ID to filter by
+
+        Returns:
+            List of TopicHistory objects ordered by completion_date (newest first)
+        """
+        with self.get_session() as session:
+            query = session.query(TopicHistory).filter(TopicHistory.user_id == user_id)
+
+            if topic_id is not None:
+                query = query.filter(TopicHistory.topic_id == topic_id)
+
+            return query.order_by(TopicHistory.completion_date.desc()).all()
+
+    def archive_topic_progress(self, user_id: int, topic_id: int) -> TopicHistory:
+        """
+        Archive current topic progress to history before reset.
+
+        Args:
+            user_id: User ID
+            topic_id: Topic ID
+
+        Returns:
+            Created TopicHistory object
+
+        Raises:
+            DatabaseError: If topic is not finished or no progress exists
+        """
+        with self.get_session() as session:
+            # Get current stats for the topic
+            stats = self.get_user_stats(user_id, topic_id)
+
+            if stats['questions_seen'] == 0:
+                raise DatabaseError("Cannot archive topic with no progress")
+
+            # Calculate next attempt number
+            existing_history = session.query(TopicHistory).filter(
+                and_(
+                    TopicHistory.user_id == user_id,
+                    TopicHistory.topic_id == topic_id
+                )
+            ).all()
+            attempt_number = len(existing_history) + 1
+
+            # Create history record
+            history = TopicHistory(
+                user_id=user_id,
+                topic_id=topic_id,
+                completion_date=datetime.utcnow(),
+                questions_total=stats['total_questions'],
+                questions_correct=stats['total_correct'],
+                questions_incorrect=stats['total_incorrect'],
+                accuracy_percentage=stats['accuracy'] * 100,
+                questions_known=stats['questions_known'],
+                attempt_number=attempt_number
+            )
+            session.add(history)
+            session.flush()
+            session.refresh(history)
+
+            logger.info(
+                f"Archived topic {topic_id} progress for user {user_id}: "
+                f"attempt {attempt_number}, accuracy {stats['accuracy']*100:.1f}%"
+            )
+
+            return history
+
+    def reset_topic_progress(self, user_id: int, topic_id: int) -> int:
+        """
+        Reset user progress for all questions in a topic.
+
+        Args:
+            user_id: User ID
+            topic_id: Topic ID
+
+        Returns:
+            Number of progress records deleted
+
+        Raises:
+            DatabaseError: If topic is not finished
+        """
+        if not self.is_topic_finished(user_id, topic_id):
+            raise DatabaseError("Cannot reset topic that is not finished")
+
+        with self.get_session() as session:
+            # Get all questions for the topic
+            all_questions = session.query(Question).filter(
+                Question.topic_id == topic_id
+            ).all()
+
+            if not all_questions:
+                return 0
+
+            all_question_ids = [q.id for q in all_questions]
+
+            # Delete all user progress for these questions
+            deleted_count = session.query(UserProgress).filter(
+                and_(
+                    UserProgress.user_id == user_id,
+                    UserProgress.question_id.in_(all_question_ids)
+                )
+            ).delete(synchronize_session=False)
+
+            logger.info(
+                f"Reset topic {topic_id} progress for user {user_id}: "
+                f"deleted {deleted_count} progress records"
+            )
+
+            return deleted_count
 
     # Example file validation operations
 
