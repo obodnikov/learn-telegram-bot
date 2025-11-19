@@ -44,23 +44,29 @@ class StartupValidator:
             self.config_loader.load_all()
             logger.info("✓ Configurations loaded successfully")
             
-            # 2. Validate example files
-            logger.info("\nStep 2: Validating example files...")
-            examples_dir = Path(self.config_dir) / "examples"
-            validation_summary = self.example_validator.validate_all_examples(str(examples_dir))
-            
-            if validation_summary['invalid'] > 0:
-                logger.warning(
-                    f"⚠ {validation_summary['invalid']} example files have validation errors"
-                )
-                # Don't fail startup, but warn
-                for file_result in validation_summary['files']:
-                    if not file_result['is_valid']:
-                        logger.warning(f"  File: {file_result['file_path']}")
-                        for error in file_result['errors']:
-                            logger.warning(f"    - {error}")
+            # 2. Validate example files (optional - can be disabled)
+            # Skip validation if SKIP_EXAMPLE_VALIDATION=true in .env
+            skip_validation = os.getenv('SKIP_EXAMPLE_VALIDATION', 'false').lower() == 'true'
+
+            if skip_validation:
+                logger.info("\nStep 2: Skipping example file validation (SKIP_EXAMPLE_VALIDATION=true)")
             else:
-                logger.info("✓ All example files valid")
+                logger.info("\nStep 2: Validating example files...")
+                examples_dir = Path(self.config_dir) / "examples"
+                validation_summary = self.example_validator.validate_all_examples(str(examples_dir))
+
+                if validation_summary['invalid'] > 0:
+                    logger.warning(
+                        f"⚠ {validation_summary['invalid']} example files have validation errors"
+                    )
+                    # Don't fail startup, but warn
+                    for file_result in validation_summary['files']:
+                        if not file_result['is_valid']:
+                            logger.warning(f"  File: {file_result['file_path']}")
+                            for error in file_result['errors']:
+                                logger.warning(f"    - {error}")
+                else:
+                    logger.info("✓ All example files valid")
             
             # 3. Validate topic-example references
             logger.info("\nStep 3: Validating topic-example references...")
